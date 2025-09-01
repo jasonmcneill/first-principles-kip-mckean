@@ -12,6 +12,15 @@ app.set("views", path.join(__dirname, "views"));
 // Use the new i18n router
 app.use("/", i18nRoutes);
 
+app.get("/", (req, res) => {
+  // Example list of supported languages
+  const languages = {
+    en: { name: "English" },
+    es: { name: "Español" },
+  };
+  res.render("select-language", { languages });
+});
+
 // A route for the subscription page (no middleware needed)
 app.get("/:langCode/subscribe", (req, res) => {
   const { langCode } = req.params;
