@@ -18,7 +18,9 @@
           <div class="col-12 text-center">
             <header>
               <h1 class="my-0 px-4 py-2 bg-dark text-light">
-                <%- data.appTitle %>
+                <a href="./dashboard" class="link-light text-decoration-none">
+                  <%- data.appTitle %>
+                </a>
               </h1>
               <h2 class="my-0 px-4 py-2 bg-secondary text-light">
                 <%- data.pageTitle %>
@@ -112,5 +114,23 @@
         </div>
       </div>
     </div>
+
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker
+            .register("/service-worker.js")
+            .then((registration) => {
+              console.log(
+                "Service Worker registered with scope:",
+                registration.scope
+              );
+            })
+            .catch((err) => {
+              console.log("Service Worker registration failed:", err);
+            });
+        });
+      }
+    </script>
   </body>
 </html>
