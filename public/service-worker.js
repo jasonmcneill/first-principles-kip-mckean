@@ -6,9 +6,10 @@ if (workbox) {
   // Precache your EJS routes as they are unchanging
   workbox.precaching.precacheAndRoute([
     { url: "/", revision: "1" },
-    { url: "/en/dashboard", revision: "1" },
+    { url: "/en/dashboard", revision: "2" },
     { url: "/en/introduction", revision: "1" },
     { url: "/en/course-information", revision: "1" },
+    { url: "/en/seeking-god", revision: "1" },
     // Add other unchanging routes here
   ]);
 
