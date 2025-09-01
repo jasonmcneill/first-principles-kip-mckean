@@ -1,0 +1,16 @@
+[
+  {
+    "key": "o3f",
+    "text": {
+      "original": "Seeking God",
+      "translated": "Seeking God"
+    },
+    "decorations": {
+      "bold": true,
+      "link": {
+        "href": "./seeking-god",
+        "attributes": ""
+      }
+    }
+  }
+]

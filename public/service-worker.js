@@ -9,6 +9,7 @@ if (workbox) {
     { url: "/en/dashboard", revision: "2" },
     { url: "/en/introduction", revision: "1" },
     { url: "/en/course-information", revision: "1" },
+    { url: "/en/intro-to-course", revision: "1" },
     { url: "/en/seeking-god", revision: "1" },
     // Add other unchanging routes here
   ]);
