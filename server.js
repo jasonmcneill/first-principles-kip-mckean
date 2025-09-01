@@ -1,0 +1,47 @@
+const express = require("express");
+const app = express();
+const path = require("path");
+const fs = require("fs");
+const port = 3000;
+const i18nRoutes = require("./routes/i18n");
+
+// Set up EJS and the views directory
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"));
+
+// Use the new i18n router
+app.use("/", i18nRoutes);
+
+// A route for the subscription page (no middleware needed)
+app.get("/:langCode/subscribe", (req, res) => {
+  const { langCode } = req.params;
+  const contentPath = path.join(__dirname, "i18n", langCode, "subscribe.json");
+
+  if (fs.existsSync(contentPath)) {
+    try {
+      const pageData = JSON.parse(fs.readFileSync(contentPath, "utf8"));
+      res.render("subscribe", { data: pageData });
+    } catch (error) {
+      console.error(error);
+      res.status(500).send("Error loading subscribe page content.");
+    }
+  } else {
+    const englishContentPath = path.join(
+      __dirname,
+      "i18n",
+      "en",
+      "subscribe.json"
+    );
+    if (fs.existsSync(englishContentPath)) {
+      const pageData = JSON.parse(fs.readFileSync(englishContentPath, "utf8"));
+      res.render("subscribe", { data: pageData });
+    } else {
+      res.status(404).render("404", { title: "Page Not Found" });
+    }
+  }
+});
+
+// Start the server
+app.listen(port, () => {
+  console.log(`Server is running on http://localhost:${port}`);
+});

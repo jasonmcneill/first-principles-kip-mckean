@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title><%- data.pageTitle %></title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="master-container">
+      <div class="container-fluid px-0">
+        <div class="row">
+          <div class="col-12 text-center">
+            <header>
+              <h1 class="my-0 px-4 py-2 bg-dark text-light">
+                <%- data.appTitle %>
+              </h1>
+              <h2 class="my-0 px-4 py-2 bg-secondary text-light">
+                <%- data.pageTitle %>
+              </h2>
+            </header>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid">
+        <div class="row bg-light">
+          <div class="col-12 col-md-8 offset-md-2">
+            <main>
+              <blockquote class="mx-4 my-4 px-3 py-3 shadow border border-dark">
+                <em><%- data.scriptureQuote %></em>
+                <div class="text-center mt-2">
+                  <strong><%- data.scriptureCitation %></strong>
+                </div>
+              </blockquote>
+
+              <p>
+                <%- data.p1s1 %> <%- data.p1s2 %> <%- data.p1s3 %> <%- data.p1s4
+                %> <%- data.p1s5 %> <%- data.p1s6 %> <%- data.p1s7 %>
+              </p>
+
+              <p><%- data.p2s1 %> <%- data.p2s2 %> <%- data.p2s3 %></p>
+
+              <p><%- data.p3s1 %> <%- data.p3s2 %></p>
+
+              <p>
+                <%- data.p4s1 %> <%- data.p4s2 %> <%- data.p4s3 %> <%- data.p4s4
+                %> <%- data.p4s5 %>
+              </p>
+
+              <p>
+                <%- data.signedBy %><br />
+                <%- data.signedDate %>
+              </p>
+            </main>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid px-0">
+        <div class="row">
+          <div class="col-12">
+            <footer class="mt-2 px-4 py-4 bg-dark text-light text-center">
+              &copy; 1980-<%= new Date().getFullYear() %> <%-
+              data.copyrightOwner %>
+            </footer>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
