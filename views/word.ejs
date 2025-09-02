@@ -1,12 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%= data.title %></title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title><%- data.pageTitle %></title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
-    <h1><%= data.title %></h1>
-    <p><%= data.content %></p>
+    <div class="master-container">
+      <div class="container-fluid px-0">
+        <div class="row">
+          <div class="col-12 text-center">
+            <header>
+              <h1 class="my-0 px-4 py-2 bg-dark text-light">
+                <a href="./dashboard" class="link-light text-decoration-none">
+                  <%- data.appTitle %>
+                </a>
+              </h1>
+              <h2 class="my-0 px-4 py-2 bg-secondary text-light">
+                <%- data.pageTitle %>
+              </h2>
+            </header>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12 col-md-8 offset-md-2 px-3 py-3">
+            <ol class="mb-3">
+              <li class="mb-3">
+                <div class="mb-3">
+                  <strong><%- data.o1 %></strong>
+                </div>
+                <ol type="A">
+                  <li class="mb-3"><%- data.o1a %></li>
+                  <li class="mb-3"><%- data.o1b %></li>
+                </ol>
+              </li>
+              <li class="mb-3">
+                <div class="mb-3">
+                  <strong><%- data.o2 %></strong>
+                </div>
+                <ol type="A">
+                  <li class="mb-3"><%- data.o2a %></li>
+                  <li class="mb-3"><%- data.o2b %></li>
+                  <li class="mb-3"><%- data.o2c %></li>
+                </ol>
+              </li>
+              <li class="mb-3">
+                <div class="mb-3">
+                  <strong><%- data.o3 %></strong>
+                </div>
+                <ol type="A">
+                  <li class="mb-3"><%- data.o3a %></li>
+                  <li class="mb-3"><%- data.o3b %></li>
+                </ol>
+              </li>
+              <li class="mb-3">
+                <div class="mb-3">
+                  <strong><%- data.o4 %></strong>
+                </div>
+                <ol type="A">
+                  <li class="mb-3"><%- data.o4a %></li>
+                  <li class="mb-3"><%- data.o4b %></li>
+                  <li class="mb-3"><%- data.o4c %></li>
+                  <li class="mb-3"><%- data.o4d %></li>
+                </ol>
+              </li>
+              <li class="mb-3">
+                <div class="mb-3">
+                  <strong><%- data.o5 %></strong>
+                </div>
+                <ol type="A">
+                  <li class="mb-3"><%- data.o5a %></li>
+                  <li class="mb-3"><%- data.o5b %></li>
+                </ol>
+              </li>
+              <li class="mb-3">
+                <div class="mb-3">
+                  <strong><%- data.o6 %></strong>
+                </div>
+                <ol type="A">
+                  <li class="mb-3"><%- data.o6a %></li>
+                  <li class="mb-3"><%- data.o6b %></li>
+                  <li class="mb-3"><%- data.o6c %></li>
+                </ol>
+              </li>
+              <li class="mb-3">
+                <div class="mb-3">
+                  <strong><%- data.o7 %></strong>
+                </div>
+                <ol type="A">
+                  <li class="mb-3"><%- data.o7a %></li>
+                  <li class="mb-3"><%- data.o7b %></li>
+                </ol>
+              </li>
+              <li class="mb-3">
+                <div class="mb-3">
+                  <strong><%- data.o8 %></strong>
+                </div>
+                <ol type="A">
+                  <li class="mb-3"><%- data.o8a %></li>
+                  <li class="mb-3"><%- data.o8b %></li>
+                </ol>
+              </li>
+              <li class="mb-3">
+                <div class="mb-3">
+                  <strong><%- data.o9 %></strong>
+                </div>
+                <ol type="A">
+                  <li class="mb-3"><%- data.o9a %></li>
+                </ol>
+              </li>
+            </ol>
+
+            <p class="mt-3"><%- data.decision %></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid px-0">
+        <div class="row">
+          <div class="col-12">
+            <footer class="mt-2 px-4 py-4 bg-dark text-light text-center">
+              &copy; 1980-<%= new Date().getFullYear() %> Kip McKean
+            </footer>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker
+            .register("/service-worker.js")
+            .then((registration) => {
+              console.log(
+                "Service Worker registered with scope:",
+                registration.scope
+              );
+            })
+            .catch((err) => {
+              console.log("Service Worker registration failed:", err);
+            });
+        });
+      }
+    </script>
   </body>
 </html>
