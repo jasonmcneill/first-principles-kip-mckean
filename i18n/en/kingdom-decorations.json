@@ -1,0 +1,32 @@
+[
+  {
+    "key": "o2a",
+    "text": {
+      "original": "25 A.D.",
+      "translated": "25 A.D."
+    },
+    "decorations": {
+      "bold": true
+    }
+  },
+  {
+    "key": "o2b",
+    "text": {
+      "original": "30 A.D.",
+      "translated": "30 A.D."
+    },
+    "decorations": {
+      "bold": true
+    }
+  },
+  {
+    "key": "o4a",
+    "text": {
+      "original": "33 A.D.",
+      "translated": "33 A.D."
+    },
+    "decorations": {
+      "bold": true
+    }
+  }
+]

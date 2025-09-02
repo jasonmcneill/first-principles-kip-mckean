@@ -13,6 +13,7 @@ if (workbox) {
     { url: "/en/seeking-god", revision: "2" },
     { url: "/en/word", revision: "1" },
     { url: "/en/discipleship", revision: "1" },
+    { url: "/en/kingdom", revision: "1" },
     // Add other unchanging routes here
   ]);
 
