@@ -60,10 +60,7 @@
                 >
                   <%- data.seekingGod %>
                 </a>
-                <a
-                  href="./word"
-                  class="list-group-item list-group-item-action"
-                >
+                <a href="./word" class="list-group-item list-group-item-action">
                   <%- data.wordOfGod %>
                 </a>
                 <a
@@ -178,20 +175,22 @@
     </div>
 
     <script>
-      if ("serviceWorker" in navigator) {
-        window.addEventListener("load", () => {
-          navigator.serviceWorker
-            .register("/service-worker.js")
-            .then((registration) => {
-              console.log(
-                "Service Worker registered with scope:",
-                registration.scope
-              );
-            })
-            .catch((err) => {
-              console.log("Service Worker registration failed:", err);
-            });
-        });
+      if (window.location.hostname !== "localhost") {
+        if ("serviceWorker" in navigator) {
+          window.addEventListener("load", () => {
+            navigator.serviceWorker
+              .register("/service-worker.js")
+              .then((registration) => {
+                console.log(
+                  "Service Worker registered with scope:",
+                  registration.scope
+                );
+              })
+              .catch((err) => {
+                console.log("Service Worker registration failed:", err);
+              });
+          });
+        }
       }
     </script>
   </body>

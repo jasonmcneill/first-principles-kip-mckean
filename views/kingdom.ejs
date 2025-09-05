@@ -44,13 +44,13 @@
             <ol>
               <li class="mb-3">
                 <div class="mb-3">
-                  <strong><%- data.o1Bold %></strong> 
+                  <strong><%- data.o1Bold %></strong>
                   <%- data.o1NotBold %>
                 </div>
                 <ol type="A">
                   <li class="mb-3">
                     <div class="mb-3">
-                      <strong><%- data.o1aScripture %></strong> 
+                      <strong><%- data.o1aScripture %></strong>
                       <%- data.o1aDate %>
                     </div>
                     <ol>
@@ -62,7 +62,7 @@
                   </li>
                   <li class="mb-3">
                     <div class="mb-3">
-                      <strong><%- data.o1bScripture %></strong> 
+                      <strong><%- data.o1bScripture %></strong>
                       <%- data.o1bDate %>
                     </div>
                     <ol>
@@ -86,7 +86,7 @@
               </li>
               <li class="mb-3">
                 <div class="mb-3">
-                  <strong><%- data.o2Bold %></strong> 
+                  <strong><%- data.o2Bold %></strong>
                   <%- data.o2NotBold %>
                 </div>
                 <ol>
@@ -222,20 +222,22 @@
     </div>
 
     <script>
-      if ("serviceWorker" in navigator) {
-        window.addEventListener("load", () => {
-          navigator.serviceWorker
-            .register("/service-worker.js")
-            .then((registration) => {
-              console.log(
-                "Service Worker registered with scope:",
-                registration.scope
-              );
-            })
-            .catch((err) => {
-              console.log("Service Worker registration failed:", err);
-            });
-        });
+      if (window.location.hostname !== "localhost") {
+        if ("serviceWorker" in navigator) {
+          window.addEventListener("load", () => {
+            navigator.serviceWorker
+              .register("/service-worker.js")
+              .then((registration) => {
+                console.log(
+                  "Service Worker registered with scope:",
+                  registration.scope
+                );
+              })
+              .catch((err) => {
+                console.log("Service Worker registration failed:", err);
+              });
+          });
+        }
       }
     </script>
   </body>

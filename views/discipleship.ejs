@@ -34,7 +34,7 @@
         <div class="row">
           <div class="col-12 col-md-8 offset-md-2 px-3 py-3">
             <p><strong><%- data.introduction %></strong></p>
-            
+
             <ol class="mb-3">
               <li class="mb-3"><%- data.i1 %></li>
               <li class="mb-3"><%- data.i2 %></li>
@@ -149,7 +149,7 @@
                   <td><%- data.t33a %></td>
                   <td><%- data.t33b %></td>
                   <td><%- data.t33c %></td>
-                </tr> 
+                </tr>
               </tbody>
             </table>
 
@@ -170,20 +170,22 @@
     </div>
 
     <script>
-      if ("serviceWorker" in navigator) {
-        window.addEventListener("load", () => {
-          navigator.serviceWorker
-            .register("/service-worker.js")
-            .then((registration) => {
-              console.log(
-                "Service Worker registered with scope:",
-                registration.scope
-              );
-            })
-            .catch((err) => {
-              console.log("Service Worker registration failed:", err);
-            });
-        });
+      if (window.location.hostname !== "localhost") {
+        if ("serviceWorker" in navigator) {
+          window.addEventListener("load", () => {
+            navigator.serviceWorker
+              .register("/service-worker.js")
+              .then((registration) => {
+                console.log(
+                  "Service Worker registered with scope:",
+                  registration.scope
+                );
+              })
+              .catch((err) => {
+                console.log("Service Worker registration failed:", err);
+              });
+          });
+        }
       }
     </script>
   </body>
