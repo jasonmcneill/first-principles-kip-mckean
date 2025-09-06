@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title><%- data.pageTitle %></title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="master-container">
+      <div class="container-fluid px-0">
+        <div class="row">
+          <div class="col-12 text-center">
+            <header>
+              <h1 class="my-0 px-4 py-2 bg-dark text-light">
+                <a href="./dashboard" class="link-light text-decoration-none">
+                  <%- data.appTitle %>
+                </a>
+              </h1>
+              <h2 class="my-0 px-4 py-2 bg-secondary text-light">
+                <%- data.pageTitle %>
+              </h2>
+            </header>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12 col-md-8 offset-md-2 px-3 py-3">
+            <ol>
+              <li class="mb-3">
+                <strong><%- data.o1p1 %></strong>
+                <div class="mt-2"><%- data.o1p2 %></div>
+                <div class="mt-2"><%- data.o1p3 %></div>
+                <%- data.o1i1 %><br />
+                <%- data.o1i2 %><br />
+                <%- data.o1i3 %><br />
+                <%- data.o1i4 %><br />
+                <%- data.o1i5 %><br />
+                <%- data.o1i6 %><br />
+                <%- data.o1i7 %><br />
+                <%- data.o1i8 %><br />
+                <%- data.o1i9 %><br />
+                <%- data.o1i10 %><br />
+                <%- data.o1i11 %><br />
+                <%- data.o1i12 %><br />
+                <%- data.o1i13 %>
+              </li>
+              <li class="mb-3">
+                <div class="mb-3">
+                  <strong><%- data.o2p1 %></strong>
+                </div>
+                <div><%- data.o2p2 %></div>
+              </li>
+              <li class="mb-3">
+                <div class="mb-3">
+                  <strong><%- data.o3 %></strong>
+                </div>
+                <ol type="A">
+                  <li class="mb-3"><%- data.o3a %></li>
+                  <li class="mb-3"><%- data.o3b %></li>
+                  <li class="mb-3"><%- data.o3c %></li>
+                  <li class="mb-3"><%- data.o3d %></li>
+                  <li class="mb-3"><%- data.o3e %></li>
+                  <li class="mb-3"><%- data.o3f %></li>
+                  <li class="mb-3"><%- data.o3g %></li>
+                </ol>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid px-0">
+        <div class="row">
+          <div class="col-12">
+            <footer class="mt-2 px-4 py-4 bg-dark text-light text-center">
+              &copy; 1980-<%= new Date().getFullYear() %> Kip McKean
+            </footer>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      if (window.location.hostname !== "localhost") {
+        if ("serviceWorker" in navigator) {
+          window.addEventListener("load", () => {
+            navigator.serviceWorker
+              .register("/service-worker.js")
+              .then((registration) => {
+                console.log(
+                  "Service Worker registered with scope:",
+                  registration.scope
+                );
+              })
+              .catch((err) => {
+                console.log("Service Worker registration failed:", err);
+              });
+          });
+        }
+      }
+    </script>
+  </body>
+</html>

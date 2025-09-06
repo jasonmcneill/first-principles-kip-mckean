@@ -1,0 +1,35 @@
+[
+  {
+    "key": "o3g",
+    "text": {
+      "original": "The Passion Of The Christ",
+      "translated": "The Passion Of The Christ"
+    },
+    "decorations": {
+      "italic": true
+    }
+  },
+  {
+    "key": "o3g",
+    "text": {
+      "original": "The Cross",
+      "translated": "The Cross"
+    },
+    "decorations": {
+      "italic": true
+    }
+  },
+  {
+    "key": "o2p2",
+    "text": {
+      "original": "medical account",
+      "translated": "medical account"
+    },
+    "decorations": {
+      "link": {
+        "href": "./medical-account",
+        "attributes": ""
+      }
+    }
+  }
+]
