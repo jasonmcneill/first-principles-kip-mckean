@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title><%- data.pageTitle %></title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="master-container">
+      <div class="container-fluid px-0">
+        <div class="row">
+          <div class="col-12 text-center bg-dark">
+            <header class="d-flex justify-content-between align-items-center">
+              <a
+                href="./dashboard"
+                class="link-light text-decoration-none float-start px-3"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  class="bi bi-house-fill"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z"
+                  />
+                  <path
+                    d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293z"
+                  />
+                </svg>
+              </a>
+              <h1 class="my-0 px-3 py-2 bg-dark text-light d-inline-block">
+                <%- data.appTitle %>
+              </h1>
+              <span class="invisible float-end px-3">
+                <div
+                  class="d-inline-block"
+                  style="width: 24px; height: 24px"
+                ></div>
+              </span>
+            </header>
+            <header>
+              <h2
+                class="my-0 px-4 py-2 bg-secondary text-light"
+                style="text-wrap: balance"
+              >
+                <%- data.pageTitle %>
+              </h2>
+            </header>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12 col-md-8 offset-md-2 px-3 py-3">
+            <ol>
+              <li class="mb-3">
+                <div class="mb-3">
+                  <strong><%- data.o1 %></strong>
+                </div>
+                <ol type="A">
+                  <li class="mb-3">
+                    <div class="mb-3"><%- data.o1a %></div>
+                    <ol>
+                      <li class="mb-3"><%- data.o1a1 %></li>
+                      <li class="mb-3"><%- data.o1a2 %></li>
+                      <li class="mb-3"><%- data.o1a3 %></li>
+                      <li class="mb-3"><%- data.o1a4 %></li>
+                      <li class="mb-3"><%- data.o1a5 %></li>
+                      <li class="mb-3"><%- data.o1a6 %></li>
+                      <li class="mb-3"><%- data.o1a7 %></li>
+                      <li class="mb-3"><%- data.o1a8 %></li>
+                      <li class="mb-3"><%- data.o1a9 %></li>
+                    </ol>
+                  </li>
+                  <li class="mb-3">
+                    <div class="mb-3"><%- data.o1b %></div>
+                    <ol>
+                      <li class="mb-3"><%- data.o1b1 %></li>
+                      <li class="mb-3"><%- data.o1b2 %></li>
+                    </ol>
+                  </li>
+                </ol>
+              </li>
+              <li class="mb-3">
+                <div class="mb-3">
+                  <strong><%- data.o2 %></strong>
+                </div>
+                <ol type="A">
+                  <li class="mb-3">
+                    <strong><%- data.o2a %></strong>
+                  </li>
+                  <li class="mb-3">
+                    <div class="mb-3">
+                      <strong><%- data.o2b %></strong>
+                    </div>
+                    <ol>
+                      <li class="mb-3"><%- data.o2b1 %></li>
+                      <li class="mb-3"><%- data.o2b2 %></li>
+                    </ol>
+                  </li>
+                  <li>
+                    <div class="mb-3">
+                      <strong><%- data.o2c %></strong>
+                    </div>
+                    <ol>
+                      <li class="mb-3"><%- data.o2c1 %></li>
+                      <li class="mb-3">
+                        <div class="mb-3"><%- data.o2c2 %></div>
+                        <ol type="a">
+                          <li class="mb-3"><%- data.o2c2a %></li>
+                          <li class="mb-3"><%- data.o2c2b %></li>
+                          <li class="mb-3"><%- data.o2c2c %></li>
+                        </ol>
+                      </li>
+                    </ol>
+                  </li>
+                </ol>
+              </li>
+              <li class="mb-3">
+                <div class="mb-3">
+                  <strong><%- data.o3 %></strong>
+                </div>
+                <ol type="A">
+                  <li class="mb-3"><%- data.o3a %></li>
+                  <li class="mb-3"><%- data.o3b %></li>
+                  <li class="mb-3"><%- data.o3c %></li>
+                  <li class="mb-3"><%- data.o3d %></li>
+                  <li class="mb-3"><%- data.o3e %></li>
+                  <li class="mb-3"><%- data.o3f %></li>
+                  <li class="mb-3"><%- data.o3g %></li>
+                  <li class="mb-3"><%- data.o3h %></li>
+                  <li class="mb-3"><%- data.o3i %></li>
+                </ol>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid px-0">
+        <div class="row">
+          <div class="col-12">
+            <footer class="mt-2 px-4 py-4 bg-dark text-light text-center">
+              &copy; 1980-<%= new Date().getFullYear() %> Kip McKean
+            </footer>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      if (window.location.hostname !== "localhost") {
+        if ("serviceWorker" in navigator) {
+          window.addEventListener("load", () => {
+            navigator.serviceWorker
+              .register("/service-worker.js")
+              .then((registration) => {
+                console.log(
+                  "Service Worker registered with scope:",
+                  registration.scope
+                );
+              })
+              .catch((err) => {
+                console.log("Service Worker registration failed:", err);
+              });
+          });
+        }
+      }
+    </script>
+  </body>
+</html>
