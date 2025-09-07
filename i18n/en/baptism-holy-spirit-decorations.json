@@ -1,0 +1,22 @@
+[
+  {
+    "key": "introduction",
+    "text": {
+      "original": "Introduction:",
+      "translated": "Introduction:"
+    },
+    "decorations": {
+      "bold": true
+    }
+  },
+  {
+    "key": "o2c2",
+    "text": {
+      "original": "and",
+      "translated": "and"
+    },
+    "decorations": {
+      "bold": true
+    }
+  }
+]
