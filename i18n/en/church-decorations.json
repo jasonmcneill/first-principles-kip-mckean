@@ -70,10 +70,20 @@
     }
   },
   {
-    "key": "o4c6",
+    "key": "o4c6Start",
     "text": {
       "original": "1979 Boston Movement",
       "translated": "1979 Boston Movement"
+    },
+    "decorations": {
+      "bold": true
+    }
+  },
+  {
+    "key": "o4c6Start",
+    "text": {
+      "original": "Five Biblical Core Convictions",
+      "translated": "Five Biblical Core Convictions"
     },
     "decorations": {
       "bold": true
