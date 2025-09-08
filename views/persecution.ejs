@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title><%- data.pageTitle %></title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="master-container">
+      <div class="container-fluid px-0">
+        <div class="row">
+          <div class="col-12 text-center bg-dark">
+            <header class="d-flex justify-content-between align-items-center">
+              <a
+                href="./dashboard"
+                class="link-light text-decoration-none float-start px-3"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  class="bi bi-house-fill"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M8.707 1.5b 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.70bL8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z"
+                  />
+                  <path
+                    d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293z"
+                  />
+                </svg>
+              </a>
+              <h1 class="my-0 px-3 py-2 bg-dark text-light d-inline-block">
+                <%- data.appTitle %>
+              </h1>
+              <span class="invisible float-end px-3">
+                <div
+                  class="d-inline-block"
+                  style="width: 24px; height: 24px"
+                ></div>
+              </span>
+            </header>
+            <header>
+              <h2
+                class="my-0 px-4 py-2 bg-secondary text-light"
+                style="text-wrap: balance"
+              >
+                <%- data.pageTitle %>
+              </h2>
+            </header>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12 col-md-8 offset-md-2 py-3">
+            <p class="text-center">
+              <em><%- data.thisStudy %></em>
+            </p>
+
+            <p>
+              <strong><%- data.introduction %></strong>
+            </p>
+
+            <ol>
+              <li class="mb-3">
+                <div class="mb-3">
+                  <strong><%- data.o1 %></strong>
+                </div>
+                <ol type="A">
+                  <li class="mb-3">
+                    <div class="mb-3">
+                      <strong><%- data.o1a %></strong>
+                    </div>
+                    <ol>
+                      <li class="mb-3"><%- data.o1a1 %></li>
+                      <li class="mb-3"><%- data.o1a2 %></li>
+                      <li class="mb-3"><%- data.o1a3 %></li>
+                    </ol>
+                  </li>
+                  <li class="mb-3">
+                    <div class="mb-3">
+                      <strong><%- data.o1b %></strong>
+                    </div>
+                    <ol>
+                      <li class="mb-3"><%- data.o1b1 %></li>
+                      <li class="mb-3"><%- data.o1b2 %></li>
+                    </ol>
+                  </li>
+                  <li class="mb-3">
+                    <div class="mb-3">
+                      <strong><%- data.o1c %></strong>
+                    </div>
+                    <ol>
+                      <li class="mb-3"><%- data.o1c1 %></li>
+                      <li class="mb-3"><%- data.o1c2 %></li>
+                    </ol>
+                  </li>
+                </ol>
+              </li>
+              <li class="mb-3">
+                <div class="mb-3">
+                  <strong><%- data.o2 %></strong>
+                </div>
+                <ol type="A">
+                  <li class="mb-3">
+                    <div class="mb-3">
+                      <strong><%- data.o2a %></strong>
+                    </div>
+                    <ol>
+                      <li class="mb-3"><%- data.o2a1 %></li>
+                      <li class="mb-3"><%- data.o2a2 %></li>
+                      <li class="mb-3"><%- data.o2a3 %></li>
+                      <li class="mb-3"><%- data.o2a4 %></li>
+                    </ol>
+                  </li>
+                  <li class="mb-3">
+                    <div class="mb-3">
+                      <strong><%- data.o2b %></strong>
+                    </div>
+                    <ol>
+                      <li class="mb-3"><%- data.o2b1 %></li>
+                      <li class="mb-3"><%- data.o2b2 %></li>
+                      <li class="mb-3"><%- data.o2b3 %></li>
+                    </ol>
+                  </li>
+                </ol>
+              </li>
+              <li class="mb-3">
+                <div class="mb-3">
+                  <strong><%- data.o3 %></strong>
+                </div>
+                <ol type="A">
+                  <li class="mb-3">
+                    <div class="mb-3">
+                      <strong><%- data.o3a %></strong>
+                    </div>
+                    <ol>
+                      <li class="mb-3"><%- data.o3a1 %></li>
+                      <li class="mb-3"><%- data.o3a2 %></li>
+                    </ol>
+                  </li>
+                  <li class="mb-3">
+                    <div class="mb-3">
+                      <strong><%- data.o3b %></strong>
+                    </div>
+                    <ol>
+                      <li class="mb-3">
+                        <div class="mb-3"><%- data.o3b1 %></div>
+                        <ol type="a">
+                          <li class="mb-3"><%- data.o3b1a %></li>
+                          <li class="mb-3"><%- data.o3b1b %></li>
+                        </ol>
+                      </li>
+                      <li class="mb-3">
+                        <div class="mb-3"><%- data.o3b2 %></div>
+                        <ol type="a">
+                          <li class="mb-3"><%- data.o3b2a %></li>
+                          <li class="mb-3"><%- data.o3b2b %></li>
+                          <li class="mb-3"><%- data.o3b2c %></li>
+                          <li class="mb-3"><%- data.o3b2d %></li>
+                        </ol>
+                      </li>
+                    </ol>
+                  </li>
+                  <li class="mb-3">
+                    <div class="mb-3">
+                      <strong><%- data.o3b3 %></strong>
+                    </div>
+                    <ol type="a">
+                      <li class="mb-3"><%- data.o3b3a %></li>
+                    </ol>
+                  </li>
+                </ol>
+              </li>
+              <li class="mb-3">
+                <div class="mb-3">
+                  <strong><%- data.o4 %></strong>
+                </div>
+                <ol type="A">
+                  <li class="mb-3">
+                    <div class="mb-3"><%- data.o4a %></div>
+                    <ol>
+                      <li class="mb-3"><%- data.o4a1 %></li>
+                      <li class="mb-3"><%- data.o4a2 %></li>
+                    </ol>
+                  </li>
+                  <li class="mb-3">
+                    <div class="mb-3"><%- data.o4b %></div>
+                    <ol>
+                      <li class="mb-3"><%- data.o4b1 %></li>
+                    </ol>
+                  </li>
+                </ol>
+              </li>
+              <li class="mb-3"><%- data.o5 %></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid px-0">
+        <div class="row">
+          <div class="col-12">
+            <footer class="mt-2 px-4 py-4 bg-dark text-light text-center">
+              &copy; 1980-<%= new Date().getFullYear() %> Kip McKean
+            </footer>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      if (window.location.hostname !== "localhost") {
+        if ("serviceWorker" in navigator) {
+          window.addEventListener("load", () => {
+            navigator.serviceWorker
+              .register("/service-worker.js")
+              .then((registration) => {
+                console.log(
+                  "Service Worker registered with scope:",
+                  registration.scope
+                );
+              })
+              .catch((err) => {
+                console.log("Service Worker registration failed:", err);
+              });
+          });
+        }
+      }
+    </script>
+
+    <script
+      src="https://www.biblegateway.com/public/link-to-us/tooltips/bglinks.js"
+      type="text/javascript"
+    ></script>
+    <script type="text/javascript">
+      BGLinks.version = "NIV";
+      BGLinks.linkVerses();
+    </script>
+  </body>
+</html>

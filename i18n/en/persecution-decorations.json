@@ -1,0 +1,48 @@
+[
+  {
+    "key": "o5",
+    "text": {
+      "original": "Conclusion",
+      "translated": "Conclusion"
+    },
+    "decorations": {
+      "bold": true
+    }
+  },
+  {
+    "key": "o5",
+    "text": {
+      "original": "(See cityofangelsicc.org and usd21.org)",
+      "translated": "(See cityofangelsicc.org and usd21.org)"
+    },
+    "decorations": {
+      "bold": true
+    }
+  },
+  {
+    "key": "o5",
+    "text": {
+      "original": "cityofangelsicc.org",
+      "translated": "cityofangelsicc.org"
+    },
+    "decorations": {
+      "link": {
+        "href": "https://cityofangelsicc.org/",
+        "attributes": "rel=\"noopener nofollow\" target=\"_blank\""
+      }
+    }
+  },
+  {
+    "key": "o5",
+    "text": {
+      "original": "usd21.org",
+      "translated": "usd21.org"
+    },
+    "decorations": {
+      "link": {
+        "href": "https://usd21.org/",
+        "attributes": "rel=\"noopener nofollow\" target=\"_blank\""
+      }
+    }
+  }
+]
