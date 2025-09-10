@@ -20,7 +20,7 @@
       <div class="container-fluid px-0">
         <div class="row">
           <div class="col-12 text-center bg-dark">
-            <header class="d-flex justify-content-between align-items-center">
+            <div class="d-flex justify-content-between align-items-center">
               <a
                 href="./dashboard"
                 class="link-light text-decoration-none float-start px-3"
@@ -50,15 +50,10 @@
                   style="width: 24px; height: 24px"
                 ></div>
               </span>
-            </header>
-            <header>
-              <h2
-                class="my-0 px-2 py-2 bg-secondary text-light"
-                style="text-wrap: balance"
-              >
-                <%- data.pageTitle %>
-              </h2>
-            </header>
+            </div>
+            <div class="text-center px-2 py-2 bg-secondary text-light">
+              <h2 class="my-0 balance"><%- data.pageTitle %></h2>
+            </div>
           </div>
         </div>
       </div>
