@@ -30,6 +30,21 @@
     }
   },
   {
+    "key": "o2",
+    "text": {
+      "original": "Luke 9:23-26",
+      "translated": "Luke 9:23-26"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"luke-9-23-26\""
+        }
+      ]
+    }
+  },
+  {
     "key": "conclusionQuestions",
     "text": {
       "original": "Conclusion Questions:",
