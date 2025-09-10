@@ -1,5 +1,20 @@
 [
   {
+    "key": "o1aScripture",
+    "text": {
+      "original": "Isaiah 2:1-4",
+      "translated": "Isaiah 2:1-4"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"isaiah-2-1-4\""
+        }
+      ]
+    }
+  },
+  {
     "key": "o2a",
     "text": {
       "original": "25 A.D.",
