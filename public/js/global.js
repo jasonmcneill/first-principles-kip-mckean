@@ -32,18 +32,28 @@ function showScripture(slug) {
           const verseText = verses[i][1];
           let verseHTML = "";
 
-          verseHTML =
-            verseHTML +
-            `<tr>
-            <td class="verseText ps-0">
-              ${verseText}
-            </td>
-            <td class="verseNum pe-0 text-nowrap text-end">
-              <div class="d-inline-block p-1 ms-2 mb-2 bg-light border border-dark">
-                ${verseNum}
-              </div>
-            </td>
-          </tr>`;
+          if (verses.length === 1) {
+            verseHTML =
+              verseHTML +
+              `<tr>
+                <td class="verseText ps-0">
+                  ${verseText}
+                </td>
+              </tr>`;
+          } else {
+            verseHTML =
+              verseHTML +
+              `<tr>
+                <td class="verseText ps-0">
+                  ${verseText}
+                </td>
+                <td class="verseNum pe-0 text-nowrap text-end">
+                  <div class="d-inline-block p-1 ms-2 mb-2 bg-light border border-dark">
+                    ${verseNum}
+                  </div>
+                </td>
+              </tr>`;
+          }
 
           versesHTML += verseHTML;
         }
