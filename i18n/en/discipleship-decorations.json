@@ -15,6 +15,21 @@
     }
   },
   {
+    "key": "o1",
+    "text": {
+      "original": "Mark 1:14-18",
+      "translated": "Mark 1:14-18"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"mark-1-14-18\""
+        }
+      ]
+    }
+  },
+  {
     "key": "conclusionQuestions",
     "text": {
       "original": "Conclusion Questions:",
