@@ -15,6 +15,21 @@
     }
   },
   {
+    "key": "o1bScripture",
+    "text": {
+      "original": "Daniel 2:31-45",
+      "translated": "Daniel 2:31-45"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"daniel-2-31-45\""
+        }
+      ]
+    }
+  },
+  {
     "key": "o2a",
     "text": {
       "original": "25 A.D.",
