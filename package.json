@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "build": "workbox generateSW workbox-config.js",
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "ssh:staging": "ssh root@172.236.250.102 -i ~/.ssh/usd21/id_rsa"
   },
   "keywords": [],
   "author": "",
