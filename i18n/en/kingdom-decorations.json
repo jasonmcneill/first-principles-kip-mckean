@@ -30,6 +30,21 @@
     }
   },
   {
+    "key": "o1d2",
+    "text": {
+      "original": "v. 44",
+      "translated": "v. 44"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"daniel-2-44\""
+        }
+      ]
+    }
+  },
+  {
     "key": "o2a",
     "text": {
       "original": "25 A.D.",
