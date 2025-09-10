@@ -1,3 +1,37 @@
 html {
   font-size: 20px;
 }
+
+#modal table td.verseText {
+  width: 99%;
+}
+
+#modal table td.verseNum {
+  width: 1%;
+}
+
+#modal table td.verseNum div {
+  border-radius: 4px;
+  min-width: 1.5rem;
+  text-align: center;
+}
+
+#modal .version {
+  font-weight: 100;
+  margin-left: 0.5rem;
+}
+
+h1[data-scripture],
+h2[data-scripture],
+h3[data-scripture],
+h4[data-scripture],
+h5[data-scripture],
+h6[data-scripture] {
+  display: inline-block;
+}
+
+[data-scripture] {
+  color: var(--bs-blue);
+  cursor: pointer;
+  text-decoration: underline;
+}
