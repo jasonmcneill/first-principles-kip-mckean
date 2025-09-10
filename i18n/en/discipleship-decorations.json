@@ -45,6 +45,21 @@
     }
   },
   {
+    "key": "o3",
+    "text": {
+      "original": "Luke 14:25-33",
+      "translated": "Luke 14:25-33"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"luke-14-25-33\""
+        }
+      ]
+    }
+  },
+  {
     "key": "conclusionQuestions",
     "text": {
       "original": "Conclusion Questions:",
