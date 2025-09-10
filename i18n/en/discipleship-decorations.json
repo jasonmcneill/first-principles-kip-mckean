@@ -90,6 +90,21 @@
     }
   },
   {
+    "key": "o6",
+    "text": {
+      "original": "Matthew 28:18-20",
+      "translated": "Matthew 28:18-20"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"matthew-28-18-20\""
+        }
+      ]
+    }
+  },
+  {
     "key": "conclusionQuestions",
     "text": {
       "original": "Conclusion Questions:",
