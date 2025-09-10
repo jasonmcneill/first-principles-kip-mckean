@@ -1,5 +1,20 @@
 [
   {
+    "key": "i2",
+    "text": {
+      "original": "Acts 11:19-26",
+      "translated": "Acts 11:19-26"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"matthew-28-18-20\""
+        }
+      ]
+    }
+  },
+  {
     "key": "conclusionQuestions",
     "text": {
       "original": "Conclusion Questions:",
