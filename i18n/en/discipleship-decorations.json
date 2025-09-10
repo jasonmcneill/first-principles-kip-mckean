@@ -75,6 +75,21 @@
     }
   },
   {
+    "key": "o5",
+    "text": {
+      "original": "John 13:34-35",
+      "translated": "John 13:34-35"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"john-13-34-35\""
+        }
+      ]
+    }
+  },
+  {
     "key": "conclusionQuestions",
     "text": {
       "original": "Conclusion Questions:",
