@@ -45,6 +45,21 @@
     }
   },
   {
+    "key": "o2b",
+    "text": {
+      "original": "Matthew 26:36-39",
+      "translated": "Matthew 26:36-39"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"matthew-26-36-39\""
+        }
+      ]
+    }
+  },
+  {
     "key": "o3",
     "text": {
       "original": "Luke 14:25-33",
