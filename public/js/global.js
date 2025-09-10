@@ -48,7 +48,7 @@ function showScripture(slug) {
                   ${verseText}
                 </td>
                 <td class="verseNum pe-0 text-nowrap text-end">
-                  <div class="d-inline-block p-1 ms-2 mb-2 bg-light border border-dark">
+                  <div class="d-inline-block p-1 ms-2 mb-2 bg-light border border-dark" inert>
                     ${verseNum}
                   </div>
                 </td>
