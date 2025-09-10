@@ -170,6 +170,32 @@
             </ol>
 
             <p class="mt-4"><%- data.decision %></p>
+
+            <div
+              class="modal fade"
+              id="modal"
+              data-bs-keyboard="false"
+              tabindex="-1"
+              aria-labelledby="modalHeader"
+              aria-hidden="true"
+            >
+              <div
+                class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+              >
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="modalHeader">Test</h1>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body"></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -181,50 +207,6 @@
               &copy; 1980-<%= new Date().getFullYear() %> Kip McKean
             </footer>
           </div>
-        </div>
-      </div>
-    </div>
-
-    <script>
-      if (window.location.hostname !== "localhost") {
-        if ("serviceWorker" in navigator) {
-          window.addEventListener("load", () => {
-            navigator.serviceWorker
-              .register("/service-worker.js")
-              .then((registration) => {
-                console.log(
-                  "Service Worker registered with scope:",
-                  registration.scope
-                );
-              })
-              .catch((err) => {
-                console.log("Service Worker registration failed:", err);
-              });
-          });
-        }
-      }
-    </script>
-
-    <div
-      class="modal fade"
-      id="modal"
-      data-bs-keyboard="false"
-      tabindex="-1"
-      aria-labelledby="modalHeader"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="modalHeader">Test</h1>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body"></div>
         </div>
       </div>
     </div>
