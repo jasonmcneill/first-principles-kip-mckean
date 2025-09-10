@@ -35,3 +35,8 @@ h6[data-scripture] {
   cursor: pointer;
   text-decoration: underline;
 }
+
+.verseNum {
+  font-size: 0.7rem;
+  font-family: "Consolas", "Courier New", monospace;
+}
