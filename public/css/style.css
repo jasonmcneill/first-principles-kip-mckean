@@ -65,3 +65,7 @@ h6[data-scripture] {
   font-size: 0.7rem;
   font-weight: bold;
 }
+
+.text-smallcaps {
+  font-variant: small-caps;
+}
