@@ -18,5 +18,290 @@
     "decorations": {
       "bold": true
     }
+  },
+  {
+    "key": "introduction",
+    "text": {
+      "original": "John 3:34",
+      "translated": "John 3:34"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"john-3-34\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o1a",
+    "text": {
+      "original": "Acts 2:38",
+      "translated": "Acts 2:38"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-2-38\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2a",
+    "text": {
+      "original": "Acts 2",
+      "translated": "Acts 2"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-ch-2\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2a",
+    "text": {
+      "original": "Acts 10",
+      "translated": "Acts 10"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-ch-10\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2a1",
+    "text": {
+      "original": "Acts 1:4-5",
+      "translated": "Acts 1:4-5"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-1-4-5\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2b1",
+    "text": {
+      "original": "Acts 2",
+      "translated": "Acts 2"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-ch-2\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2b2",
+    "text": {
+      "original": "Acts 10",
+      "translated": "Acts 10"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-ch-10\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2b2a",
+    "text": {
+      "original": "v. 48",
+      "translated": "v. 48"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-10-48\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2b2b",
+    "text": {
+      "original": "Acts 11:1-18",
+      "translated": "Acts 11:1-18"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-11-1-18\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2b2c",
+    "text": {
+      "original": "Acts 11:15",
+      "translated": "Acts 11:15"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-11-15\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2b2d",
+    "text": {
+      "original": "Acts 11:14",
+      "translated": "Acts 11:14"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-11-14\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2b2d",
+    "text": {
+      "original": "Acts 10:44",
+      "translated": "Acts 10:44"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-10-44\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2c",
+    "text": {
+      "original": "Ephesians 4:4-6",
+      "translated": "Ephesians 4:4-6"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"ephesians-4-6\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2c1",
+    "text": {
+      "original": "Acts 19:1-5",
+      "translated": "Acts 19:1-5"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-19-1-5\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2c2",
+    "text": {
+      "original": "Acts 2",
+      "translated": "Acts 2"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-ch-2\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2c2",
+    "text": {
+      "original": "10",
+      "translated": "10"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-ch-10\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2c3a",
+    "text": {
+      "original": "Matthew 28:18-20",
+      "translated": "Matthew 28:18-20"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"matthew-28-18-20\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2c3b",
+    "text": {
+      "original": "1 Peter 3:21",
+      "translated": "1 Peter 3:21"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"1-peter-3-21\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2c3c",
+    "text": {
+      "original": "Ephesians 4:4-6",
+      "translated": "Ephesians 4:4-6"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"ephesians-4-4-6\""
+        }
+      ]
+    }
   }
 ]
