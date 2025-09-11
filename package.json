@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "build": "workbox generateSW workbox-config.js",
-    "dev": "nodemon server.js",
+    "dev": "kill-port 3000 && nodemon server.js",
     "ssh:staging": "ssh root@172.236.250.102 -i ~/.ssh/usd21/id_rsa",
     "deploy:staging": "npm run ssh:staging ./pull-fp.sh"
   },
@@ -19,6 +19,7 @@
     "i18n": "^0.15.1"
   },
   "devDependencies": {
+    "kill-port": "^2.0.1",
     "nodemon": "^3.0.3"
   }
 }
