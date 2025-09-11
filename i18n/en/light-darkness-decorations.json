@@ -1,0 +1,437 @@
+[
+  {
+    "key": "introduction",
+    "text": {
+      "original": "1 Peter 2:9-10",
+      "translated": "1 Peter 2:9-10"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"1-peter-2-9-10\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o1a",
+    "text": {
+      "original": "Isaiah 59:1-2",
+      "translated": "Isaiah 59:1-2"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"isaiah-59-1-2\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o1b",
+    "text": {
+      "original": "Romans 3:23-25",
+      "translated": "Romans 3:23-25"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"romans-3-23-25\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o1b3",
+    "text": {
+      "original": "v. 25",
+      "translated": "v. 25"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"romans-3-25\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o1c1",
+    "text": {
+      "original": "Galatians 5:19-21",
+      "translated": "Galatians 5:19-21"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"galatians-5-19-21\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o1c2",
+    "text": {
+      "original": "2 Timothy 3:1-5",
+      "translated": "2 Timothy 3:1-5"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"2-timothy-3-1-5\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o1c3",
+    "text": {
+      "original": "James 4:17",
+      "translated": "James 4:17"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"james-4-17\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o1c4",
+    "text": {
+      "original": "Romans 6:23",
+      "translated": "Romans 6:23"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"romans-6-23\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2a",
+    "text": {
+      "original": "John 3:1-7",
+      "translated": "John 3:1-7"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"john-3-1-7\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2a",
+    "text": {
+      "original": "v. 3",
+      "translated": "v. 3"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"john-3-3\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2a",
+    "text": {
+      "original": "v. 5",
+      "translated": "v. 5"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"john-3-5\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2a",
+    "text": {
+      "original": "v. 7",
+      "translated": "v. 7"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"john-3-7\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2c",
+    "text": {
+      "original": "Acts 2:22-24",
+      "translated": "Acts 2:22-24"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-2-22-24\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2c1",
+    "text": {
+      "original": "v. 22",
+      "translated": "v. 22"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-2-22\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2c2",
+    "text": {
+      "original": "v. 24",
+      "translated": "v. 24"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-2-24\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2c3",
+    "text": {
+      "original": "v. 23",
+      "translated": "v. 23"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-2-23\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2c3",
+    "text": {
+      "original": "Romans 3:23",
+      "translated": "Romans 3:23"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"romans-3-23\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2d",
+    "text": {
+      "original": "Acts 2:36-37",
+      "translated": "Acts 2:36-37"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-2-36-37\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2e",
+    "text": {
+      "original": "Acts 2:38-42",
+      "translated": "Acts 2:38-42"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-2-38-42\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2e3l1",
+    "text": {
+      "original": "Romans 6:1-4",
+      "translated": "Romans 6:1-4"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"romans-6-1-4\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2e3isaiah5912",
+    "text": {
+      "original": "Isaiah 59:1-2",
+      "translated": "Isaiah 59:1-2"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"isaiah-59-1-2\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2e3acts238",
+    "text": {
+      "original": "Acts 2:38",
+      "translated": "Acts 2:38"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-2-38\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2e3john35",
+    "text": {
+      "original": "John 3:5",
+      "translated": "John 3:5"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"john-3-5\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2e3rom325",
+    "text": {
+      "original": "Romans 3:25",
+      "translated": "Romans 3:25"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"romans-3-25\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2e3rom634",
+    "text": {
+      "original": "Romans 6:3-4",
+      "translated": "Romans 6:3-4"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"romans-6-3-4\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o3",
+    "text": {
+      "original": "Matthew 15:6-9",
+      "translated": "Matthew 15:6-9"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"matthew-15-6-9\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o3a1",
+    "text": {
+      "original": "Colossians 2:12",
+      "translated": "Colossians 2:12"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"colossians-2-12\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o3a3a",
+    "text": {
+      "original": "Ezekiel 18:20",
+      "translated": "Ezekiel 18:20"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"ezekiel-18-20\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o3b1",
+    "text": {
+      "original": "Revelation 3:20",
+      "translated": "Revelation 3:20"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"revelation-3-20\""
+        }
+      ]
+    }
+  }
+]
