@@ -1,0 +1,377 @@
+[
+  {
+    "key": "o1a1",
+    "text": {
+      "original": "Acts 2:36-47",
+      "translated": "Acts 2:36-47"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-2-36-47\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o1a2",
+    "text": {
+      "original": "Acts 8:26-39",
+      "translated": "Acts 8:26-39"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-8-26-39\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o1a3",
+    "text": {
+      "original": "Acts 16:22-34",
+      "translated": "Acts 16:22-34"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-16-22-34\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o1a41",
+    "text": {
+      "original": "Acts 9:1-22",
+      "translated": "Acts 9:1-22"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-9-1-22\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o1a42",
+    "text": {
+      "original": "Acts 22:3-16",
+      "translated": "Acts 22:3-16"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-22-3-16\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o1a5",
+    "text": {
+      "original": "Acts 18:24-26",
+      "translated": "Acts 18:24-26"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-18-24-26\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o1a6",
+    "text": {
+      "original": "Acts 19:1-5",
+      "translated": "Acts 19:1-5"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-19-1-5\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2ap1",
+    "text": {
+      "original": "Revelation 3:20",
+      "translated": "Revelation 3:20"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"revelation-3-20\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2ap2",
+    "text": {
+      "original": "Romans 10:9",
+      "translated": "Romans 10:9"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"romans-10-9\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2ap2",
+    "text": {
+      "original": "Romans 10:13",
+      "translated": "Romans 10:13"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"romans-10-13\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2ap2",
+    "text": {
+      "original": "Acts 22:16",
+      "translated": "Acts 22:16"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-22-16\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2bp1",
+    "text": {
+      "original": "Colossians 2:12",
+      "translated": "Colossians 2:12"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"colossians-2-12\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2bp2",
+    "text": {
+      "original": "Ezekiel 18:20",
+      "translated": "Ezekiel 18:20"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"ezekiel-18-20\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2c",
+    "text": {
+      "original": "1 Peter 3:21",
+      "translated": "1 Peter 3:21"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"1-peter-3-21\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2c",
+    "text": {
+      "original": "Acts 2:38",
+      "translated": "Acts 2:38"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-2-38\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2d",
+    "text": {
+      "original": "Ephesians 2:8",
+      "translated": "Ephesians 2:8"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"ephesians-2-8\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2d",
+    "text": {
+      "original": "Colossians 2:12",
+      "translated": "Colossians 2:12"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"colossians-2-12\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2e",
+    "text": {
+      "original": "Romans 6:2-4",
+      "translated": "Romans 6:2-4"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"romans-6-2-4\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2f",
+    "text": {
+      "original": "1 Corinthians 1:17",
+      "translated": "1 Corinthians 1:17"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"1-corinthians-1-17\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2f",
+    "text": {
+      "original": "Acts 22:16",
+      "translated": "Acts 22:16"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-22-16\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2f",
+    "text": {
+      "original": "1 Corinthians 1:10-17",
+      "translated": "1 Corinthians 1:10-17"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"1-corinthians-1-10-17\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2g",
+    "text": {
+      "original": "Romans 6:2-4",
+      "translated": "Romans 6:2-4"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"romans-6-2-4\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2g",
+    "text": {
+      "original": "Matthew 9:2-6",
+      "translated": "Matthew 9:2-6"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"matthew-9-2-6\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2h",
+    "text": {
+      "original": "John 3:5",
+      "translated": "John 3:5"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"john-3-5\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2h",
+    "text": {
+      "original": "Acts 2:38",
+      "translated": "Acts 2:38"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-2-38\""
+        }
+      ]
+    }
+  }
+]
