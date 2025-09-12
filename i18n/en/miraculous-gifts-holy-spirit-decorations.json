@@ -8,5 +8,410 @@
     "decorations": {
       "bold": true
     }
+  },
+  {
+    "key": "o1a",
+    "text": {
+      "original": "1 Corinthians 12:8-10",
+      "translated": "1 Corinthians 12:8-10"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"1-corinthians-12-8-10\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o1b",
+    "text": {
+      "original": "Mark 16:16-18",
+      "translated": "Mark 16:16-18"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"mark-16-16-18\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o1b2",
+    "text": {
+      "original": "Acts 28:5",
+      "translated": "Acts 28:5"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-28-5\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2a",
+    "text": {
+      "original": "Acts 13:3",
+      "translated": "Acts 13:3"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-13-3\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2b1",
+    "text": {
+      "original": "Acts 9:17-18",
+      "translated": "Acts 9:17-18"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-9-17-18\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2b2",
+    "text": {
+      "original": "Acts 28:8",
+      "translated": "Acts 28:8"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-28-8\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2c1",
+    "text": {
+      "original": "Acts 8:18",
+      "translated": "Acts 8:18"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-8-18\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2c2a",
+    "text": {
+      "original": "Acts 6:1-8",
+      "translated": "Acts 6:1-8"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-6-1-8\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2c2a",
+    "text": {
+      "original": "v. 8",
+      "translated": "v. 8"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-6-8\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2c2b",
+    "text": {
+      "original": "Acts 8:1-25",
+      "translated": "Acts 8:1-25"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-8-1-25\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2c2b",
+    "text": {
+      "original": "Acts 6:1-8",
+      "translated": "Acts 6:1-8"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-6-1-8\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2c2b",
+    "text": {
+      "original": "v. 12",
+      "translated": "v. 12"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-8-12\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2c2b",
+    "text": {
+      "original": "v. 13",
+      "translated": "v. 13"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-8-13\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2c2b",
+    "text": {
+      "original": "Acts 2:38",
+      "translated": "Acts 2:38"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-2-38\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2c2b",
+    "text": {
+      "original": "Acts 8:18",
+      "translated": "Acts 8:18"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-8-18\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2c2c",
+    "text": {
+      "original": "Acts 19:1-6",
+      "translated": "Acts 19:1-6"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-19-1-6\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2c2c",
+    "text": {
+      "original": "v. 5",
+      "translated": "v. 5"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-19-5\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2c2c",
+    "text": {
+      "original": "v. 6",
+      "translated": "v. 6"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-19-6\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o3a",
+    "text": {
+      "original": "Luke 9:1",
+      "translated": "Luke 9:1"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"luke-9-1\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o3b",
+    "text": {
+      "original": "1 Corinthians 12",
+      "translated": "1 Corinthians 12"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"1-corinthians-ch-12\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o3b",
+    "text": {
+      "original": "14",
+      "translated": "14"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"1-corinthians-ch-14\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o3b",
+    "text": {
+      "original": "1 Corinthians 12:28-30",
+      "translated": "1 Corinthians 12:28-30"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"1-corinthians-12-28-30\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o3c",
+    "text": {
+      "original": "1 Corinthians 13:8-10",
+      "translated": "1 Corinthians 13:8-10"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"1-corinthians-13-8-10\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o3d",
+    "text": {
+      "original": "1 Corinthians 14:20-22",
+      "translated": "1 Corinthians 14:20-22"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"1-corinthians-14-20-22\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o3f",
+    "text": {
+      "original": "2 Thessalonians 2:9-12",
+      "translated": "2 Thessalonians 2:9-12"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"2-thessalonians-2-9-12\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o3h",
+    "text": {
+      "original": "Ephesians 5:18-19",
+      "translated": "Ephesians 5:18-19"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"ephesians-5-18-19\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o3i",
+    "text": {
+      "original": "John 3:34-36",
+      "translated": "John 3:34-36"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"john-3-34-36\""
+        }
+      ]
+    }
   }
 ]

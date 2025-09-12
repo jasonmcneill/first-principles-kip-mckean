@@ -58,6 +58,7 @@ h6[data-scripture] {
 [data-scripture] {
   color: var(--bs-blue);
   cursor: pointer;
+  white-space: nowrap;
   text-decoration: underline;
 }
 
