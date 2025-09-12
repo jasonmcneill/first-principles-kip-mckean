@@ -1,0 +1,21 @@
+{
+  "display": "John 16:1-4",
+  "version": "NIV",
+  "book": "John",
+  "chapter": 16,
+  "verses": [
+    [1, "All this I have told you so that you will not fall away."],
+    [
+      2,
+      "They will put you out of the synagogue; in fact, the time is coming when anyone who kills you will think they are offering a service to God."
+    ],
+    [
+      3,
+      "They will do such things because they have not known the Father or me."
+    ],
+    [
+      4,
+      "I have told you this, so that when their time comes you will remember that I warned you about them. I did not tell you this from the beginning because I was with you,"
+    ]
+  ]
+}
