@@ -44,8 +44,10 @@ function renderPage(req, res) {
     `${pageSlug}.json`
   );
 
-  console.log("pass2Path exists: " + fs.existsSync(pass2Path));
-  console.log("pass2Path:", pass2path);
+  if (pass2Path) {
+    console.log("pass2Path exists: " + fs.existsSync(pass2Path));
+    console.log("pass2Path:", pass2path);
+  }
 
   if (fs.existsSync(templatePath) && fs.existsSync(pass1Path)) {
     try {
