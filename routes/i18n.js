@@ -44,6 +44,9 @@ function renderPage(req, res) {
     `${pageSlug}.json`
   );
 
+  console.log("pass2Path exists: " + fs.existsSync(pass2Path));
+  console.log("pass2Path:", pass2path);
+
   if (fs.existsSync(templatePath) && fs.existsSync(pass1Path)) {
     try {
       const pass1 = JSON.parse(fs.readFileSync(pass1Path, "utf8"));
