@@ -40,7 +40,8 @@ function renderPage(req, res) {
     __dirname,
     "../i18n",
     langCode,
-    `${pageSlug}-decorations.json`
+    "decorations",
+    `${pageSlug}.json`
   );
 
   if (fs.existsSync(templatePath) && fs.existsSync(pass1Path)) {
