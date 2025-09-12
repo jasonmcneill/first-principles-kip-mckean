@@ -8,5 +8,440 @@
     "decorations": {
       "bold": true
     }
+  },
+  {
+    "key": "o1a",
+    "text": {
+      "original": "Luke 19:10",
+      "translated": "Luke 19:10"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"luke-19-10\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o1b",
+    "text": {
+      "original": "Matthew 28:19-20",
+      "translated": "Matthew 28:19-20"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"matthew-28-19-20\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o1c",
+    "text": {
+      "original": "1 Timothy 2:3-4",
+      "translated": "1 Timothy 2:3-4"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"1-timothy-2-3-4\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2a",
+    "text": {
+      "original": "John 15:1-16",
+      "translated": "John 15:1-16"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"john-15-1-16\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2a1",
+    "text": {
+      "original": "Matthew 28:19",
+      "translated": "Matthew 28:19"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"matthew-28-19\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2a1",
+    "text": {
+      "original": "John 15:16",
+      "translated": "John 15:16"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"john-15-16\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2a3",
+    "text": {
+      "original": "John 15:9-10",
+      "translated": "John 15:9-10"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"john-15-9-10\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2a4",
+    "text": {
+      "original": "Matthew 28:20",
+      "translated": "Matthew 28:20"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"matthew-28-20\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2b1",
+    "text": {
+      "original": "Acts 2:41",
+      "translated": "Acts 2:41"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-2-41\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2b2",
+    "text": {
+      "original": "Acts 2:47",
+      "translated": "Acts 2:47"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-2-47\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2b3",
+    "text": {
+      "original": "Acts 4:4",
+      "translated": "Acts 4:4"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-4-4\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2b4",
+    "text": {
+      "original": "Acts 5:14",
+      "translated": "Acts 5:14"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-5-14\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2b5",
+    "text": {
+      "original": "Acts 6:1",
+      "translated": "Acts 6:1"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-6-1\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2b6",
+    "text": {
+      "original": "Acts 6:7",
+      "translated": "Acts 6:7"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-6-7\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2b7",
+    "text": {
+      "original": "Acts 8:4",
+      "translated": "Acts 8:4"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-8-4\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2b8",
+    "text": {
+      "original": "Acts 9:31",
+      "translated": "Acts 9:31"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-9-31\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2b9",
+    "text": {
+      "original": "Acts 11:21",
+      "translated": "Acts 11:21"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-11-21\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2b10",
+    "text": {
+      "original": "Acts 12:24",
+      "translated": "Acts 12:24"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-12-24\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2b11",
+    "text": {
+      "original": "Acts 13:49",
+      "translated": "Acts 13:49"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-13-49\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2b12",
+    "text": {
+      "original": "Acts 14:1",
+      "translated": "Acts 14:1"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-14-1\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2b13",
+    "text": {
+      "original": "Acts 14:21",
+      "translated": "Acts 14:21"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-14-21\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2b14",
+    "text": {
+      "original": "Acts 16:5",
+      "translated": "Acts 16:5"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-16-5\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2b15",
+    "text": {
+      "original": "Acts 17:4",
+      "translated": "Acts 17:4"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-17-4\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2b16",
+    "text": {
+      "original": "Acts 28:22",
+      "translated": "Acts 28:22"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-28-22\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2b17",
+    "text": {
+      "original": "Acts 17:6",
+      "translated": "Acts 17:6"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-17-6-rsv\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2b18",
+    "text": {
+      "original": "Colossians 1:6",
+      "translated": "Colossians 1:6"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"colossians-1-6\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2b18",
+    "text": {
+      "original": "23",
+      "translated": "23"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"colossians-1-23\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2b18",
+    "text": {
+      "original": "Acts 28:30",
+      "translated": "Acts 28:30"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-28-30\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2b18",
+    "text": {
+      "original": "Matthew 28",
+      "translated": "Matthew 28"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"matthew-28-18-20\""
+        }
+      ]
+    }
   }
 ]
