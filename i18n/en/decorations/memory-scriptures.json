@@ -1,0 +1,272 @@
+[
+  {
+    "key": "s1a",
+    "text": {
+      "original": "Jeremiah 29:11",
+      "translated": "Jeremiah 29:11"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"jeremiah-29-11\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "s1b",
+    "text": {
+      "original": "Matthew 6:33",
+      "translated": "Matthew 6:33"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"matthew-6-33\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "s2a",
+    "text": {
+      "original": "John 8:31-32",
+      "translated": "John 8:31-32"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"john-8-31-32\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "s2b",
+    "text": {
+      "original": "Philippians 4:13",
+      "translated": "Philippians 4:13"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"philippians-4-13\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "s3a",
+    "text": {
+      "original": "Mark 1:17",
+      "translated": "Mark 1:17"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"mark-1-17\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "s3b",
+    "text": {
+      "original": "John 13:34-35",
+      "translated": "John 13:34-35"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"john-13-34-35\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "s4a",
+    "text": {
+      "original": "Acts 2:38",
+      "translated": "Acts 2:38"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-2-38\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "s4b",
+    "text": {
+      "original": "Philippians 4:4",
+      "translated": "Philippians 4:4"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"philippians-4-4\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "s5a",
+    "text": {
+      "original": "Ezekiel 18:20",
+      "translated": "Ezekiel 18:20"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"ezekiel-18-20\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "s5b",
+    "text": {
+      "original": "Galatians 1:8",
+      "translated": "Galatians 1:8"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"galatians-1-8\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "s6a",
+    "text": {
+      "original": "Matthew 22:37-39",
+      "translated": "Matthew 22:37-39"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"matthew-22-37-39\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "s6b",
+    "text": {
+      "original": "John 15:8",
+      "translated": "John 15:8"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"john-15-8\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "s7a",
+    "text": {
+      "original": "Matthew 28:18-20",
+      "translated": "Matthew 28:18-20"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"matthew-28-18-20\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "s7b",
+    "text": {
+      "original": "Luke 19:10",
+      "translated": "Luke 19:10"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"luke-19-10\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "s8a",
+    "text": {
+      "original": "Hebrews 10:23-25",
+      "translated": "Hebrews 10:23-25"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"hebrews-10-23-25\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "s8b",
+    "text": {
+      "original": "1 John 1:9",
+      "translated": "1 John 1:9"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"1-john-1-9\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "s9a",
+    "text": {
+      "original": "Hebrews 12:15",
+      "translated": "Hebrews 12:15"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"hebrews-12-15\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "s9b",
+    "text": {
+      "original": "Hebrews 13:17",
+      "translated": "Hebrews 13:17"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"hebrews-13-17\""
+        }
+      ]
+    }
+  }
+]
