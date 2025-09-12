@@ -46,7 +46,7 @@ function renderPage(req, res) {
 
   if (pass2Path) {
     console.log("pass2Path exists: " + fs.existsSync(pass2Path));
-    console.log("pass2Path:", pass2path);
+    console.log("pass2Path:", pass2Path);
   }
 
   if (fs.existsSync(templatePath) && fs.existsSync(pass1Path)) {
