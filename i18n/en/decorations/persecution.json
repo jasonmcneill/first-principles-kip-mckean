@@ -181,6 +181,21 @@
     }
   },
   {
+    "key": "o2b",
+    "text": {
+      "original": "Acts 28:21-22",
+      "translated": "Acts 28:21-22"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-28-21-22\""
+        }
+      ]
+    }
+  },
+  {
     "key": "o3",
     "text": {
       "original": "1 Timothy 4:16",
