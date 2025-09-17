@@ -1,5 +1,8 @@
 {
-  "lang": "en",
+  "metadata": {
+    "lang": "en",
+    "hasAudio": true
+  },
   "appTitle": "First Principles",
   "pageTitle": "New Testament Conversion",
   "o1": "The Major Conversions in Acts",

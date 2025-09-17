@@ -1,5 +1,8 @@
 {
-  "lang": "en",
+  "metadata": {
+    "lang": "en",
+    "hasAudio": false
+  },
   "appTitle": "First Principles",
   "pageTitle": "After Baptism, Now What?",
   "introduction": "Introduction",

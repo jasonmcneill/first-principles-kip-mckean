@@ -1,5 +1,8 @@
 {
-  "lang": "en",
+  "metadata": {
+    "lang": "en",
+    "hasAudio": true
+  },
   "appTitle": "First Principles",
   "pageTitle": "The Church",
   "o1": "Colossians 1:15-18",

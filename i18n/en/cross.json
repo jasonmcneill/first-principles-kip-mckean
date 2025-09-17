@@ -1,5 +1,8 @@
 {
-  "lang": "en",
+  "metadata": {
+    "lang": "en",
+    "hasAudio": true
+  },
   "appTitle": "First Principles",
   "pageTitle": "The Cross",
   "o1p1": "Passion Account",

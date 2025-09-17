@@ -10,7 +10,23 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
 // Set up a public directory
-app.use(express.static(path.join(__dirname, "public")));
+app.use(
+  express.static(path.join(__dirname, "public"), {
+    maxAge: "1d",
+    etag: true,
+    lastModified: true,
+  })
+);
+
+// Set parameters for audio
+app.use(
+  "/audio",
+  express.static(path.join(__dirname, "public/audio"), {
+    maxAge: "90d", // cache audio aggressively
+    etag: true,
+    lastModified: true,
+  })
+);
 
 // Use the new i18n router
 app.use("/", i18nRoutes);

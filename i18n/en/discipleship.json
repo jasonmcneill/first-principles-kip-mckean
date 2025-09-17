@@ -1,5 +1,8 @@
 {
-  "lang": "en",
+  "metadata": {
+    "lang": "en",
+    "hasAudio": true
+  },
   "appTitle": "First Principles",
   "pageTitle": "Discipleship",
   "introduction": "Introduction:",

@@ -1,5 +1,8 @@
 {
-  "lang": "en",
+  "metadata": {
+    "lang": "en",
+    "hasAudio": true
+  },
   "appTitle": "First Principles",
   "pageTitle": "Light and Darkness",
   "introduction": "Introduction: 1 Peter 2:9-10",

@@ -1,5 +1,8 @@
 {
-  "lang": "en",
+  "metadata": {
+    "lang": "en",
+    "hasAudio": false
+  },
   "appTitle": "First Principles",
   "introduction": "Introduction",
   "courseInformation": "Course Information",

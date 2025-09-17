@@ -1,3 +1,16 @@
+function hideAudioIfOpusNotSupported() {
+  const testAudio = document.createElement("audio");
+  const canPlayOpus =
+    !!testAudio.canPlayType &&
+    testAudio.canPlayType('audio/webm; codecs="opus"').replace(/no/, "");
+
+  if (!canPlayOpus) {
+    document.querySelectorAll(".audioContainer").forEach((item) => {
+      item.setAttribute("hidden", "");
+    });
+  }
+}
+
 function listenForScriptureClicks() {
   document.querySelectorAll("[data-scripture]").forEach((el) => {
     el.addEventListener("click", (evt) => {
@@ -91,6 +104,7 @@ function addListeners() {
 
 function init() {
   addListeners();
+  hideAudioIfOpusNotSupported();
 }
 
 init();
