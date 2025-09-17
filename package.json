@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "build": "workbox generateSW workbox-config.js",
+    "build": "npx workbox injectManifest workbox-config.js",
     "dev": "kill-port 3000 && nodemon server.js",
     "ssh:staging": "ssh root@172.236.250.102 -i ~/.ssh/usd21/id_rsa",
     "deploy:staging": "npm run ssh:staging ./pull-fp.sh"
