@@ -47,37 +47,33 @@ if (workbox) {
     });
   });
 
-  // Precache static assets + generated routes
-  workbox.precaching.precacheAndRoute(self.__WB_MANIFEST.concat(routes), {
+  // Precache static assets + generated routes (exclude audio .webm)
+  const precacheManifest = (self.__WB_MANIFEST || []).filter((entry) => {
+    const url = typeof entry === "string" ? entry : entry.url;
+    return !(
+      /^\/?audio\//i.test(url) ||
+      /\.webm(\?.*)?$/i.test(url)
+    );
+  });
+  workbox.precaching.precacheAndRoute(precacheManifest.concat(routes), {
     ignoreURLParametersMatching: [/^utm_/, /^fbclid$/],
   });
 
-  // Runtime caching for audio files
+  // Runtime caching for audio files (.webm) - cache on first play
   workbox.routing.registerRoute(
-    ({ url }) => url.pathname.startsWith("/audio/"),
-    async ({ event, request }) => {
-      const cache = await caches.open("audio-cache");
-      const cachedResponse = await cache.match(request);
-      if (cachedResponse) {
-        return cachedResponse;
-      }
-
-      // Check for online status
-      if (self.navigator.onLine) {
-        try {
-          const networkResponse = await fetch(request);
-          if (networkResponse && networkResponse.ok) {
-            // Clone and store in cache
-            cache.put(request, networkResponse.clone());
-            return networkResponse;
-          }
-        } catch (err) {
-          // Network fetch failed, fall through to fail silently
-        }
-      }
-      // Fail silently (no response)
-      return Response.error();
-    }
+    ({ request, url }) =>
+      url.pathname.startsWith("/audio/") &&
+      (request.destination === "audio" || url.pathname.endsWith(".webm")),
+    new workbox.strategies.CacheFirst({
+      cacheName: "audio-cache",
+      plugins: [
+        // Support HTTP Range requests used by <audio> streaming
+        new workbox.rangeRequests.RangeRequestsPlugin(),
+        new workbox.cacheableResponse.CacheableResponsePlugin({
+          statuses: [0, 200],
+        }),
+      ],
+    })
   );
 } else {
   console.error("Workbox failed to load 😢");
