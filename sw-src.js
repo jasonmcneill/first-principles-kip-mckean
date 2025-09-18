@@ -1,8 +1,8 @@
 // Service Worker with Workbox
-import { precacheAndRoute } from "workbox-precaching";
-import { registerRoute } from "workbox-routing";
-import { CacheFirst } from "workbox-strategies";
-import { ExpirationPlugin } from "workbox-expiration";
+import { precacheAndRoute } from "https://storage.googleapis.com/workbox-cdn/releases/7.0.0/workbox-precaching.mjs";
+import { registerRoute } from "https://storage.googleapis.com/workbox-cdn/releases/7.0.0/workbox-routing.mjs";
+import { CacheFirst } from "https://storage.googleapis.com/workbox-cdn/releases/7.0.0/workbox-strategies.mjs";
+import { ExpirationPlugin } from "https://storage.googleapis.com/workbox-cdn/releases/7.0.0/workbox-expiration.mjs";
 
 // Import routes list (auto-generated)
 import { routes } from "./routes.js";

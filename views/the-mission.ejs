@@ -201,10 +201,12 @@
       if ("serviceWorker" in navigator) {
         window.addEventListener("load", async () => {
           try {
-            const reg = await navigator.serviceWorker.register("/sw.js");
-            console.log("Service worker registered with scope:", reg.scope);
+            const reg = await navigator.serviceWorker.register("/sw.js", {
+              type: "module", // 👈 key difference
+            });
+            console.log("Service Worker registered with scope:", reg.scope);
           } catch (err) {
-            console.error("Service worker registration failed:", err);
+            console.error("Service Worker registration failed:", err);
           }
         });
       }
