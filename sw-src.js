@@ -5,7 +5,7 @@ import { CacheFirst } from "https://storage.googleapis.com/workbox-cdn/releases/
 import { ExpirationPlugin } from "https://storage.googleapis.com/workbox-cdn/releases/7.0.0/workbox-expiration.mjs";
 
 // Import routes list (auto-generated)
-import { routes } from "./routes.js";
+import { routes } from "./public/routes.js";
 
 // Combine manifest + routes + manual routes
 precacheAndRoute(
