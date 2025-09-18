@@ -4,8 +4,6 @@ importScripts(
 );
 
 if (workbox) {
-  console.log("Workbox loaded 🎉");
-
   const langSlugs = [
     "after-baptism-now-what",
     "baptism-holy-spirit",
