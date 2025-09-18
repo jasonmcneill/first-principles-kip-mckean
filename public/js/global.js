@@ -98,6 +98,23 @@ function showScripture(slug) {
   });
 }
 
+function listenForAudio() {
+  return new Promise((resolve) => {
+    const channel = new MessageChannel();
+    const t = setTimeout(() => {
+      channel.port1.onmessage = null;
+      resolve({ ok: false, error: "timeout", url, requestId });
+    }, timeoutMs);
+
+    channel.port1.onmessage = (ev) => {
+      clearTimeout(t);
+      resolve(ev.data);
+    };
+
+    sw.postMessage({ type: "PREFETCH_AUDIO", url, requestId }, [channel.port2]);
+  });
+}
+
 function addListeners() {
   listenForScriptureClicks();
 }
