@@ -1,9 +1,9 @@
 // Service Worker as an ES module
 // Import Workbox modules from CDN (v7.0.0 at time of writing)
-import { precacheAndRoute } from "https://storage.googleapis.com/workbox-cdn/releases/7.0.0/workbox-precaching.mjs";
-import { registerRoute } from "https://storage.googleapis.com/workbox-cdn/releases/7.0.0/workbox-routing.mjs";
-import { CacheFirst } from "https://storage.googleapis.com/workbox-cdn/releases/7.0.0/workbox-strategies.mjs";
-import { ExpirationPlugin } from "https://storage.googleapis.com/workbox-cdn/releases/7.0.0/workbox-expiration.mjs";
+import { precacheAndRoute } from "https://storage.googleapis.com/workbox-cdn/releases/7.0.0/workbox-precaching.js";
+import { registerRoute } from "https://storage.googleapis.com/workbox-cdn/releases/7.0.0/workbox-routing.js";
+import { CacheFirst } from "https://storage.googleapis.com/workbox-cdn/releases/7.0.0/workbox-strategies.js";
+import { ExpirationPlugin } from "https://storage.googleapis.com/workbox-cdn/releases/7.0.0/workbox-expiration.js";
 
 // Import your own routes list
 const routes = [
