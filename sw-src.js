@@ -6,7 +6,7 @@ importScripts(
 if (workbox) {
   console.log("Workbox loaded 🎉");
 
-  const routes = [
+  const slugs = [
     "after-baptism-now-what",
     "baptism-holy-spirit",
     "best-friends-all-time",
@@ -31,28 +31,23 @@ if (workbox) {
     "word",
   ];
 
-  const languages = ["en", "es"];
+  const slugQuantity = slugs.length;
+  const langs = ["en"];
+  const langRoutes = [];
 
-  // Build language-prefixed routes
-  const languageRoutes = languages.flatMap((lang) =>
-    routes.map((slug) => `/${lang}/${slug}`)
-  );
+  langs.forEach((lang) => {
+    slugs.forEach((slug) => {
+      langRoutes.push({
+        url: `/${lang}/${slug}`,
+        revision: null,
+      });
+    });
+  });
 
   // Precache static assets + generated routes
-  /* workbox.precaching.precacheAndRoute(
-    self.__WB_MANIFEST.concat(
-      [
-        { url: "/", revision: null }, // homepage
-        { url: "/about", revision: null },
-        { url: "/contact", revision: null },
-        { url: "/en/subscribe", revision: null },
-        { url: "/es/subscribe", revision: null },
-      ].concat(languageRoutes.map((url) => ({ url, revision: null })))
-    ),
-    {
-      ignoreURLParametersMatching: [/^utm_/, /^fbclid$/],
-    }
-  ); */
+  workbox.precaching.precacheAndRoute(self.__WB_MANIFEST.concat(langRoutes), {
+    ignoreURLParametersMatching: [/^utm_/, /^fbclid$/],
+  });
 
   // Runtime caching for audio files
   workbox.routing.registerRoute(
