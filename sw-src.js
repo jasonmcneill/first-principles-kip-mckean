@@ -50,7 +50,7 @@ if (workbox) {
   });
 
   // Precache static assets + generated routes
-  workbox.precaching.precacheAndRoute(self.__WB_MANIFEST.concat(langRoutes), {
+  workbox.precaching.precacheAndRoute(self.__WB_MANIFEST.concat(routes), {
     ignoreURLParametersMatching: [/^utm_/, /^fbclid$/],
   });
 
