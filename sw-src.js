@@ -6,7 +6,30 @@ import { CacheFirst } from "https://storage.googleapis.com/workbox-cdn/releases/
 import { ExpirationPlugin } from "https://storage.googleapis.com/workbox-cdn/releases/7.0.0/workbox-expiration.mjs";
 
 // Import your own routes list
-import { routes } from "./routes.js";
+const routes = [
+  "after-baptism-now-what",
+  "baptism-holy-spirit",
+  "best-friends-all-time",
+  "christ-is-your-life",
+  "church",
+  "course-information",
+  "cross",
+  "dashboard",
+  "discipleship",
+  "intro-to-course",
+  "introduction",
+  "kingdom",
+  "light-darkness",
+  "medical-account",
+  "memory-scriptures",
+  "miraculous-gifts-holy-spirit",
+  "new-testament-conversion",
+  "persecution",
+  "seeking-god",
+  "select-language",
+  "the-mission",
+  "word",
+];
 
 // Precache static assets discovered by Workbox + your custom routes
 precacheAndRoute(
