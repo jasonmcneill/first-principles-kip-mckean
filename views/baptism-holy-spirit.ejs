@@ -194,23 +194,6 @@
             .catch((err) => console.error("SW registration failed:", err));
         });
       }
-
-      // Cache audio recording if user clicks play
-      document.addEventListener(
-        "play",
-        (event) => {
-          const el = event.target;
-          if (el.tagName.toLowerCase() === "audio") {
-            const url = el.currentSrc || el.src;
-            if ("caches" in window && url) {
-              caches.open("audio-files").then((cache) => {
-                cache.add(url).catch(() => {});
-              });
-            }
-          }
-        },
-        true
-      );
     </script>
   </body>
 </html>

@@ -54,16 +54,30 @@ if (workbox) {
 
   // Runtime caching for audio files
   workbox.routing.registerRoute(
-    ({ request }) => request.destination === "audio",
-    new workbox.strategies.CacheFirst({
-      cacheName: "audio-cache",
-      plugins: [
-        new workbox.expiration.ExpirationPlugin({
-          maxEntries: 50,
-          maxAgeSeconds: 90 * 24 * 60 * 60, // 90 days
-        }),
-      ],
-    })
+    ({ url }) => url.pathname.startsWith("/audio/"),
+    async ({ event, request }) => {
+      const cache = await caches.open("audio-cache");
+      const cachedResponse = await cache.match(request);
+      if (cachedResponse) {
+        return cachedResponse;
+      }
+
+      // Check for online status
+      if (self.navigator.onLine) {
+        try {
+          const networkResponse = await fetch(request);
+          if (networkResponse && networkResponse.ok) {
+            // Clone and store in cache
+            cache.put(request, networkResponse.clone());
+            return networkResponse;
+          }
+        } catch (err) {
+          // Network fetch failed, fall through to fail silently
+        }
+      }
+      // Fail silently (no response)
+      return Response.error();
+    }
   );
 } else {
   console.error("Workbox failed to load 😢");
