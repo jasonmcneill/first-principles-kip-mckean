@@ -214,19 +214,23 @@
       if ("serviceWorker" in navigator) {
         window.addEventListener("load", () => {
           navigator.serviceWorker
-            .register("/sw.js") // ← no type: "module"
-            .then((reg) => console.log("SW registered:", reg))
+            .register("/sw.js")
             .catch((err) => console.error("SW registration failed:", err));
         });
       }
 
-      // Listen for audio plays
+      // Cache audio recording if user clicks play
       document.addEventListener(
         "play",
         (event) => {
           const el = event.target;
           if (el.tagName.toLowerCase() === "audio") {
-            console.log("Audio playing:", el.currentSrc || el.src);
+            const url = el.currentSrc || el.src;
+            if ("caches" in window && url) {
+              caches.open("audio-files").then((cache) => {
+                cache.add(url).catch(() => {});
+              });
+            }
           }
         },
         true
