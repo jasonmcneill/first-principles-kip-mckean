@@ -269,12 +269,11 @@
     ></script>
 
     <script>
-      // 1. Register the Service Worker
       if ("serviceWorker" in navigator) {
         window.addEventListener("load", async () => {
           try {
             const reg = await navigator.serviceWorker.register("/sw.js", {
-              type: "module", // 👈 key difference
+              type: "module", // 👈 key for ES module SW
             });
             console.log("Service Worker registered with scope:", reg.scope);
           } catch (err) {
@@ -283,26 +282,17 @@
         });
       }
 
-      // 2. Listen for clicks on <audio> play buttons
+      // Listen for audio plays
       document.addEventListener(
         "play",
         (event) => {
           const el = event.target;
           if (el.tagName.toLowerCase() === "audio") {
-            const src = el.currentSrc || el.src;
-            console.log("Audio play triggered for:", src);
-
-            // Optionally send a message to the SW
-            if (navigator.serviceWorker.controller && src) {
-              navigator.serviceWorker.controller.postMessage({
-                type: "AUDIO_PLAY",
-                url: src,
-              });
-            }
+            console.log("Audio playing:", el.currentSrc || el.src);
           }
         },
         true
-      ); // use capture so it fires reliably
+      );
     </script>
   </body>
 </html>
