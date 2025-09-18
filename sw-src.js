@@ -1,55 +1,72 @@
-// Service Worker as an ES module
-// Import Workbox modules from CDN (v7.0.0 at time of writing)
-import { precacheAndRoute } from "https://storage.googleapis.com/workbox-cdn/releases/7.0.0/workbox-precaching.js";
-import { registerRoute } from "https://storage.googleapis.com/workbox-cdn/releases/7.0.0/workbox-routing.js";
-import { CacheFirst } from "https://storage.googleapis.com/workbox-cdn/releases/7.0.0/workbox-strategies.js";
-import { ExpirationPlugin } from "https://storage.googleapis.com/workbox-cdn/releases/7.0.0/workbox-expiration.js";
-
-// Import your own routes list
-const routes = [
-  "after-baptism-now-what",
-  "baptism-holy-spirit",
-  "best-friends-all-time",
-  "christ-is-your-life",
-  "church",
-  "course-information",
-  "cross",
-  "dashboard",
-  "discipleship",
-  "intro-to-course",
-  "introduction",
-  "kingdom",
-  "light-darkness",
-  "medical-account",
-  "memory-scriptures",
-  "miraculous-gifts-holy-spirit",
-  "new-testament-conversion",
-  "persecution",
-  "seeking-god",
-  "select-language",
-  "the-mission",
-  "word",
-];
-
-// Precache static assets discovered by Workbox + your custom routes
-precacheAndRoute(
-  self.__WB_MANIFEST.concat(routes.map((url) => ({ url, revision: null }))),
-  {
-    // Strip out tracking params so cache still matches
-    ignoreURLParametersMatching: [/^utm_/, /^fbclid$/],
-  }
+// Service worker using Workbox UMD build
+importScripts(
+  "https://storage.googleapis.com/workbox-cdn/releases/7.0.0/workbox-sw.js"
 );
 
-// Runtime caching for audio files
-registerRoute(
-  ({ request }) => request.destination === "audio",
-  new CacheFirst({
-    cacheName: "audio-cache",
-    plugins: [
-      new ExpirationPlugin({
-        maxEntries: 50, // cap number of cached files
-        maxAgeSeconds: 90 * 24 * 60 * 60, // 90 days
-      }),
-    ],
-  })
-);
+if (workbox) {
+  console.log("Workbox loaded 🎉");
+
+  const routes = [
+    "after-baptism-now-what",
+    "baptism-holy-spirit",
+    "best-friends-all-time",
+    "christ-is-your-life",
+    "church",
+    "course-information",
+    "cross",
+    "dashboard",
+    "discipleship",
+    "intro-to-course",
+    "introduction",
+    "kingdom",
+    "light-darkness",
+    "medical-account",
+    "memory-scriptures",
+    "miraculous-gifts-holy-spirit",
+    "new-testament-conversion",
+    "persecution",
+    "seeking-god",
+    "select-language",
+    "the-mission",
+    "word",
+  ];
+
+  const languages = ["en", "es"];
+
+  // Build language-prefixed routes
+  const languageRoutes = languages.flatMap((lang) =>
+    routes.map((slug) => `/${lang}/${slug}`)
+  );
+
+  // Precache static assets + generated routes
+  workbox.precaching.precacheAndRoute(
+    self.__WB_MANIFEST.concat(
+      [
+        { url: "/", revision: null }, // homepage
+        { url: "/about", revision: null },
+        { url: "/contact", revision: null },
+        { url: "/en/subscribe", revision: null },
+        { url: "/es/subscribe", revision: null },
+      ].concat(languageRoutes.map((url) => ({ url, revision: null })))
+    ),
+    {
+      ignoreURLParametersMatching: [/^utm_/, /^fbclid$/],
+    }
+  );
+
+  // Runtime caching for audio files
+  workbox.routing.registerRoute(
+    ({ request }) => request.destination === "audio",
+    new workbox.strategies.CacheFirst({
+      cacheName: "audio-cache",
+      plugins: [
+        new workbox.expiration.ExpirationPlugin({
+          maxEntries: 50,
+          maxAgeSeconds: 90 * 24 * 60 * 60, // 90 days
+        }),
+      ],
+    })
+  );
+} else {
+  console.error("Workbox failed to load 😢");
+}
