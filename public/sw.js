@@ -6,7 +6,7 @@ importScripts(
 if (workbox) {
   console.log("Workbox loaded 🎉");
 
-  const slugs = [
+  const langSlugs = [
     "after-baptism-now-what",
     "baptism-holy-spirit",
     "best-friends-all-time",
@@ -26,18 +26,23 @@ if (workbox) {
     "new-testament-conversion",
     "persecution",
     "seeking-god",
-    "select-language",
     "the-mission",
     "word",
   ];
 
-  const slugQuantity = slugs.length;
+  const routes = [
+    {
+      url: "/",
+      revision: null,
+    },
+  ];
+
+  const slugQuantity = langSlugs.length;
   const langs = ["en"];
-  const langRoutes = [];
 
   langs.forEach((lang) => {
-    slugs.forEach((slug) => {
-      langRoutes.push({
+    langSlugs.forEach((slug) => {
+      routes.push({
         url: `/${lang}/${slug}`,
         revision: null,
       });
