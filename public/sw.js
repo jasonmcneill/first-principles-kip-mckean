@@ -1,6 +1,6 @@
 // Service worker using Workbox UMD build
 importScripts(
-  "https://storage.googleapis.com/workbox-cdn/releases/7.0.0/workbox-sw.js"
+  "https://cdn.jsdelivr.net/npm/workbox-sw@7.0.0/build/workbox-sw.js"
 );
 
 if (workbox) {
