@@ -6,6 +6,16 @@ html {
   scrollbar-gutter: stable;
 }
 
+h1 {
+  font-size: 1.6rem !important;
+}
+h2 {
+  font-size: 1.3rem !important;
+}
+h3 {
+  font-size: 1rem !important;
+}
+
 /* Prevent layout shift when modal is open by compensating for scrollbar */
 body.modal-open {
   padding-right: var(--bs-scrollbar-width, 0px) !important;

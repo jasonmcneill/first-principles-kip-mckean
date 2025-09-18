@@ -8,6 +8,8 @@ if (workbox) {
     "after-baptism-now-what",
     "baptism-holy-spirit",
     "best-friends-all-time",
+    "book-of-acts",
+    "book-of-john",
     "christ-is-your-life",
     "church",
     "course-information",
@@ -50,10 +52,7 @@ if (workbox) {
   // Precache static assets + generated routes (exclude audio .webm)
   const precacheManifest = (self.__WB_MANIFEST || []).filter((entry) => {
     const url = typeof entry === "string" ? entry : entry.url;
-    return !(
-      /^\/?audio\//i.test(url) ||
-      /\.webm(\?.*)?$/i.test(url)
-    );
+    return !(/^\/?audio\//i.test(url) || /\.webm(\?.*)?$/i.test(url));
   });
   workbox.precaching.precacheAndRoute(precacheManifest.concat(routes), {
     ignoreURLParametersMatching: [/^utm_/, /^fbclid$/],
@@ -65,7 +64,10 @@ if (workbox) {
     try {
       const url = new URL(urlString, self.location.origin);
       result.url = url.href;
-      if (!url.pathname.startsWith("/audio/") || !/\.webm$/i.test(url.pathname)) {
+      if (
+        !url.pathname.startsWith("/audio/") ||
+        !/\.webm$/i.test(url.pathname)
+      ) {
         result.error = "URL not allowed";
         return result;
       }
@@ -98,7 +100,9 @@ if (workbox) {
         return result;
       }
 
-      result.error = `Unexpected response: ${resp ? resp.status : "no response"}`;
+      result.error = `Unexpected response: ${
+        resp ? resp.status : "no response"
+      }`;
       return result;
     } catch (err) {
       result.error = (err && err.message) || String(err);
@@ -112,7 +116,11 @@ if (workbox) {
     if (!data) return;
     if (data.type === "PREFETCH_AUDIO" && typeof data.url === "string") {
       const respond = (payload) => {
-        const message = { type: "PREFETCH_AUDIO_RESULT", ...payload, requestId: data.requestId };
+        const message = {
+          type: "PREFETCH_AUDIO_RESULT",
+          ...payload,
+          requestId: data.requestId,
+        };
         if (event.ports && event.ports[0]) {
           event.ports[0].postMessage(message);
         } else if (event.source && event.source.postMessage) {
@@ -140,7 +148,10 @@ if (workbox) {
         }
       }
       // Fallback: first available window client
-      const clientsList = await self.clients.matchAll({ type: "window", includeUncontrolled: true });
+      const clientsList = await self.clients.matchAll({
+        type: "window",
+        includeUncontrolled: true,
+      });
       if (clientsList && clientsList.length && clientsList[0].postMessage) {
         clientsList[0].postMessage(payload);
       }
@@ -155,13 +166,20 @@ if (workbox) {
       try {
         if (!request || request.method !== "GET") return;
         // Only act on range requests that yielded a 206
-        const rangeHeader = request.headers && request.headers.get ? request.headers.get("range") : null;
+        const rangeHeader =
+          request.headers && request.headers.get
+            ? request.headers.get("range")
+            : null;
         if (!rangeHeader) return;
         if (!response || response.status !== 206) return;
 
         const url = new URL(request.url);
         // Constrain to our audio path and .webm
-        if (!url.pathname.startsWith("/audio/") || !url.pathname.endsWith(".webm")) return;
+        if (
+          !url.pathname.startsWith("/audio/") ||
+          !url.pathname.endsWith(".webm")
+        )
+          return;
 
         const cache = await caches.open("audio-cache");
         const already = await cache.match(url.href);
@@ -184,7 +202,8 @@ if (workbox) {
           mode: request.mode || "cors",
           redirect: request.redirect || "follow",
           referrer: request.referrer || "about:client",
-          referrerPolicy: request.referrerPolicy || "strict-origin-when-cross-origin",
+          referrerPolicy:
+            request.referrerPolicy || "strict-origin-when-cross-origin",
           integrity: request.integrity || "",
         });
 
@@ -196,7 +215,7 @@ if (workbox) {
           let error;
           try {
             const fullResponse = await fetch(fullRequest);
-            status = fullResponse ? (fullResponse.status || 0) : 0;
+            status = fullResponse ? fullResponse.status || 0 : 0;
             opaque = !!(fullResponse && fullResponse.type === "opaque");
             // Cache successful 200 or opaque responses
             if (fullResponse && (status === 200 || opaque)) {
