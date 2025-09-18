@@ -39,7 +39,7 @@ if (workbox) {
   );
 
   // Precache static assets + generated routes
-  workbox.precaching.precacheAndRoute(
+  /* workbox.precaching.precacheAndRoute(
     self.__WB_MANIFEST.concat(
       [
         { url: "/", revision: null }, // homepage
@@ -52,7 +52,7 @@ if (workbox) {
     {
       ignoreURLParametersMatching: [/^utm_/, /^fbclid$/],
     }
-  );
+  ); */
 
   // Runtime caching for audio files
   workbox.routing.registerRoute(
