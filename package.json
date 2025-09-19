@@ -4,7 +4,9 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "build": "npx workbox injectManifest workbox-config.js",
+    "build": "node ./build-sw.js",
+    "clean": "node ./scripts/clean.js",
+    "test:sw-slugs": "node ./scripts/test-sw-slugs.js",
     "dev": "kill-port 3000 && nodemon server.js",
     "ssh:staging": "ssh root@172.236.250.102 -i ~/.ssh/usd21/id_rsa",
     "deploy:staging": "npm run ssh:staging ./pull-fp.sh"
@@ -16,10 +18,12 @@
     "accept-language-parser": "^1.5.0",
     "ejs": "^3.1.9",
     "express": "^4.18.2",
+    "firstprinciples-kip-mckean": "file:",
     "i18n": "^0.15.1"
   },
   "devDependencies": {
     "kill-port": "^2.0.1",
-    "nodemon": "^3.0.3"
+    "nodemon": "^3.0.3",
+    "workbox-build": "^6.6.0"
   }
 }

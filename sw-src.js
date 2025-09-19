@@ -4,49 +4,52 @@ importScripts(
 );
 
 if (workbox) {
-  const langSlugs = [
-    "after-baptism-now-what",
-    "baptism-holy-spirit",
-    "best-friends-all-time",
-    "book-of-acts",
-    "book-of-john",
-    "christ-is-your-life",
-    "church",
-    "course-information",
-    "cross",
-    "dashboard",
-    "discipleship",
-    "intro-to-course",
-    "introduction",
-    "kingdom",
-    "light-darkness",
-    "medical-account",
-    "memory-scriptures",
-    "miraculous-gifts-holy-spirit",
-    "new-testament-conversion",
-    "persecution",
-    "seeking-god",
-    "the-mission",
-    "word",
-  ];
+  // The `LANG_SLUGS` object is injected at build-time from the i18n folder.
+  // BUILD_INJECT_LANG_SLUGS
+  const LANG_SLUGS = {};
 
   const routes = [
     {
       url: "/",
-      revision: null,
+      // Use a timestamp so the precache manifest changes when this file is rebuilt
+      revision: String(Date.now()),
     },
   ];
 
-  const slugQuantity = langSlugs.length;
-  const langs = ["en"];
+  // Use LANG_SLUGS keys so additional languages can be supported when present
+  const langs = Object.keys(LANG_SLUGS || {});
 
   langs.forEach((lang) => {
-    langSlugs.forEach((slug) => {
+    const langList = LANG_SLUGS[lang] || [];
+    langList.forEach((slug) => {
       routes.push({
         url: `/${lang}/${slug}`,
-        revision: null,
+        // Use a timestamp to force update when this script is regenerated
+        revision: String(Date.now()),
       });
     });
+  });
+
+  // Ensure the service worker takes control as soon as it's installed/activated
+  // This helps when a new SW is deployed so clients are claimed immediately.
+  self.addEventListener('install', (event) => {
+    // Activate new SW immediately, skipping waiting state
+    if (self.skipWaiting) {
+      try { self.skipWaiting(); } catch (e) { /* ignore */ }
+    }
+    if (event && event.waitUntil) {
+      // No async work here, but keep waitUntil for future use
+      event.waitUntil(Promise.resolve());
+    }
+  });
+
+  self.addEventListener('activate', (event) => {
+    if (self.clients && self.clients.claim) {
+      try { self.clients.claim(); } catch (e) { /* ignore */ }
+    }
+    if (event && event.waitUntil) {
+      event.waitUntil(Promise.resolve());
+    }
   });
 
   // Precache static assets + generated routes (exclude audio .webm)
