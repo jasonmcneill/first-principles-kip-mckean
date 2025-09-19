@@ -32,10 +32,14 @@ if (workbox) {
 
   // Ensure the service worker takes control as soon as it's installed/activated
   // This helps when a new SW is deployed so clients are claimed immediately.
-  self.addEventListener('install', (event) => {
+  self.addEventListener("install", (event) => {
     // Activate new SW immediately, skipping waiting state
     if (self.skipWaiting) {
-      try { self.skipWaiting(); } catch (e) { /* ignore */ }
+      try {
+        self.skipWaiting();
+      } catch (e) {
+        /* ignore */
+      }
     }
     if (event && event.waitUntil) {
       // No async work here, but keep waitUntil for future use
@@ -43,9 +47,13 @@ if (workbox) {
     }
   });
 
-  self.addEventListener('activate', (event) => {
+  self.addEventListener("activate", (event) => {
     if (self.clients && self.clients.claim) {
-      try { self.clients.claim(); } catch (e) { /* ignore */ }
+      try {
+        self.clients.claim();
+      } catch (e) {
+        /* ignore */
+      }
     }
     if (event && event.waitUntil) {
       event.waitUntil(Promise.resolve());
