@@ -38,7 +38,7 @@ const workboxBuild = require("workbox-build");
       LANG_SLUGS[lang] = entries;
     });
 
-    const routes = [{ url: "/", revision: buildHash }];
+    const routes = [];
     Object.keys(LANG_SLUGS).forEach((lang) => {
       LANG_SLUGS[lang].forEach((slug) => {
         routes.push({ url: `/${lang}/${slug}`, revision: buildHash });
@@ -63,16 +63,19 @@ const workboxBuild = require("workbox-build");
       );
     }
     // Replace only the const assignment with the LANG_SLUGS object
-    const finalSw = swSrc.replace(
+    let finalSw = swSrc.replace(
       "const LANG_SLUGS = {};",
       `const LANG_SLUGS = ${JSON.stringify(LANG_SLUGS, null, 2)};`
     );
+    // Ensure route revisions are stable per build (replace Date.now() with buildHash)
+    finalSw = finalSw.replace(/revision:\s*String\(Date\.now\(\)\)/g, `revision: "${buildHash}"`);
     fs.writeFileSync(swTempPath, finalSw, "utf8");
 
-    // Call injectManifest programmatically and include our routes via additionalManifestEntries
+    // Call injectManifest programmatically.
+    // Do NOT pass additionalManifestEntries for language routes here,
+    // since sw-src.js already adds them; passing both causes duplicates.
     const injectOptions = Object.assign({}, config, {
       swSrc: swTempPath,
-      additionalManifestEntries: routes,
     });
 
     console.log(
