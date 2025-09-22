@@ -1,0 +1,17 @@
+{
+  "display": "John 10:19-21",
+  "version": "NVI",
+  "book": "John",
+  "chapter": 10,
+  "verses": [
+    [19, "The Jews who heard these words were again divided."],
+    [
+      20,
+      "Many of them said, \"He is demon-possessed and raving mad. Why listen to him?\""
+    ],
+    [
+      21,
+      "But others said, \"These are not the sayings of a man possessed by a demon. Can a demon open the eyes of the blind?\""
+    ]
+  ]
+}
