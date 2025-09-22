@@ -62,6 +62,8 @@
         <div class="row bg-light">
           <div class="col-12 col-md-8 offset-md-2">
             <main>
+
+              <% if(data.metadata.hasAudio) { %>
               <div class="audioContainer text-center my-3">
                 <audio controls preload="none">
                   <source
@@ -71,6 +73,7 @@
                   />
                 </audio>
               </div>
+              <% } %>
 
               <blockquote class="mx-4 my-4 px-3 py-3 shadow border border-dark">
                 <em><%- data.scriptureQuote %></em>

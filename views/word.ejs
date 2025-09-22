@@ -61,6 +61,8 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-12 col-md-8 offset-md-2 px-3 py-3">
+            
+            <% if(data.metadata.hasAudio) { %>
             <div class="audioContainer text-center my-3">
               <audio controls preload="none">
                 <source
@@ -70,6 +72,7 @@
                 />
               </audio>
             </div>
+            <% } %>
 
             <ol class="mb-3">
               <li class="mb-3">
