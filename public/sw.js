@@ -39,7 +39,7 @@ if (workbox) {
     {
       url: "/",
       // Use a timestamp so the precache manifest changes when this file is rebuilt
-      revision: "d53ad20",
+      revision: "6aaab8b",
     },
   ];
 
@@ -52,7 +52,7 @@ if (workbox) {
       routes.push({
         url: `/${lang}/${slug}`,
         // Use a timestamp to force update when this script is regenerated
-        revision: "d53ad20",
+        revision: "6aaab8b",
       });
     });
   });
