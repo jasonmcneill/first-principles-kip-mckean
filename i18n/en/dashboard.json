@@ -1,7 +1,8 @@
 {
   "metadata": {
     "lang": "en",
-    "hasAudio": false
+    "hasAudio": false,
+    "hide": []
   },
   "appTitle": "First Principles",
   "introduction": "Introduction",

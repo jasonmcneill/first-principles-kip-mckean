@@ -1,7 +1,11 @@
 {
   "metadata": {
     "lang": "es",
-    "hasAudio": false
+    "hasAudio": false,
+    "hide": [
+      "introToCourse",
+      "bookOfJohn"
+    ]
   },
   "appTitle": "Principios Básicos",
   "introduction": "Introducción",

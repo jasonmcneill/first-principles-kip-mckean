@@ -34,135 +34,163 @@
           <div class="col-12 col-md-6 offset-md-3">
             <main>
               <div class="list-group my-4 bg-white shadow">
+
+                
+                <% if(! data.metadata.hide.includes("introToCourse")) { %>
                 <a
                   href="./introduction"
                   class="list-group-item list-group-item-action"
                 >
                   <%- data.introduction %>
                 </a>
+                <% } %>
+
                 <a
                   href="./course-information"
                   class="list-group-item list-group-item-action"
                 >
                   <%- data.courseInformation %>
                 </a>
+
                 <a
                   href="./intro-to-course"
                   class="list-group-item list-group-item-action"
                 >
                   <%- data.introToCourse %>
                 </a>
+
+                <% if(! data.metadata.hide.includes("bookOfJohn")) { %>
                 <a
                   href="./book-of-john"
                   class="list-group-item list-group-item-action"
                 >
                   <%- data.bookOfJohn %>
                 </a>
+                <% } %>
+
                 <a
                   href="./seeking-god"
                   class="list-group-item list-group-item-action"
                 >
                   <%- data.seekingGod %>
                 </a>
+
                 <a href="./word" class="list-group-item list-group-item-action">
                   <%- data.wordOfGod %>
                 </a>
+
                 <a
                   href="./discipleship"
                   class="list-group-item list-group-item-action"
                 >
                   <%- data.discipleship %>
                 </a>
+
                 <a
                   href="./kingdom"
                   class="list-group-item list-group-item-action"
                 >
                   <%- data.kingdom %>
                 </a>
+
                 <a
                   href="./light-darkness"
                   class="list-group-item list-group-item-action"
                 >
                   <%- data.lightDarkness %>
                 </a>
+
                 <a
                   href="./new-testament-conversion"
                   class="list-group-item list-group-item-action"
                 >
                   <%- data.newTestamentConversion %>
                 </a>
+
                 <a
                   href="./cross"
                   class="list-group-item list-group-item-action"
                 >
                   <%- data.cross %>
                 </a>
+
                 <a
                   href="./medical-account"
                   class="list-group-item list-group-item-action"
                 >
                   <%- data.medicalAccount %>
                 </a>
+
                 <a
                   href="./baptism-holy-spirit"
                   class="list-group-item list-group-item-action"
                 >
                   <%- data.baptismHolySpirit %>
                 </a>
+
                 <a
                   href="./miraculous-gifts-holy-spirit"
                   class="list-group-item list-group-item-action"
                 >
                   <%- data.miraculousGifts %>
                 </a>
+
                 <a
                   href="./church"
                   class="list-group-item list-group-item-action"
                 >
                   <%- data.church %>
                 </a>
+
                 <a
                   href="./book-of-acts"
                   class="list-group-item list-group-item-action"
                 >
                   <%- data.bookOfActs %>
                 </a>
+
                 <a
                   href="./after-baptism-now-what"
                   class="list-group-item list-group-item-action"
                 >
                   <%- data.afterBaptism %>
                 </a>
+
                 <a
                   href="./christ-is-your-life"
                   class="list-group-item list-group-item-action"
                 >
                   <%- data.christIsYourLife %>
                 </a>
+
                 <a
                   href="./best-friends-all-time"
                   class="list-group-item list-group-item-action"
                 >
                   <%- data.bestFriendsAllTime %>
                 </a>
+
                 <a
                   href="./the-mission"
                   class="list-group-item list-group-item-action"
                 >
                   <%- data.mission %>
                 </a>
+
                 <a
                   href="./persecution"
                   class="list-group-item list-group-item-action"
                 >
                   <%- data.persecution %>
                 </a>
+
                 <a
                   href="./memory-scriptures"
                   class="list-group-item list-group-item-action"
                 >
                   <%- data.memoryScriptures %>
                 </a>
+                
               </div>
             </main>
           </div>
