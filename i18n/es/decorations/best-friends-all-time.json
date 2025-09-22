@@ -1,0 +1,242 @@
+[
+  {
+    "key": "o1a",
+    "text": {
+      "original": "John 13:34-35",
+      "translated": "Juan 13:34-35"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"john-13-34-35\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o1b",
+    "text": {
+      "original": "Hebrews 3:12-14",
+      "translated": "Hebreos 3:12-14"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"hebrews-3-12-14\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o1c",
+    "text": {
+      "original": "Ephesians 5:19-20",
+      "translated": "Efesios 5:19-20"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"ephesians-5-19-20\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o1d",
+    "text": {
+      "original": "Colossians 1:28-29",
+      "translated": "Colosenses 1:28-29"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"colossians-1-28-29\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o1e",
+    "text": {
+      "original": "Galatians 6:1-2",
+      "translated": "Gálatas 6:1-2"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"galatians-6-1-2\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o1f",
+    "text": {
+      "original": "James 5:16",
+      "translated": "Santiago 5:16"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"james-5-16\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o1g",
+    "text": {
+      "original": "James 5:16-18",
+      "translated": "Santiago 5:16-18"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"james-5-16-18\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o1h",
+    "text": {
+      "original": "Hebrews 12:14-15",
+      "translated": "Hebreos 12:14-15"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"hebrews-12-14-15\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o1i",
+    "text": {
+      "original": "1 Thessalonians 5:12-14",
+      "translated": "1 Tesalonicenses 5:12-14"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"1-thessalonians-5-12-14\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o1j",
+    "text": {
+      "original": "John 17:20-23",
+      "translated": "Juan 17:20-23"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"john-17-20-23\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2a",
+    "text": {
+      "original": "1 Corinthians 7:39",
+      "translated": "1 Corintios 7:39"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"1-corinthians-7-39\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2b",
+    "text": {
+      "original": "2 Corinthians 6:14-18",
+      "translated": "2 Corintios 6:14-18"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"2-corinthians-6-14-18\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2c",
+    "text": {
+      "original": "1 Kings 11:1-10",
+      "translated": "1 Reyes 11:1-10"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"1-kings-11-1-10\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2c",
+    "text": {
+      "original": "Nehemiah 13:23-27",
+      "translated": "Nehemías 13:23-27"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"nehemiah-13-23-27\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2d",
+    "text": {
+      "original": "1 Peter 3:1-7",
+      "translated": "1 Pedro 3:1-7"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"1-peter-3-1-7\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o3a",
+    "text": {
+      "original": "Matthew 18:15-17",
+      "translated": "Mateo 18:15-17"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"matthew-18-15-17\""
+        }
+      ]
+    }
+  }
+]

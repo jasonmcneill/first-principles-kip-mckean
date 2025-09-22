@@ -1,0 +1,182 @@
+[
+  {
+    "key": "p1s1",
+    "text": {
+      "original": "First Principle Studies",
+      "translated": "Estudios de Primeros Principios"
+    },
+    "decorations": {
+      "italic": true
+    }
+  },
+  {
+    "key": "p1s3",
+    "text": {
+      "original": "Baptism Of The Holy Spirit",
+      "translated": "Bautismo del Espíritu Santo"
+    },
+    "decorations": {
+      "italic": true
+    }
+  },
+  {
+    "key": "p1s3",
+    "text": {
+      "original": "Miraculous Gifts of the Holy Spirit",
+      "translated": "Dones Milagrosos del Espíritu Santo"
+    },
+    "decorations": {
+      "italic": true
+    }
+  },
+  {
+    "key": "p1s4",
+    "text": {
+      "original": "Seeking God",
+      "translated": "Buscando a Dios"
+    },
+    "decorations": {
+      "italic": true
+    }
+  },
+  {
+    "key": "p1s4",
+    "text": {
+      "original": "Word Of God",
+      "translated": "Palabra de Dios"
+    },
+    "decorations": {
+      "italic": true
+    }
+  },
+  {
+    "key": "p1s4",
+    "text": {
+      "original": "Light and Darkness",
+      "translated": "Luz y Tinieblas"
+    },
+    "decorations": {
+      "italic": true
+    }
+  },
+  {
+    "key": "p1s4",
+    "text": {
+      "original": "New Testament Conversion",
+      "translated": "Conversión en el Nuevo Testamento"
+    },
+    "decorations": {
+      "italic": true
+    }
+  },
+  {
+    "key": "p1s4",
+    "text": {
+      "original": "Church",
+      "translated": "Iglesia"
+    },
+    "decorations": {
+      "italic": true
+    }
+  },
+  {
+    "key": "p1s5",
+    "text": {
+      "original": "Coming of the Kingdom",
+      "translated": "Llegada del Reino"
+    },
+    "decorations": {
+      "italic": true
+    }
+  },
+  {
+    "key": "p1s6",
+    "text": {
+      "original": "Discipleship",
+      "translated": "Discipulado"
+    },
+    "decorations": {
+      "italic": true
+    }
+  },
+  {
+    "key": "p1s7",
+    "text": {
+      "original": "Cross",
+      "translated": "La Cruz"
+    },
+    "decorations": {
+      "italic": true
+    }
+  },
+  {
+    "key": "p2s1",
+    "text": {
+      "original": "First Principles",
+      "translated": "Primeros Principios"
+    },
+    "decorations": {
+      "italic": true
+    }
+  },
+  {
+    "key": "p2s2",
+    "text": {
+      "original": "First Principles",
+      "translated": "Primeros Principios"
+    },
+    "decorations": {
+      "italic": true
+    }
+  },
+  {
+    "key": "p2s3",
+    "text": {
+      "original": "First Principle",
+      "translated": "Primer Principio"
+    },
+    "decorations": {
+      "italic": true
+    }
+  },
+  {
+    "key": "p3s1",
+    "text": {
+      "original": "Follow Up",
+      "translated": "Seguimiento"
+    },
+    "decorations": {
+      "italic": true
+    }
+  },
+  {
+    "key": "p3s2",
+    "text": {
+      "original": "Persecution",
+      "translated": "Persecución"
+    },
+    "decorations": {
+      "italic": true
+    }
+  },
+  {
+    "key": "p4s1",
+    "text": {
+      "original": "First Principles",
+      "translated": "Primeros Principios"
+    },
+    "decorations": {
+      "italic": true
+    }
+  },
+  {
+    "key": "p4s4",
+    "text": {
+      "original": "First Principles Studies",
+      "translated": "Estudios de Primeros Principios"
+    },
+    "decorations": {
+      "italic": true
+    }
+  }
+]

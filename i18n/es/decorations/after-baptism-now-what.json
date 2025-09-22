@@ -1,0 +1,107 @@
+[
+  {
+    "key": "o1",
+    "text": {
+      "original": "Acts 2:36-47",
+      "translated": "Hechos 2:36-47"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-2-36-47\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o1c4",
+    "text": {
+      "original": "2 Corinthians 9:6-11",
+      "translated": "2 Corintios 9:6-11"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"2-corinthians-9-6-11\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o1d",
+    "text": {
+      "original": "1 Corinthians 11:23-32",
+      "translated": "1 Corintios 11:23-32"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"1-corinthians-11-23-32\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o1d2",
+    "text": {
+      "original": "Proverbs 13:12",
+      "translated": "Proverbios 13:12"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"proberbs-13-12\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o1e1",
+    "text": {
+      "original": "Philippians 4:4-7",
+      "translated": "Filipenses 4:4-7"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"philippians-4-4-7\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2",
+    "text": {
+      "original": "Acts 9:18-25",
+      "translated": "Hechos 9:18-25"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-9-18-25\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o3",
+    "text": {
+      "original": "Hebrews 5:11-6:6",
+      "translated": "Hebreos 5:11-6:6"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"hebrews-ch-5-11-ch-6-6\""
+        }
+      ]
+    }
+  }
+]

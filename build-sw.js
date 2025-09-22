@@ -38,12 +38,7 @@ const workboxBuild = require("workbox-build");
       LANG_SLUGS[lang] = entries;
     });
 
-    const routes = [];
-    Object.keys(LANG_SLUGS).forEach((lang) => {
-      LANG_SLUGS[lang].forEach((slug) => {
-        routes.push({ url: `/${lang}/${slug}`, revision: buildHash });
-      });
-    });
+    // routes array no longer needed here; sw-src composes routes from ACTIVE_LANG
 
     // Load existing workbox config
     const workboxConfigPath = path.join(process.cwd(), "workbox-config.js");
@@ -54,50 +49,64 @@ const workboxBuild = require("workbox-build");
 
     // Replace placeholder in sw-src.js with the slug array so the built sw contains the list
     const swSrcPath = path.join(process.cwd(), config.swSrc || "sw-src.js");
-    const swTempPath = path.join(process.cwd(), ".sw-build-temp.js");
-    let swSrc = fs.readFileSync(swSrcPath, "utf8");
+    // Build one service worker per language
+    const swSrcTemplate = fs.readFileSync(swSrcPath, "utf8");
     const placeholder = "BUILD_INJECT_LANG_SLUGS";
-    if (!swSrc.includes(placeholder)) {
+    if (!swSrcTemplate.includes(placeholder)) {
       throw new Error(
         `Placeholder ${placeholder} not found in ${swSrcPath}. Aborting build.`
       );
     }
-    // Replace only the const assignment with the LANG_SLUGS object
-    let finalSw = swSrc.replace(
-      "const LANG_SLUGS = {};",
-      `const LANG_SLUGS = ${JSON.stringify(LANG_SLUGS, null, 2)};`
-    );
-    // Ensure route revisions are stable per build (replace Date.now() with buildHash)
-    finalSw = finalSw.replace(/revision:\s*String\(Date\.now\(\)\)/g, `revision: "${buildHash}"`);
-    fs.writeFileSync(swTempPath, finalSw, "utf8");
 
-    // Call injectManifest programmatically.
-    // Do NOT pass additionalManifestEntries for language routes here,
-    // since sw-src.js already adds them; passing both causes duplicates.
-    const injectOptions = Object.assign({}, config, {
-      swSrc: swTempPath,
-    });
+    for (const lang of Object.keys(LANG_SLUGS)) {
+      const swTempPath = path.join(process.cwd(), `.sw-build-temp-${lang}.js`);
+      let finalSw = swSrcTemplate
+        // Inject all language slugs (the SW will filter to ACTIVE_LANG)
+        .replace(
+          "const LANG_SLUGS = {};",
+          `const LANG_SLUGS = ${JSON.stringify(LANG_SLUGS, null, 2)};`
+        )
+        // Inject the active language constant
+        .replace(
+          "const ACTIVE_LANG = null;",
+          `const ACTIVE_LANG = ${JSON.stringify(lang)};`
+        )
+        // Ensure route revisions are stable per build
+        .replace(
+          /revision:\s*String\(Date\.now\(\)\)/g,
+          `revision: "${buildHash}"`
+        );
 
-    console.log(
-      "Running workbox injectManifest with build revision:",
-      buildHash
-    );
-    const { count, size, warnings } = await workboxBuild.injectManifest(
-      injectOptions
-    );
-    if (warnings && warnings.length) {
-      console.warn("Workbox warnings:", warnings);
-    }
-    console.log(
-      `Generated ${injectOptions.swDest} with ${count} precached files, total size ${size} bytes`
-    );
+      fs.writeFileSync(swTempPath, finalSw, "utf8");
 
-    // Remove temporary sw file after successful build
-    try {
-      if (fs.existsSync(swTempPath)) fs.unlinkSync(swTempPath);
-    } catch (e) {
-      // Non-fatal: just warn
-      console.warn("Failed to remove temporary SW file:", e && e.message);
+      // Call injectManifest for this language
+      const injectOptions = Object.assign({}, config, {
+        swSrc: swTempPath,
+        swDest: path.join("public", `sw-${lang}.js`),
+      });
+
+      console.log(
+        `Building SW for lang=${lang} with build revision ${buildHash}`
+      );
+      const { count, size, warnings } = await workboxBuild.injectManifest(
+        injectOptions
+      );
+      if (warnings && warnings.length) {
+        console.warn(`Workbox warnings for ${lang}:`, warnings);
+      }
+      console.log(
+        `Generated ${injectOptions.swDest} with ${count} precached files, total size ${size} bytes`
+      );
+
+      // Remove temporary sw file after successful build
+      try {
+        if (fs.existsSync(swTempPath)) fs.unlinkSync(swTempPath);
+      } catch (e) {
+        console.warn(
+          `Failed to remove temporary SW file for ${lang}:`,
+          e && e.message
+        );
+      }
     }
   } catch (err) {
     console.error("Error during SW build:", err);

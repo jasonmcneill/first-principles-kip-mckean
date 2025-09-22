@@ -1,0 +1,91 @@
+[
+  {
+    "key": "o2a",
+    "text": {
+      "original": "Hebrews 5:11-14",
+      "translated": "Hebreos 5:11-14"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"hebrews-5-11-14\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2a",
+    "text": {
+      "original": "6:1-3",
+      "translated": "6:1-3"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"hebrews-6-1-3\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2b",
+    "text": {
+      "original": "John 13:34-35",
+      "translated": "Juan 13:34-35"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"john-13-34-35\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2c",
+    "text": {
+      "original": "Matthew 28:18-20",
+      "translated": "Mateo 28:18-20"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"matthew-28-18-20\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o3e2",
+    "text": {
+      "original": "John 20:30-31",
+      "translated": "Juan 20:30-31"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"john-20-30-31\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o3f",
+    "text": {
+      "original": "Seeking God",
+      "translated": "Buscando a Dios"
+    },
+    "decorations": {
+      "bold": true,
+      "link": {
+        "href": "./seeking-god",
+        "attributes": ""
+      }
+    }
+  }
+]

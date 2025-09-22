@@ -1,0 +1,707 @@
+[
+  {
+    "key": "o1aScripture",
+    "text": {
+      "original": "Isaiah 2:1-4",
+      "translated": "Isaías 2:1-4"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"isaiah-2-1-4\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o1bScripture",
+    "text": {
+      "original": "Daniel 2:31-45",
+      "translated": "Daniel 2:31-45"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"daniel-2-31-45\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o1d2",
+    "text": {
+      "original": "v. 44",
+      "translated": "v. 44"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"daniel-2-44\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2a",
+    "text": {
+      "original": "25 A.D.",
+      "translated": "25 D.C."
+    },
+    "decorations": {
+      "bold": true
+    }
+  },
+  {
+    "key": "o2a1",
+    "text": {
+      "original": "Matthew 3:1-6",
+      "translated": "Mateo 3:1-6"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"matthew-3-1-6\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2b",
+    "text": {
+      "original": "30 A.D.",
+      "translated": "30 D.C."
+    },
+    "decorations": {
+      "bold": true
+    }
+  },
+  {
+    "key": "o2b1",
+    "text": {
+      "original": "Matthew 4:17",
+      "translated": "Mateo 4:17"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"matthew-4-17\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2b2",
+    "text": {
+      "original": "Mark 9:1",
+      "translated": "Marcos 9:1"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"mark-9-1\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2b3",
+    "text": {
+      "original": "Mark 9:1",
+      "translated": "Marcos 9:1"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"mark-9-1\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2b4",
+    "text": {
+      "original": "John 3:1-7",
+      "translated": "Juan 3:1-7"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"john-3-1-7\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2b5",
+    "text": {
+      "original": "Luke 17:20-21",
+      "translated": "Lucas 17:20-21"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"luke-17-20-21\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2b6",
+    "text": {
+      "original": "Matthew 16:13-19",
+      "translated": "Mateo 16:13-19"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"matthew-16-13-19\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2b6",
+    "text": {
+      "original": "1 Corinthians 3:11",
+      "translated": "1 Corintios 3:11"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"1-corinthians-3-11\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2b7",
+    "text": {
+      "original": "Luke 23:50-51",
+      "translated": "Lucas 23:50-51"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"luke-23-50-51\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2b8",
+    "text": {
+      "original": "Luke 24:44-49",
+      "translated": "Lucas 24:44-49"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"luke-24-44-49\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o3",
+    "text": {
+      "original": "Acts 1-2",
+      "translated": "Hechos 1-2"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-ch-1-ch-2\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o3a",
+    "text": {
+      "original": "Acts 2:17",
+      "translated": "Hechos 2:17"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-2-17\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o3a",
+    "text": {
+      "original": "Acts 2:17",
+      "translated": "Hechos 2:17"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-2-17\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o3a1",
+    "text": {
+      "original": "Isaiah 2:2",
+      "translated": "Isaías 2:2"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"isaiah-2-2\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o3b",
+    "text": {
+      "original": "Acts 2:5",
+      "translated": "Hechos 2:5"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-2-5\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o3b1",
+    "text": {
+      "original": "Isaiah 2:2",
+      "translated": "Isaías 2:2"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"isaiah-2-2\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o3b2",
+    "text": {
+      "original": "Luke 24:47",
+      "translated": "Lucas 24:47"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"luke-24-47\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o3c",
+    "text": {
+      "original": "Acts 2:5",
+      "translated": "Hechos 2:5"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-2-5\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o3c1",
+    "text": {
+      "original": "Isaiah 2:3",
+      "translated": "Isaías 2:3"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"isaiah-2-3\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o3c2",
+    "text": {
+      "original": "Luke 24:44-49",
+      "translated": "Lucas 24:44-49"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"luke-24-44-49\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o3d",
+    "text": {
+      "original": "Acts 2:37-42",
+      "translated": "Hechos 2:37-42"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-2-37-42\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o3d1",
+    "text": {
+      "original": "Daniel 2:31-45",
+      "translated": "Daniel 2:31-45"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"daniel-2-31-45\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o3e",
+    "text": {
+      "original": "Acts 1-2",
+      "translated": "Hechos 1-2"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-ch-1-ch-2\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o3e2",
+    "text": {
+      "original": "Matthew 3:1-2",
+      "translated": "Mateo 3:1-2"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"matthew-3-1-2\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o3e3",
+    "text": {
+      "original": "Matthew 4:17",
+      "translated": "Mateo 4:17"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"matthew-4-17\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o3f",
+    "text": {
+      "original": "Acts 2:14",
+      "translated": "Hechos 2:14"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-2-14\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o3f1",
+    "text": {
+      "original": "Mark 9:1",
+      "translated": "Marcos 9:1"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"mark-9-1\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o3f2",
+    "text": {
+      "original": "Acts 1:18-19",
+      "translated": "Hechos 1:18-19"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-1-18-19\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o3g",
+    "text": {
+      "original": "Acts 1:8",
+      "translated": "Hechos 1:8"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-1-8\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o3g",
+    "text": {
+      "original": "Acts 2:1-4",
+      "translated": "Hechos 2:1-4"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-2-1-4\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o3g1",
+    "text": {
+      "original": "Mark 9:1",
+      "translated": "Marcos 9:1"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"mark-9-1\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o3h",
+    "text": {
+      "original": "Acts 2:38",
+      "translated": "Hechos 2:38"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-2-38\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o3h1",
+    "text": {
+      "original": "John 3:1-7",
+      "translated": "Juan 3:1-7"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"john-3-1-7\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o3i",
+    "text": {
+      "original": "Acts 2:37-38",
+      "translated": "Hechos 2:37-38"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-2-37-38\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o3i1",
+    "text": {
+      "original": "Luke 17:20-21",
+      "translated": "Lucas 17:20-21"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"luke-17-20-21\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o3j",
+    "text": {
+      "original": "Acts 2:14",
+      "translated": "Hechos 2:14"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-2-14\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o3j",
+    "text": {
+      "original": "38",
+      "translated": "38"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-2-38\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o3j1",
+    "text": {
+      "original": "Matthew 16:19",
+      "translated": "Mateo 16:19"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"matthew-16-19\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o3k",
+    "text": {
+      "original": "Acts 2:38",
+      "translated": "Hechos 2:38"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-2-38\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o3k1",
+    "text": {
+      "original": "Luke 24:44-49",
+      "translated": "Lucas 24:44-49"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"luke-24-44-49\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o4a",
+    "text": {
+      "original": "33 A.D.",
+      "translated": "33 D.C."
+    },
+    "decorations": {
+      "bold": true
+    }
+  },
+  {
+    "key": "o4bScripture",
+    "text": {
+      "original": "Acts 2:42",
+      "translated": "Hechos 2:42"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-2-42\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o4cScripture",
+    "text": {
+      "original": "Matthew 6:33",
+      "translated": "Mateo 6:33"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"matthew-6-33\""
+        }
+      ]
+    }
+  }
+]

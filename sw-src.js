@@ -7,6 +7,9 @@ if (workbox) {
   // The `LANG_SLUGS` object is injected at build-time from the i18n folder.
   // BUILD_INJECT_LANG_SLUGS
   const LANG_SLUGS = {};
+  // The active language is injected per build when generating per-language SW files
+  // BUILD_INJECT_ACTIVE_LANG
+  const ACTIVE_LANG = null;
 
   const routes = [
     {
@@ -16,8 +19,11 @@ if (workbox) {
     },
   ];
 
-  // Use LANG_SLUGS keys so additional languages can be supported when present
-  const langs = Object.keys(LANG_SLUGS || {});
+  // Restrict to a single active language when provided; otherwise include all
+  const langs =
+    typeof ACTIVE_LANG === "string" && ACTIVE_LANG
+      ? [ACTIVE_LANG]
+      : Object.keys(LANG_SLUGS || {});
 
   langs.forEach((lang) => {
     const langList = LANG_SLUGS[lang] || [];
@@ -68,6 +74,10 @@ if (workbox) {
   workbox.precaching.precacheAndRoute(precacheManifest.concat(routes), {
     ignoreURLParametersMatching: [/^utm_/, /^fbclid$/],
   });
+  // Clean up caches created by older service workers when switching languages
+  if (workbox.precaching && workbox.precaching.cleanupOutdatedCaches) {
+    try { workbox.precaching.cleanupOutdatedCaches(); } catch (_) {}
+  }
 
   // Prefetch helper: fetch full .webm under /audio/ and cache
   async function prefetchAudio(urlString) {

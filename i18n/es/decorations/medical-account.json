@@ -1,0 +1,32 @@
+[
+  {
+    "key": "p1",
+    "text": {
+      "original": "The Day Christ Died",
+      "translated": "El Día que Cristo Murió"
+    },
+    "decorations": {
+      "italic": true
+    }
+  },
+  {
+    "key": "p36",
+    "text": {
+      "original": "From New Wine Magazine",
+      "translated": "De la revista New Wine"
+    },
+    "decorations": {
+      "italic": true
+    }
+  },
+  {
+    "key": "p36",
+    "text": {
+      "original": "Arizona Medicine",
+      "translated": "Arizona Medicine"
+    },
+    "decorations": {
+      "italic": true
+    }
+  }
+]

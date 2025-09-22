@@ -1,0 +1,167 @@
+[
+  {
+    "key": "o1",
+    "text": {
+      "original": "Colossians 3:1-4",
+      "translated": "Colosenses 3:1-4"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"colossians-3-1-4\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o1a",
+    "text": {
+      "original": "Colossians 2:11-12",
+      "translated": "Colosenses 2:11-12"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"colossians-2-11-12\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2",
+    "text": {
+      "original": "Colossians 3:5-11",
+      "translated": "Colosenses 3:5-11"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"colossians-3-5-11\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o3",
+    "text": {
+      "original": "Colossians 3:12-14",
+      "translated": "Colosenses 3:12-14"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"colossians-3-12-14\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o4",
+    "text": {
+      "original": "Colossians 3:15-4:1",
+      "translated": "Colosenses 3:15-4:1"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"colossians-ch-3-15-ch-4-1\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o4a",
+    "text": {
+      "original": "v. 15",
+      "translated": "v. 15"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"colossians-3-15\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o4b",
+    "text": {
+      "original": "v. 15-16",
+      "translated": "v. 15-16"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"colossians-3-15-16\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o4c",
+    "text": {
+      "original": "v. 17",
+      "translated": "v. 17"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"colossians-3-17\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o4d",
+    "text": {
+      "original": "v. 18-21",
+      "translated": "v. 18-21"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"colossians-3-18-21\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o4e",
+    "text": {
+      "original": "3:22",
+      "translated": "3:22"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"colossians-3-22\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o4e",
+    "text": {
+      "original": "4:1",
+      "translated": "4:1"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"colossians-4-1\""
+        }
+      ]
+    }
+  }
+]

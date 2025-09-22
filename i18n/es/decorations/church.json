@@ -1,0 +1,507 @@
+[
+  {
+    "key": "o4c1",
+    "text": {
+      "original": "Catholic Church",
+      "translated": "Iglesia Católica"
+    },
+    "decorations": {
+      "bold": true
+    }
+  },
+  {
+    "key": "o4c1",
+    "text": {
+      "original": "Eastern Orthodox Church",
+      "translated": "Iglesia Ortodoxa Oriental"
+    },
+    "decorations": {
+      "bold": true
+    }
+  },
+  {
+    "key": "o4c1",
+    "text": {
+      "original": "Roman Catholic Church",
+      "translated": "Iglesia Católica Romana"
+    },
+    "decorations": {
+      "bold": true
+    }
+  },
+  {
+    "key": "o4c2",
+    "text": {
+      "original": "1500's Reformation Movement",
+      "translated": "Movimiento de la Reforma de 1500"
+    },
+    "decorations": {
+      "bold": true
+    }
+  },
+  {
+    "key": "o4c3",
+    "text": {
+      "original": "1700's Great Awakening Movement",
+      "translated": "Movimiento del Gran Despertar de 1700"
+    },
+    "decorations": {
+      "bold": true
+    }
+  },
+  {
+    "key": "o4c4",
+    "text": {
+      "original": "1800's Restoration Movement",
+      "translated": "Movimiento de la Restauración de 1800"
+    },
+    "decorations": {
+      "bold": true
+    }
+  },
+  {
+    "key": "o4c5",
+    "text": {
+      "original": "1967 Crossroads Movement",
+      "translated": "Movimiento Crossroads de 1967"
+    },
+    "decorations": {
+      "bold": true
+    }
+  },
+  {
+    "key": "o4c6Start",
+    "text": {
+      "original": "1979 Boston Movement",
+      "translated": "Movimiento de Boston de 1979"
+    },
+    "decorations": {
+      "bold": true
+    }
+  },
+  {
+    "key": "o4c6Start",
+    "text": {
+      "original": "Five Biblical Core Convictions",
+      "translated": "Cinco Convicciones Bíblicas Centrales"
+    },
+    "decorations": {
+      "bold": true
+    }
+  },
+  {
+    "key": "o4c7",
+    "text": {
+      "original": "2006 SoldOut Movement (Portland Movement / International Christian Church)",
+      "translated": "Movimiento SoldOut de 2006 (Movimiento de Portland / Iglesia Cristiana Internacional)"
+    },
+    "decorations": {
+      "bold": true
+    }
+  },
+  {
+    "key": "o1",
+    "text": {
+      "original": "Colossians 1:15-18",
+      "translated": "Colosenses 1:15-18"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"colossians-1-15-18\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2",
+    "text": {
+      "original": "Ephesians 2:19-21",
+      "translated": "Efesios 2:19-21"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"ephesians-2-19-21\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2b",
+    "text": {
+      "original": "1 Corinthians 12:12-13",
+      "translated": "1 Corintios 12:12-13"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"1-corinthians-12-12-13\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o2c",
+    "text": {
+      "original": "Romans 6:3-4",
+      "translated": "Romanos 6:3-4"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"romans-6-3-4\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o3",
+    "text": {
+      "original": "Ephesians 2:20",
+      "translated": "Efesios 2:20"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"ephesians-3-20\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o4a1",
+    "text": {
+      "original": "Ephesians 4:4-6",
+      "translated": "Efesios 4:4-6"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"ephesians-4-4-6\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o4a2",
+    "text": {
+      "original": "Romans 12:4-5",
+      "translated": "Romanos 12:4-5"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"romans-12-4-5\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o4a3",
+    "text": {
+      "original": "1 Corinthians 12:12-13",
+      "translated": "1 Corintios 12:12-13"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"1-corinthians-12-12-13\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o4b1",
+    "text": {
+      "original": "1 Corinthians 1:10-13",
+      "translated": "1 Corintios 1:10-13"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"1-corinthians-1-10-13\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o4b1",
+    "text": {
+      "original": "Matthew 15:6-9",
+      "translated": "Mateo 15:6-9"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"matthew-15-6-9\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o4b2",
+    "text": {
+      "original": "Luke 12:51-53",
+      "translated": "Lucas 12:51-53"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"luke-12-51-53\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o4b2",
+    "text": {
+      "original": "John 10:19-21",
+      "translated": "Juan 10:19-21"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"john-10-19-21\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o4c6a",
+    "text": {
+      "original": "2 Timothy 3:16-17",
+      "translated": "2 Timoteo 3:16-17"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"2-timothy-3-16-17\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o4c6b",
+    "text": {
+      "original": "Genesis 2:19",
+      "translated": "Génesis 2:19"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"genesis-2-19\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o4c6c",
+    "text": {
+      "original": "Matthew 28:19-20",
+      "translated": "Mateo 28:19-20"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"matthew-28-19-20\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o4c6d",
+    "text": {
+      "original": "Numbers 27:12-18",
+      "translated": "Números 27:12-18"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"numbers-27-12-18\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o4c6e",
+    "text": {
+      "original": "1 Timothy 2:3-4",
+      "translated": "1 Timoteo 2:3-4"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"1-timothy-2-3-4\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o5a",
+    "text": {
+      "original": "Acts 11:25-26",
+      "translated": "Hechos 11:25-26"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"acts-11-25-26\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o5a",
+    "text": {
+      "original": "Ephesians 4:4-6",
+      "translated": "Efesios 4:4-6"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"ephesians-4-4-6\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o6",
+    "text": {
+      "original": "1 Corinthians 12:14-27",
+      "translated": "1 Corintios 12:14-27"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"1-corinthians-12-14-27\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o6a",
+    "text": {
+      "original": "v. 21",
+      "translated": "v. 21"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"1-corinthians-12-21\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o6b",
+    "text": {
+      "original": "v. 26",
+      "translated": "v. 26"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"1-corinthians-12-26\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o7",
+    "text": {
+      "original": "Hebrews 10:23-25",
+      "translated": "Hebreos 10:23-25"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"hebrews-10-23-25\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o7b",
+    "text": {
+      "original": "v. 23",
+      "translated": "v. 23"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"hebrews-10-23\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o7c",
+    "text": {
+      "original": "v. 24",
+      "translated": "v. 24"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"hebrews-10-24\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o8a",
+    "text": {
+      "original": "Malachi 3:6-12",
+      "translated": "Malaquías 3:6-12"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"malachi-3-6-12\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o8b",
+    "text": {
+      "original": "2 Corinthians 9:6-8",
+      "translated": "2 Corintios 9:6-8"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"2-corinthians-9-6-8\""
+        }
+      ]
+    }
+  }
+]

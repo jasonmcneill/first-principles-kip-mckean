@@ -1,0 +1,290 @@
+[
+  {
+    "key": "o3g",
+    "text": {
+      "original": "The Passion Of The Christ",
+      "translated": "La Pasión de Cristo"
+    },
+    "decorations": {
+      "italic": true
+    }
+  },
+  {
+    "key": "o3g",
+    "text": {
+      "original": "The Cross",
+      "translated": "La Cruz"
+    },
+    "decorations": {
+      "italic": true
+    }
+  },
+  {
+    "key": "o2p2",
+    "text": {
+      "original": "medical account",
+      "translated": "relato médico"
+    },
+    "decorations": {
+      "link": {
+        "href": "./medical-account",
+        "attributes": ""
+      }
+    }
+  },
+  {
+    "key": "o1i1",
+    "text": {
+      "original": "26:31-35",
+      "translated": "26:31-35"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"matthew-26-31-35\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o1i2",
+    "text": {
+      "original": "26:36-46",
+      "translated": "26:36-46"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"matthew-26-36-46\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o1i3",
+    "text": {
+      "original": "26:47-56",
+      "translated": "26:47-56"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"matthew-26-47-56\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o1i4",
+    "text": {
+      "original": "26:57-68",
+      "translated": "26:57-68"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"matthew-26-57-68\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o1i5",
+    "text": {
+      "original": "26:69-75",
+      "translated": "26:69-75"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"matthew-26-69-75\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o1i6",
+    "text": {
+      "original": "27:1-10",
+      "translated": "27:1-10"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"matthew-27-1-10\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o1i7",
+    "text": {
+      "original": "27:11-26",
+      "translated": "27:11-26"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"matthew-27-11-26\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o1i8",
+    "text": {
+      "original": "27:27-31",
+      "translated": "27:27-31"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"matthew-27-27-31\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o1i9",
+    "text": {
+      "original": "27:32-44",
+      "translated": "27:32-44"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"matthew-27-32-44\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o1i10",
+    "text": {
+      "original": "27:45-56",
+      "translated": "27:45-56"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"matthew-27-45-56\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o1i11",
+    "text": {
+      "original": "27:57-61",
+      "translated": "27:57-61"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"matthew-27-57-61\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o1i12",
+    "text": {
+      "original": "27:62-66",
+      "translated": "27:62-66"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"matthew-27-62-66\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o1i13",
+    "text": {
+      "original": "28:1-10",
+      "translated": "28:1-10"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"matthew-28-1-10\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o3b",
+    "text": {
+      "original": "Romans 3:23",
+      "translated": "Romanos 3:23"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"romans-3-23\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o3c",
+    "text": {
+      "original": "Isaiah 59:1-2",
+      "translated": "Isaías 59:1-2"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"isaiah-59-1-2\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o3d",
+    "text": {
+      "original": "Matthew 27:46",
+      "translated": "Mateo 27:46"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"matthew-27-46\""
+        }
+      ]
+    }
+  },
+  {
+    "key": "o3f",
+    "text": {
+      "original": "Isaiah 53:4-6",
+      "translated": "Isaías 53:4-6"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "data-scripture=\"isaiah-53-4-6\""
+        }
+      ]
+    }
+  }
+]
