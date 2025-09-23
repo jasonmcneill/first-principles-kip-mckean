@@ -56,10 +56,10 @@
     {
       "id": "8uNaA-slzFIxVHqGJil2Q",
       "type": "arrow",
-      "x": -612.8446938808341,
-      "y": 215.539712308263,
-      "width": 42.89604350434092,
-      "height": 35.58164454616575,
+      "x": -612.267146437612,
+      "y": 215.53971230826303,
+      "width": 42.31849606111882,
+      "height": 35.58164454616572,
       "angle": 0,
       "strokeColor": "#1e1e1e",
       "backgroundColor": "#ffffff",
@@ -75,11 +75,11 @@
         "type": 2
       },
       "seed": 505554680,
-      "version": 1467,
-      "versionNonce": 1483194965,
+      "version": 1491,
+      "versionNonce": 1655367811,
       "isDeleted": false,
       "boundElements": [],
-      "updated": 1758580361714,
+      "updated": 1758610068216,
       "link": null,
       "locked": false,
       "points": [
@@ -88,12 +88,12 @@
           0
         ],
         [
-          38.52168319791451,
-          3.776069180487845
+          37.94413575469241,
+          3.7760691804878164
         ],
         [
-          42.89604350434092,
-          35.58164454616575
+          42.31849606111882,
+          35.58164454616572
         ]
       ],
       "lastCommittedPoint": null,
@@ -1153,7 +1153,7 @@
       "version": 85,
       "versionNonce": 1502195317,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1758580570226,
       "link": null,
       "locked": false,
@@ -1640,7 +1640,7 @@
       "type": "text",
       "x": -614.2891647190802,
       "y": 168.86193951427117,
-      "width": 96.43527221679688,
+      "width": 91.74809265136719,
       "height": 37.800722827863105,
       "angle": 0,
       "strokeColor": "#1e1e1e",
@@ -1655,8 +1655,8 @@
       "index": "b2g",
       "roundness": null,
       "seed": 368555000,
-      "version": 464,
-      "versionNonce": 697274363,
+      "version": 488,
+      "versionNonce": 1311145187,
       "isDeleted": false,
       "boundElements": [
         {
@@ -1664,16 +1664,16 @@
           "type": "arrow"
         }
       ],
-      "updated": 1758580306287,
+      "updated": 1758610068211,
       "link": null,
       "locked": false,
-      "text": "\"SEPULTADO\nCON CRISTO\"",
+      "text": "\"MORIR CON\nCRISTO\"",
       "fontSize": 15.120289131145242,
       "fontFamily": 6,
       "textAlign": "left",
       "verticalAlign": "top",
       "containerId": null,
-      "originalText": "\"SEPULTADO\nCON CRISTO\"",
+      "originalText": "\"MORIR CON\nCRISTO\"",
       "autoResize": true,
       "lineHeight": 1.25
     },
@@ -1700,7 +1700,7 @@
       "version": 462,
       "versionNonce": 146149717,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1758580532434,
       "link": null,
       "locked": false,
