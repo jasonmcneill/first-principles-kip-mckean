@@ -1,21 +1,21 @@
 {
-  "display": "Luke 11:1-4",
+  "display": "Lucas 11:1-4",
   "version": "NVI",
   "book": "Luke",
   "chapter": 11,
   "verses": [
     [
       1,
-      "One day Jesus was praying in a certain place. When he finished, one of his disciples said to him, \"Lord, teach us to pray, just as John taught his disciples.\""
+      "Un día estaba Jesús orando en cierto lugar. Cuando terminó, dijo uno de sus discípulos: —Señor, enséñanos a orar, así como Juan enseñó a sus discípulos."
     ],
     [
       2,
-      "He said to them, \"When you pray, say: \"'Father, hallowed be your name, your kingdom come."
+      "Él les dijo: —Cuando oren, digan: »“Padre, santificado sea tu nombre. Venga tu reino."
     ],
-    [3, "Give us each day our daily bread."],
+    [3, "Danos cada día nuestro pan cotidiano."],
     [
       4,
-      "Forgive us our sins, for we also forgive everyone who sins against us. And lead us not into temptation.'\""
+      "Perdónanos nuestros pecados, porque también nosotros perdonamos a todos los que nos ofenden. Y no nos dejes caer en tentación”."
     ]
   ]
 }

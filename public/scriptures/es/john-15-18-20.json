@@ -1,17 +1,20 @@
 {
-  "display": "John 15:18-20",
+  "display": "Juan 15:18-20",
   "version": "NVI",
   "book": "John",
   "chapter": 15,
   "verses": [
-    [18, "If the world hates you, keep in mind that it hated me first."],
+    [
+      18,
+      "»Si el mundo los aborrece, tengan presente que antes que a ustedes me aborreció a mí."
+    ],
     [
       19,
-      "If you belonged to the world, it would love you as its own. As it is, you do not belong to the world, but I have chosen you out of the world. That is why the world hates you."
+      "Si fueran del mundo, el mundo los amaría como a los suyos. Pero ustedes no son del mundo, sino que yo los he escogido de entre el mundo. Por eso el mundo los aborrece."
     ],
     [
       20,
-      "Remember what I told you: 'A servant is not greater than his master.' If they persecuted me, they will persecute you also. If they obeyed my teaching, they will obey yours also."
+      "Recuerden lo que les dije: “Ningún siervo es más que su amo”. Si a mí me han perseguido, también a ustedes los perseguirán. Si han obedecido mis palabras, también obedecerán las de ustedes."
     ]
   ]
 }

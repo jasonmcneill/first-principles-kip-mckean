@@ -1,17 +1,20 @@
 {
-  "display": "John 10:19-21",
+  "display": "Juan 10:19-21",
   "version": "NVI",
   "book": "John",
   "chapter": 10,
   "verses": [
-    [19, "The Jews who heard these words were again divided."],
+    [
+      19,
+      "De nuevo las palabras de Jesús fueron motivo de disensión entre los judíos."
+    ],
     [
       20,
-      "Many of them said, \"He is demon-possessed and raving mad. Why listen to him?\""
+      "Muchos de ellos decían: «Está endemoniado y loco de remate. ¿Para qué hacerle caso?»."
     ],
     [
       21,
-      "But others said, \"These are not the sayings of a man possessed by a demon. Can a demon open the eyes of the blind?\""
+      "Pero otros opinaban: «Estas palabras no son de un endemoniado. ¿Puede acaso un demonio abrirles los ojos a los ciegos?»."
     ]
   ]
 }

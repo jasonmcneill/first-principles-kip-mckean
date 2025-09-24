@@ -1,7 +1,12 @@
 {
-  "display": "Luke 19:10",
+  "display": "Lucas 19:10",
   "version": "NVI",
   "book": "Luke",
   "chapter": 19,
-  "verses": [[10, "For the Son of Man came to seek and to save the lost."]]
+  "verses": [
+    [
+      10,
+      "Porque el Hijo del hombre vino a buscar y a salvar lo que se había perdido."
+    ]
+  ]
 }

@@ -1,30 +1,33 @@
 {
-  "display": "John 3:1-7",
+  "display": "Juan 3:1-7",
   "version": "NVI",
   "book": "John",
   "chapter": 3,
   "verses": [
     [
       1,
-      "Now there was a Pharisee, a man named Nicodemus who was a member of the Jewish ruling council."
+      "Había entre los fariseos un dirigente de los judíos llamado Nicodemo."
     ],
     [
       2,
-      "He came to Jesus at night and said, \"Rabbi, we know that you are a teacher who has come from God. For no one could perform the signs you are doing if God were not with him.\""
+      "Este fue de noche a visitar a Jesús. —Rabí —le dijo—, sabemos que eres un maestro que ha venido de parte de Dios, porque nadie podría hacer las señales que tú haces si Dios no estuviera con él."
     ],
     [
       3,
-      "Jesus replied, \"Very truly I tell you, no one can see the kingdom of God unless they are born again.\""
+      "—Te aseguro que quien no nazca de nuevo no puede ver el reino de Dios —dijo Jesús."
     ],
     [
       4,
-      "\"How can someone be born when they are old?\" Nicodemus asked. \"Surely they cannot enter a second time into their mother's womb to be born!\""
+      "—¿Cómo puede uno nacer de nuevo siendo ya viejo? —preguntó Nicodemo—. ¿Acaso puede entrar por segunda vez en el vientre de su madre y volver a nacer?"
     ],
     [
       5,
-      "Jesus answered, \"Very truly I tell you, no one can enter the kingdom of God unless they are born of water and the Spirit."
+      "—Te aseguro que quien no nazca de agua y del Espíritu no puede entrar en el reino de Dios —respondió Jesús—."
     ],
-    [6, "Flesh gives birth to flesh, but the Spirit gives birth to spirit."],
-    [7, "You should not be surprised at my saying, 'You must be born again.'\""]
+    [
+      6,
+      "Lo que nace del cuerpo es cuerpo; lo que nace del Espíritu es espíritu."
+    ],
+    [7, "No te sorprendas de que haya dicho: “Tienen que nacer de nuevo”."]
   ]
 }

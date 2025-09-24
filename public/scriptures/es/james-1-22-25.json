@@ -1,24 +1,21 @@
 {
-  "display": "James 1:22-25",
+  "display": "Santiago 1:22-25",
   "version": "NVI",
   "book": "James",
   "chapter": 1,
   "verses": [
     [
       22,
-      "Do not merely listen to the word, and so deceive yourselves. Do what it says."
+      "No se contenten solo con oír la palabra, pues así se engañan ustedes mismos. Llévenla a la práctica."
     ],
     [
       23,
-      "Anyone who listens to the word but does not do what it says is like someone who looks at his face in a mirror"
+      "El que escucha la palabra, pero no la pone en práctica, es como el que se mira el rostro en un espejo"
     ],
-    [
-      24,
-      "and, after looking at himself, goes away and immediately forgets what he looks like."
-    ],
+    [24, "y después de mirarse, se va y se olvida enseguida de cómo es."],
     [
       25,
-      "But whoever looks intently into the perfect law that gives freedom, and continues in it—not forgetting what they have heard, but doing it—they will be blessed in what they do."
+      "Pero quien se fija atentamente en la ley perfecta que da libertad y persevera en ella, no olvidando lo que ha oído, sino haciéndolo, recibirá bendición al practicarla."
     ]
   ]
 }
