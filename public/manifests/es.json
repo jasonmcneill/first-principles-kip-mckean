@@ -8,8 +8,8 @@
   "id": "750c1f4e-1e26-4a35-85e6-21554d415659",
   "display": "standalone",
   "start_url": "/es/dashboard?utm_source=homescreen",
-  "theme_color": "#212529",
-  "background_color": "#1e0801",
+  "theme_color": "#070808",
+  "background_color": "#212529",
   "icons": [
     {
       "src": "/img/es/launch/512.png",
