@@ -9,7 +9,7 @@
   "display": "standalone",
   "start_url": "/en/dashboard?utm_source=homescreen",
   "theme_color": "#070808",
-  "background_color": "#212529",
+  "background_color": "#6c757d",
   "icons": [
     {
       "src": "/img/en/launch/512.png",
