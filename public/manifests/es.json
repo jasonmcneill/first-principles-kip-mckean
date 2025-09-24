@@ -7,7 +7,7 @@
   "dir": "ltr",
   "id": "750c1f4e-1e26-4a35-85e6-21554d415659",
   "display": "standalone",
-  "start_url": "/en/dashboard?utm_source=homescreen",
+  "start_url": "/es/dashboard?utm_source=homescreen",
   "icons": [
     {
       "src": "/img/es/launch/512.png",
