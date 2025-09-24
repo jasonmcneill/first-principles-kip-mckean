@@ -5,7 +5,11 @@ const fs = require("fs");
 const port = 3000;
 const i18nRoutes = require("./routes/i18n");
 
-require("dotenv").config();
+// Load .env only for local/dev environments
+const env = process.env.NODE_ENV || "local";
+if (env === "development") {
+  require("dotenv").config();
+}
 
 // Set up EJS and the views directory
 app.set("view engine", "ejs");
