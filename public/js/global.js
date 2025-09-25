@@ -11,6 +11,16 @@ function hideAudioIfOpusNotSupported() {
   }
 }
 
+function hideScriptureHash() {
+  if (window.location.hash && window.location.hash === "#scripture") {
+    history.replaceState(
+      null,
+      "",
+      window.location.pathname + window.location.search
+    );
+  }
+}
+
 function listenForScriptureClicks() {
   document.querySelectorAll("[data-scripture]").forEach((el) => {
     el.addEventListener("click", (evt) => {
@@ -117,11 +127,36 @@ function listenForAudio() {
 
 function addListeners() {
   listenForScriptureClicks();
+
+  window.addEventListener("popstate", () => {
+    const modalEl = document.getElementById("modal");
+    const modal = bootstrap.Modal.getInstance(modalEl);
+    if (modal) {
+      modal.hide();
+    }
+  });
+
+  const myModalEl = document.getElementById("modal");
+
+  myModalEl.addEventListener("hide.bs.modal", (event) => {
+    if (window.location.hash === "#scripture") {
+      history.replaceState(
+        null,
+        "",
+        window.location.pathname + window.location.search
+      );
+    }
+  });
+
+  myModalEl.addEventListener("show.bs.modal", (event) => {
+    history.pushState(null, "", "#scripture");
+  });
 }
 
 function init() {
   addListeners();
   hideAudioIfOpusNotSupported();
+  hideScriptureHash();
 }
 
 init();
