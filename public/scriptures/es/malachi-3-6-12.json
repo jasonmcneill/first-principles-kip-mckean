@@ -1,33 +1,36 @@
 {
-  "display": "Malachi 3:6-12",
+  "display": "Malaquías 3:6-12",
   "version": "NVI",
   "book": "Malachi",
   "chapter": 3,
   "verses": [
     [
-      3,
-      "\"I the LORD do not change. So you, the descendants of Jacob, are not destroyed."
+      6,
+      "»Yo, el Señor, no cambio. Por eso ustedes, descendientes de Jacob, no han sido exterminados."
     ],
-    [
-      4,
-      "Ever since the time of your ancestors you have turned away from my decrees and have not kept them. Return to me, and I will return to you,\" says the LORD Almighty. \"But you ask, 'How are we to return?'"
-    ],
-    [
-      5,
-      "Will a mere mortal rob God? Yet you rob me. \"But you ask, 'How are we robbing you?' In tithes and offerings."
-    ],
-    [6, "You are under a curse—your whole nation—because you are robbing me."],
     [
       7,
-      "Bring the whole tithe into the storehouse, that there may be food in my house. Test me in this,\" says the LORD Almighty, \"and see if I will not throw open the floodgates of heaven and pour out so much blessing that there will not be room enough to store it."
+      "Desde la época de sus antepasados se han apartado de mis estatutos y no los han guardado. Vuélvanse a mí y yo me volveré a ustedes —dice el Señor de los Ejércitos—. »Pero ustedes preguntan: “¿En qué sentido tenemos que volvernos?”."
     ],
     [
       8,
-      "I will prevent pests from devouring your crops, and the vines in your fields will not drop their fruit before it is ripe,\" says the LORD Almighty."
+      "»¿Acaso roba el ser humano a Dios? ¡Ustedes me están robando! »Y todavía preguntan: “¿En qué te robamos?”. »En los diezmos y en las ofrendas."
     ],
     [
       9,
-      "\"Then all the nations will call you blessed, for yours will be a delightful land,\" says the LORD Almighty."
+      "Ustedes —la nación entera—, están bajo gran maldición, pues es a mí a quien están robando."
+    ],
+    [
+      10,
+      "»Traigan íntegro el diezmo a la tesorería del Templo; así habrá alimento en mi casa. Pruébenme en esto —dice el Señor de los Ejércitos—, y vean si no abro las compuertas del cielo y derramo sobre ustedes bendición hasta que sobreabunde."
+    ],
+    [
+      11,
+      "Reprenderé al devorador para que no arruine sus cultivos y las vides en los campos no pierdan su fruto —dice el Señor de los Ejércitos—."
+    ],
+    [
+      12,
+      "Entonces todas las naciones los llamarán dichosos, porque ustedes tendrán una tierra maravillosa —dice el Señor de los Ejércitos—."
     ]
   ]
 }

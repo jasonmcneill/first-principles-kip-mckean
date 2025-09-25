@@ -1,25 +1,22 @@
 {
-  "display": "Matthew 26:31-35",
+  "display": "Mateo 26:31-35",
   "version": "NVI",
   "book": "Matthew",
   "chapter": 26,
   "verses": [
     [
       31,
-      "Then Jesus told them, \"This very night you will all fall away on account of me, for it is written: 'I will strike the shepherd, and the sheep of the flock will be scattered.'"
+      "—Esta misma noche —dijo Jesús— todos ustedes me abandonarán, porque está escrito: »“Heriré al pastor y se dispersarán las ovejas del rebaño”."
     ],
-    [32, "But after I have risen, I will go ahead of you into Galilee.\""],
-    [
-      33,
-      "Peter replied, \"Even if all fall away on account of you, I never will.\""
-    ],
+    [32, "Pero después de que yo resucite, iré delante de ustedes a Galilea»."],
+    [33, "—Aunque todos te abandonen —declaró Pedro—, yo jamás lo haré."],
     [
       34,
-      "\"Truly I tell you,\" Jesus answered, \"this very night, before the rooster crows, you will disown me three times.\""
+      "—Te aseguro —le contestó Jesús— que esta misma noche, antes de que cante el gallo, me negarás tres veces."
     ],
     [
       35,
-      "But Peter declared, \"Even if I have to die with you, I will never disown you.\" And all the other disciples said the same."
+      "—Aunque tenga que morir contigo —insistió Pedro—, jamás te negaré. Y los demás discípulos dijeron lo mismo."
     ]
   ]
 }

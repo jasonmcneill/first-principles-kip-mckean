@@ -1,54 +1,51 @@
 {
-  "display": "Matthew 27:32-44",
+  "display": "Mateo 27:32-44",
   "version": "NVI",
   "book": "Matthew",
   "chapter": 27,
   "verses": [
     [
       32,
-      "As they were going out, they met a man from Cyrene, named Simon, and they forced him to carry the cross."
+      "Al salir, encontraron a un hombre de Cirene que se llamaba Simón y lo obligaron a llevar la cruz."
     ],
     [
       33,
-      "They came to a place called Golgotha (which means \"the place of the skull\")."
+      "Llegaron a un lugar llamado Gólgota, que significa «Lugar de la Calavera»."
     ],
     [
       34,
-      "There they offered Jesus wine to drink, mixed with gall; but after tasting it, he refused to drink it."
+      "Allí dieron a Jesús vino mezclado con hiel; pero después de probarlo, se negó a beberlo."
     ],
-    [
-      35,
-      "When they had crucified him, they divided up his clothes by casting lots."
-    ],
-    [36, "And sitting down, they kept watch over him there."],
+    [35, "Lo crucificaron y repartieron su ropa, echando suertes."],
+    [36, "Y se sentaron a vigilarlo."],
     [
       37,
-      "Above his head they placed the written charge against him: This is Jesus, the King of the Jews."
+      "Encima de su cabeza pusieron por escrito la causa de su condena: ESTE ES JESÚS, EL REY DE LOS JUDÍOS."
     ],
     [
       38,
-      "Two rebels were crucified with him, one on his right and one on his left."
+      "Con él crucificaron a dos bandidos, uno a su derecha y otro a su izquierda."
     ],
-    [39, "Those who passed by hurled insults at him, shaking their heads"],
+    [39, "Los que pasaban meneaban la cabeza y blasfemaban contra él:"],
     [
       40,
-      "and saying, \"You who are going to destroy the temple and build it in three days, save yourself! Come down from the cross, if you are the Son of God!\""
+      "—Tú que destruyes el Templo y en tres días lo reconstruyes, ¡sálvate a ti mismo! Si eres el Hijo de Dios, ¡baja de la cruz!"
     ],
     [
       41,
-      "In the same way the chief priests, the teachers of the law and the elders mocked him."
+      "De la misma manera, se burlaban de él los jefes de los sacerdotes, junto con los maestros de la Ley y los líderes religiosos."
     ],
     [
       42,
-      "\"He saved others,\" they said, \"but he can't save himself! He's the king of Israel! Let him come down now from the cross, and we will believe in him."
+      "—Salvó a otros —decían—, ¡pero no puede salvarse a sí mismo! ¡Y es el rey de Israel! Que baje ahora de la cruz y así creeremos en él."
     ],
     [
       43,
-      "He trusts in God. Let God rescue him now if he wants him, for he said, 'I am the Son of God.'\""
+      "Él confía en Dios; pues que lo libre Dios ahora, si de veras lo quiere. ¿Acaso no dijo: “Yo soy el Hijo de Dios”?"
     ],
     [
       44,
-      "In the same way the rebels who were crucified with him also heaped insults on him."
+      "Así también lo insultaban los bandidos que estaban crucificados con él."
     ]
   ]
 }

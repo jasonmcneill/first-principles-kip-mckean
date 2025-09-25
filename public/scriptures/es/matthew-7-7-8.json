@@ -1,16 +1,13 @@
 {
-  "display": "Matthew 7:7-8",
+  "display": "Mateo 7:7-8",
   "version": "NVI",
   "book": "Matthew",
   "chapter": 7,
   "verses": [
-    [
-      7,
-      "Ask and it will be given to you; seek and you will find; knock and the door will be opened to you."
-    ],
+    [7, "»Pidan y se les dará; busquen y encontrarán; llamen y se les abrirá."],
     [
       8,
-      "For everyone who asks receives; the one who seeks finds; and to the one who knocks, the door will be opened."
+      "Porque todo el que pide, recibe; el que busca, encuentra y al que llama, se le abre."
     ]
   ]
 }

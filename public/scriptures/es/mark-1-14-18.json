@@ -1,25 +1,22 @@
 {
-  "display": "Mark 1:14-18",
+  "display": "Marcos 1:14-18",
   "version": "NVI",
   "book": "Mark",
   "chapter": 1,
   "verses": [
     [
       14,
-      "After John was put in prison, Jesus went into Galilee, proclaiming the good news of God."
+      "Después de que encarcelaron a Juan, Jesús se fue a Galilea a anunciar las buenas noticias de Dios."
     ],
     [
       15,
-      "\"The time has come,\" he said. \"The kingdom of God has come near. Repent and believe the good news!\""
+      "«Se ha cumplido el tiempo —decía—. El reino de Dios está cerca. ¡Arrepiéntanse y crean las buenas noticias!»."
     ],
     [
       16,
-      "As Jesus walked beside the Sea of Galilee, he saw Simon and his brother Andrew casting a net into the lake, for they were fishermen."
+      "Pasando junto al lago de Galilea, Jesús vio a Simón y a su hermano Andrés que echaban la red al lago, pues eran pescadores."
     ],
-    [
-      17,
-      "\"Come, follow me,\" Jesus said, \"and I will send you out to fish for people.\""
-    ],
-    [18, "At once they left their nets and followed him."]
+    [17, "«Vengan, síganme —dijo Jesús—, y los haré pescadores de hombres»."],
+    [18, "Al instante dejaron las redes y lo siguieron."]
   ]
 }

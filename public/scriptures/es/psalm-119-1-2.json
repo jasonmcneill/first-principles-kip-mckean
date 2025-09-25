@@ -1,16 +1,13 @@
 {
-  "display": "Psalm 119:1-2",
+  "display": "Salmos 119:1-2",
   "version": "NVI",
   "book": "Psalm",
   "chapter": 119,
   "verses": [
     [
       1,
-      "Blessed are those whose ways are blameless, who walk according to the law of the Lord."
+      "Dichosos los que van por caminos intachables, los que andan conforme a la Ley del Señor."
     ],
-    [
-      2,
-      "Blessed are those who keep his statutes and seek him with all their heart"
-    ]
+    [2, "Dichosos los que obedecen sus mandatos y de todo corazón lo buscan."]
   ]
 }
