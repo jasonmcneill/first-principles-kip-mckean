@@ -8,7 +8,7 @@
   "id": "f496f2da-069e-4543-bcd7-1640237d41d0",
   "display": "standalone",
   "start_url": "/en/dashboard?utm_source=homescreen",
-  "theme_color": "#174c56",
+  "theme_color": "#111111",
   "background_color": "#2a8698",
   "icons": [
     {
