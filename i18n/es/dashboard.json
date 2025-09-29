@@ -2,10 +2,7 @@
   "metadata": {
     "lang": "es",
     "hasAudio": false,
-    "hide": [
-      "introToCourse",
-      "bookOfJohn"
-    ]
+    "hide": ["introToCourse", "bookOfJohn", "bookOfActs"]
   },
   "appTitle": "Principios Básicos",
   "introduction": "Introducción",
