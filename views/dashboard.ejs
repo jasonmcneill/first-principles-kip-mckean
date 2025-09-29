@@ -177,12 +177,14 @@
                   <%- data.church %>
                 </a>
 
+                <% if(! data.metadata.hide.includes("introToCourse")) { %>
                 <a
                   href="./book-of-acts"
                   class="list-group-item list-group-item-action"
                 >
                   <%- data.bookOfActs %>
                 </a>
+                <% } %>
 
                 <a
                   href="./after-baptism-now-what"
