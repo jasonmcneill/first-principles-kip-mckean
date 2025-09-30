@@ -1,8 +1,10 @@
 const express = require("express");
+const bodyParser = require("body-parser");
+const axios = require("axios");
 const app = express();
 const path = require("path");
 const fs = require("fs");
-const port = 3000;
+const PORT = process.env.PORT || 3000;
 const i18nRoutes = require("./routes/i18n");
 
 // Load .env only for local/dev environments
@@ -14,6 +16,11 @@ if (env === "development") {
 // Set up EJS and the views directory
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
+app.use(bodyParser.json({ type: "application/json" }));
+
+// Mount the PayPal webhook route
+const paypalWebhook = require("./paypalWebhook");
+app.post("/paypal-webhook", paypalWebhook);
 
 // Set up a public directory
 app.use(
@@ -76,6 +83,6 @@ app.get("/:langCode/subscribe", (req, res) => {
 });
 
 // Start the server
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
 });
