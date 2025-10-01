@@ -11,7 +11,7 @@
       name="apple-mobile-web-app-status-bar-style"
       content="black-translucent"
     />
-    <title><%- data.appTitle %></title>
+    <title><%- data.page Title %></title>
     <link rel="stylesheet" href="/css/style.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
@@ -266,128 +266,6 @@
                   <%- data.registerButton %>
                 </button>
               </form>
-
-              <script>
-                const registrationForm =
-                  document.querySelector("#registrationForm");
-                const errors = {
-                  usernameRequired: "<%- data.errorUsernameRequired %>",
-                  usernameTaken: "<%- data.errorUsernameTaken %>",
-                  passwordRequired: "<%- data.errorPasswordRequired %>",
-                  passwordInvalid: "<%- data.errorPasswordInvalid %>",
-                  emailRequired: "<%- data.errorEmailRequired %>",
-                  emailRegistered: "<%- data.errorEmailRegistered %>",
-                  emailInvalid: "<%- data.errorEmailInvalid %>",
-                  firstNameRequired: "<%- data.errorFirstNameRequired %>",
-                  lastNameRequired: "<%- data.errorLastNameRequired %>",
-                  genderRequired: "<%- data.errorGenderRequired %>",
-                };
-
-                const genderErrorEl = document.querySelector(
-                  "#gender_invalid_feedback"
-                );
-                const maleEl = document.querySelector("#gender_male");
-                const femaleEl = document.querySelector("#gender_female");
-
-                maleEl.addEventListener("change", (evt) => {
-                  genderErrorEl.classList.add("d-none");
-                  maleEl.classList.remove("is-invalid");
-                  femaleEl.classList.remove("is-invalid");
-                });
-
-                femaleEl.addEventListener("change", (evt) => {
-                  genderErrorEl.classList.add("d-none");
-                  maleEl.classList.remove("is-invalid");
-                  femaleEl.classList.remove("is-invalid");
-                });
-
-                registrationForm.addEventListener("submit", (event) => {
-                  genderErrorEl.classList.add("d-none");
-                  event.preventDefault();
-
-                  document
-                    .querySelectorAll(".is-invalid")
-                    .forEach((item) => item.classList.remove("is-invalid"));
-
-                  const usernameEl = document.querySelector("#username");
-                  const passwordEl = document.querySelector("#password");
-                  const emailEl = document.querySelector("#email");
-                  const firstNameEl = document.querySelector("#firstname");
-                  const lastNameEl = document.querySelector("#lastname");
-
-                  if (!usernameEl.value.trim().length) {
-                    usernameEl.parentElement.querySelector(
-                      ".invalid-feedback"
-                    ).innerHTML = errors.usernameRequired;
-                    usernameEl.classList.add("is-invalid");
-                    usernameEl.parentElement.scrollIntoView();
-                    usernameEl.focus();
-                    return;
-                  }
-
-                  if (!passwordEl.value.trim().length) {
-                    passwordEl.parentElement.querySelector(
-                      ".invalid-feedback"
-                    ).innerHTML = errors.passwordRequired;
-                    passwordEl.classList.add("is-invalid");
-                    passwordEl.parentElement.scrollIntoView();
-                    passwordEl.focus();
-                    return;
-                  }
-
-                  if (passwordEl.value.trim().length < 8) {
-                    passwordEl.parentElement.querySelector(
-                      ".invalid-feedback"
-                    ).innerHTML = errors.passwordInvalid;
-                    passwordEl.classList.add("is-invalid");
-                    passwordEl.parentElement.scrollIntoView();
-                    passwordEl.focus();
-                    return;
-                  }
-
-                  if (!emailEl.value.trim().length) {
-                    emailEl.parentElement.querySelector(
-                      ".invalid-feedback"
-                    ).innerHTML = errors.emailRequired;
-                    emailEl.classList.add("is-invalid");
-                    emailEl.parentElement.scrollIntoView();
-                    emailEl.focus();
-                    return;
-                  }
-
-                  if (!firstNameEl.value.trim().length) {
-                    firstNameEl.parentElement.querySelector(
-                      ".invalid-feedback"
-                    ).innerHTML = errors.firstNameRequired;
-                    firstNameEl.classList.add("is-invalid");
-                    firstNameEl.parentElement.scrollIntoView();
-                    firstNameEl.focus();
-                    return;
-                  }
-
-                  if (!lastNameEl.value.trim().length) {
-                    lastNameEl.parentElement.querySelector(
-                      ".invalid-feedback"
-                    ).innerHTML = errors.lastNameRequired;
-                    lastNameEl.classList.add("is-invalid");
-                    lastNameEl.parentElement.scrollIntoView();
-                    lastNameEl.focus();
-                    return;
-                  }
-
-                  if (!maleEl.checked && !femaleEl.checked) {
-                    document
-                      .querySelector("#gender_male")
-                      .classList.add("is-invalid");
-                    document
-                      .querySelector("#gender_female")
-                      .classList.add("is-invalid");
-                    genderErrorEl.classList.remove("d-none");
-                    genderErrorEl.parentElement.scrollIntoView();
-                    return;
-                  }
-                });
-              </script>
             </main>
           </div>
         </div>
@@ -435,6 +313,159 @@
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
+
+    <script>
+      const registrationForm = document.querySelector("#registrationForm");
+      const errors = {
+        usernameRequired: "<%- data.errorUsernameRequired %>",
+        usernameTaken: "<%- data.errorUsernameTaken %>",
+        passwordRequired: "<%- data.errorPasswordRequired %>",
+        passwordInvalid: "<%- data.errorPasswordInvalid %>",
+        emailRequired: "<%- data.errorEmailRequired %>",
+        emailRegistered: "<%- data.errorEmailRegistered %>",
+        emailInvalid: "<%- data.errorEmailInvalid %>",
+        firstNameRequired: "<%- data.errorFirstNameRequired %>",
+        lastNameRequired: "<%- data.errorLastNameRequired %>",
+        genderRequired: "<%- data.errorGenderRequired %>",
+      };
+
+      const genderErrorEl = document.querySelector("#gender_invalid_feedback");
+      const maleEl = document.querySelector("#gender_male");
+      const femaleEl = document.querySelector("#gender_female");
+
+      maleEl.addEventListener("change", (evt) => {
+        genderErrorEl.classList.add("d-none");
+        maleEl.classList.remove("is-invalid");
+        femaleEl.classList.remove("is-invalid");
+      });
+
+      femaleEl.addEventListener("change", (evt) => {
+        genderErrorEl.classList.add("d-none");
+        maleEl.classList.remove("is-invalid");
+        femaleEl.classList.remove("is-invalid");
+      });
+
+      registrationForm.addEventListener("submit", (event) => {
+        genderErrorEl.classList.add("d-none");
+        event.preventDefault();
+
+        document
+          .querySelectorAll(".is-invalid")
+          .forEach((item) => item.classList.remove("is-invalid"));
+
+        const usernameEl = document.querySelector("#username");
+        const passwordEl = document.querySelector("#password");
+        const emailEl = document.querySelector("#email");
+        const firstNameEl = document.querySelector("#firstname");
+        const lastNameEl = document.querySelector("#lastname");
+        const mailingListEl = document.querySelector("#mailinglist");
+
+        if (!usernameEl.value.trim().length) {
+          usernameEl.parentElement.querySelector(
+            ".invalid-feedback"
+          ).innerHTML = errors.usernameRequired;
+          usernameEl.classList.add("is-invalid");
+          usernameEl.parentElement.scrollIntoView();
+          usernameEl.focus();
+          return;
+        }
+
+        if (!passwordEl.value.trim().length) {
+          passwordEl.parentElement.querySelector(
+            ".invalid-feedback"
+          ).innerHTML = errors.passwordRequired;
+          passwordEl.classList.add("is-invalid");
+          passwordEl.parentElement.scrollIntoView();
+          passwordEl.focus();
+          return;
+        }
+
+        if (passwordEl.value.trim().length < 8) {
+          passwordEl.parentElement.querySelector(
+            ".invalid-feedback"
+          ).innerHTML = errors.passwordInvalid;
+          passwordEl.classList.add("is-invalid");
+          passwordEl.parentElement.scrollIntoView();
+          passwordEl.focus();
+          return;
+        }
+
+        if (!emailEl.value.trim().length) {
+          emailEl.parentElement.querySelector(".invalid-feedback").innerHTML =
+            errors.emailRequired;
+          emailEl.classList.add("is-invalid");
+          emailEl.parentElement.scrollIntoView();
+          emailEl.focus();
+          return;
+        }
+
+        if (!firstNameEl.value.trim().length) {
+          firstNameEl.parentElement.querySelector(
+            ".invalid-feedback"
+          ).innerHTML = errors.firstNameRequired;
+          firstNameEl.classList.add("is-invalid");
+          firstNameEl.parentElement.scrollIntoView();
+          firstNameEl.focus();
+          return;
+        }
+
+        if (!lastNameEl.value.trim().length) {
+          lastNameEl.parentElement.querySelector(
+            ".invalid-feedback"
+          ).innerHTML = errors.lastNameRequired;
+          lastNameEl.classList.add("is-invalid");
+          lastNameEl.parentElement.scrollIntoView();
+          lastNameEl.focus();
+          return;
+        }
+
+        if (!maleEl.checked && !femaleEl.checked) {
+          document.querySelector("#gender_male").classList.add("is-invalid");
+          document.querySelector("#gender_female").classList.add("is-invalid");
+          genderErrorEl.classList.remove("d-none");
+          genderErrorEl.parentElement.scrollIntoView();
+          return;
+        }
+
+        console.log("Submitting...");
+
+        const formObj = {
+          username: usernameEl.value.trim(),
+          password: passwordEl.value.trim(),
+          email: emailEl.value.trim(),
+          firstName: firstNameEl.value.trim(),
+          lastName: lastNameEl.value.trim(),
+          mailingList: mailingListEl.checked,
+        };
+
+        // include gender and lang in the payload
+        const gender = maleEl.checked
+          ? "male"
+          : femaleEl.checked
+          ? "female"
+          : "";
+        const lang = document.querySelector("#lang").value || "";
+
+        formObj.gender = gender;
+        formObj.lang = lang;
+
+        const endpoint = "/api/register";
+        fetch(endpoint, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formObj),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log("Result:", data);
+          })
+          .catch((err) => {
+            console.error("Register request failed:", err);
+          });
+      });
+    </script>
 
     <script>
       if ("serviceWorker" in navigator) {
