@@ -18,7 +18,7 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.use(bodyParser.json({ type: "application/json" }));
 
-// Mount the PayPal webhook route
+// PayPal route
 const paypalWebhook = require("./paypalWebhook");
 app.post("/paypal-webhook", paypalWebhook);
 
