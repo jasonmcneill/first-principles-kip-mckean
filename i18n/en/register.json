@@ -1,0 +1,28 @@
+{
+  "metadata": {
+    "lang": "en"
+  },
+  "appTitle": "First Principles",
+  "pageTitle": "Register",
+  "username": "Username:",
+  "errorUsernameRequired": "Username is required",
+  "errorUsernameTaken": "Username is already taken",
+  "password": "Password:",
+  "passwordRequirement": "Must be at least 8 characters long",
+  "errorPasswordRequired": "Password is required",
+  "errorPasswordInvalid": "Password is invalid. Please try again.",
+  "email": "E-mail Address:",
+  "errorEmailRequired": "E-mail address is required",
+  "errorEmailRegistered": "E-mail is already registered",
+  "errorEmailInvalid": "E-mail format is invalid. Please check it for accuracy.",
+  "firstName": "First Name:",
+  "errorFirstNameRequired": "First name is required",
+  "lastName": "Last Name:",
+  "errorLastNameRequired": "Last name is required",
+  "gender": "Gender:",
+  "male": "Male",
+  "female": "Female",
+  "errorGenderRequired": "Gender is required",
+  "mailingList": "Subscribe to our mailing list",
+  "registerButton": "Register"
+}
