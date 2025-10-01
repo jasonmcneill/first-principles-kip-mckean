@@ -7,20 +7,21 @@ const fs = require("fs");
 const PORT = process.env.PORT || 3000;
 const i18nRoutes = require("./routes/i18n");
 
-// Load .env only for local/dev environments
-const env = process.env.NODE_ENV || "local";
-if (env === "development") {
+// Load .env only dev environments
+if (process.env.NODE_ENV === "development") {
   require("dotenv").config();
 }
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // Set up EJS and the views directory
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
-app.use(bodyParser.json({ type: "application/json" }));
 
-// PayPal route
-const paypalWebhook = require("./paypalWebhook");
-app.post("/paypal-webhook", paypalWebhook);
+// API
+const routes_api = require("./routes/api/_index");
+app.use("/api", routes_api);
 
 // Set up a public directory
 app.use(
