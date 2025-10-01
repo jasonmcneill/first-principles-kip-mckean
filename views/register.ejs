@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="<%- data.metadata.lang %>">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="google" content="notranslate" />
+    <meta name="view-transition" content="same-origin" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <title><%- data.appTitle %></title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="shortcut icon"
+      href="/img/<%- data.metadata.lang %>/launch/favicon.ico"
+      type="image/x-icon"
+    />
+    <link
+      rel="icon"
+      href="/img/<%- data.metadata.lang %>/launch/favicon.ico"
+      type="image/x-icon"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="/img/<%- data.metadata.lang %>/launch/180.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/img/<%- data.metadata.lang %>/launch/180.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="167x167"
+      href="/img/<%- data.metadata.lang %>/launch/167.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="/img/<%- data.metadata.lang %>/launch/152.png"
+    />
+    <link rel="manifest" href="/manifests/<%- data.metadata.lang %>.json" />
+    <style type="text/css">
+      form label {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="master-container">
+      <div class="container-fluid px-0">
+        <div class="row">
+          <div class="col-12 text-center">
+            <div
+              class="d-flex justify-content-between align-items-center bg-dark"
+            >
+              <a
+                href="./dashboard"
+                class="link-light text-decoration-none float-start px-3"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  class="bi bi-house-fill"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z"
+                  />
+                  <path
+                    d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293z"
+                  />
+                </svg>
+              </a>
+              <h1
+                class="pageHeadline my-0 px-3 py-2 bg-dark text-light d-inline-block"
+              >
+                <%- data.appTitle %>
+              </h1>
+              <span class="invisible float-end px-3">
+                <div
+                  class="d-inline-block"
+                  style="width: 24px; height: 24px"
+                ></div>
+              </span>
+            </div>
+            <div class="text-center px-2 py-2 bg-secondary text-light">
+              <h2 class="pageHeadline my-0 balance"><%- data.pageTitle %></h2>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid">
+        <div class="row bg-light">
+          <div class="col-12 col-md-6 offset-md-3">
+            <main>
+              <form id="registrationForm" class="my-4" novalidate>
+                <input
+                  type="hidden"
+                  name="lang"
+                  id="lang"
+                  value="<%- data.metadata.lang %>"
+                />
+                <!-- Username -->
+                <div class="mb-4">
+                  <label for="username" class="form-label"
+                    ><%- data.username %></label
+                  >
+                  <input
+                    type="text"
+                    maxlength="255"
+                    class="form-control shadow"
+                    id="username"
+                    name="username"
+                    required
+                  />
+                  <div class="username invalid-feedback">
+                    <%- data.errorUsernameRequired %>
+                  </div>
+                </div>
+
+                <!-- Password -->
+                <div class="mb-4">
+                  <label for="password" class="form-label"
+                    ><%- data.password %></label
+                  >
+                  <input
+                    type="password"
+                    maxlength="255"
+                    class="form-control shadow"
+                    id="password"
+                    name="password"
+                    required
+                    autocomplete="new-password"
+                  />
+                  <div class="form-text"><%- data.passwordRequirement %></div>
+                  <div class="password invalid-feedback">
+                    <%- data.errorPasswordRequired %>
+                  </div>
+                </div>
+
+                <!-- Email -->
+                <div class="mb-4">
+                  <label for="email" class="form-label"
+                    ><%- data.email %></label
+                  >
+                  <input
+                    type="email"
+                    maxlength="255"
+                    class="form-control shadow"
+                    id="email"
+                    name="email"
+                    required
+                  />
+                  <div class="email invalid-feedback">
+                    <%- data.errorEmailRequired %>
+                  </div>
+                </div>
+
+                <!-- First Name -->
+                <div class="mb-4">
+                  <label for="firstname" class="form-label">
+                    <%- data.firstName %>
+                  </label>
+                  <input
+                    type="text"
+                    maxlength="255"
+                    class="form-control shadow"
+                    id="firstname"
+                    name="firstname"
+                    required
+                  />
+                  <div class="firstname invalid-feedback">
+                    <%- data.errorFirstNameRequired %>
+                  </div>
+                </div>
+
+                <!-- Last Name -->
+                <div class="mb-4">
+                  <label for="lastname" class="form-label">
+                    <%- data.lastName %>
+                  </label>
+                  <input
+                    type="text"
+                    maxlength="255"
+                    class="form-control shadow"
+                    id="lastname"
+                    name="lastname"
+                    required
+                  />
+                  <div class="lastname invalid-feedback">
+                    <%- data.errorLastNameRequired %>
+                  </div>
+                </div>
+
+                <!-- Gender -->
+                <div class="mb-4">
+                  <div class="d-block mb-1">
+                    <strong><%- data.gender %></strong>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input shadow"
+                      type="radio"
+                      name="gender"
+                      id="gender_male"
+                      value="male"
+                      required
+                    />
+                    <label class="form-check-label" for="gender_male">
+                      <%- data.male %>
+                    </label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input shadow"
+                      type="radio"
+                      name="gender"
+                      id="gender_female"
+                      value="female"
+                      required
+                    />
+                    <label class="form-check-label" for="gender_female">
+                      <%- data.female %>
+                    </label>
+                  </div>
+                  <div class="text-danger d-none" id="gender_invalid_feedback">
+                    <%- data.errorGenderRequired %>
+                  </div>
+                </div>
+
+                <!-- Mailing List -->
+                <div
+                  class="my-5 border border-dark pt-3 pb-2 px-3 shadow"
+                  style="background-color: var(--bs-gray-200)"
+                >
+                  <div class="form-check form-check-inline">
+                    <label for="mailinglist" class="form-label d-block">
+                      <input
+                        class="form-check-input border"
+                        type="checkbox"
+                        name="mailinglist"
+                        id="mailinglist"
+                        value="1"
+                        checked
+                      />
+                      <%- data.mailingList %>
+                    </label>
+                  </div>
+                </div>
+
+                <!-- Submit -->
+                <button type="submit" class="btn btn-primary">
+                  <%- data.registerButton %>
+                </button>
+              </form>
+
+              <script>
+                const registrationForm =
+                  document.querySelector("#registrationForm");
+                const errors = {
+                  usernameRequired: "<%- data.errorUsernameRequired %>",
+                  usernameTaken: "<%- data.errorUsernameTaken %>",
+                  passwordRequired: "<%- data.errorPasswordRequired %>",
+                  passwordInvalid: "<%- data.errorPasswordInvalid %>",
+                  emailRequired: "<%- data.errorEmailRequired %>",
+                  emailRegistered: "<%- data.errorEmailRegistered %>",
+                  emailInvalid: "<%- data.errorEmailInvalid %>",
+                  firstNameRequired: "<%- data.errorFirstNameRequired %>",
+                  lastNameRequired: "<%- data.errorLastNameRequired %>",
+                  genderRequired: "<%- data.errorGenderRequired %>",
+                };
+
+                const genderErrorEl = document.querySelector(
+                  "#gender_invalid_feedback"
+                );
+                const maleEl = document.querySelector("#gender_male");
+                const femaleEl = document.querySelector("#gender_female");
+
+                maleEl.addEventListener("change", (evt) => {
+                  genderErrorEl.classList.add("d-none");
+                  maleEl.classList.remove("is-invalid");
+                  femaleEl.classList.remove("is-invalid");
+                });
+
+                femaleEl.addEventListener("change", (evt) => {
+                  genderErrorEl.classList.add("d-none");
+                  maleEl.classList.remove("is-invalid");
+                  femaleEl.classList.remove("is-invalid");
+                });
+
+                registrationForm.addEventListener("submit", (event) => {
+                  genderErrorEl.classList.add("d-none");
+                  event.preventDefault();
+
+                  document
+                    .querySelectorAll(".is-invalid")
+                    .forEach((item) => item.classList.remove("is-invalid"));
+
+                  const usernameEl = document.querySelector("#username");
+                  const passwordEl = document.querySelector("#password");
+                  const emailEl = document.querySelector("#email");
+                  const firstNameEl = document.querySelector("#firstname");
+                  const lastNameEl = document.querySelector("#lastname");
+
+                  if (!usernameEl.value.trim().length) {
+                    usernameEl.parentElement.querySelector(
+                      ".invalid-feedback"
+                    ).innerHTML = errors.usernameRequired;
+                    usernameEl.classList.add("is-invalid");
+                    usernameEl.parentElement.scrollIntoView();
+                    usernameEl.focus();
+                    return;
+                  }
+
+                  if (!passwordEl.value.trim().length) {
+                    passwordEl.parentElement.querySelector(
+                      ".invalid-feedback"
+                    ).innerHTML = errors.passwordRequired;
+                    passwordEl.classList.add("is-invalid");
+                    passwordEl.parentElement.scrollIntoView();
+                    passwordEl.focus();
+                    return;
+                  }
+
+                  if (passwordEl.value.trim().length < 8) {
+                    passwordEl.parentElement.querySelector(
+                      ".invalid-feedback"
+                    ).innerHTML = errors.passwordInvalid;
+                    passwordEl.classList.add("is-invalid");
+                    passwordEl.parentElement.scrollIntoView();
+                    passwordEl.focus();
+                    return;
+                  }
+
+                  if (!emailEl.value.trim().length) {
+                    emailEl.parentElement.querySelector(
+                      ".invalid-feedback"
+                    ).innerHTML = errors.emailRequired;
+                    emailEl.classList.add("is-invalid");
+                    emailEl.parentElement.scrollIntoView();
+                    emailEl.focus();
+                    return;
+                  }
+
+                  if (!firstNameEl.value.trim().length) {
+                    firstNameEl.parentElement.querySelector(
+                      ".invalid-feedback"
+                    ).innerHTML = errors.firstNameRequired;
+                    firstNameEl.classList.add("is-invalid");
+                    firstNameEl.parentElement.scrollIntoView();
+                    firstNameEl.focus();
+                    return;
+                  }
+
+                  if (!lastNameEl.value.trim().length) {
+                    lastNameEl.parentElement.querySelector(
+                      ".invalid-feedback"
+                    ).innerHTML = errors.lastNameRequired;
+                    lastNameEl.classList.add("is-invalid");
+                    lastNameEl.parentElement.scrollIntoView();
+                    lastNameEl.focus();
+                    return;
+                  }
+
+                  if (!maleEl.checked && !femaleEl.checked) {
+                    document
+                      .querySelector("#gender_male")
+                      .classList.add("is-invalid");
+                    document
+                      .querySelector("#gender_female")
+                      .classList.add("is-invalid");
+                    genderErrorEl.classList.remove("d-none");
+                    genderErrorEl.parentElement.scrollIntoView();
+                    return;
+                  }
+                });
+              </script>
+            </main>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid px-0">
+        <div class="row">
+          <div class="col-12">
+            <footer class="mt-2 px-4 py-4 bg-dark text-light text-center">
+              &copy; 1980-<%= new Date().getFullYear() %> Kip McKean
+            </footer>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="modal"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="modalHeader"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="modalHeader">Test</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="/js/global.js"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          try {
+            const seg = (location.pathname.split("/")[1] || "").toLowerCase();
+            if (/^[a-z]{2}(-[a-z]{2})?$/.test(seg)) {
+              navigator.serviceWorker
+                .register(`/sw-${seg}.js`)
+                .catch((err) => console.error("SW registration failed:", err));
+            }
+          } catch (err) {
+            console.error("SW registration failed:", err);
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
