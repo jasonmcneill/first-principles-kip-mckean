@@ -1,60 +1,29 @@
-// db.js
-const mysql = require("mysql2/promise");
-
-// Create a pool for performance
+const mysql = require("mysql2");
+const util = require("util");
 const pool = mysql.createPool({
+  connectionLimit: 10,
+  database: process.env.DB_NAME,
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
   password: process.env.DB_PASS,
-  database: process.env.DB_NAME,
-  waitForConnections: true,
-  connectionLimit: 10,
-  queueLimit: 0,
 });
 
-// Mark an order as paid
-async function markOrderPaid({ orderId, payerEmail, amount, currency }) {
-  const sql = `
-    INSERT INTO orders (order_id, payer_email, amount, currency, status)
-    VALUES (?, ?, ?, ?, 'COMPLETED')
-    ON DUPLICATE KEY UPDATE
-      payer_email = VALUES(payer_email),
-      amount = VALUES(amount),
-      currency = VALUES(currency),
-      status = 'COMPLETED'
-  `;
-  await pool.query(sql, [orderId, payerEmail, amount, currency]);
-  console.log(`✅ Order ${orderId} marked as PAID`);
-}
+pool.getConnection((err, connection) => {
+  if (err) {
+    if (err.code === "PROTOCOL_CONNECTION_LOST") {
+      console.error("Database connection was closed.");
+    }
+    if (err.code === "ER_CON_COUNT_ERROR") {
+      console.error("Database has too many connections.");
+    }
+    if (err.code === "ECONNREFUSED") {
+      console.error("Database connection was refused.");
+    }
+  }
+  if (connection) connection.release();
+  return;
+});
 
-// Mark an order as failed
-async function markOrderFailed({ orderId, reason }) {
-  const sql = `
-    INSERT INTO orders (order_id, status, failure_reason)
-    VALUES (?, 'FAILED', ?)
-    ON DUPLICATE KEY UPDATE
-      status = 'FAILED',
-      failure_reason = VALUES(failure_reason)
-  `;
-  await pool.query(sql, [orderId, reason]);
-  console.log(`❌ Order ${orderId} marked as FAILED`);
-}
+pool.query = util.promisify(pool.query);
 
-module.exports = {
-  markOrderPaid,
-  markOrderFailed,
-};
-
-/*
-CREATE TABLE orders (
-  id INT AUTO_INCREMENT PRIMARY KEY,
-  order_id VARCHAR(64) NOT NULL UNIQUE,  -- PayPal's capture/order ID
-  payer_email VARCHAR(255) DEFAULT NULL, -- Buyer’s email from PayPal
-  amount DECIMAL(10,2) DEFAULT NULL,     -- Payment amount
-  currency CHAR(3) DEFAULT NULL,         -- ISO currency code (e.g., USD, EUR)
-  status ENUM('PENDING','COMPLETED','FAILED','REFUNDED') NOT NULL DEFAULT 'PENDING',
-  failure_reason VARCHAR(255) DEFAULT NULL,
-  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-*/
+module.exports = pool;
