@@ -1,5 +1,6 @@
-// Load environment variables early
-require("dotenv").config();
+try {
+  require("dotenv").config();
+} catch (_) {}
 
 const express = require("express");
 const bodyParser = require("body-parser");
