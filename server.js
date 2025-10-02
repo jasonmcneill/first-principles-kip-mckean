@@ -1,3 +1,6 @@
+// Load environment variables early
+require("dotenv").config();
+
 const express = require("express");
 const bodyParser = require("body-parser");
 const axios = require("axios");
@@ -6,11 +9,6 @@ const path = require("path");
 const fs = require("fs");
 const PORT = process.env.PORT || 3000;
 const i18nRoutes = require("./routes/i18n");
-
-// Load .env only dev environments
-if (process.env.NODE_ENV === "development") {
-  require("dotenv").config();
-}
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

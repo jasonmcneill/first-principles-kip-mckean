@@ -1,5 +1,4 @@
 const mysql = require("mysql2");
-const util = require("util");
 const pool = mysql.createPool({
   connectionLimit: 10,
   database: process.env.DB_NAME,
@@ -23,7 +22,5 @@ pool.getConnection((err, connection) => {
   if (connection) connection.release();
   return;
 });
-
-pool.query = util.promisify(pool.query);
 
 module.exports = pool;
