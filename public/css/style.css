@@ -97,6 +97,10 @@ h6[data-scripture] {
   font-variant: small-caps;
 }
 
+tbody.numerals td {
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
 .text-normal-numeric {
   font-variant-numeric: normal !important;
 }
