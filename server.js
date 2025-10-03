@@ -1,10 +1,13 @@
 // Load .env for non-production environments (and when NODE_ENV is unset)
 // This ensures local development picks up credentials from .env
-if (process.env.NODE_ENV !== "production") {
+if (
+  process.env.NODE_ENV !== "production" &&
+  process.env.NODE_ENV !== "staging"
+) {
   try {
     require("dotenv").config();
   } catch (_) {
-    // dotenv is optional in production; ignore if unavailable
+    // dotenv is optional in production or staging; ignore if unavailable
   }
 }
 
