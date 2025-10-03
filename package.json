@@ -10,7 +10,8 @@
     "dev": "nodemon server.js",
     "ssh:staging": "ssh root@172.236.250.102 -i ~/.ssh/usd21/id_rsa",
     "ssh:prod": "ssh root@172.233.143.78 -i ~/.ssh/usd21/id_rsa",
-    "deploy:staging": "npm run ssh:staging ./pull-fp.sh"
+    "deploy:staging": "npm run ssh:staging ./pull-fp.sh",
+    "deploy:prod": "npm run ssh:prod ./pull-fp.sh"
   },
   "keywords": [],
   "author": "",
