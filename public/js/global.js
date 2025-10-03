@@ -1,3 +1,15 @@
+let phrases;
+
+function getPhrase(key) {
+  if (!phrases) return;
+
+  const phrase = phrases[key];
+
+  if (!phrase) return;
+
+  return phrase;
+}
+
 function hideAudioIfOpusNotSupported() {
   const testAudio = document.createElement("audio");
   const canPlayOpus =
@@ -31,6 +43,14 @@ function listenForScriptureClicks() {
       }
     });
   });
+}
+
+function loadContent() {
+  const contentEl = document.querySelector("#content");
+  if (!contentEl) return;
+
+  const content = JSON.parse(contentEl.innerHTML);
+  phrases = content;
 }
 
 function showScripture(slug) {
@@ -155,6 +175,7 @@ function addListeners() {
 
 function init() {
   addListeners();
+  loadContent();
   hideAudioIfOpusNotSupported();
   hideScriptureHash();
 }

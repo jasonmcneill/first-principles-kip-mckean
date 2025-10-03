@@ -1,0 +1,19 @@
+{
+  "metadata": {
+    "lang": "en"
+  },
+  "appTitle": "First Principles",
+  "pageTitle": "Log In",
+  "username": "Username:",
+  "usernameRequiredError": "Username is required",
+  "password": "Password:",
+  "passwordRequiredError": "Password is required",
+  "logIn": "Log In",
+  "forgotPassword": "Forgot password?",
+  "noAccount": "No account?",
+  "registerLilnk": "Register",
+  "alertHeadlineInvalid": "Invalid Login",
+  "alertHeadlineUnable": "Unable to Log In",
+  "alertErrorInvalid": "Your username and/or password do not match our records. Please try again.",
+  "alertErrorGlitch": "There was a technical glitch preventing you from logging in. Please try again."
+}

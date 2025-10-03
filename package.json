@@ -7,7 +7,7 @@
     "build": "node ./build-sw.js",
     "clean": "node ./scripts/clean.js",
     "test:sw-slugs": "node ./scripts/test-sw-slugs.js",
-    "dev": "kill-port 3000 && nodemon server.js",
+    "dev": "nodemon server.js",
     "ssh:staging": "ssh root@172.236.250.102 -i ~/.ssh/usd21/id_rsa",
     "deploy:staging": "npm run ssh:staging ./pull-fp.sh"
   },

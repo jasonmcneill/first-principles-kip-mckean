@@ -12,4 +12,7 @@ const authenticateToken = utils.authenticateToken;
 const register = require("./register");
 router.post("/register", register.POST);
 
+const login = require("./login");
+router.post("/login", login.POST);
+
 module.exports = router;

@@ -1,6 +1,12 @@
-try {
-  require("dotenv").config();
-} catch (_) {}
+// Load .env for non-production environments (and when NODE_ENV is unset)
+// This ensures local development picks up credentials from .env
+if (process.env.NODE_ENV !== "production") {
+  try {
+    require("dotenv").config();
+  } catch (_) {
+    // dotenv is optional in production; ignore if unavailable
+  }
+}
 
 const express = require("express");
 const bodyParser = require("body-parser");
