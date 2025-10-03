@@ -76,7 +76,9 @@ if (workbox) {
   });
   // Clean up caches created by older service workers when switching languages
   if (workbox.precaching && workbox.precaching.cleanupOutdatedCaches) {
-    try { workbox.precaching.cleanupOutdatedCaches(); } catch (_) {}
+    try {
+      workbox.precaching.cleanupOutdatedCaches();
+    } catch (_) {}
   }
 
   // Prefetch helper: fetch full .webm under /audio/ and cache
@@ -274,11 +276,10 @@ if (workbox) {
     },
   };
 
-  // Runtime caching for audio files (.webm) - cache on first play
+  // Runtime caching for audio files (e.g. .webm, .mp4, .mp3) - cache on first play
   workbox.routing.registerRoute(
     ({ request, url }) =>
-      url.pathname.startsWith("/audio/") &&
-      (request.destination === "audio" || url.pathname.endsWith(".webm")),
+      url.pathname.startsWith("/audio/") && request.destination === "audio",
     new workbox.strategies.CacheFirst({
       cacheName: "audio-cache",
       plugins: [
