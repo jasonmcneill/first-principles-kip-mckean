@@ -1,0 +1,12 @@
+{
+  "metadata": {
+    "lang": "en",
+    "hasAudio": false
+  },
+  "appTitle": "First Principles",
+  "pageTitle": "Confirm My Account",
+  "p1": "Please check your e-mail. We have sent you a 6-digit confirmation code. You must input that code below in order to confirm your account.",
+  "buttonLabel": "Confirmation Code:",
+  "confirmButton": "Confirm",
+  "errRequired": "Confirmation code is required"
+}

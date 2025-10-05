@@ -15,4 +15,10 @@ router.post("/register", register.POST);
 const login = require("./login");
 router.post("/login", login.POST);
 
+const confirm = require("./confirm");
+router.post("/confirm", authenticateToken, confirm.POST);
+
+const refreshToken = require("./refresh-token");
+router.post("/refresh-token", refreshToken.POST);
+
 module.exports = router;
