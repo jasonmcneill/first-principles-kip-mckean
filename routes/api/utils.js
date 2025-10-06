@@ -20,3 +20,46 @@ exports.authenticateToken = (req, res, next) => {
     }
   );
 };
+
+exports.sendMail = (
+  toEmail: "",
+  toName: "",
+  subject: "",
+  htmlBody: "",
+  textBody: ""
+) => {
+  return new Promise((resolve, reject) => {
+    const Mailjet = require("node-mailjet");
+    const mailjet = Mailjet.apiConnect(
+      process.env.MAILJET_API_KEY,
+      process.env.MAILJET_SECRET_KEY
+    );
+
+    const request = mailjet.post("send", { version: "v3.1" }).request({
+      Messages: [
+        {
+          From: {
+            Email: process.env.fromEmail,
+            Name: process.env.fromName,
+          },
+          To: [
+            {
+              Email: toEmail,
+              Name: toName,
+            },
+          ],
+          Subject: subject,
+          TextPart: textBody,
+          HTMLPart: htmlBody,
+        },
+      ],
+    });
+    request
+      .then((result) => {
+        return resolve(result);
+      })
+      .catch((err) => {
+        return resolve(err);
+      });
+  });
+};

@@ -27,7 +27,8 @@
     "firstprinciples-kip-mckean": "file:",
     "i18n": "^0.15.1",
     "jsonwebtoken": "^9.0.2",
-    "mysql2": "^3.15.1"
+    "mysql2": "^3.15.1",
+    "node-mailjet": "^6.0.9"
   },
   "devDependencies": {
     "dotenv": "^17.2.2",
