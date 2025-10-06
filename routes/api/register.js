@@ -153,8 +153,12 @@ exports.POST = async (req, res) => {
 
           const userid = insertResult.insertId;
           const otp = genOTP.generateOTP(6);
+          const expiry = new Date(Date.now() + 20 * 60 * 1000)
+            .toISOString()
+            .slice(0, 19)
+            .replace("T", " ");
 
-          // TODO:  Generate an email with i18n that supports injecting the above 2 variables
+          // TODO:  Generate an email with i18n that supports injecting variables
 
           return res.status(200).send({
             msg: "user registered",
