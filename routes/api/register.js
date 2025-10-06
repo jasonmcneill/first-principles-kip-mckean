@@ -1,6 +1,7 @@
 exports.POST = async (req, res) => {
   const db = require("../../db");
   const validator = require("email-validator");
+  const genOTP = require("generate-one-time-password");
   const bcrypt = require("bcrypt");
   const username = req.body.username || "";
   const password = req.body.password || "";
@@ -149,6 +150,11 @@ exports.POST = async (req, res) => {
               msgType: "error",
             });
           }
+
+          const userid = insertResult.insertId;
+          const otp = genOTP.generateOTP(6);
+
+          // TODO:  Generate an email with i18n that supports injecting the above 2 variables
 
           return res.status(200).send({
             msg: "user registered",
