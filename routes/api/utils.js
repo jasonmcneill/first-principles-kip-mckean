@@ -26,7 +26,9 @@ exports.sendMail = (
   toName: "",
   subject: "",
   htmlBody: "",
-  textBody: ""
+  textBody: "",
+  fromEmailAddress: "",
+  fromEmailName: ""
 ) => {
   return new Promise((resolve, reject) => {
     const Mailjet = require("node-mailjet");
@@ -35,12 +37,22 @@ exports.sendMail = (
       process.env.MAILJET_SECRET_KEY
     );
 
+    const fromEmail =
+      fromEmailAddress && fromEmailAddress.length
+        ? fromEmailAddress
+        : process.env.EMAIL_FROM_ADDRESS;
+
+    const fromName =
+      fromEmailName && fromEmailName.length
+        ? fromEmailName
+        : process.env.EMAIL_FROM_NAME;
+
     const request = mailjet.post("send", { version: "v3.1" }).request({
       Messages: [
         {
           From: {
-            Email: process.env.fromEmail,
-            Name: process.env.fromName,
+            Email: fromEmail,
+            Name: fromName,
           },
           To: [
             {
