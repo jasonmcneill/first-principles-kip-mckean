@@ -22,13 +22,13 @@ exports.authenticateToken = (req, res, next) => {
 };
 
 exports.sendMail = (
-  toEmail: "",
-  toName: "",
-  subject: "",
-  htmlBody: "",
-  textBody: "",
-  fromEmailAddress: "",
-  fromEmailName: ""
+  toEmail = "",
+  toName = "",
+  subject = "",
+  htmlBody = "",
+  textBody = "",
+  fromEmailAddress = "",
+  fromEmailName = ""
 ) => {
   return new Promise((resolve, reject) => {
     const Mailjet = require("node-mailjet");
