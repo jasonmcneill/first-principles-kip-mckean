@@ -1,4 +1,4 @@
-exports.POST = async (req, res) => {
+exports.POST = (req, res) => {
   const db = require("../../db");
   const validator = require("email-validator");
   const genOTP = require("generate-one-time-password");
@@ -15,6 +15,8 @@ exports.POST = async (req, res) => {
   const emailP1 = req.body.emailP1 || "";
   const emailP2 = req.body.emailP2 || "";
   const emailP3 = req.body.emailP3 || "";
+  const emailFooter1 = req.body.emailFooter1 || "";
+  const emailFooter2 = req.body.emailFooter2 || "";
   const emailTextTemplate = req.body.emailTextTemplate || "";
   const emailHTMLTemplate = req.body.emailHTMLTemplate || "";
 
@@ -148,7 +150,7 @@ exports.POST = async (req, res) => {
           mailingList,
           lang,
         ],
-        (insertErr, insertResult) => {
+        async (insertErr, insertResult) => {
           if (insertErr) {
             console.log(insertErr);
             return res.status(500).send({
@@ -164,8 +166,31 @@ exports.POST = async (req, res) => {
             .slice(0, 19)
             .replace("T", " ");
 
-          // TODO:  Replace placeholders in text email
-          // TODO:  Replace placeholders in HTML email
+          // TODO:  Insert the userid, OTP and expiry into the "otp" table of the DB
+
+          let htmlBody = emailHTMLTemplate.replaceAll("{{ emailP1 }}", emailP1);
+          htmlBody = htmlBody.replaceAll("{{ OTP }}", otp);
+          htmlBody = htmlBody.replaceAll("{{ emailP2 }}", emailP2);
+          htmlBody = htmlBody.replaceAll("{{ emailP3 }}", emailP3);
+          htmlBody = htmlBody.replaceAll("{{ emailFooter1 }}", emailFooter1);
+          htmlBody = htmlBody.replaceAll("{{ emailFooter2 }}", emailFooter2);
+
+          let textBody = emailTextTemplate.replaceAll("{{ emailP1 }}", emailP1);
+          textBody = textBody.replaceAll("{{ OTP }}", otp);
+          textBody = textBody.replaceAll("{{ emailP2 }}", emailP2);
+          textBody = textBody.replaceAll("{{ emailP3 }}", emailP3);
+          textBody = textBody.replaceAll("{{ emailFooter1 }}", emailFooter1);
+          textBody = textBody.replaceAll("{{ emailFooter2 }}", emailFooter2);
+
+          const utils = require("./utils");
+
+          await utils.sendMail(
+            email,
+            `${firstName} ${lastName}`,
+            emailSubject,
+            htmlBody,
+            textBody
+          );
 
           return res.status(200).send({
             msg: "user registered",

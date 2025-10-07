@@ -128,6 +128,8 @@ function validate(phrases) {
     emailP1: getPhrase("emailP1"),
     emailP2: getPhrase("emailP2"),
     emailP3: getPhrase("emailP3"),
+    emailFooter1: getPhrase("emailFooter1"),
+    emailFooter2: getPhrase("emailFooter2"),
   };
 }
 
