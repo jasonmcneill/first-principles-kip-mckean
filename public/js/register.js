@@ -151,7 +151,9 @@ async function onSubmit(evt) {
   })
     .then((res) => res.json())
     .then((data) => {
-      console.log("Result:", data);
+      if (data.msg === "user registered") {
+        window.location.href = `./confirm?userid=${userid}`;
+      }
     })
     .catch((err) => {
       console.error("Register request failed:", err);

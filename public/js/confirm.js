@@ -3,7 +3,8 @@ async function onSubmit(evt) {
   const codeEl = document.querySelector("#confirmationCode");
   const errMsgEl = document.querySelector("#errMsg");
   const code = codeEl.value.trim();
-  const accessToken = await getAccessToken();
+  const params = new URL(url).searchParams;
+  const userid = params.get("userid");
 
   document
     .querySelectorAll(".is-invalid")
@@ -14,19 +15,39 @@ async function onSubmit(evt) {
     errMsgEl.innerHTML = getPhrase("errRequired");
   }
 
-  fetch("/confirm", {
+  if (isNaN(userid)) {
+    console.error("userid must be numeric");
+    // TODO: show error in UI
+    return;
+  }
+
+  fetch("/api/confirm", {
     method: "POST",
     body: JSON.stringify({
+      userid: userid,
       code: code,
     }),
     headers: new Headers({
       "Content-Type": "application/json",
     }),
-    authorization: `Bearer ${accessToken}`,
   })
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
+      switch (data.msg) {
+        case "code is required":
+          break;
+        case "code must be numeric":
+          break;
+        case "no match found":
+          break;
+        case "code expired":
+          break;
+        case "code verified":
+          // TODO: Show a success message, then let the user proceed. Don't just redirect.
+          break;
+        default:
+          break;
+      }
     });
 }
 
