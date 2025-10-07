@@ -7,6 +7,7 @@
     "build": "node ./build-sw.js",
     "clean": "node ./scripts/clean.js",
     "test:sw-slugs": "node ./scripts/test-sw-slugs.js",
+    "kill": "npx kill-port 3000",
     "dev": "nodemon server.js",
     "ssh:staging": "ssh root@172.236.250.102 -i ~/.ssh/usd21/id_rsa",
     "ssh:prod": "ssh root@172.233.143.78 -i ~/.ssh/usd21/id_rsa",

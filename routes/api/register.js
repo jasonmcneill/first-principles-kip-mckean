@@ -150,7 +150,7 @@ exports.POST = (req, res) => {
           mailingList,
           lang,
         ],
-        async (insertErr, insertResult) => {
+        (insertErr, insertResult) => {
           if (insertErr) {
             console.log(insertErr);
             return res.status(500).send({
@@ -159,42 +159,61 @@ exports.POST = (req, res) => {
             });
           }
 
-          const userid = insertResult.insertId;
           const otp = genOTP.generateOTP(6);
-          const expiry = new Date(Date.now() + 20 * 60 * 1000)
-            .toISOString()
-            .slice(0, 19)
-            .replace("T", " ");
 
-          // TODO:  Insert the userid, OTP and expiry into the "otp" table of the DB
+          const sql = `
+            INSERT INTO otp(userid, code, expiry, createdAt)
+            VALUES (
+              ?,
+              ?,
+              TIMESTAMPADD(MINUTE, 20, UTC_TIMESTAMP()),
+              UTC_TIMESTAMP()
+            );
+          `;
 
-          let htmlBody = emailHTMLTemplate.replaceAll("{{ emailP1 }}", emailP1);
-          htmlBody = htmlBody.replaceAll("{{ OTP }}", otp);
-          htmlBody = htmlBody.replaceAll("{{ emailP2 }}", emailP2);
-          htmlBody = htmlBody.replaceAll("{{ emailP3 }}", emailP3);
-          htmlBody = htmlBody.replaceAll("{{ emailFooter1 }}", emailFooter1);
-          htmlBody = htmlBody.replaceAll("{{ emailFooter2 }}", emailFooter2);
+          db.query(sql, [userid, otp, expiry], async (error, result) => {
+            if (error) {
+              console.log(error);
+              return res.status(500).send({
+                msg: "unable to store otp",
+                msgType: "error",
+              });
+            }
 
-          let textBody = emailTextTemplate.replaceAll("{{ emailP1 }}", emailP1);
-          textBody = textBody.replaceAll("{{ OTP }}", otp);
-          textBody = textBody.replaceAll("{{ emailP2 }}", emailP2);
-          textBody = textBody.replaceAll("{{ emailP3 }}", emailP3);
-          textBody = textBody.replaceAll("{{ emailFooter1 }}", emailFooter1);
-          textBody = textBody.replaceAll("{{ emailFooter2 }}", emailFooter2);
+            let htmlBody = emailHTMLTemplate.replaceAll(
+              "{{ emailP1 }}",
+              emailP1
+            );
+            htmlBody = htmlBody.replaceAll("{{ OTP }}", otp);
+            htmlBody = htmlBody.replaceAll("{{ emailP2 }}", emailP2);
+            htmlBody = htmlBody.replaceAll("{{ emailP3 }}", emailP3);
+            htmlBody = htmlBody.replaceAll("{{ emailFooter1 }}", emailFooter1);
+            htmlBody = htmlBody.replaceAll("{{ emailFooter2 }}", emailFooter2);
 
-          const utils = require("./utils");
+            let textBody = emailTextTemplate.replaceAll(
+              "{{ emailP1 }}",
+              emailP1
+            );
+            textBody = textBody.replaceAll("{{ OTP }}", otp);
+            textBody = textBody.replaceAll("{{ emailP2 }}", emailP2);
+            textBody = textBody.replaceAll("{{ emailP3 }}", emailP3);
+            textBody = textBody.replaceAll("{{ emailFooter1 }}", emailFooter1);
+            textBody = textBody.replaceAll("{{ emailFooter2 }}", emailFooter2);
 
-          await utils.sendMail(
-            email,
-            `${firstName} ${lastName}`,
-            emailSubject,
-            htmlBody,
-            textBody
-          );
-
-          return res.status(200).send({
-            msg: "user registered",
-            msgType: "success",
+            require("./utils")
+              .sendMail(
+                email,
+                `${firstName} ${lastName}`,
+                emailSubject,
+                htmlBody,
+                textBody
+              )
+              .then((result) => {
+                return res.status(200).send({
+                  msg: "user registered",
+                  msgType: "success",
+                });
+              });
           });
         }
       );
