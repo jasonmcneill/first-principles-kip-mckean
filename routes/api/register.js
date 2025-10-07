@@ -11,6 +11,12 @@ exports.POST = async (req, res) => {
   const gender = req.body.gender;
   const mailingList = req.body.mailingList ? 1 : 0;
   const lang = req.body.lang || "";
+  const emailSubject = req.body.emailSubject || "";
+  const emailP1 = req.body.emailP1 || "";
+  const emailP2 = req.body.emailP2 || "";
+  const emailP3 = req.body.emailP3 || "";
+  const emailTextTemplate = req.body.emailTextTemplate || "";
+  const emailHTMLTemplate = req.body.emailHTMLTemplate || "";
 
   // Validate
 
@@ -158,7 +164,8 @@ exports.POST = async (req, res) => {
             .slice(0, 19)
             .replace("T", " ");
 
-          // TODO:  Generate an email with i18n that supports injecting variables
+          // TODO:  Replace placeholders in text email
+          // TODO:  Replace placeholders in HTML email
 
           return res.status(200).send({
             msg: "user registered",

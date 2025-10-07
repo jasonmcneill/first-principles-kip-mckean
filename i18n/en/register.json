@@ -24,5 +24,11 @@
   "female": "Female",
   "errorGenderRequired": "Gender is required",
   "mailingList": "Subscribe to our e-mail newsletter",
-  "registerButton": "Register"
+  "registerButton": "Register",
+  "emailSubject": "First Principles Verification Code",
+  "emailP1": "Confirm your First Principles account with this One-Time-Password:",
+  "emailP2": "The above code expires after 20 minutes.",
+  "emailP3": "Thank you for registering for First Principles!",
+  "emailFooter1": "First Principles Bible Study Series",
+  "emailFooter2": "https://fp.kipmckean.com/"
 }

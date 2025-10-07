@@ -1,3 +1,23 @@
+function getEmailHTMLTemplate() {
+  return new Promise((resolve, reject) => {
+    fetch("../email/registration/registration.html")
+      .then((res) => res.text())
+      .then((data) => {
+        resolve(data);
+      });
+  });
+}
+
+function getEmailTextTemplate() {
+  return new Promise((resolve, reject) => {
+    fetch("../email/registration/registration.txt")
+      .then((res) => res.text())
+      .then((data) => {
+        resolve(data);
+      });
+  });
+}
+
 function validate(phrases) {
   const content = JSON.parse(document.querySelector("#content").innerHTML);
   const errors = {
@@ -104,14 +124,21 @@ function validate(phrases) {
     gender: gender,
     mailingList: mailingListEl.checked,
     lang: lang,
+    emailSubject: getPhrase("emailSubject"),
+    emailP1: getPhrase("emailP1"),
+    emailP2: getPhrase("emailP2"),
+    emailP3: getPhrase("emailP3"),
   };
 }
 
-function onSubmit(evt) {
+async function onSubmit(evt) {
   event.preventDefault();
 
   const formData = validate();
   if (!formData) return;
+
+  formData.emailTextTemplate = await getEmailTextTemplate();
+  formData.emailHTMLTemplate = await getEmailHTMLTemplate();
 
   fetch("/api/register", {
     method: "POST",

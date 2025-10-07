@@ -1,0 +1,11 @@
+{{ emailP1 }}
+
+{{ OTP }}
+
+
+{{ emailP2 }}
+
+{{ emailP3 }}
+
+{{ emailFooter1 }}
+{{ emailFooter2 }}
