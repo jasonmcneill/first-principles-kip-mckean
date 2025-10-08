@@ -11,6 +11,7 @@
       name="apple-mobile-web-app-status-bar-style"
       content="black-translucent"
     />
+    <script src="/js/enforceAccess.js"></script>
     <title><%- data.pageTitle %></title>
     <link rel="stylesheet" href="/css/style.css" />
     <link
@@ -48,11 +49,6 @@
       sizes="152x152"
       href="/img/<%- data.metadata.lang %>/launch/152.png"
     />
-    <style type="text/css">
-      form label {
-        font-weight: bold;
-      }
-    </style>
   </head>
   <body>
     <div class="master-container">
@@ -104,64 +100,21 @@
       <div class="container-fluid">
         <div class="row bg-light">
           <div class="col-12 col-md-6 offset-md-3">
-            <main class="my-3">
-              <form id="confirmForm" class="my-4" novalidate>
-                <p><%- data.p1 %></p>
-                <div class="mb-4">
-                  <div class="text-center">
-                    <label for="confirmationCode" class="form-label">
-                      <%- data.buttonLabel %>
-                    </label>
-                  </div>
-                  <input
-                    type="tel"
-                    pattern="[0-9]*"
-                    class="form-control"
-                    id="confirmationCode"
-                    maxlength="6"
-                    autofocus
-                  />
-                  <div class="invalid-feedback text-center balance" id="errMsg">
-                    <%- data.errRequired %>
-                  </div>
-                </div>
-                <div class="text-center">
-                  <button type="submit" class="btn btn-primary">
-                    <span
-                      class="spinner-border spinner-border-sm me-2 submitButtonSpinner d-none"
-                      aria-hidden="true"
-                    ></span>
-                    <%- data.confirmButton %>
-                  </button>
-                </div>
-              </form>
-
-              <div id="confirmed" class="d-none">
-                <div class="text-center mt-4">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="150"
-                    height="150"
-                    fill="currentColor"
-                    class="bi bi-check-circle-fill text-success"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"
-                    ></path>
-                  </svg>
-                </div>
-
-                <p class="text-center balance mt-3">
-                  <strong><%- data.confirmedP1 %></strong>
-                </p>
-
-                <p class="text-center balance mt-3"><%- data.confirmedP2 %></p>
-
-                <div class="text-center">
-                  <a href="./login" class="btn btn-primary">
-                    <%- data.continue %>
-                  </a>
+            <main>
+              <div class="card my-4 shadow-sm">
+                <div class="card-body">
+                  <form id="form" novalidate>
+                    <p><%- data.p1 %></p>
+                    <div class="py-2 my-4 text-center">
+                      <button type="submit" class="btn btn-primary">
+                        <span
+                          class="spinner-border spinner-border-sm me-2 submitButtonSpinner d-none"
+                          aria-hidden="true"
+                        ></span>
+                        <%- data.buttonSend %>
+                      </button>
+                    </div>
+                  </form>
                 </div>
               </div>
             </main>
@@ -213,7 +166,7 @@
       <%- JSON.stringify(data) %>
     </script>
     <script src="/js/global.js"></script>
-    <script src="/js/confirm.js"></script>
+    <script src="/js/pending.js"></script>
     <script src="/js/load-sw.js"></script>
   </body>
 </html>

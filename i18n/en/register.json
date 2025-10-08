@@ -25,7 +25,7 @@
   "errorGenderRequired": "Gender is required",
   "mailingList": "Subscribe to our e-mail newsletter",
   "registerButton": "Register",
-  "emailSubject": "First Principles Verification Code",
+  "emailSubject": "First Principles Confirmation Code",
   "emailP1": "Please confirm your First Principles account with the following confirmation code:",
   "emailP2": "The above code expires after 20 minutes.",
   "emailP3": "Thank you for registering for First Principles!",

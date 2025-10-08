@@ -3,12 +3,6 @@ const router = express.Router();
 const utils = require("./utils");
 const authenticateToken = utils.authenticateToken;
 
-/*
-  // HOW TO USE MIDDLEWARE
-  const eventAdd = require("./controllers_invites/event-add");
-  router.post("/event-add", authenticateToken, eventAdd.POST);
-*/
-
 const register = require("./register");
 router.post("/register", register.POST);
 
@@ -20,5 +14,8 @@ router.post("/login", login.POST);
 
 const refreshToken = require("./refresh-token");
 router.post("/refresh-token", refreshToken.POST);
+
+const pending = require("./pending");
+router.post("/pending", authenticateToken, pending.POST);
 
 module.exports = router;

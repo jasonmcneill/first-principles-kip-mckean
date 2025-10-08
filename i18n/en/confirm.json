@@ -24,5 +24,6 @@
   "errSendNew": "Send me a new code",
   "titleAccountConfirmed": "Account Confirmed",
   "confirmedP1": "Your account is now confirmed and active!",
+  "confirmedP2": "You can now delete the e-mail we sent you.",
   "continue": "Continue"
 }
