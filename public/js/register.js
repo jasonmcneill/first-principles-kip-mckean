@@ -152,7 +152,15 @@ async function onSubmit(evt) {
     .then((res) => res.json())
     .then((data) => {
       if (data.msg === "user registered") {
-        window.location.href = `./confirm?userid=${data.userid}`;
+        const userid = data.userid;
+
+        if (!userid) {
+          return console.error("userid is missing in response");
+        } else if (isNaN(userid)) {
+          return console.error("userid in response is not a number");
+        }
+
+        window.location.href = `./confirm?userid=${userid}`;
       }
     })
     .catch((err) => {
