@@ -152,7 +152,7 @@ async function onSubmit(evt) {
     .then((res) => res.json())
     .then((data) => {
       if (data.msg === "user registered") {
-        window.location.href = `./confirm?userid=${userid}`;
+        window.location.href = `./confirm?userid=${data.userid}`;
       }
     })
     .catch((err) => {
