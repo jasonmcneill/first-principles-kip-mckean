@@ -121,6 +121,8 @@ exports.POST = (req, res) => {
       });
     }
 
+    const userid = result[0].id;
+
     const saltRounds = 10;
 
     bcrypt.hash(password, saltRounds, (hashErr, hashedPassword) => {
