@@ -159,6 +159,8 @@ exports.POST = (req, res) => {
             });
           }
 
+          console.log(insertResult);
+
           const userid = insertResult.insertId;
 
           const otp = genOTP.generateOTP(6);
