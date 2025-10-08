@@ -191,6 +191,20 @@ function listenForAudio() {
   });
 }
 
+function resetSubmitButtons() {
+  document.querySelectorAll("button[type=submit]").forEach((item) => {
+    item.removeAttribute("disabled");
+    item.querySelector(".submitButtonSpinner").classList.add("d-none");
+  });
+}
+
+function showSubmitButtonSpinner(submitEvt) {
+  const submitButtonEl = submitEvt.target.querySelector("button[type=submit]");
+  const spinnerEl = submitButtonEl?.querySelector(".submitButtonSpinner");
+  submitButtonEl?.setAttribute("disabled", "");
+  spinnerEl?.classList.remove("d-none");
+}
+
 function addListeners() {
   listenForScriptureClicks();
 

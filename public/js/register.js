@@ -6,6 +6,8 @@ function popUpError(title, body) {
   titleEl.innerHTML = title;
   bodyEl.innerHTML = body;
 
+  resetSubmitButtons();
+
   new bootstrap.Modal("#modal").show();
 }
 
@@ -50,6 +52,8 @@ function validate(phrases) {
   const femaleEl = document.querySelector("#gender_female");
 
   genderErrorEl.classList.add("d-none");
+
+  resetSubmitButtons();
 
   document
     .querySelectorAll(".is-invalid")
@@ -147,6 +151,9 @@ function validate(phrases) {
 async function onSubmit(evt) {
   event.preventDefault();
 
+  resetSubmitButtons();
+  showSubmitButtonSpinner(evt);
+
   const formData = validate();
   if (!formData) return;
 
@@ -164,7 +171,7 @@ async function onSubmit(evt) {
     .then((data) => {
       switch (data.msg) {
         case "username is taken":
-          popupError(
+          popUpError(
             getPhrase("usernameTakenTitle"),
             getPhrase("usernameTaken")
           );
@@ -173,13 +180,14 @@ async function onSubmit(evt) {
           window.location.href = `./confirm?userid=${data.userid}`;
           break;
         default:
-          popupError(getPhrase("errorTitle"), getPhrase("errorGeneric"));
+          popUpError(getPhrase("errorTitle"), getPhrase("errorGeneric"));
           console.error(data.msg);
           break;
       }
     })
     .catch((err) => {
       console.error("Register request failed:", err);
+      resetSubmitButtons();
     });
 }
 

@@ -48,6 +48,8 @@ function validate() {
   const usernameEl = document.querySelector("#username");
   const passwordEl = document.querySelector("#password");
 
+  resetSubmitButtons();
+
   if (!usernameEl.value.length) {
     usernameEl.parentElement.querySelector(".invalid-feedback").innerHTML =
       getPhrase("usernameRequiredError");
@@ -69,8 +71,8 @@ function validate() {
   return true;
 }
 
-function onSubmit(event) {
-  event.preventDefault();
+function onSubmit(evt) {
+  evt.preventDefault();
 
   const isValid = validate();
   if (!isValid) return;
@@ -79,7 +81,8 @@ function onSubmit(event) {
   const usernameEl = document.querySelector("#username");
   const passwordEl = document.querySelector("#password");
 
-  submitButtonEl.setAttribute("disabled", "");
+  resetSubmitButtons();
+  showSubmitButtonSpinner(evt);
 
   // TODO: show spinner
 
@@ -96,19 +99,17 @@ function onSubmit(event) {
     .then((res) => res.json())
     .then((data) => {
       if (data.msg === "unable to log in") {
+        resetSubmitButtons();
         showAlert(
           getPhrase("alertErrorGlitch"),
           getPhrase("alertHeadlineUnable")
         );
-        submitButtonEl.removeAttribute("disabled");
-        // TODO: hide spinner
       } else if (data.msg === "invalid login") {
+        resetSubmitButtons();
         showAlert(
           getPhrase("alertErrorInvalid"),
           getPhrase("alertHeadlineInvalid")
         );
-        submitButtonEl.removeAttribute("disabled");
-        // TODO: hide spinner
       } else if (data.msg === "login succeeded") {
         localStorage.setItem("refreshToken", data.refreshToken);
         sessionStorage.setItem("accessToken", data.accessToken);
@@ -119,7 +120,7 @@ function onSubmit(event) {
     })
     .catch((error) => {
       console.error(error);
-      submitButtonEl.removeAttribute("disabled");
+      resetSubmitButtons();
     });
 }
 

@@ -6,6 +6,8 @@ function popUpError(title, body) {
   titleEl.innerHTML = title;
   bodyEl.innerHTML = body;
 
+  resetSubmitButtons();
+
   new bootstrap.Modal("#modal").show();
 }
 
@@ -17,6 +19,9 @@ async function onSubmit(evt) {
   const params = new URLSearchParams(window.location.search);
   const userid = params.get("userid");
 
+  resetSubmitButtons();
+  showSubmitButtonSpinner(evt);
+
   document
     .querySelectorAll(".is-invalid")
     .forEach((item) => item.classList.remove("is-invalid"));
@@ -24,12 +29,14 @@ async function onSubmit(evt) {
   if (!code.length) {
     codeEl.classList.add("is-invalid");
     errMsgEl.innerHTML = getPhrase("errRequired");
+    resetSubmitButtons();
     return;
   }
 
   if (code.length < 6 || isNaN(code)) {
     codeEl.classList.add("is-invalid");
     errMsgEl.innerHTML = getPhrase("err6Digits");
+    resetSubmitButtons();
     return;
   }
 

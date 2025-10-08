@@ -104,3 +104,8 @@ tbody.numerals td {
 .text-normal-numeric {
   font-variant-numeric: normal !important;
 }
+
+.form-control,
+.form-check-input {
+  border-color: #666666 !important;
+}
