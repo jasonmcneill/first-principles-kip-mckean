@@ -113,7 +113,7 @@ function onSubmit(evt) {
       } else if (data.msg === "login succeeded") {
         localStorage.setItem("refreshToken", data.refreshToken);
         sessionStorage.setItem("accessToken", data.accessToken);
-        window.location.href = "./dashboard";
+        window.location.replace("./dashboard");
       }
     })
     .catch((error) => {
