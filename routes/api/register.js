@@ -159,10 +159,6 @@ exports.POST = (req, res) => {
             });
           }
 
-          console.log(insertResult);
-
-          const userid = insertResult.insertId;
-
           const otp = genOTP.generateOTP(6);
 
           const sql = `
@@ -175,7 +171,7 @@ exports.POST = (req, res) => {
             );
           `;
 
-          db.query(sql, [userid, otp], async (error, result) => {
+          db.query(sql, [insertResult.insertId, otp], async (error, result) => {
             if (error) {
               console.log(error);
               return res.status(500).send({
