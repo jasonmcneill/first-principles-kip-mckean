@@ -151,16 +151,31 @@ async function onSubmit(evt) {
   })
     .then((res) => res.json())
     .then((data) => {
-      if (data.msg === "user registered") {
-        const userid = data.userid;
-
-        if (!userid) {
-          return console.error("userid is missing in response");
-        } else if (isNaN(userid)) {
-          return console.error("userid in response is not a number");
-        }
-
-        window.location.href = `./confirm?userid=${userid}`;
+      // TODO: handle all these responses
+      switch (data.msg) {
+        case "username is required":
+          break;
+        case "password is required":
+          break;
+        case "password must be at least 8 characters":
+          break;
+        case "email is required":
+          break;
+        case "invalid email":
+          break;
+        case "firstName is required":
+          break;
+        case "lastName is required":
+          break;
+        case "gender is required":
+          break;
+        case "username is taken":
+          break;
+        case "user registered":
+          window.location.href = `./confirm?userid=${data.userid}`;
+          break;
+        default:
+          break;
       }
     })
     .catch((err) => {
