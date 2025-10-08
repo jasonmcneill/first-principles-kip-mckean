@@ -1,3 +1,14 @@
+function popUpError(title, body) {
+  const modalEl = document.querySelector("#modal");
+  const titleEl = modalEl.querySelector(".modal-title");
+  const bodyEl = modalEl.querySelector(".modal-body");
+
+  titleEl.innerHTML = title;
+  bodyEl.innerHTML = body;
+
+  new bootstrap.Modal("#modal").show();
+}
+
 function getEmailHTMLTemplate() {
   return new Promise((resolve, reject) => {
     fetch("../email/registration/registration.html")
@@ -151,30 +162,19 @@ async function onSubmit(evt) {
   })
     .then((res) => res.json())
     .then((data) => {
-      // TODO: handle all these responses
       switch (data.msg) {
-        case "username is required":
-          break;
-        case "password is required":
-          break;
-        case "password must be at least 8 characters":
-          break;
-        case "email is required":
-          break;
-        case "invalid email":
-          break;
-        case "firstName is required":
-          break;
-        case "lastName is required":
-          break;
-        case "gender is required":
-          break;
         case "username is taken":
+          popupError(
+            getPhrase("usernameTakenTitle"),
+            getPhrase("usernameTaken")
+          );
           break;
         case "user registered":
           window.location.href = `./confirm?userid=${data.userid}`;
           break;
         default:
+          popupError(getPhrase("errorTitle"), getPhrase("errorGeneric"));
+          console.error(data.msg);
           break;
       }
     })

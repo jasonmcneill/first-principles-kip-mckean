@@ -30,5 +30,9 @@
   "emailP2": "The above code expires after 20 minutes.",
   "emailP3": "Thank you for registering for First Principles!",
   "emailFooter1": "First Principles Bible Study Series",
-  "emailFooter2": "https://fp.kipmckean.com/"
+  "emailFooter2": "https://fp.kipmckean.com/",
+  "errorTitle": "Error",
+  "errorGeneric": "There was an unexpected error. Please check your internet connection and try again.",
+  "usernameTakenTitle": "Username Taken",
+  "usernameTaken": "That username is already being used by another user. Please choose a different username."
 }
