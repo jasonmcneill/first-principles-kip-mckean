@@ -113,8 +113,6 @@ function onSubmit(evt) {
       } else if (data.msg === "login succeeded") {
         localStorage.setItem("refreshToken", data.refreshToken);
         sessionStorage.setItem("accessToken", data.accessToken);
-        submitButtonEl.classList.add("d-none");
-        submitButtonEl.removeAttribute("disabled");
         window.location.href = "./dashboard";
       }
     })
