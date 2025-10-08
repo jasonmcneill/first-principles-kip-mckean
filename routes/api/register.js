@@ -121,8 +121,6 @@ exports.POST = (req, res) => {
       });
     }
 
-    const userid = result[0].insertId;
-
     const saltRounds = 10;
 
     bcrypt.hash(password, saltRounds, (hashErr, hashedPassword) => {
@@ -160,6 +158,8 @@ exports.POST = (req, res) => {
               msgType: "error",
             });
           }
+
+          const userid = result[0].insertId;
 
           const otp = genOTP.generateOTP(6);
 
