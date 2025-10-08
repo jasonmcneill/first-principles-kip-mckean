@@ -121,7 +121,7 @@ exports.POST = (req, res) => {
       });
     }
 
-    const userid = result[0].id;
+    const userid = result[0].insertId;
 
     const saltRounds = 10;
 
