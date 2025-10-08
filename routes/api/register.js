@@ -159,7 +159,7 @@ exports.POST = (req, res) => {
             });
           }
 
-          const userid = insertResult[0].insertId;
+          const userid = insertResult.insertId;
 
           const otp = genOTP.generateOTP(6);
 
@@ -173,7 +173,7 @@ exports.POST = (req, res) => {
             );
           `;
 
-          db.query(sql, [userid, otp, expiry], async (error, result) => {
+          db.query(sql, [userid, otp], async (error, result) => {
             if (error) {
               console.log(error);
               return res.status(500).send({
