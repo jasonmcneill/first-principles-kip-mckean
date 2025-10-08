@@ -37,6 +37,7 @@ exports.POST = async (req, res) => {
 
   const sql = `
     SELECT
+      userid,
       expiry
     FROM
       otp
@@ -79,9 +80,11 @@ exports.POST = async (req, res) => {
     const sql = `
       UPDATE users
       SET
-        status = 'registered'
+        status = 'active'
       WHERE
         id = ?
+      AND
+        status = 'pendingConfirmation'
       LIMIT 1
       ;
     `;

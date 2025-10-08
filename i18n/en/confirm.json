@@ -8,5 +8,21 @@
   "p1": "Please check your e-mail. We have sent you a 6-digit confirmation code. You must input that code below in order to confirm your account.",
   "buttonLabel": "Confirmation Code:",
   "confirmButton": "Confirm",
-  "errRequired": "Confirmation code is required"
+  "errTitle": "Error:",
+  "errTitleNotFound": "Code Not Found",
+  "errTitleExpired": "Code Expired",
+  "errTitleGlitch": "Unable to Process",
+  "errRequired": "Confirmation code is required",
+  "errUserIdNumeric": "The URL to this page is invalid. It must contain your numeric user ID.",
+  "errNumeric": "Confirmation code must be numeric",
+  "err6Digits": "Must be a 6-digit number",
+  "errRequired2": "Please input the confirmation code.",
+  "errNumeric2": "The confirmation code must be a 6-digit number.",
+  "errNoMatch": "That confirmation code did not match our records. Please try again.",
+  "errExpired": "That confirmation code is expired. Please try again by clicking the button below.",
+  "errGlitch": "There was an unexpected glitch. Please make sure you are connected to the internet, then try again.",
+  "errSendNew": "Send me a new code",
+  "titleAccountConfirmed": "Account Confirmed",
+  "confirmedP1": "Your account is now confirmed and active!",
+  "continue": "Continue"
 }

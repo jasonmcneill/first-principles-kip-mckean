@@ -70,7 +70,7 @@ function hideAudioIfOpusNotSupported() {
 }
 
 function hideScriptureHash() {
-  if (window.location.hash && window.location.hash === "#scripture") {
+  if (window.location.hash && window.location.hash === "#modal") {
     history.replaceState(
       null,
       "",
@@ -205,7 +205,7 @@ function addListeners() {
   const myModalEl = document.getElementById("modal");
 
   myModalEl.addEventListener("hide.bs.modal", (event) => {
-    if (window.location.hash === "#scripture") {
+    if (window.location.hash === "#modal") {
       history.replaceState(
         null,
         "",
@@ -215,7 +215,7 @@ function addListeners() {
   });
 
   myModalEl.addEventListener("show.bs.modal", (event) => {
-    history.pushState(null, "", "#scripture");
+    history.pushState(null, "", "#modal");
   });
 }
 

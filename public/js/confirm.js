@@ -1,9 +1,20 @@
+function popUpError(title, body) {
+  const modalEl = document.querySelector("#modal");
+  const titleEl = modalEl.querySelector(".modal-title");
+  const bodyEl = modalEl.querySelector(".modal-body");
+
+  titleEl.innerHTML = title;
+  bodyEl.innerHTML = body;
+
+  new bootstrap.Modal("#modal").show();
+}
+
 async function onSubmit(evt) {
   evt.preventDefault();
   const codeEl = document.querySelector("#confirmationCode");
   const errMsgEl = document.querySelector("#errMsg");
   const code = codeEl.value.trim();
-  const params = new URL(url).searchParams;
+  const params = new URLSearchParams(window.location.search);
   const userid = params.get("userid");
 
   document
@@ -13,11 +24,17 @@ async function onSubmit(evt) {
   if (!code.length) {
     codeEl.classList.add("is-invalid");
     errMsgEl.innerHTML = getPhrase("errRequired");
+    return;
+  }
+
+  if (code.length < 6 || isNaN(code)) {
+    codeEl.classList.add("is-invalid");
+    errMsgEl.innerHTML = getPhrase("err6Digits");
+    return;
   }
 
   if (isNaN(userid)) {
-    console.error("userid must be numeric");
-    // TODO: show error in UI
+    popUpError(getPhrase("errTitle"), getPhrase("errUserIdNumeric"));
     return;
   }
 
@@ -35,15 +52,23 @@ async function onSubmit(evt) {
     .then((data) => {
       switch (data.msg) {
         case "code is required":
+          popUpError(getPhrase("errTitle"), getPhrase("errRequired2"));
           break;
         case "code must be numeric":
+          popUpError(getPhrase("errTitle"), getPhrase("errNumeric2"));
           break;
         case "no match found":
+          popUpError(getPhrase("errTitleNotFound"), getPhrase("errNoMatch"));
           break;
         case "code expired":
+          popUpError(getPhrase("errTitleExpired"), getPhrase("errExpired"));
           break;
         case "code verified":
-          // TODO: Show a success message, then let the user proceed. Don't just redirect.
+          const confirmFormEl = document.querySelector("#confirmForm");
+          const confirmedEl = document.querySelector("#confirmed");
+
+          confirmFormEl.classList.add("d-none");
+          confirmedEl.classList.remove("d-none");
           break;
         default:
           break;
