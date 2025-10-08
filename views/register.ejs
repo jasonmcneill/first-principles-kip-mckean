@@ -125,6 +125,8 @@
                     id="username"
                     name="username"
                     required
+                    autocomplete="off"
+                    autocapitalize="off"
                   />
                   <div class="username invalid-feedback">
                     <%- data.errorUsernameRequired %>
@@ -144,6 +146,7 @@
                     name="password"
                     required
                     autocomplete="new-password"
+                    autocapitalize="off"
                   />
                   <div class="form-text"><%- data.passwordRequirement %></div>
                   <div class="password invalid-feedback">
