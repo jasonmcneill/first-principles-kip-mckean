@@ -113,7 +113,16 @@ function onSubmit(evt) {
       } else if (data.msg === "login succeeded") {
         localStorage.setItem("refreshToken", data.refreshToken);
         sessionStorage.setItem("accessToken", data.accessToken);
-        window.location.replace("./dashboard");
+
+        const refreshToken = JSON.parse(atob(data.refreshToken));
+
+        switch (refreshToken.status) {
+          case "active":
+            window.location.replace("./dashboard");
+            break;
+          default:
+            window.location.href("./pending");
+        }
       }
     })
     .catch((error) => {
