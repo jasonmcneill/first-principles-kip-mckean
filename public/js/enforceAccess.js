@@ -2,7 +2,7 @@
   const redirectToLogin = () => {
     let lang = document.querySelector("html").getAttribute("lang");
 
-    if (!lang || !lang.length) {
+    if (!lang || lang.length !== 2) {
       lang = "en";
     }
 
