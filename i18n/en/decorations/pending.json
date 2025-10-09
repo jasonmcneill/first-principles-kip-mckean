@@ -1,0 +1,12 @@
+[
+  {
+    "key": "p1",
+    "text": {
+      "original": "Your account remains unconfirmed.",
+      "translated": "Your account remains unconfirmed."
+    },
+    "decorations": {
+      "bold": true
+    }
+  }
+]

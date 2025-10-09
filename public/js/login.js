@@ -114,14 +114,14 @@ function onSubmit(evt) {
         localStorage.setItem("refreshToken", data.refreshToken);
         sessionStorage.setItem("accessToken", data.accessToken);
 
-        const refreshToken = JSON.parse(atob(data.refreshToken));
+        const refreshToken = JSON.parse(atob(data.refreshToken.split(".")[1]));
 
         switch (refreshToken.status) {
           case "active":
             window.location.replace("./dashboard");
             break;
           default:
-            window.location.href("./pending");
+            window.location.href = "./pending";
         }
       }
     })
