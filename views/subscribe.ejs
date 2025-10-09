@@ -14,6 +14,33 @@
     <h1><%= data.title %></h1>
     <p><%= data.content %></p>
 
+    <div id="paypal-button-container-P-8VF83246215050542NDTTB3Q"></div>
+    <script
+      src="https://www.paypal.com/sdk/js?client-id=ATsp2P-rj98T6VeoiTQHW5uGzhlbScbPAr1qeNUIuD2s3hBqnJ4LvEinePWV4xUBWjXryRcpjwhCvR-n&vault=true&intent=subscription"
+      data-sdk-integration-source="button-factory"
+    ></script>
+    <script>
+      paypal
+        .Buttons({
+          style: {
+            shape: "rect",
+            color: "gold",
+            layout: "vertical",
+            label: "subscribe",
+          },
+          createSubscription: function (data, actions) {
+            return actions.subscription.create({
+              /* Creates the subscription */
+              plan_id: "P-8VF83246215050542NDTTB3Q",
+            });
+          },
+          onApprove: function (data, actions) {
+            alert(data.subscriptionID); // You can add optional success message for the subscriber here
+          },
+        })
+        .render("#paypal-button-container-P-8VF83246215050542NDTTB3Q"); // Renders the PayPal button
+    </script>
+
     <script src="/js/load-sw.js"></script>
   </body>
 </html>
