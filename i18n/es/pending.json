@@ -2,14 +2,14 @@
   "metadata": {
     "lang": "es"
   },
-  "appTitle": "Primeros Principios",
+  "appTitle": "Principios Básicos",
   "pageTitle": "Cuenta Aún Sin Confirmar",
   "p1": "Su cuenta permanece sin confirmar. Para confirmarla, debemos enviar otro código de confirmación a la dirección de correo electrónico con la que se registró. Haga clic en el botón de abajo para comenzar:",
   "buttonSend": "Enviar Código",
-  "emailSubject": "Código de Confirmación de Primeros Principios",
-  "emailP1": "Por favor, confirme su cuenta de Primeros Principios con el siguiente código de confirmación:",
+  "emailSubject": "Código de Confirmación de Principios Básicos",
+  "emailP1": "Por favor, confirme su cuenta de Principios Básicos con el siguiente código de confirmación:",
   "emailP2": "El código anterior caduca después de 20 minutos.",
-  "emailP3": "¡Gracias por registrarse en Primeros Principios!",
-  "emailFooter1": "Serie de Estudios Bíblicos Primeros Principios",
+  "emailP3": "¡Gracias por registrarse en Principios Básicos!",
+  "emailFooter1": "Serie de Estudios Bíblicos Principios Básicos",
   "emailFooter2": "https://fp.kipmckean.com/"
 }
