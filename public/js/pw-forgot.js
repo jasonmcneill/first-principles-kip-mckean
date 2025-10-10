@@ -64,6 +64,7 @@ async function onSubmitEmail(evt) {
 
   const formData = {
     email: email,
+    emailAppName: getPhrase("appTitle"),
     emailSubject: getPhrase("emailSubject"),
     emailP1: getPhrase("emailP1"),
     emailP2: getPhrase("emailP2"),

@@ -139,6 +139,7 @@ function validate(phrases) {
     gender: gender,
     mailingList: mailingListEl.checked,
     lang: lang,
+    emailAppName: getPhrase("appTitle"),
     emailSubject: getPhrase("emailSubject"),
     emailP1: getPhrase("emailP1"),
     emailP2: getPhrase("emailP2"),

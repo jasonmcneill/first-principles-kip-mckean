@@ -44,6 +44,7 @@ async function onSubmit(evt) {
   fetch("/api/confirm", {
     method: "POST",
     body: JSON.stringify({
+      emailAppName: getPhrase("appTitle"),
       userid: userid,
       code: code,
     }),

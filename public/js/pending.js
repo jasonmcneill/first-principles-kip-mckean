@@ -28,6 +28,7 @@ async function onSubmit(evt) {
   const emailHTMLTemplate = await getEmailHTMLTemplate();
 
   const otpData = {
+    emailAppName: getPhrase("appTitle"),
     emailSubject: getPhrase("emailSubject"),
     emailP1: getPhrase("emailP1"),
     emailP2: getPhrase("emailP2"),
