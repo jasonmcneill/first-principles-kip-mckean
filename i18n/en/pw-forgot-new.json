@@ -4,6 +4,7 @@
   },
   "appTitle": "First Principles",
   "pageTitle": "Create a New Password",
+  "sideMenuHeader": "Menu",
   "password": "New Password:",
   "passwordRequirement": "Must be at least 8 characters long",
   "errorPasswordRequired": "Password is required",

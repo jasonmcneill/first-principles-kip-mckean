@@ -5,6 +5,7 @@
     "hide": ["introToCourse", "bookOfJohn", "bookOfActs"]
   },
   "appTitle": "Principios Básicos",
+  "sideMenuHeader": "Menú",
   "introduction": "Introducción",
   "courseInformation": "Información del Curso",
   "introToCourse": "Introducción al Curso",

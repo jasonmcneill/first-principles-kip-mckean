@@ -4,6 +4,7 @@
   },
   "appTitle": "First Principles",
   "pageTitle": "Register",
+  "sideMenuHeader": "Menu",
   "username": "Username:",
   "errorUsernameRequired": "Username is required",
   "errorUsernameTaken": "Username is already taken",

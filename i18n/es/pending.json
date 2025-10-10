@@ -4,6 +4,7 @@
   },
   "appTitle": "Principios Básicos",
   "pageTitle": "Cuenta Aún Sin Confirmar",
+  "sideMenuHeader": "Menú",
   "p1": "Su cuenta permanece sin confirmar. Para confirmarla, debemos enviar otro código de confirmación a la dirección de correo electrónico con la que se registró. Haga clic en el botón de abajo para comenzar:",
   "buttonSend": "Enviar Código",
   "emailSubject": "Código de Confirmación de Principios Básicos",

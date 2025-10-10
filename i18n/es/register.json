@@ -4,6 +4,7 @@
   },
   "appTitle": "Principios Básicos",
   "pageTitle": "Registrarse",
+  "sideMenuHeader": "Menú",
   "username": "Nombre de Usuario:",
   "errorUsernameRequired": "Se requiere el nombre de usuario",
   "errorUsernameTaken": "El nombre de usuario ya está en uso",

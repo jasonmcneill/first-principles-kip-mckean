@@ -4,6 +4,7 @@
   },
   "appTitle": "Principios Básicos",
   "pageTitle": "Crear una Nueva Contraseña",
+  "sideMenuHeader": "Menú",
   "password": "Nueva Contraseña:",
   "passwordRequirement": "Debe tener al menos 8 caracteres de longitud",
   "errorPasswordRequired": "La contraseña es obligatoria",

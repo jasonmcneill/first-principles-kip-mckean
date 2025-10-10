@@ -4,6 +4,7 @@
   },
   "appTitle": "Principios Básicos",
   "pageTitle": "Iniciar Sesión",
+  "sideMenuHeader": "Menú",
   "username": "Nombre de Usuario:",
   "usernameRequiredError": "Se requiere el nombre de usuario",
   "password": "Contraseña:",

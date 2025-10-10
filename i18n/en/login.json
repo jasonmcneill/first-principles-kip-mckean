@@ -4,6 +4,7 @@
   },
   "appTitle": "First Principles",
   "pageTitle": "Log In",
+  "sideMenuHeader": "Menu",
   "username": "Username:",
   "usernameRequiredError": "Username is required",
   "password": "Password:",

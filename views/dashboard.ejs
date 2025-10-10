@@ -55,15 +55,99 @@
     <div class="master-container">
       <div class="container-fluid px-0">
         <div class="row">
-          <div class="col-12 px-0">
-            <header>
+          <div class="col-12">
+            <div
+              class="d-flex justify-content-between align-items-center bg-green"
+            >
+              <a
+                href="./dashboard"
+                class="invisible link-light text-decoration-none float-start px-3"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  class="bi bi-house-fill"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z"
+                  />
+                  <path
+                    d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293z"
+                  />
+                </svg>
+              </a>
               <h1
-                class="pageHeadline my-0 px-2 py-2 bg-green text-light text-center"
+                class="pageHeadline my-0 px-3 py-2 bg-green text-light d-inline-block"
               >
                 <%- data.appTitle %>
               </h1>
-            </header>
+              <span class="float-end px-3">
+                <button
+                  class="navbar-toggler link-light"
+                  type="button"
+                  data-bs-toggle="offcanvas"
+                  data-bs-target="#offcanvasWithBothOptions"
+                  aria-controls="offcanvasWithBothOptions"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="currentColor"
+                    class="bi bi-list"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"
+                    />
+                  </svg>
+                </button>
+              </span>
+            </div>
           </div>
+        </div>
+      </div>
+
+      <div
+        class="offcanvas offcanvas-end"
+        data-bs-scroll="true"
+        tabindex="-1"
+        id="offcanvasWithBothOptions"
+        aria-labelledby="offcanvasWithBothOptionsLabel"
+      >
+        <div class="offcanvas-header bg-green text-light pe-0">
+          <h5
+            class="offcanvas-title flex-grow-1"
+            id="offcanvasWithBothOptionsLabel"
+          >
+            <%- data.sideMenuHeader %>
+          </h5>
+          <button
+            class="btn text-light"
+            type="button"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="currentColor"
+              class="bi bi-x-lg"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div class="offcanvas-body">
+          <p></p>
         </div>
       </div>
 

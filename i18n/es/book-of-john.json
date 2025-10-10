@@ -4,5 +4,6 @@
     "hasAudio": false
   },
   "appTitle": "Principios Básicos",
-  "pageTitle": "El Libro de Juan"
+  "pageTitle": "El Libro de Juan",
+  "sideMenuHeader": "Menú"
 }

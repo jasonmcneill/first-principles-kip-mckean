@@ -4,6 +4,7 @@
   },
   "appTitle": "Principios Básicos",
   "pageTitle": "Olvidé Mi Contraseña",
+  "sideMenuHeader": "Menú",
   "p1": "¿Ha olvidado su contraseña? ¡No hay problema! Puede restablecerla. Para empezar, complete el formulario a continuación.",
   "labelEmailAddress": "Correo Electrónico:",
   "buttonResetPassword": "Restablecer Contraseña",

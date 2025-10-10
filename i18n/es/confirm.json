@@ -5,6 +5,7 @@
   },
   "appTitle": "Principios Básicos",
   "pageTitle": "Confirmar Mi Cuenta",
+  "sideMenuHeader": "Menú",
   "p1": "Por favor, revise su correo electrónico. Le hemos enviado un código de confirmación de 6 dígitos. Debe introducir ese código a continuación para confirmar su cuenta.",
   "buttonLabel": "Código de Confirmación:",
   "confirmButton": "Confirmar",
