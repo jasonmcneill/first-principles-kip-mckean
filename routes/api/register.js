@@ -11,6 +11,7 @@ exports.POST = (req, res) => {
   const gender = req.body.gender;
   const mailingList = req.body.mailingList ? 1 : 0;
   const lang = req.body.lang || "";
+  const emailAppName = req.body.emailAppName || "";
   const emailSubject = req.body.emailSubject || "";
   const emailP1 = req.body.emailP1 || "";
   const emailP2 = req.body.emailP2 || "";
@@ -206,7 +207,8 @@ exports.POST = (req, res) => {
                 `${firstName} ${lastName}`,
                 emailSubject,
                 htmlBody,
-                textBody
+                textBody,
+                emailAppName
               )
               .then((result) => {
                 return res.status(200).send({

@@ -1,6 +1,7 @@
 exports.POST = async (req, res) => {
   const db = require("../../db");
   const genOTP = require("generate-one-time-password");
+  const emailAppName = req.body.emailAppName || "";
   const emailSubject = req.body.emailSubject || "";
   const emailP1 = req.body.emailP1 || "";
   const emailP2 = req.body.emailP2 || "";
@@ -50,7 +51,8 @@ exports.POST = async (req, res) => {
         `${req.user.firstName} ${req.user.lastName}`,
         emailSubject,
         htmlBody,
-        textBody
+        textBody,
+        emailAppName
       )
       .then((result) => {
         return res.status(200).send({
