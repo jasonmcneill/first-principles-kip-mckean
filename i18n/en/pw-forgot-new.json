@@ -1,0 +1,14 @@
+{
+  "metadata": {
+    "lang": "en"
+  },
+  "appTitle": "First Principles",
+  "pageTitle": "Create a New Password",
+  "passwordRequirement": "Must be at least 8 characters long",
+  "buttonUpdate": "Update",
+  "titleAccountConfirmed": "Password Reset",
+  "confirmedP1": "Your password was reset successfully!",
+  "confirmedP2": "You can now delete the e-mail we sent you.",
+  "continue": "Continue",
+  "cancel": "Cancel password reset"
+}
