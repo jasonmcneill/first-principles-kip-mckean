@@ -18,4 +18,13 @@ router.post("/refresh-token", refreshToken.POST);
 const pending = require("./pending");
 router.post("/pending", authenticateToken, pending.POST);
 
+const pwForgot = require("./pw-forgot");
+router.post("/pw-forgot", pwForgot.POST);
+
+const pwForgotConfirm = require("./pw-forgot-confirm");
+router.post("/pw-forgot-confirm", pwForgotConfirm.POST);
+
+const pwForgotNew = require("./pw-forgot-new");
+router.post("/pw-forgot-new", authenticateToken, pwForgotNew.POST);
+
 module.exports = router;
