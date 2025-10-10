@@ -4,11 +4,16 @@
   },
   "appTitle": "First Principles",
   "pageTitle": "Create a New Password",
+  "password": "New Password:",
   "passwordRequirement": "Must be at least 8 characters long",
+  "errorPasswordRequired": "Password is required",
+  "errorPasswordInvalid": "Password is invalid. Please try again.",
   "buttonUpdate": "Update",
-  "titleAccountConfirmed": "Password Reset",
+  "titlePasswordUpdated": "Password Updated",
   "confirmedP1": "Your password was reset successfully!",
   "confirmedP2": "You can now delete the e-mail we sent you.",
   "continue": "Continue",
-  "cancel": "Cancel password reset"
+  "cancel": "Cancel password reset",
+  "errorTitle": "Error",
+  "errorGeneric": "There was an unexpected error. Please check your internet connection and try again."
 }
