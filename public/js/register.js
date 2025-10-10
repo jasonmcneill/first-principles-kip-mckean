@@ -149,7 +149,7 @@ function validate(phrases) {
 }
 
 async function onSubmit(evt) {
-  event.preventDefault();
+  evt.preventDefault();
 
   resetSubmitButtons();
   showSubmitButtonSpinner(evt);
