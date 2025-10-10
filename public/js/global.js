@@ -191,6 +191,19 @@ function listenForAudio() {
   });
 }
 
+function maskNumericPasswordOnIOS() {
+  const isIOS = /iP(ad|hone|od)/.test(navigator.userAgent);
+  if (isIOS) {
+    document
+      .querySelectorAll('input[type="password"][data-mask="true"]')
+      .forEach((item) => {
+        item.type = "tel";
+        item.inputMode = "numeric";
+        item.style.webkitTextSecurity = "disc";
+      });
+  }
+}
+
 function resetSubmitButtons() {
   document.querySelectorAll("button[type=submit]").forEach((item) => {
     item.removeAttribute("disabled");
@@ -237,6 +250,14 @@ function addListeners() {
   myModalEl.addEventListener("show.bs.modal", (event) => {
     history.pushState(null, "", "#modal");
   });
+
+  window.addEventListener("pageshow", function (event) {
+    if (event.persisted) {
+      resetSubmitButtons();
+    }
+  });
+
+  document.addEventListener("DOMContentLoaded", maskNumericPasswordOnIOS);
 }
 
 function init() {
@@ -244,6 +265,7 @@ function init() {
   loadContent();
   hideAudioIfOpusNotSupported();
   hideScriptureHash();
+  resetSubmitButtons();
 }
 
 init();

@@ -109,3 +109,9 @@ tbody.numerals td {
 .form-check-input {
   border-color: #666666 !important;
 }
+
+input[data-mask="true"],
+input[type="password"] {
+  -webkit-text-security: disc;
+  text-security: disc;
+}
