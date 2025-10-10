@@ -1,0 +1,29 @@
+{
+  "metadata": {
+    "lang": "es",
+    "hasAudio": false
+  },
+  "appTitle": "Primeros Principios",
+  "pageTitle": "Confirmar Mi Cuenta",
+  "p1": "Por favor, revise su correo electrónico. Le hemos enviado un código de confirmación de 6 dígitos. Debe introducir ese código a continuación para confirmar su cuenta.",
+  "buttonLabel": "Código de Confirmación:",
+  "confirmButton": "Confirmar",
+  "errTitle": "Error:",
+  "errTitleNotFound": "Código No Encontrado",
+  "errTitleExpired": "Código Expirado",
+  "errTitleGlitch": "No se Puede Procesar",
+  "errRequired": "Se requiere el código de confirmación",
+  "errUserIdNumeric": "La URL de esta página no es válida. Debe contener su ID de usuario numérico.",
+  "errNumeric": "El código de confirmación debe ser numérico",
+  "err6Digits": "Debe ser un número de 6 dígitos",
+  "errRequired2": "Por favor, introduzca el código de confirmación.",
+  "errNumeric2": "El código de confirmación debe ser un número de 6 dígitos.",
+  "errNoMatch": "Ese código de confirmación no coincide con nuestros registros. Por favor, inténtelo de nuevo.",
+  "errExpired": "Ese código de confirmación ha expirado. Por favor, inténtelo de nuevo haciendo clic en el botón de abajo.",
+  "errGlitch": "Hubo un fallo inesperado. Por favor, asegúrese de estar conectado a internet, luego inténtelo de nuevo.",
+  "errSendNew": "Enviarme un nuevo código",
+  "titleAccountConfirmed": "Cuenta Confirmada",
+  "confirmedP1": "¡Su cuenta ha sido confirmada y está activa!",
+  "confirmedP2": "Ahora puede eliminar el correo electrónico que le enviamos.",
+  "continue": "Continuar"
+}

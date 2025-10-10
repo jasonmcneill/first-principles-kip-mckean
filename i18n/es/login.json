@@ -1,0 +1,19 @@
+{
+  "metadata": {
+    "lang": "es"
+  },
+  "appTitle": "Primeros Principios",
+  "pageTitle": "Iniciar Sesión",
+  "username": "Nombre de Usuario:",
+  "usernameRequiredError": "Se requiere el nombre de usuario",
+  "password": "Contraseña:",
+  "passwordRequiredError": "Se requiere la contraseña",
+  "logIn": "Iniciar Sesión",
+  "forgotPassword": "¿Olvidó su contraseña?",
+  "noAccount": "¿No tiene cuenta?",
+  "registerLink": "Registrarse",
+  "alertHeadlineInvalid": "Inicio de Sesión Inválido",
+  "alertHeadlineUnable": "No Se Puede Iniciar Sesión",
+  "alertErrorInvalid": "Su nombre de usuario y/o contraseña no coinciden con nuestros registros. Por favor, inténtelo de nuevo.",
+  "alertErrorGlitch": "Hubo un fallo técnico que impidió que iniciara sesión. Por favor, inténtelo de nuevo."
+}

@@ -1,0 +1,20 @@
+{
+  "metadata": {
+    "lang": "es"
+  },
+  "appTitle": "Primeros Principios",
+  "pageTitle": "Código de Confirmación",
+  "p1": "Por favor, revise su correo electrónico. Le hemos enviado un código de confirmación de 6 dígitos. Debe introducir ese código a continuación para restablecer su contraseña.",
+  "labelConfirmationCode": "Código de Confirmación:",
+  "confirmButton": "Confirmar",
+  "cancel": "Cancelar restablecimiento de contraseña",
+  "errConfirmationCodeRequired": "Se requiere el código de confirmación",
+  "errTitleNotFound": "Código No Encontrado",
+  "errTitleExpired": "Código Expirado",
+  "errTitleGlitch": "No se Puede Procesar",
+  "errNumeric": "El código de confirmación debe ser numérico",
+  "err6Digits": "Debe ser un número de 6 dígitos",
+  "errNoMatch": "Ese código de confirmación no coincide con nuestros registros. Por favor, inténtelo de nuevo.",
+  "errExpired": "Ese código de confirmación ha expirado. Por favor, inténtelo de nuevo haciendo clic en el botón de abajo.",
+  "errGlitch": "Hubo un fallo inesperado. Por favor, asegúrese de estar conectado a internet, luego inténtelo de nuevo."
+}

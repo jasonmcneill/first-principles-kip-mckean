@@ -1,0 +1,24 @@
+{
+  "metadata": {
+    "lang": "es"
+  },
+  "appTitle": "Primeros Principios",
+  "pageTitle": "Olvidé Mi Contraseña",
+  "p1": "¿Ha olvidado su contraseña? ¡No hay problema! Puede restablecerla. Para empezar, complete el formulario a continuación.",
+  "labelEmailAddress": "Correo Electrónico:",
+  "buttonResetPassword": "Restablecer Contraseña",
+  "login": "Iniciar Sesión",
+  "errTitle": "Error:",
+  "errAcctNotFoundTitle": "Cuenta No Encontrada",
+  "errAcctNotFound": "Esa dirección de correo electrónico no coincide con nuestros registros. Por favor, introduzca la dirección de correo electrónico con la que se registró.",
+  "errTitleGlitch": "No se Puede Procesar",
+  "errEmailRequired": "El correo electrónico es obligatorio",
+  "errorEmailInvalid": "El formato del correo electrónico no es válido. Por favor, verifíquelo.",
+  "errGlitch": "Hubo un fallo inesperado. Por favor, asegúrese de estar conectado a internet, luego inténtelo de nuevo.",
+  "emailSubject": "Código de Restablecimiento de Contraseña de Primeros Principios",
+  "emailP1": "Puede restablecer la contraseña de su cuenta de Primeros Principios con el siguiente código de confirmación:",
+  "emailP2": "El código anterior caduca después de 20 minutos.",
+  "emailP3": "¡Gracias por usar Primeros Principios!",
+  "emailFooter1": "Serie de Estudios Bíblicos Primeros Principios",
+  "emailFooter2": "https://fp.kipmckean.com/"
+}

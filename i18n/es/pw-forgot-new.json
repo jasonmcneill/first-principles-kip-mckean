@@ -1,0 +1,19 @@
+{
+  "metadata": {
+    "lang": "es"
+  },
+  "appTitle": "Primeros Principios",
+  "pageTitle": "Crear una Nueva Contraseña",
+  "password": "Nueva Contraseña:",
+  "passwordRequirement": "Debe tener al menos 8 caracteres de longitud",
+  "errorPasswordRequired": "La contraseña es obligatoria",
+  "errorPasswordInvalid": "La contraseña no es válida. Por favor, inténtelo de nuevo.",
+  "buttonUpdate": "Actualizar",
+  "titlePasswordUpdated": "Contraseña Actualizada",
+  "confirmedP1": "¡Su contraseña fue restablecida con éxito!",
+  "confirmedP2": "Ahora puede eliminar el correo electrónico que le enviamos.",
+  "continue": "Continuar",
+  "cancel": "Cancelar restablecimiento de contraseña",
+  "errorTitle": "Error",
+  "errorGeneric": "Hubo un error inesperado. Por favor, compruebe su conexión a internet e inténtelo de nuevo."
+}
