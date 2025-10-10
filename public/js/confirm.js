@@ -22,10 +22,6 @@ async function onSubmit(evt) {
   resetSubmitButtons();
   showSubmitButtonSpinner(evt);
 
-  document
-    .querySelectorAll(".is-invalid")
-    .forEach((item) => item.classList.remove("is-invalid"));
-
   if (!code.length) {
     codeEl.classList.add("is-invalid");
     errMsgEl.innerHTML = getPhrase("errRequired");
