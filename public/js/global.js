@@ -198,6 +198,12 @@ function resetSubmitButtons() {
   });
 }
 
+function fpScrollTo(el, offset = 20) {
+  const y = el.getBoundingClientRect().top + window.pageYOffset - offset;
+
+  window.scrollTo({ top: y, behavior: "smooth" });
+}
+
 function showSubmitButtonSpinner(submitEvt) {
   const submitButtonEl = submitEvt.target.querySelector("button[type=submit]");
   const spinnerEl = submitButtonEl?.querySelector(".submitButtonSpinner");

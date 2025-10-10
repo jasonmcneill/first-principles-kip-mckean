@@ -1,0 +1,19 @@
+{
+  "metadata": {
+    "lang": "en"
+  },
+  "appTitle": "First Principles",
+  "pageTitle": "Confirmation Code",
+  "p1": "Please check your e-mail. We have sent you a 6-digit confirmation code. You must input that code below in order to reset your password.",
+  "labelConfirmationCode": "Confirmation Code:",
+  "confirmButton": "Confirm",
+  "errConfirmationCodeRequired": "Confirmation code is required",
+  "errTitleNotFound": "Code Not Found",
+  "errTitleExpired": "Code Expired",
+  "errTitleGlitch": "Unable to Process",
+  "errNumeric": "Confirmation code must be numeric",
+  "err6Digits": "Must be a 6-digit number",
+  "errNoMatch": "That confirmation code did not match our records. Please try again.",
+  "errExpired": "That confirmation code is expired. Please try again by clicking the button below.",
+  "errGlitch": "There was an unexpected glitch. Please make sure you are connected to the internet, then try again."
+}
