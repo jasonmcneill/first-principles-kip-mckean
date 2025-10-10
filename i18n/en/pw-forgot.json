@@ -1,0 +1,24 @@
+{
+  "metadata": {
+    "lang": "en"
+  },
+  "appTitle": "First Principles",
+  "pageTitle": "Forgot My Password",
+  "p1": "Have you forgotten your password? No problem! You can reset it. To begin, input your e-mail address then click Reset Password.",
+  "labelEmailAddress": "E-mail Address:",
+  "buttonResetPassword": "Reset Password",
+  "login": "Log In",
+  "errTitle": "Error:",
+  "errAcctNotFoundTitle": "Account Not Found",
+  "errAcctNotFound": "That e-mail address does not match our records. Please input the e-mail address that you registered with.",
+  "errTitleGlitch": "Unable to Process",
+  "errEmailRequired": "E-mail address is required",
+  "errorEmailInvalid": "E-mail format is invalid. Please check it for accuracy.",
+  "errGlitch": "There was an unexpected glitch. Please make sure you are connected to the internet, then try again.",
+  "emailSubject": "First Principles Password Reset Code",
+  "emailP1": "You can reset the password for your First Principles account with the following confirmation code:",
+  "emailP2": "The above code expires after 20 minutes.",
+  "emailP3": "Thank you for using First Principles!",
+  "emailFooter1": "First Principles Bible Study Series",
+  "emailFooter2": "https://fp.kipmckean.com/"
+}
