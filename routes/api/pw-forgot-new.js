@@ -1,5 +1,6 @@
 exports.POST = async (req, res) => {
   const db = require("../../db");
+  const bcrypt = require("bcrypt");
   const userid = req.user.id;
   const password = req.body.password || "";
 
