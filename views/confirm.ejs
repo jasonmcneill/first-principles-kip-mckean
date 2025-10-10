@@ -114,12 +114,18 @@
                     </label>
                   </div>
                   <input
-                    type="tel"
+                    type="password"
                     pattern="[0-9]*"
                     class="form-control"
                     id="confirmationCode"
                     maxlength="6"
+                    inputmode="numeric"
+                    autocomplete="new-password"
+                    autocorrect="off"
+                    autocapitalize="off"
+                    spellcheck="false"
                     autofocus
+                    data-mask="true"
                   />
                   <div class="invalid-feedback text-center balance" id="errMsg">
                     <%- data.errRequired %>
