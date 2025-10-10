@@ -4,7 +4,7 @@
   },
   "appTitle": "First Principles",
   "pageTitle": "Forgot My Password",
-  "p1": "Have you forgotten your password? No problem! You can reset it. To begin, input your e-mail address then click Reset Password.",
+  "p1": "Have you forgotten your password? No problem! You can reset it. To begin, complete the form below.",
   "labelEmailAddress": "E-mail Address:",
   "buttonResetPassword": "Reset Password",
   "login": "Log In",
