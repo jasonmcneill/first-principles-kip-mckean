@@ -99,6 +99,12 @@ function loadContent() {
   phrases = content;
 }
 
+function logOut() {
+  localStorage.removeItem("refreshToken");
+  sessionStorage.removeItem("accessToken");
+  window.location.replace("./login");
+}
+
 function showScripture(slug) {
   return new Promise((resolve, reject) => {
     const modal = new bootstrap.Modal("#modal");
