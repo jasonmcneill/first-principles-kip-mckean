@@ -96,73 +96,95 @@ exports.POST = (req, res) => {
 
   const sql = `
     SELECT
-      id, username
+      id, username, email
     FROM
       users
     WHERE
       username = ?
-    LIMIT 1
+    OR
+      email = ?
     ;
   `;
 
-  db.query(sql, [username.toLowerCase().trim()], (error, result) => {
-    if (error) {
-      console.log(error);
-      return res.status(500).send({
-        msg: "unable to check for existing username",
-        msgType: "error",
-      });
-    }
-
-    if (result.length) {
-      return res.status(500).send({
-        msg: "username is taken",
-        msgType: "error",
-        existingUser: result,
-      });
-    }
-
-    const saltRounds = 10;
-
-    bcrypt.hash(password, saltRounds, (hashErr, hashedPassword) => {
-      if (hashErr) {
-        console.log(hashErr);
+  db.query(
+    sql,
+    [username.toLowerCase().trim(), email.toLowerCase().trim()],
+    (error, result) => {
+      if (error) {
+        console.log(error);
         return res.status(500).send({
-          msg: "unable to hash password",
+          msg: "unable to check for existing username or e-mail address",
           msgType: "error",
         });
       }
 
-      const insertSql = `
+      if (result.length) {
+        const normalizedUsername = username.toLowerCase().trim();
+        const normalizedEmail = email.toLowerCase().trim();
+        const isUsernameTaken = result.some(
+          (row) =>
+            String(row.username || "").toLowerCase() === normalizedUsername
+        );
+        const isEmailTaken = result.some(
+          (row) => String(row.email || "").toLowerCase() === normalizedEmail
+        );
+
+        if (isUsernameTaken) {
+          return res.status(409).send({
+            msg: "username is taken",
+            msgType: "error",
+          });
+        }
+
+        if (isEmailTaken) {
+          return res.status(409).send({
+            msg: "email is taken",
+            msgType: "error",
+          });
+        }
+      }
+
+      const saltRounds = 10;
+
+      bcrypt.hash(password, saltRounds, (hashErr, hashedPassword) => {
+        if (hashErr) {
+          console.log(hashErr);
+          return res.status(500).send({
+            msg: "unable to hash password",
+            msgType: "error",
+          });
+        }
+
+        const insertSql = `
         INSERT INTO users
           (username, password, email, firstName, lastName, gender, mailingList, lang, createdAt)
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, UTC_TIMESTAMP())
       `;
 
-      db.query(
-        insertSql,
-        [
-          username,
-          hashedPassword,
-          email,
-          firstName,
-          lastName,
-          gender,
-          mailingList,
-          lang,
-        ],
-        (insertErr, insertResult) => {
-          if (insertErr) {
-            console.log(insertErr);
-            return res.status(500).send({
-              msg: "unable to create user",
-              msgType: "error",
-            });
-          }
+        db.query(
+          insertSql,
+          [
+            username,
+            hashedPassword,
+            email,
+            firstName,
+            lastName,
+            gender,
+            mailingList,
+            lang,
+          ],
+          (insertErr, insertResult) => {
+            if (insertErr) {
+              console.log(insertErr);
+              return res.status(500).send({
+                msg: "unable to create user",
+                msgType: "error",
+              });
+            }
 
-          const otp = genOTP.generateOTP(6);
+            const otp = genOTP.generateOTP(6);
 
-          const sql = `
+            const sql = `
             INSERT INTO otp(userid, code, expiry, createdAt)
             VALUES (
               ?,
@@ -172,54 +194,71 @@ exports.POST = (req, res) => {
             );
           `;
 
-          db.query(sql, [insertResult.insertId, otp], async (error, result) => {
-            if (error) {
-              console.log(error);
-              return res.status(500).send({
-                msg: "unable to store otp",
-                msgType: "error",
-              });
-            }
+            db.query(
+              sql,
+              [insertResult.insertId, otp],
+              async (error, result) => {
+                if (error) {
+                  console.log(error);
+                  return res.status(500).send({
+                    msg: "unable to store otp",
+                    msgType: "error",
+                  });
+                }
 
-            let htmlBody = emailHTMLTemplate.replaceAll(
-              "{{ emailP1 }}",
-              emailP1
+                let htmlBody = emailHTMLTemplate.replaceAll(
+                  "{{ emailP1 }}",
+                  emailP1
+                );
+                htmlBody = htmlBody.replaceAll("{{ OTP }}", otp);
+                htmlBody = htmlBody.replaceAll("{{ emailP2 }}", emailP2);
+                htmlBody = htmlBody.replaceAll("{{ emailP3 }}", emailP3);
+                htmlBody = htmlBody.replaceAll(
+                  "{{ emailFooter1 }}",
+                  emailFooter1
+                );
+                htmlBody = htmlBody.replaceAll(
+                  "{{ emailFooter2 }}",
+                  emailFooter2
+                );
+
+                let textBody = emailTextTemplate.replaceAll(
+                  "{{ emailP1 }}",
+                  emailP1
+                );
+                textBody = textBody.replaceAll("{{ OTP }}", otp);
+                textBody = textBody.replaceAll("{{ emailP2 }}", emailP2);
+                textBody = textBody.replaceAll("{{ emailP3 }}", emailP3);
+                textBody = textBody.replaceAll(
+                  "{{ emailFooter1 }}",
+                  emailFooter1
+                );
+                textBody = textBody.replaceAll(
+                  "{{ emailFooter2 }}",
+                  emailFooter2
+                );
+
+                require("./utils")
+                  .sendMail(
+                    email,
+                    `${firstName} ${lastName}`,
+                    emailSubject,
+                    htmlBody,
+                    textBody,
+                    emailAppName
+                  )
+                  .then((result) => {
+                    return res.status(200).send({
+                      msg: "user registered",
+                      msgType: "success",
+                      userid: insertResult.insertId,
+                    });
+                  });
+              }
             );
-            htmlBody = htmlBody.replaceAll("{{ OTP }}", otp);
-            htmlBody = htmlBody.replaceAll("{{ emailP2 }}", emailP2);
-            htmlBody = htmlBody.replaceAll("{{ emailP3 }}", emailP3);
-            htmlBody = htmlBody.replaceAll("{{ emailFooter1 }}", emailFooter1);
-            htmlBody = htmlBody.replaceAll("{{ emailFooter2 }}", emailFooter2);
-
-            let textBody = emailTextTemplate.replaceAll(
-              "{{ emailP1 }}",
-              emailP1
-            );
-            textBody = textBody.replaceAll("{{ OTP }}", otp);
-            textBody = textBody.replaceAll("{{ emailP2 }}", emailP2);
-            textBody = textBody.replaceAll("{{ emailP3 }}", emailP3);
-            textBody = textBody.replaceAll("{{ emailFooter1 }}", emailFooter1);
-            textBody = textBody.replaceAll("{{ emailFooter2 }}", emailFooter2);
-
-            require("./utils")
-              .sendMail(
-                email,
-                `${firstName} ${lastName}`,
-                emailSubject,
-                htmlBody,
-                textBody,
-                emailAppName
-              )
-              .then((result) => {
-                return res.status(200).send({
-                  msg: "user registered",
-                  msgType: "success",
-                  userid: insertResult.insertId,
-                });
-              });
-          });
-        }
-      );
-    });
-  });
+          }
+        );
+      });
+    }
+  );
 };

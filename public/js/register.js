@@ -177,6 +177,12 @@ async function onSubmit(evt) {
             getPhrase("usernameTaken")
           );
           break;
+        case "email is taken":
+          popUpError(
+            getPhrase("emailTakenTitle"),
+            getPhrase("errorEmailRegistered")
+          );
+          break;
         case "user registered":
           window.location.href = `./confirm?userid=${data.userid}`;
           break;
