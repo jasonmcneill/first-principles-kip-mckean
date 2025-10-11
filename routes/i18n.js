@@ -92,7 +92,30 @@ function renderPage(req, res) {
         }
       }
 
-      res.render(pageSlug, { data: pageData });
+      // Load global i18n key/value pairs for the current language
+      const globalPath = path.join(
+        __dirname,
+        "../i18n",
+        langCode,
+        "global.json"
+      );
+
+      let globalData = {};
+      if (fs.existsSync(globalPath)) {
+        globalData = JSON.parse(fs.readFileSync(globalPath, "utf8"));
+      } else {
+        const englishGlobalPath = path.join(
+          __dirname,
+          "../i18n",
+          "en",
+          "global.json"
+        );
+        if (fs.existsSync(englishGlobalPath)) {
+          globalData = JSON.parse(fs.readFileSync(englishGlobalPath, "utf8"));
+        }
+      }
+
+      res.render(pageSlug, { data: pageData, globalData: globalData });
     } catch (error) {
       console.error(error);
       res.status(500).send("Error loading page content.");

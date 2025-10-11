@@ -64,7 +64,7 @@
             >
               <a
                 href="./dashboard"
-                class="link-light text-decoration-none float-start px-3"
+                class="invisible link-light text-decoration-none float-start px-3"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -87,7 +87,7 @@
               >
                 <%- data.appTitle %>
               </h1>
-              <span class="float-end px-3">
+              <span class="invisible float-end px-3">
                 <button
                   class="navbar-toggler link-light"
                   type="button"
@@ -152,8 +152,15 @@
             </svg>
           </button>
         </div>
-        <div class="offcanvas-body">
-          <p></p>
+        <div class="offcanvas-body bg-light">
+          <div class="list-group bg-white shadow">
+            <a
+              href="javascript:logOut()"
+              class="list-group-item list-group-item-action"
+            >
+              <%- globalData.logout %>
+            </a>
+          </div>
         </div>
       </div>
 
@@ -167,7 +174,7 @@
 
                   <form id="loginForm" novalidate>
                     <div class="mb-4">
-                      <label for="identifier" class="form-label">
+                      <label for="username" class="form-label">
                         <%- data.username %>
                       </label>
                       <input

@@ -148,8 +148,15 @@
             </svg>
           </button>
         </div>
-        <div class="offcanvas-body">
-          <p></p>
+        <div class="offcanvas-body bg-light">
+          <div class="list-group bg-white shadow">
+            <a
+              href="javascript:logOut()"
+              class="list-group-item list-group-item-action"
+            >
+              <%- globalData.logout %>
+            </a>
+          </div>
         </div>
       </div>
 

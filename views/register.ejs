@@ -87,7 +87,7 @@
               >
                 <%- data.appTitle %>
               </h1>
-              <span class="float-end px-3">
+              <span class="invisible float-end px-3">
                 <button
                   class="navbar-toggler link-light"
                   type="button"
@@ -152,8 +152,15 @@
             </svg>
           </button>
         </div>
-        <div class="offcanvas-body">
-          <p></p>
+        <div class="offcanvas-body bg-light">
+          <div class="list-group bg-white shadow">
+            <a
+              href="javascript:logOut()"
+              class="list-group-item list-group-item-action"
+            >
+              <%- globalData.logout %>
+            </a>
+          </div>
         </div>
       </div>
 
