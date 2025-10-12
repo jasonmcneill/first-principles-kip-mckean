@@ -36,6 +36,10 @@ async function onSubmit(evt) {
   resetErrors();
   showSubmitButtonSpinner(evt);
 
+  document
+    .querySelectorAll(".is-invalid")
+    .forEach((item) => item.classList.remove("is-invalid"));
+
   const passwordEl = evt.target.querySelector("#password");
   const password = passwordEl.value.trim();
 

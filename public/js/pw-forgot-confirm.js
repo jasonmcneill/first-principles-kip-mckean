@@ -38,6 +38,10 @@ async function onSubmitCode(evt) {
   resetErrors();
   showSubmitButtonSpinner(evt);
 
+  document
+    .querySelectorAll(".is-invalid")
+    .forEach((item) => item.classList.remove("is-invalid"));
+
   const userid = new URLSearchParams(window.location.search).get("userid");
   const codeEl = document.querySelector("#confirmationCode");
   const errMsgEl = document.querySelector("#errMsgConfirmationCode");

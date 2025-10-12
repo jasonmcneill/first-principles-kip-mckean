@@ -49,6 +49,10 @@ async function onSubmitEmail(evt) {
   hideAlert();
   showSubmitButtonSpinner(evt);
 
+  document
+    .querySelectorAll(".is-invalid")
+    .forEach((item) => item.classList.remove("is-invalid"));
+
   const emailEl = evt.target.querySelector("#email");
   const errMsgEmail = evt.target.querySelector("#errMsgEmail");
   const email = emailEl.value.trim();
