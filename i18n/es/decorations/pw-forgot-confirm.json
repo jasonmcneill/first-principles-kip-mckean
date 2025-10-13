@@ -1,0 +1,12 @@
+[
+  {
+    "key": "p1",
+    "text": {
+      "original": "Please check your e-mail.",
+      "translated": "Por favor, revise su correo electrónico."
+    },
+    "decorations": {
+      "bold": true
+    }
+  }
+]
