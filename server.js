@@ -18,6 +18,7 @@ const app = express();
 const path = require("path");
 const fs = require("fs");
 const PORT = process.env.PORT || 3000;
+const HOST = "127.0.0.1";
 const i18nRoutes = require("./routes/i18n");
 
 app.use(express.json());
@@ -92,6 +93,6 @@ app.get("/:langCode/subscribe", (req, res) => {
 });
 
 // Start the server
-app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+app.listen(PORT, HOST, () => {
+  console.log(`Server is running on http://${HOST}:${PORT}`);
 });
