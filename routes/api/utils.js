@@ -68,9 +68,11 @@ exports.sendMail = (
     });
     request
       .then((result) => {
+        console.log(result);
         return resolve(result);
       })
       .catch((err) => {
+        console.log(err);
         return resolve(err);
       });
   });
