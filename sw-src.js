@@ -28,6 +28,7 @@ if (workbox) {
   langs.forEach((lang) => {
     const langList = LANG_SLUGS[lang] || [];
     langList.forEach((slug) => {
+      if (slug === "global") return;
       routes.push({
         url: `/${lang}/${slug}`,
         // Use a timestamp to force update when this script is regenerated
