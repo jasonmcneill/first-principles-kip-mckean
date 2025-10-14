@@ -1,5 +1,11 @@
 let phrases;
 
+function fpScrollTo(el, offset = 20) {
+  const y = el.getBoundingClientRect().top + window.pageYOffset - offset;
+
+  window.scrollTo({ top: y, behavior: "smooth" });
+}
+
 function getAccessToken() {
   let needToRefresh = false;
   const accessToken = sessionStorage.getItem("accessToken") || "";
@@ -117,8 +123,45 @@ async function logOut() {
     }
   };
 
-  await clearAllPWACaches();
+  // await clearAllPWACaches();
   window.location.replace("./login");
+}
+
+function listenForAudio() {
+  return new Promise((resolve) => {
+    const channel = new MessageChannel();
+    const t = setTimeout(() => {
+      channel.port1.onmessage = null;
+      resolve({ ok: false, error: "timeout", url, requestId });
+    }, timeoutMs);
+
+    channel.port1.onmessage = (ev) => {
+      clearTimeout(t);
+      resolve(ev.data);
+    };
+
+    sw.postMessage({ type: "PREFETCH_AUDIO", url, requestId }, [channel.port2]);
+  });
+}
+
+function maskNumericPasswordOnIOS() {
+  const isIOS = /iP(ad|hone|od)/.test(navigator.userAgent);
+  if (isIOS) {
+    document
+      .querySelectorAll('input[type="password"][data-mask="true"]')
+      .forEach((item) => {
+        item.type = "tel";
+        item.inputMode = "numeric";
+        item.style.webkitTextSecurity = "disc";
+      });
+  }
+}
+
+function resetSubmitButtons() {
+  document.querySelectorAll("button[type=submit]").forEach((item) => {
+    item.removeAttribute("disabled");
+    item.querySelector(".submitButtonSpinner").classList.add("d-none");
+  });
 }
 
 function showScripture(slug) {
@@ -194,49 +237,6 @@ function showScripture(slug) {
         return resolve(scriptureObject);
       });
   });
-}
-
-function listenForAudio() {
-  return new Promise((resolve) => {
-    const channel = new MessageChannel();
-    const t = setTimeout(() => {
-      channel.port1.onmessage = null;
-      resolve({ ok: false, error: "timeout", url, requestId });
-    }, timeoutMs);
-
-    channel.port1.onmessage = (ev) => {
-      clearTimeout(t);
-      resolve(ev.data);
-    };
-
-    sw.postMessage({ type: "PREFETCH_AUDIO", url, requestId }, [channel.port2]);
-  });
-}
-
-function maskNumericPasswordOnIOS() {
-  const isIOS = /iP(ad|hone|od)/.test(navigator.userAgent);
-  if (isIOS) {
-    document
-      .querySelectorAll('input[type="password"][data-mask="true"]')
-      .forEach((item) => {
-        item.type = "tel";
-        item.inputMode = "numeric";
-        item.style.webkitTextSecurity = "disc";
-      });
-  }
-}
-
-function resetSubmitButtons() {
-  document.querySelectorAll("button[type=submit]").forEach((item) => {
-    item.removeAttribute("disabled");
-    item.querySelector(".submitButtonSpinner").classList.add("d-none");
-  });
-}
-
-function fpScrollTo(el, offset = 20) {
-  const y = el.getBoundingClientRect().top + window.pageYOffset - offset;
-
-  window.scrollTo({ top: y, behavior: "smooth" });
 }
 
 function showSubmitButtonSpinner(submitEvt) {

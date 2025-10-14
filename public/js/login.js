@@ -84,8 +84,6 @@ function onSubmit(evt) {
   resetSubmitButtons();
   showSubmitButtonSpinner(evt);
 
-  // TODO: show spinner
-
   fetch("/api/login", {
     method: "POST",
     body: JSON.stringify({
@@ -136,9 +134,7 @@ function addListeners() {
 }
 
 function init() {
-  // TODO: show spinner
   addListeners();
-  // TODO: hide spinner
 }
 
 init();
