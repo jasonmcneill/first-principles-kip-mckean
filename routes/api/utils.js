@@ -27,8 +27,8 @@ exports.sendMail = (
   subject = "",
   htmlBody = "",
   textBody = "",
-  fromEmailName = "",
-  fromEmailAddress = ""
+  fromEmailName = process.env.EMAIL_FROM_NAME,
+  fromEmailAddress = process.env.EMAIL_FROM_ADDRESS
 ) => {
   return new Promise((resolve, reject) => {
     sendMail_MailGun(
@@ -54,6 +54,7 @@ function sendMail_MailGun(
   fromEmailName,
   fromEmailAddress
 ) {
+  console.log(fromEmailAddress);
   const mailgun = require("mailgun-js");
   return new Promise((resolve, reject) => {
     try {
@@ -86,16 +87,17 @@ function sendMail_MailGun(
 }
 
 function sendMail_MailJet(
-  toEmail = "",
-  toName = "",
-  subject = "",
-  htmlBody = "",
-  textBody = "",
-  fromEmailName = "",
-  fromEmailAddress = "contact@kipmckean.app"
+  toEmail,
+  toName,
+  subject,
+  htmlBody,
+  textBody,
+  fromEmailName,
+  fromEmailAddress
 ) {
+  console.log(fromEmailAddress);
+  const Mailjet = require("node-mailjet");
   return new Promise((resolve, reject) => {
-    const Mailjet = require("node-mailjet");
     const mailjet = Mailjet.apiConnect(
       process.env.MAILJET_API_KEY,
       process.env.MAILJET_SECRET_KEY
