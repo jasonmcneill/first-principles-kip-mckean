@@ -31,6 +31,78 @@ exports.sendMail = (
   fromEmailAddress = ""
 ) => {
   return new Promise((resolve, reject) => {
+    sendMail_MailGun(
+      toEmail,
+      toName,
+      subject,
+      htmlBody,
+      textBody,
+      fromEmailName,
+      fromEmailAddress
+    ).then((result) => {
+      resolve(result);
+    });
+  });
+};
+
+function sendMail_MailGun(
+  toEmail,
+  toName,
+  subject,
+  htmlBody,
+  textBody,
+  fromEmailName,
+  fromEmailAddress
+) {
+  const mailgun = require("mailgun-js");
+  exports.sendMail = (
+    toEmail = "",
+    toName = "",
+    subject = "",
+    htmlBody = "",
+    textBody = "",
+    fromEmailName = "",
+    fromEmailAddress = "contact@kipmckean.app"
+  ) => {
+    return new Promise((resolve, reject) => {
+      try {
+        const mg = mailgun({
+          apiKey: process.env.MAILGUN_SECRET_KEY,
+          domain: process.env.MAILGUN_DOMAIN,
+        });
+
+        const data = {
+          from: `${fromEmailName} <${fromEmailAddress}>`,
+          to: `${toName} <${toEmail}>`,
+          subject,
+          text: textBody || undefined,
+          html: htmlBody || undefined,
+        };
+
+        mg.messages().send(data, (error, body) => {
+          if (error) {
+            reject(error);
+          } else {
+            resolve(body);
+          }
+        });
+      } catch (err) {
+        reject(err);
+      }
+    });
+  };
+}
+
+function sendMail_MailJet(
+  toEmail = "",
+  toName = "",
+  subject = "",
+  htmlBody = "",
+  textBody = "",
+  fromEmailName = "",
+  fromEmailAddress = "contact@kipmckean.app"
+) {
+  return new Promise((resolve, reject) => {
     const Mailjet = require("node-mailjet");
     const mailjet = Mailjet.apiConnect(
       process.env.MAILJET_API_KEY,
@@ -82,4 +154,4 @@ exports.sendMail = (
         return resolve(err);
       });
   });
-};
+}
