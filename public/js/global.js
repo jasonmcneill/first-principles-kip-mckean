@@ -99,9 +99,25 @@ function loadContent() {
   phrases = content;
 }
 
-function logOut() {
+async function logOut() {
   localStorage.removeItem("refreshToken");
   sessionStorage.removeItem("accessToken");
+
+  const clearAllPWACaches = async () => {
+    const cacheKeys = await caches.keys();
+
+    for (const key of cacheKeys) {
+      const deleted = await caches.delete(key);
+
+      if (deleted) {
+        console.log(`Successfully deleted cache: ${key}`);
+      } else {
+        console.log(`Cache not found or could not be deleted: ${key}`);
+      }
+    }
+  };
+
+  await clearAllPWACaches();
   window.location.replace("./login");
 }
 
