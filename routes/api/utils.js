@@ -54,7 +54,6 @@ function sendMail_MailGun(
   fromEmailName,
   fromEmailAddress
 ) {
-  console.log(fromEmailAddress);
   const mailgun = require("mailgun-js");
   return new Promise((resolve, reject) => {
     try {
@@ -95,7 +94,6 @@ function sendMail_MailJet(
   fromEmailName,
   fromEmailAddress
 ) {
-  console.log(fromEmailAddress);
   const Mailjet = require("node-mailjet");
   return new Promise((resolve, reject) => {
     const mailjet = Mailjet.apiConnect(
