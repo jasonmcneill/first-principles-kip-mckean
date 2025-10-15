@@ -143,10 +143,7 @@ function sendMail_MailJet(
           HTMLPart: htmlBody,
           Headers: {
             "X-Mailer": "fp.kipmckean.com via Mailjet",
-            ReplyTo: {
-              Email: process.env.EMAIL_REPLYTO_ADDRESS,
-              Name: process.env.EMAIL_REPLYTO_NAME,
-            },
+            ReplyTo: process.env.EMAIL_REPLYTO_ADDRESS,
           },
         },
       ],
