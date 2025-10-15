@@ -139,10 +139,6 @@ function sendMail_MailJet(
               Name: toName,
             },
           ],
-          ReplyTo: {
-            Email: process.env.EMAIL_REPLYTO_NAME,
-            Name: process.env.EMAIL_REPLYTO_ADDRESS,
-          },
           Subject: subject,
           TextPart: textBody,
           HTMLPart: htmlBody,
