@@ -31,17 +31,31 @@ exports.sendMail = (
   fromEmailAddress = process.env.EMAIL_FROM_ADDRESS
 ) => {
   return new Promise((resolve, reject) => {
-    sendMail_MailGun(
-      toEmail,
-      toName,
-      subject,
-      htmlBody,
-      textBody,
-      fromEmailName,
-      fromEmailAddress
-    ).then((result) => {
-      resolve(result);
-    });
+    if (process.env.NODE_ENV === "production") {
+      sendMail_MailJet(
+        toEmail,
+        toName,
+        subject,
+        htmlBody,
+        textBody,
+        fromEmailName,
+        fromEmailAddress
+      ).then((result) => {
+        resolve(result);
+      });
+    } else {
+      sendMail_MailGun(
+        toEmail,
+        toName,
+        subject,
+        htmlBody,
+        textBody,
+        fromEmailName,
+        fromEmailAddress
+      ).then((result) => {
+        resolve(result);
+      });
+    }
   });
 };
 
@@ -75,6 +89,7 @@ function sendMail_MailGun(
           console.log(error);
           reject(error);
         } else {
+          console.log(body);
           resolve(body);
         }
       });
@@ -139,6 +154,7 @@ function sendMail_MailJet(
     });
     request
       .then((result) => {
+        console.log(result);
         return resolve(result);
       })
       .catch((err) => {
