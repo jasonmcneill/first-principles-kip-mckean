@@ -138,15 +138,15 @@ function sendMail_MailJet(
               Name: toName,
             },
           ],
-          ReplyTo: {
-            Email: process.env.EMAIL_REPLYTO_ADDRESS,
-            Name: process.env.EMAIL_REPLYTO_NAME,
-          },
           Subject: subject,
           TextPart: textBody,
           HTMLPart: htmlBody,
           Headers: {
             "X-Mailer": "fp.kipmckean.com via Mailjet",
+            ReplyTo: {
+              Email: process.env.EMAIL_REPLYTO_ADDRESS,
+              Name: process.env.EMAIL_REPLYTO_NAME,
+            },
           },
         },
       ],
