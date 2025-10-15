@@ -142,9 +142,6 @@ function sendMail_MailJet(
           Subject: subject,
           TextPart: textBody,
           HTMLPart: htmlBody,
-          Headers: {
-            "X-Mailer": "fp.kipmckean.com via Mailjet",
-          },
         },
       ],
     });
