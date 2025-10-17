@@ -104,7 +104,6 @@ exports.POST = async (req, res) => {
           emailAppName
         )
         .then((mailResponse) => {
-          console.log(`mailResponse: ${mailResponse}`);
           return res.status(200).send({
             msg: "password reset email sent",
             msgType: "success",
