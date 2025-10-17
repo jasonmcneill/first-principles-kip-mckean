@@ -149,15 +149,16 @@ function sendMail_MailJet(
     });
     request
       .then((result) => {
-        const { status, statusText, headers, config } = result;
         const mailResponse = {
-          status,
-          statusText,
-          headers,
-          config,
+          status: result.status,
+          statusText: result.statusText,
+          headers: result.headers,
+          config: result.config,
         };
 
         console.log(mailResponse);
+
+        console.log(result);
 
         return resolve(mailResponse);
       })
