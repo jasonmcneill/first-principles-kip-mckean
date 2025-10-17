@@ -92,6 +92,7 @@ function sendMail_MailGun(
           console.log(error);
           reject(error);
         } else {
+          console.log(body);
           resolve(body);
         }
       });
