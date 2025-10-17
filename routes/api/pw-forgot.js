@@ -103,11 +103,13 @@ exports.POST = async (req, res) => {
           textBody,
           emailAppName
         )
-        .then(() => {
+        .then((response) => {
+          let mailResponse = response ? response : null;
           return res.status(200).send({
             msg: "password reset email sent",
             msgType: "success",
             userid: userid,
+            mailResponse: mailResponse,
           });
         });
     });
