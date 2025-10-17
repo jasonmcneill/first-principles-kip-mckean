@@ -148,7 +148,7 @@ function sendMail_MailJet(
     });
     request
       .then((result) => {
-        return resolve(result);
+        return resolve(result.response);
       })
       .catch((err) => {
         return resolve(err);
