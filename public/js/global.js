@@ -1,4 +1,5 @@
 let phrases;
+let globalPhrases;
 
 function fpScrollTo(el, offset = 20) {
   const y = el.getBoundingClientRect().top + window.pageYOffset - offset;
@@ -52,6 +53,16 @@ function getAccessToken() {
   });
 }
 
+function getGlobalPhrase(key) {
+  if (!globalPhrases) return;
+
+  const phrase = globalPhrases[key];
+
+  if (!phrase) return;
+
+  return phrase;
+}
+
 function getPhrase(key) {
   if (!phrases) return;
 
@@ -101,8 +112,14 @@ function loadContent() {
   const contentEl = document.querySelector("#content");
   if (!contentEl) return;
 
+  const globalContentEl = document.querySelector("#globalContent");
+  if (!globalContentEl) return;
+
   const content = JSON.parse(contentEl.innerHTML);
+  const globalContent = JSON.parse(globalContentEl.innerHTML);
+
   phrases = content;
+  globalPhrases = globalContent;
 }
 
 async function logOut() {
