@@ -150,10 +150,10 @@ function sendMail_MailJet(
     request
       .then((result) => {
         const mailResponse = {
-          status: result.status,
-          statusText: result.statusText,
-          headers: result.headers,
-          config: result.config,
+          status: result.response.status,
+          statusText: result.response.statusText,
+          headers: result.response.headers,
+          config: result.response.config,
         };
 
         console.log(mailResponse);
