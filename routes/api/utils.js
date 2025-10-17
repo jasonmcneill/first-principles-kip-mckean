@@ -86,14 +86,15 @@ function sendMail_MailGun(
 
       mg.messages().send(data, (error, body) => {
         if (error) {
-          console.log(error);
+          console.log(util.inspect(error, { depth: 7, colors: true }));
           reject(error);
         } else {
+          console.log(util.inspect(body, { depth: 7, colors: true }));
           resolve(body);
         }
       });
     } catch (err) {
-      console.log(err);
+      console.log(util.inspect(err, { depth: 7, colors: true }));
       reject(err);
     }
   });
@@ -146,10 +147,11 @@ function sendMail_MailJet(
     });
     request
       .then((result) => {
+        console.log(util.inspect(result, { depth: 7, colors: true }));
         return resolve(result);
       })
       .catch((err) => {
-        console.log(err);
+        console.log(util.inspect(err, { depth: 7, colors: true }));
         return resolve(err);
       });
   });
