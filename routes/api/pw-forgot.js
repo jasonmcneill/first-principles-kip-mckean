@@ -104,9 +104,9 @@ exports.POST = async (req, res) => {
           emailAppName
         )
         .then((mailResponse) => {
-          const { status } = mailResponse;
+          const { statusCode } = mailResponse;
 
-          if (status >= 200 && status <= 299) {
+          if (statusCode >= 200 && statusCode <= 299) {
             return res.status(200).send({
               msg: "password reset email sent",
               msgType: "success",
