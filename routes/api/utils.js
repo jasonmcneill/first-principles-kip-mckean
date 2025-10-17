@@ -93,9 +93,35 @@ function sendMail_MailGun(
           console.log(error);
           reject(error);
         } else {
+          let statusText = "OK";
+          let statusCode = 200;
+
+          if (body && body.message) {
+            if (
+              body.message.includes(
+                "account-requests-per-sec limit exceeded, try again after 120 seconds"
+              )
+            ) {
+              statusCode = 200;
+              statusText = body.message;
+            } else if (body.message.includes("Internal Server Error")) {
+              statusCode = 500;
+              statusText = body.message;
+            } else if (body === "Forbidden") {
+              statusCode = 401;
+              statusText = body;
+            } else if (body.message !== "Queued. Thank you.") {
+              statusCode = 400;
+              statusText = body.message;
+            } else {
+              statusCode = 200;
+              statusText = body.message;
+            }
+          }
+
           const mailResponse = {
-            status: 200,
-            statusText: body.message,
+            status: statusCode,
+            statusText: statusText,
           };
 
           resolve(mailResponse);
