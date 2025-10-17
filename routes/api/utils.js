@@ -56,7 +56,6 @@ exports.sendMail = (
         fromEmailName,
         fromEmailAddress
       ).then((result) => {
-        console.log(result);
         resolve(result);
       });
     }
@@ -90,12 +89,14 @@ function sendMail_MailGun(
 
       mg.messages().send(data, (error, body) => {
         if (error) {
+          console.log(error);
           reject(error);
         } else {
           resolve(body);
         }
       });
     } catch (err) {
+      console.log(err);
       reject(err);
     }
   });
@@ -148,9 +149,20 @@ function sendMail_MailJet(
     });
     request
       .then((result) => {
-        return resolve(result.response);
+        const { status, statusText, headers, config } = result;
+        const mailResponse = {
+          status,
+          statusText,
+          headers,
+          config,
+        };
+
+        console.log(mailResponse);
+
+        return resolve(mailResponse);
       })
       .catch((err) => {
+        console.log(err);
         return resolve(err);
       });
   });
