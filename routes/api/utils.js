@@ -152,13 +152,7 @@ function sendMail_MailJet(
         const mailResponse = {
           status: result.response.status,
           statusText: result.response.statusText,
-          headers: result.response.headers,
-          config: result.response.config,
         };
-
-        console.log(mailResponse);
-
-        console.log(result);
 
         return resolve(mailResponse);
       })
