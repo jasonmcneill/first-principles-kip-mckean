@@ -182,7 +182,7 @@ function sendMail_MailJet(
     request
       .then((result) => {
         const mailResponse = {
-          status: result.response.status,
+          statusCode: result.response.status,
           statusText: result.response.statusText,
         };
 

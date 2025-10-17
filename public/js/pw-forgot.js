@@ -107,6 +107,26 @@ async function onSubmitEmail(evt) {
           window.location.href = `./pw-forgot-confirm?userid=${data.userid}`;
           break;
         default:
+          if (typeof data === "undefined") {
+            showAlert(getPhrase("errGlitch"), getPhrase("errTitle"));
+          } else {
+            showAlert(
+              `
+                ${getPhrase("errGlitch")}
+                <div class="my-3 p-3 text-danger bg-light border-dark">
+                  <code>
+                  ${data.mailResponse.statusText}
+                  </code>
+                </div>
+              `,
+              getPhrase("errTitle")
+            );
+          }
+
+          if (data.mailResponse) {
+            console.error(data.mailResponse);
+          }
+
           break;
       }
     });

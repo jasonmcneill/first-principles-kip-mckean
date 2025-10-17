@@ -189,6 +189,7 @@ async function onSubmit(evt) {
         default:
           popUpError(getPhrase("errorTitle"), getPhrase("errorGeneric"));
           console.error(data.msg);
+          if (data.mailResponse) console.error(data.mailResponse.statusText);
           break;
       }
     })
