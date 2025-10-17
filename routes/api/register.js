@@ -247,13 +247,12 @@ exports.POST = (req, res) => {
                     textBody,
                     emailAppName
                   )
-                  .then((response) => {
-                    let mailResponse = response ? response : null;
+                  .then((outgoingEmailResponse) => {
                     return res.status(200).send({
                       msg: "user registered",
                       msgType: "success",
                       userid: insertResult.insertId,
-                      mailResponse: mailResponse,
+                      outgoingEmailResponse: outgoingEmailResponse,
                     });
                   });
               }
