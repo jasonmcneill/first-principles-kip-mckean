@@ -252,7 +252,6 @@ exports.POST = (req, res) => {
                       msg: "user registered",
                       msgType: "success",
                       userid: insertResult.insertId,
-                      result: result,
                     });
                   });
               }
