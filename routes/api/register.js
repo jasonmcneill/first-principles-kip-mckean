@@ -248,12 +248,23 @@ exports.POST = (req, res) => {
                     emailAppName
                   )
                   .then((mailResponse) => {
-                    return res.status(200).send({
-                      msg: "user registered",
-                      msgType: "success",
-                      userid: insertResult.insertId,
-                      mailResponse: mailResponse,
-                    });
+                    const { statusCode } = mailResponse;
+
+                    if (statusCode >= 200 && statusCode <= 299) {
+                      return res.status(statusCode).send({
+                        msg: "user registered",
+                        msgType: "success",
+                        userid: insertResult.insertId,
+                        mailResponse: mailResponse,
+                      });
+                    } else {
+                      return res.status(statusCode).send({
+                        msg: "confirmation email not sent",
+                        msgType: "error",
+                        userid: insertResult.insertId,
+                        mailResponse: mailResponse,
+                      });
+                    }
                   });
               }
             );
