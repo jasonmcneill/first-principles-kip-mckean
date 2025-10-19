@@ -97,7 +97,7 @@ function sendMail_MailGun(
             statusCode: 200,
             statusText: body.message,
           };
-          resolve(body);
+          resolve(mailResponse);
         }
       });
     } catch (err) {
