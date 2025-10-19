@@ -93,15 +93,7 @@ function sendMail_MailGun(
           console.log(error);
           reject(error);
         } else {
-          let statusText = "OK";
-          let statusCode = 200;
-
-          const mailResponse = {
-            status: statusCode,
-            statusText: body.message,
-          };
-
-          resolve(mailResponse);
+          resolve(body);
         }
       });
     } catch (err) {
