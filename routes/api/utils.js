@@ -56,7 +56,6 @@ exports.sendMail = (
         fromEmailName,
         fromEmailAddress
       ).then((result) => {
-        console.log(result);
         resolve(result);
       });
     }
