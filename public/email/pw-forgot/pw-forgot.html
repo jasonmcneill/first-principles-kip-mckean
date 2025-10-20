@@ -1,31 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{ emailSubject }}</title>
-  </head>
-  <body>
-    <p class="emailP1">{{ emailP1 }}</p>
 
-    <p class="emailP2">
-      <strong style="font-size: 125%">{{ OTP }}</strong>
-    </p>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ emailSubject }}</title>
+</head>
 
-    <p class="emailP3">{{ emailP3 }}</p>
+<body>
+  <p class="emailP1">{{ emailP1 }}</p>
 
-    <br />
+  <p class="emailP2">
+    <strong style="font-size: 125%">{{ OTP }}</strong>
+  </p>
 
-    <hr />
+  <p class="emailP3">{{ emailP3 }}</p>
 
-    <div>
-      <small class="emailFooter1"> {{ emailFooter1 }} </small>
-    </div>
+  <br />
 
-    <div>
-      <small class="emailFooter2">
-        <a href="https://fp.kipmckean.com/">{{ emailFooter2 }}</a>
-      </small>
-    </div>
-  </body>
+  <hr />
+
+  <div>
+    <small class="emailFooter1"> {{ emailFooter1 }} </small>
+  </div>
+
+  <div>
+    <small class="emailFooter2">
+      <a href="{{ emailFooter2 }}">{{ emailFooter2 }}</a>
+    </small>
+  </div>
+</body>
+
 </html>
