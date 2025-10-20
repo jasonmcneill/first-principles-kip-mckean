@@ -9,7 +9,6 @@ exports.POST = async (req, res) => {
   const emailP2 = req.body.emailP2 || "";
   const emailP3 = req.body.emailP3 || "";
   const emailFooter1 = req.body.emailFooter1 || "";
-  const emailFooter2 = req.body.emailFooter2 || "";
   const emailTextTemplate = req.body.emailTextTemplate || "";
   const emailHTMLTemplate = req.body.emailHTMLTemplate || "";
 
@@ -85,14 +84,14 @@ exports.POST = async (req, res) => {
       htmlBody = htmlBody.replaceAll("{{ emailP2 }}", emailP2);
       htmlBody = htmlBody.replaceAll("{{ emailP3 }}", emailP3);
       htmlBody = htmlBody.replaceAll("{{ emailFooter1 }}", emailFooter1);
-      htmlBody = htmlBody.replaceAll("{{ emailFooter2 }}", emailFooter2);
+      htmlBody = htmlBody.replaceAll("{{ emailFooter2 }}", process.env.FRONTEND_URL);
 
       let textBody = emailTextTemplate.replaceAll("{{ emailP1 }}", emailP1);
       textBody = textBody.replaceAll("{{ OTP }}", otp);
       textBody = textBody.replaceAll("{{ emailP2 }}", emailP2);
       textBody = textBody.replaceAll("{{ emailP3 }}", emailP3);
       textBody = textBody.replaceAll("{{ emailFooter1 }}", emailFooter1);
-      textBody = textBody.replaceAll("{{ emailFooter2 }}", emailFooter2);
+      textBody = textBody.replaceAll("{{ emailFooter2 }}", process.env.FRONTEND_URL);
 
       require("./utils")
         .sendMail(

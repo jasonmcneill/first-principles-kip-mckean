@@ -17,7 +17,6 @@ exports.POST = (req, res) => {
   const emailP2 = req.body.emailP2 || "";
   const emailP3 = req.body.emailP3 || "";
   const emailFooter1 = req.body.emailFooter1 || "";
-  const emailFooter2 = req.body.emailFooter2 || "";
   const emailTextTemplate = req.body.emailTextTemplate || "";
   const emailHTMLTemplate = req.body.emailHTMLTemplate || "";
 
@@ -219,7 +218,7 @@ exports.POST = (req, res) => {
                 );
                 htmlBody = htmlBody.replaceAll(
                   "{{ emailFooter2 }}",
-                  emailFooter2
+                  process.env.FRONTEND_URL
                 );
 
                 let textBody = emailTextTemplate.replaceAll(
@@ -235,7 +234,7 @@ exports.POST = (req, res) => {
                 );
                 textBody = textBody.replaceAll(
                   "{{ emailFooter2 }}",
-                  emailFooter2
+                  process.env.FRONTEND_URL
                 );
 
                 require("./utils")
