@@ -111,7 +111,11 @@ app.get('/profile', requiresAuth(), (req, res) => {
 
 app.get('/callback', async (req, res) => {
   const user = await getUserFromAuth0(req);
+  const lang = user.user_metadata?.language || 'en';
+
   console.log(user);
+
+  res.redirect(`/${lang}/dashboard`);
 });
 
 // Start the server
