@@ -20,9 +20,20 @@ const fs = require("fs");
 const PORT = process.env.PORT || 3000;
 const HOST = "127.0.0.1";
 const i18nRoutes = require("./routes/i18n");
+const { auth } = require('express-openid-connect');
+
+const config = {
+  authRequired: false,
+  auth0Logout: true,
+  secret: `${process.env.AUTH0_SECRET}`,
+  baseURL: `${process.env.AUTH0_BASE_URL}`,
+  clientID: `${process.env.AUTH0_CLIENT_ID}`,
+  issuerBaseURL: `${process.env.AUTH0_ISSUER_BASE_URL}`
+};
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(auth(config));
 
 // Set up EJS and the views directory
 app.set("view engine", "ejs");
@@ -90,6 +101,16 @@ app.get("/:langCode/subscribe", (req, res) => {
       res.status(404).render("404", { title: "Page Not Found" });
     }
   }
+});
+
+const { requiresAuth } = require('express-openid-connect');
+
+app.get('/profile', requiresAuth(), (req, res) => {
+  res.send(JSON.stringify(req.oidc.user));
+});
+
+app.get('/callback', (req, res) => {
+  console.log(req.oidc.user);
 });
 
 // Start the server

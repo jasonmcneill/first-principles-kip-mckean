@@ -141,7 +141,8 @@ async function logOut() {
   };
 
   // await clearAllPWACaches();
-  window.location.replace("./login");
+  // window.location.replace("./login");
+  window.location.replace("/logout");
 }
 
 function listenForAudio() {

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="<%- data.metadata.lang %>">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="google" content="notranslate" />
+    <meta name="view-transition" content="same-origin" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <title><%- data.pageTitle %></title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+    <link rel="shortcut icon" href="/img/<%- data.metadata.lang %>/launch/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/img/<%- data.metadata.lang %>/launch/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/img/<%- data.metadata.lang %>/launch/180.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/<%- data.metadata.lang %>/launch/180.png" />
+    <link rel="apple-touch-icon" sizes="167x167" href="/img/<%- data.metadata.lang %>/launch/167.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/img/<%- data.metadata.lang %>/launch/152.png" />
+    <style type="text/css">
+        form label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="master-container">
+        <div class="container-fluid px-0">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <div class="d-flex justify-content-between align-items-center bg-green">
+                        <a href="./dashboard" class="link-light text-decoration-none float-start px-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                                class="bi bi-house-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z" />
+                                <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293z" />
+                            </svg>
+                        </a>
+                        <h1 class="pageHeadline my-0 px-3 py-2 bg-green text-light d-inline-block">
+                            <%- data.appTitle %>
+                        </h1>
+                        <span class="invisible float-end px-3">
+                            <button class="navbar-toggler link-light" type="button" data-bs-toggle="offcanvas"
+                                data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                                    class="bi bi-list" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+                                </svg>
+                            </button>
+                        </span>
+                    </div>
+                    <div class="text-center px-2 py-2 bg-light-green text-light">
+                        <h2 class="pageHeadline my-0 balance"><%- data.pageTitle %></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+            aria-labelledby="offcanvasWithBothOptionsLabel">
+            <div class="offcanvas-header bg-green text-light py-1">
+                <h5 class="offcanvas-title flex-grow-1" id="offcanvasWithBothOptionsLabel">
+                    <%- data.sideMenuHeader %>
+                </h5>
+                <button class="btn text-light" type="button" data-bs-dismiss="offcanvas" aria-label="Close">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                        class="bi bi-x-lg" viewBox="0 0 16 16">
+                        <path
+                            d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
+                    </svg>
+                </button>
+            </div>
+            <div class="offcanvas-body bg-light">
+                <div class="list-group bg-white shadow">
+                    <a href="javascript:logOut()" class="list-group-item list-group-item-action">
+                        <%- globalData.logout %>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row bg-light">
+                <div class="col-12 col-md-6 offset-md-3">
+                    <main>
+                        <p class="mt-4">
+                            <%- data.p1 %>
+                        </p>
+
+                        <ol>
+                            <li><%- data.list1 %></li>
+                            <li><%- data.list2 %></li>
+                            <li><%- data.list3 %></li>
+                        </ol>
+
+                        <p class="my-4 text-center">
+                            <%- data.p2 %>
+                        </p>
+
+                        <div class="mt-4 text-center">
+                            <a href="./dashboard" class="btn btn-primary">
+                                <%- data.openButton %>
+                            </a>
+
+                            <div class="text-muted mt-2 mb-4">
+                                <small><%- data.requires %></small>
+                            </div>
+                        </div>
+                    </main>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid px-0">
+            <div class="row">
+                <div class="col-12">
+                    <footer class="mt-2 px-4 py-4 bg-dark text-light text-center">
+                        &copy; 1980-<%= new Date().getFullYear() %> Kip McKean
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modal" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalHeader"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="modalHeader"></h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script type="application/json" id="content">
+      <%- JSON.stringify(data) %>
+    </script>
+    <script type="application/json" id="globalContent">
+      <%- JSON.stringify(globalData) %>
+    </script>
+    <script src="/js/global.js"></script>
+    <script src="/js/load-sw.js"></script>
+</body>
+
+</html>
