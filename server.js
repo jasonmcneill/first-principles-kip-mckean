@@ -109,8 +109,9 @@ app.get('/profile', requiresAuth(), (req, res) => {
   res.send(JSON.stringify(req.oidc.user));
 });
 
-app.get('/callback', (req, res) => {
-  console.log(req.oidc.user);
+app.get('/callback', async (req, res) => {
+  const user = await getUserFromAuth0(req);
+  console.log(user);
 });
 
 // Start the server
