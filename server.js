@@ -1,80 +1,90 @@
-// Load .env for non-production environments (and when NODE_ENV is unset)
-// This ensures local development picks up credentials from .env
-if (
-  process.env.NODE_ENV !== "production" &&
-  process.env.NODE_ENV !== "staging"
-) {
-  try {
-    require("dotenv").config();
-  } catch (_) {
-    // dotenv is optional in production or staging; ignore if unavailable
-  }
+// server.js
+
+// Load .env for non-production environments
+if (process.env.NODE_ENV !== "production" && process.env.NODE_ENV !== "staging") {
+  try { require("dotenv").config(); } catch (_) { }
 }
 
 const express = require("express");
 const bodyParser = require("body-parser");
-const axios = require("axios");
-const app = express();
 const path = require("path");
 const fs = require("fs");
+const { auth, requiresAuth } = require('express-openid-connect');
+
 const PORT = process.env.PORT || 3000;
 const HOST = "127.0.0.1";
-const i18nRoutes = require("./routes/i18n");
-const { auth } = require('express-openid-connect');
 
+const i18nRoutes = require("./routes/i18n");
+const routes_api = require("./routes/api/_index");
+
+const app = express();
+
+// ---------------------------
+// Auth0 configuration
+// ---------------------------
 const config = {
   authRequired: false,
   auth0Logout: true,
-  secret: `${process.env.AUTH0_SECRET}`,
-  baseURL: `${process.env.AUTH0_BASE_URL}`,
-  clientID: `${process.env.AUTH0_CLIENT_ID}`,
-  issuerBaseURL: `${process.env.AUTH0_ISSUER_BASE_URL}`
+  baseURL: process.env.AUTH0_BASE_URL,
+  issuerBaseURL: process.env.AUTH0_ISSUER_BASE_URL,
+  clientID: process.env.AUTH0_CLIENT_ID,
+  secret: process.env.AUTH0_SECRET,
+  afterCallback: (req, res, session) => {
+    const jwt = require('jsonwebtoken');
+    const idToken = session.id_token;
+    const lang = req.query.lang || "en";
+
+    console.log('OIDC returnTo:', req.oidc.returnTo);
+    console.log('Language detected in afterCallback:', lang);
+
+    if (idToken) {
+      const decoded = jwt.decode(idToken, { complete: true });
+      console.log('Decoded ID token:', decoded);
+    }
+
+    res.redirect(`/${lang}/dashboard`);
+    return;
+  }
 };
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+// Initialize Auth0 middleware
 app.use(auth(config));
 
-// Set up EJS and the views directory
+// ---------------------------
+// View engine setup
+// ---------------------------
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
-// API
-const routes_api = require("./routes/api/_index");
+// ---------------------------
+// Middleware
+// ---------------------------
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// ---------------------------
+// Public static directories
+// ---------------------------
+app.use(express.static(path.join(__dirname, "public"), { maxAge: "1d" }));
+app.use("/audio", express.static(path.join(__dirname, "public/audio"), { maxAge: "90d" }));
+
+// ---------------------------
+// API and i18n routes
+// ---------------------------
 app.use("/api", routes_api);
-
-// Set up a public directory
-app.use(
-  express.static(path.join(__dirname, "public"), {
-    maxAge: "1d",
-    etag: true,
-    lastModified: true,
-  })
-);
-
-// Set parameters for audio
-app.use(
-  "/audio",
-  express.static(path.join(__dirname, "public/audio"), {
-    maxAge: "90d", // cache audio aggressively
-    etag: true,
-    lastModified: true,
-  })
-);
-
-// Use the new i18n router
 app.use("/", i18nRoutes);
 
+// ---------------------------
+// Home page (language selector)
+// ---------------------------
 app.get("/", (req, res) => {
-  // Example list of supported languages
-  const languages = {
-    en: { name: "English" },
-    es: { name: "Español" },
-  };
+  const languages = { en: { name: "English" }, es: { name: "Español" } };
   res.render("select-language", { languages });
 });
 
-// A route for the subscription page (no middleware needed)
+// ---------------------------
+// Subscription page
+// ---------------------------
 app.get("/:langCode/subscribe", (req, res) => {
   const { langCode } = req.params;
   const contentPath = path.join(__dirname, "i18n", langCode, "subscribe.json");
@@ -88,12 +98,8 @@ app.get("/:langCode/subscribe", (req, res) => {
       res.status(500).send("Error loading subscribe page content.");
     }
   } else {
-    const englishContentPath = path.join(
-      __dirname,
-      "i18n",
-      "en",
-      "subscribe.json"
-    );
+    // fallback to English
+    const englishContentPath = path.join(__dirname, "i18n", "en", "subscribe.json");
     if (fs.existsSync(englishContentPath)) {
       const pageData = JSON.parse(fs.readFileSync(englishContentPath, "utf8"));
       res.render("subscribe", { data: pageData });
@@ -103,22 +109,28 @@ app.get("/:langCode/subscribe", (req, res) => {
   }
 });
 
-const { requiresAuth } = require('express-openid-connect');
+// ---------------------------
+// Login route (from front-end)
+// ---------------------------
+// Example: user clicks "Login" button on /en or /es page
+// Front-end should redirect to /login?lang=<lang>
+app.get('/login', (req, res) => {
+  const lang = req.query.lang || "en";
+  res.oidc.login({
+    authorizationParams: { lang, scope: 'openid profile email' },
+  });
+});
 
+// ---------------------------
+// Profile route (protected)
+// ---------------------------
 app.get('/profile', requiresAuth(), (req, res) => {
   res.send(JSON.stringify(req.oidc.user));
 });
 
-app.get('/callback', async (req, res) => {
-  const user = await getUserFromAuth0(req);
-  const lang = user.user_metadata?.language || 'en';
-
-  console.log(user);
-
-  res.redirect(`/${lang}/dashboard`);
-});
-
-// Start the server
+// ---------------------------
+// Start server
+// ---------------------------
 app.listen(PORT, HOST, () => {
-  console.log(`Server is running on http://${HOST}:${PORT}`);
+  console.log(`Server running at http://${HOST}:${PORT}`);
 });
