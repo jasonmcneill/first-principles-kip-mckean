@@ -1,12 +1,6 @@
 (() => {
   const redirectToLogin = () => {
-    let lang = document.querySelector("html").getAttribute("lang");
-
-    if (!lang || lang.length !== 2) {
-      lang = "en";
-    }
-
-    const loginUrl = `/${lang}/login`;
+    const loginUrl = `/login`;
 
     sessionStorage.removeItem("accessToken");
     localStorage.removeItem("refreshToken");
