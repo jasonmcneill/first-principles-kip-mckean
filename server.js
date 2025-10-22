@@ -14,7 +14,6 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
 const fs = require("fs");
-const { auth, requiresAuth } = require("express-openid-connect");
 
 const PORT = process.env.PORT || 3000;
 const HOST = "127.0.0.1";
