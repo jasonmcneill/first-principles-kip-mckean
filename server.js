@@ -52,7 +52,7 @@ app.use("/api", routes_api);
 app.use("/", i18nRoutes);
 
 // ---------------------------
-// Home page (language selector)
+// Home (Select Language page)
 // ---------------------------
 app.get("/", (req, res) => {
   const languages = { en: { name: "English" }, es: { name: "Español" } };
@@ -89,20 +89,6 @@ app.get("/:langCode/subscribe", (req, res) => {
       res.status(404).render("404", { title: "Page Not Found" });
     }
   }
-});
-
-app.get('/zeptomail-test', async (req, res) => {
-  const { sendOTPEmail } = require('./emailService');
-  const recipientEmail = 'vrtjason@gmail.com';
-  const otpCode = '123456';
-
-  sendOTPEmail(recipientEmail, otpCode)
-    .then(response => {
-      res.send('Test OTP email sent successfully.');
-    })
-    .catch(error => {
-      res.status(500).send('Failed to send test OTP email.');
-    });
 });
 
 // ---------------------------
