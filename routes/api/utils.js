@@ -33,32 +33,17 @@ exports.sendMail = (
   fromEmailAddress = process.env.EMAIL_FROM_ADDRESS
 ) => {
   return new Promise((resolve, reject) => {
-    if (process.env.NODE_ENV === "production") {
-      sendMail_MailJet(
-        toEmail,
-        toName,
-        subject,
-        htmlBody,
-        textBody,
-        fromEmailName,
-        fromEmailAddress
-      ).then((result) => {
-        console.log(result);
-        resolve(result);
-      });
-    } else {
-      sendMail_MailGun(
-        toEmail,
-        toName,
-        subject,
-        htmlBody,
-        textBody,
-        fromEmailName,
-        fromEmailAddress
-      ).then((result) => {
-        resolve(result);
-      });
-    }
+    sendMail_ZeptoMail(
+      toEmail,
+      toName,
+      subject,
+      htmlBody,
+      textBody,
+      fromEmailName,
+      fromEmailAddress
+    ).then((result) => {
+      resolve(result);
+    });
   });
 };
 
@@ -71,8 +56,8 @@ function sendMail_MailGun(
   fromEmailName,
   fromEmailAddress
 ) {
-  const mailgun = require("mailgun-js");
   return new Promise((resolve, reject) => {
+    const mailgun = require("mailgun-js");
     try {
       const mg = mailgun({
         apiKey: process.env.MAILGUN_SECRET_KEY,
@@ -106,7 +91,7 @@ function sendMail_MailGun(
   });
 }
 
-function sendMail_MailJet(
+function sendMail_ZeptoMail(
   toEmail,
   toName,
   subject,
@@ -115,12 +100,11 @@ function sendMail_MailJet(
   fromEmailName,
   fromEmailAddress
 ) {
-  const Mailjet = require("node-mailjet");
-  return new Promise((resolve, reject) => {
-    const mailjet = Mailjet.apiConnect(
-      process.env.MAILJET_API_KEY,
-      process.env.MAILJET_SECRET_KEY
-    );
+  return new Promise(async (resolve, reject) => {
+    const { SendMailClient } = require('zeptomail');
+    const url = "api.zeptomail.com/";
+    const token = process.env.ZEPTOMAIL_API_TOKEN;
+    const client = new SendMailClient({ url, token });
 
     const fromEmail =
       fromEmailAddress && fromEmailAddress.length
@@ -132,37 +116,36 @@ function sendMail_MailJet(
         ? fromEmailName
         : process.env.EMAIL_FROM_NAME;
 
-    const request = mailjet.post("send", { version: "v3.1" }).request({
-      Messages: [
-        {
-          From: {
-            Email: fromEmail,
-            Name: fromName,
-          },
-          To: [
-            {
-              Email: toEmail,
-              Name: toName,
-            },
-          ],
-          Subject: subject,
-          TextPart: textBody,
-          HTMLPart: htmlBody,
+    try {
+      const mailOptions = {
+        'from': {
+          'address': fromEmail,
+          'name': fromName
         },
-      ],
-    });
-    request
-      .then((result) => {
-        const mailResponse = {
-          statusCode: result.response.status,
-          statusText: result.response.statusText,
-        };
+        'to': [
+          {
+            'email_address': {
+              'address': toEmail,
+              'name': toName
+            }
+          }
+        ],
+        'subject': subject,
+        'htmlbody': htmlBody,
+        'textbody': textBody
+      };
 
-        return resolve(mailResponse);
-      })
-      .catch((err) => {
-        console.log(err);
-        return resolve(err);
-      });
+      const response = await client.sendMail(mailOptions);
+
+      const mailResponse = {
+        statusCode: 200,
+        statusText: response.message,
+      };
+
+      resolve(mailResponse);
+    } catch (error) {
+      console.error('ZeptoMail Error:', error.response ? error.response.data : error.message);
+      reject(new Error('Failed to send OTP email.'));
+    }
   });
 }

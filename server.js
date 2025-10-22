@@ -20,37 +20,6 @@ const routes_api = require("./routes/api/_index");
 const app = express();
 
 // ---------------------------
-// Auth0 configuration
-// ---------------------------
-const config = {
-  authRequired: false,
-  auth0Logout: true,
-  baseURL: process.env.AUTH0_BASE_URL,
-  issuerBaseURL: process.env.AUTH0_ISSUER_BASE_URL,
-  clientID: process.env.AUTH0_CLIENT_ID,
-  secret: process.env.AUTH0_SECRET,
-  afterCallback: (req, res, session) => {
-    const jwt = require('jsonwebtoken');
-    const idToken = session.id_token;
-    const lang = req.query.lang || "en";
-
-    console.log('OIDC returnTo:', req.oidc.returnTo);
-    console.log('Language detected in afterCallback:', lang);
-
-    if (idToken) {
-      const decoded = jwt.decode(idToken, { complete: true });
-      console.log('Decoded ID token:', decoded);
-    }
-
-    res.redirect(`/${lang}/dashboard`);
-    return;
-  }
-};
-
-// Initialize Auth0 middleware
-app.use(auth(config));
-
-// ---------------------------
 // View engine setup
 // ---------------------------
 app.set("view engine", "ejs");
@@ -109,23 +78,18 @@ app.get("/:langCode/subscribe", (req, res) => {
   }
 });
 
-// ---------------------------
-// Login route (from front-end)
-// ---------------------------
-// Example: user clicks "Login" button on /en or /es page
-// Front-end should redirect to /login?lang=<lang>
-app.get('/login', (req, res) => {
-  const lang = req.query.lang || "en";
-  res.oidc.login({
-    authorizationParams: { lang, scope: 'openid profile email' },
-  });
-});
+app.get('/zeptomail-test', async (req, res) => {
+  const { sendOTPEmail } = require('./emailService');
+  const recipientEmail = 'vrtjason@gmail.com';
+  const otpCode = '123456';
 
-// ---------------------------
-// Profile route (protected)
-// ---------------------------
-app.get('/profile', requiresAuth(), (req, res) => {
-  res.send(JSON.stringify(req.oidc.user));
+  sendOTPEmail(recipientEmail, otpCode)
+    .then(response => {
+      res.send('Test OTP email sent successfully.');
+    })
+    .catch(error => {
+      res.status(500).send('Failed to send test OTP email.');
+    });
 });
 
 // ---------------------------
