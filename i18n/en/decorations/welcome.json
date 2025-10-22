@@ -1,0 +1,32 @@
+[
+  {
+    "key": "list1",
+    "text": {
+      "original": "Solidify",
+      "translated": "Solidify"
+    },
+    "decorations": {
+      "bold": true
+    }
+  },
+  {
+    "key": "list2",
+    "text": {
+      "original": "Unifiy",
+      "translated": "Unifiy"
+    },
+    "decorations": {
+      "bold": true
+    }
+  },
+  {
+    "key": "list3",
+    "text": {
+      "original": "Multiply",
+      "translated": "Multiply"
+    },
+    "decorations": {
+      "bold": true
+    }
+  }
+]
