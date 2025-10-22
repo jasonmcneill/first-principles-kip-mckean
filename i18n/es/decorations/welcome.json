@@ -3,7 +3,7 @@
     "key": "list1",
     "text": {
       "original": "Solidify",
-      "translated": "Solidify"
+      "translated": "Solidificar"
     },
     "decorations": {
       "bold": true
@@ -13,7 +13,7 @@
     "key": "list2",
     "text": {
       "original": "Unify",
-      "translated": "Unify"
+      "translated": "Unificarse"
     },
     "decorations": {
       "bold": true
@@ -23,7 +23,7 @@
     "key": "list3",
     "text": {
       "original": "Multiply",
-      "translated": "Multiply"
+      "translated": "Multiplicar"
     },
     "decorations": {
       "bold": true

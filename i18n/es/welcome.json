@@ -1,9 +1,14 @@
 {
   "metadata": {
-    "lang": "en"
+    "lang": "es"
   },
-  "appTitle": "First Principles",
-  "pageTitle": "Bible Study Series",
-  "p1": "Welcome, y'all",
-  "requires": "Requires login and subscription"
+  "appTitle": "Principios Básicos",
+  "pageTitle": "Serie de Estudio Bíblico",
+  "p1": "¡Saludos cariñosos! Principios Básicos es una serie guiada de estudio bíblico diseñada para ayudar a los discípulos de Jesús a hacer lo siguiente:",
+  "list1": "Solidificar su fe",
+  "list2": "Unificarse con otros discípulos de Jesús",
+  "list3": "Multiplicar los miembros de la iglesia de Dios",
+  "p2": "¡Gracias por tu interés! Por favor, inicia sesión a continuación.",
+  "openButton": "Entrar",
+  "requires": "Requiere inicio de sesión y suscripción"
 }
