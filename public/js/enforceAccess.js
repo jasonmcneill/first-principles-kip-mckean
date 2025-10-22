@@ -5,7 +5,7 @@
     sessionStorage.removeItem("accessToken");
     localStorage.removeItem("refreshToken");
 
-    window.location.href = `/login/?lang=${lang}`;
+    window.location.href = `./login`;
   };
 
   const refreshTokenStored = localStorage.getItem("refreshToken");

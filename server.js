@@ -1,15 +1,20 @@
 // server.js
 
 // Load .env for non-production environments
-if (process.env.NODE_ENV !== "production" && process.env.NODE_ENV !== "staging") {
-  try { require("dotenv").config(); } catch (_) { }
+if (
+  process.env.NODE_ENV !== "production" &&
+  process.env.NODE_ENV !== "staging"
+) {
+  try {
+    require("dotenv").config();
+  } catch (_) { }
 }
 
 const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
 const fs = require("fs");
-const { auth, requiresAuth } = require('express-openid-connect');
+const { auth, requiresAuth } = require("express-openid-connect");
 
 const PORT = process.env.PORT || 3000;
 const HOST = "127.0.0.1";
@@ -35,7 +40,10 @@ app.use(express.urlencoded({ extended: true }));
 // Public static directories
 // ---------------------------
 app.use(express.static(path.join(__dirname, "public"), { maxAge: "1d" }));
-app.use("/audio", express.static(path.join(__dirname, "public/audio"), { maxAge: "90d" }));
+app.use(
+  "/audio",
+  express.static(path.join(__dirname, "public/audio"), { maxAge: "90d" })
+);
 
 // ---------------------------
 // API and i18n routes
@@ -68,7 +76,12 @@ app.get("/:langCode/subscribe", (req, res) => {
     }
   } else {
     // fallback to English
-    const englishContentPath = path.join(__dirname, "i18n", "en", "subscribe.json");
+    const englishContentPath = path.join(
+      __dirname,
+      "i18n",
+      "en",
+      "subscribe.json"
+    );
     if (fs.existsSync(englishContentPath)) {
       const pageData = JSON.parse(fs.readFileSync(englishContentPath, "utf8"));
       res.render("subscribe", { data: pageData });
