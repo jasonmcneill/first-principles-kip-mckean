@@ -27,6 +27,7 @@
   "errorGenderRequired": "El género es obligatorio",
   "mailingList": "Suscribirse a nuestro boletín por correo electrónico",
   "registerButton": "Registrarse",
+  "cancelButton": "Cancelar",
   "emailSubject": "Código de Confirmación de Principios Básicos",
   "emailP1": "Por favor, confirme su cuenta de Principios Básicos con el siguiente código de confirmación:",
   "emailP2": "El código anterior caduca después de 20 minutos.",
