@@ -1,8 +1,9 @@
 {
   "metadata": {
-    "lang": "en",
-    "hasAudio": false
+    "lang": "en"
   },
-  "title": "Please Subscribe",
-  "content": "This is the English content for the Subscribe page."
+  "appTitle": "First Principles",
+  "pageTitle": "Please Subscribe",
+  "p1": "For only $1.00/month (USD), you can use the First Principles at any time.",
+  "p2": "Click below to subscribe via PayPal:"
 }

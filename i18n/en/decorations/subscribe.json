@@ -1,0 +1,12 @@
+[
+  {
+    "key": "p1",
+    "text": {
+      "original": "$1.00/month",
+      "translated": "$1.00/month"
+    },
+    "decorations": {
+      "bold": true
+    }
+  }
+]
