@@ -183,6 +183,9 @@ async function onSubmit(evt) {
             getPhrase("errorEmailRegistered")
           );
           break;
+        case "invalid email":
+          popUpError(getPhrase("errorTitle"), getPhrase("errorEmailInvalid"));
+          break;
         case "user registered":
           window.location.href = `./confirm?userid=${data.userid}`;
           break;
