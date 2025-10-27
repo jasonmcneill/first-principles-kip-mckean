@@ -88,7 +88,7 @@ function sendMail_MailJet(
         ? fromEmailName
         : process.env.EMAIL_FROM_NAME;
 
-    const request = mailjet.post("send", { version: "v3.1" }).request({
+    const request = mailjet.post("send", { version: "v3.0" }).request({
       Messages: [
         {
           From: {
