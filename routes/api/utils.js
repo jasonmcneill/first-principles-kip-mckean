@@ -33,7 +33,6 @@ exports.sendMail = (
   fromEmailAddress = process.env.EMAIL_FROM_ADDRESS
 ) => {
   return new Promise((resolve, reject) => {
-
     if (process.env.NODE_ENV === "production") {
       sendMail_MailJet(
         toEmail,
@@ -46,7 +45,7 @@ exports.sendMail = (
       ).then((result) => {
         resolve(result);
       });
-    } else {
+    } else if (process.env.NODE_ENV === "staging") {
       sendMail_ZeptoMail(
         toEmail,
         toName,
@@ -56,6 +55,19 @@ exports.sendMail = (
         fromEmailName,
         fromEmailAddress
       ).then((result) => {
+        resolve(result);
+      });
+    } else if (process.env.NODE_ENV === "development") {
+      sendMail_MailJet(
+        toEmail,
+        toName,
+        subject,
+        htmlBody,
+        textBody,
+        fromEmailName,
+        fromEmailAddress
+      ).then((result) => {
+        console.log(result);
         resolve(result);
       });
     }
@@ -71,64 +83,56 @@ function sendMail_MailJet(
   fromEmailName,
   fromEmailAddress
 ) {
-  const Mailjet = require("node-mailjet");
   return new Promise((resolve, reject) => {
+    console.log("Sending Mail via MailJet...");
+    const Mailjet = require('node-mailjet');
     const mailjet = Mailjet.apiConnect(
-      process.env.MAILJET_API_KEY,
-      process.env.MAILJET_SECRET_KEY
+      process.env.MAILJET_KEY_ID,
+      process.env.MAILJET_SECRET_KEY,
     );
-
-    const fromEmail =
-      fromEmailAddress && fromEmailAddress.length
-        ? fromEmailAddress
-        : process.env.EMAIL_FROM_ADDRESS;
-
-    const fromName =
-      fromEmailName && fromEmailName.length
-        ? fromEmailName
-        : process.env.EMAIL_FROM_NAME;
-
-    const request = mailjet.post("send", { version: "v3.0" }).request({
-      Messages: [
-        {
-          From: {
-            Email: fromEmail,
-            Name: fromName,
-          },
-          To: [
-            {
-              Email: toEmail,
-              Name: toName,
+    const request = mailjet
+      .post("send", { 'version': 'v3.1' })
+      .request({
+        "Messages": [
+          {
+            "From": {
+              "Email": `${fromEmailAddress}`,
+              "Name": `${fromEmailName}`
             },
-          ],
-          ReplyTo: {
-            Email: process.env.EMAIL_REPLYTO_NAME,
-            Name: process.env.EMAIL_REPLYTO_ADDRESS,
-          },
-          Subject: subject,
-          TextPart: textBody,
-          HTMLPart: htmlBody,
-          Headers: {
-            "X-Mailer": "fp.kipmckean.com via Mailjet",
-          },
-        },
-      ],
-    });
+            "To": [
+              {
+                "Email": `${toEmail}`,
+                "Name": `${toName}`
+              }
+            ],
+            "Subject": `${subject}`,
+            "TextPart": `${textBody}`,
+            "HTMLPart": `${htmlBody}`,
+          }
+        ]
+      })
     request
       .then((result) => {
-        console.log(result);
+        const { response } = result;
+        console.log(response);
 
         const mailResponse = {
           statusCode: 200,
-          statusText: result.body,
+          statusText: response.statusText,
         };
 
-        return resolve(mailResponse);
+        resolve(mailResponse);
       })
       .catch((err) => {
         console.log(err);
-        return resolve(err);
-      });
+
+        const mailResponse = {
+          statusCode: 400,
+          statusText: "Failed to send email via MailJet",
+        };
+
+        resolve(mailResponse);
+      })
   });
 }
 
