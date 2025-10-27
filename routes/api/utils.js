@@ -33,19 +33,104 @@ exports.sendMail = (
   fromEmailAddress = process.env.EMAIL_FROM_ADDRESS
 ) => {
   return new Promise((resolve, reject) => {
-    sendMail_ZeptoMail(
-      toEmail,
-      toName,
-      subject,
-      htmlBody,
-      textBody,
-      fromEmailName,
-      fromEmailAddress
-    ).then((result) => {
-      resolve(result);
-    });
+
+    if (process.env.NODE_ENV === "production") {
+      sendMail_MailJet(
+        toEmail,
+        toName,
+        subject,
+        htmlBody,
+        textBody,
+        fromEmailName,
+        fromEmailAddress
+      ).then((result) => {
+        resolve(result);
+      });
+    } else {
+      sendMail_ZeptoMail(
+        toEmail,
+        toName,
+        subject,
+        htmlBody,
+        textBody,
+        fromEmailName,
+        fromEmailAddress
+      ).then((result) => {
+        resolve(result);
+      });
+    }
   });
 };
+
+function sendMail_MailJet(
+  toEmail,
+  toName,
+  subject,
+  htmlBody,
+  textBody,
+  fromEmailName,
+  fromEmailAddress
+) {
+  const Mailjet = require("node-mailjet");
+  return new Promise((resolve, reject) => {
+    const mailjet = Mailjet.apiConnect(
+      process.env.MAILJET_API_KEY,
+      process.env.MAILJET_SECRET_KEY
+    );
+
+    const fromEmail =
+      fromEmailAddress && fromEmailAddress.length
+        ? fromEmailAddress
+        : process.env.EMAIL_FROM_ADDRESS;
+
+    const fromName =
+      fromEmailName && fromEmailName.length
+        ? fromEmailName
+        : process.env.EMAIL_FROM_NAME;
+
+    const request = mailjet.post("send", { version: "v3.1" }).request({
+      Messages: [
+        {
+          From: {
+            Email: fromEmail,
+            Name: fromName,
+          },
+          To: [
+            {
+              Email: toEmail,
+              Name: toName,
+            },
+          ],
+          ReplyTo: {
+            Email: process.env.EMAIL_REPLYTO_NAME,
+            Name: process.env.EMAIL_REPLYTO_ADDRESS,
+          },
+          Subject: subject,
+          TextPart: textBody,
+          HTMLPart: htmlBody,
+          Headers: {
+            "X-Mailer": "fp.kipmckean.com via Mailjet",
+          },
+        },
+      ],
+    });
+    request
+      .then((result) => {
+        console.log(result);
+
+        const mailResponse = {
+          statusCode: 200,
+          statusText: result.body,
+        };
+
+        return resolve(mailResponse);
+      })
+      .catch((err) => {
+        console.log(err);
+        return resolve(err);
+      });
+  });
+}
 
 function sendMail_MailGun(
   toEmail,
