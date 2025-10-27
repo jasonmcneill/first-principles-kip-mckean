@@ -5,17 +5,14 @@
 
   const refreshToken = JSON.parse(atob(refreshTokenStored.split(".")[1]));
 
-  const login = () => {
-    sessionStorage.removeItem("accessToken");
-    localStorage.removeItem("refreshToken");
-
-    window.location.href = `./login`;
+  const subscribe = () => {
+    return window.location.href = `./subscribe`;
   };
 
-  if (!refreshToken.subscribeduntil) return login();
+  if (!refreshToken.subscribeduntil) return subscribe();
 
   const now = Math.floor(Date.now() / 1000);
   const isSubscriptionCurrent = now >= refreshToken.subscribeduntil;
 
-  if (!isSubscriptionCurrent) return login();
+  if (!isSubscriptionCurrent) return subscribe();
 })();
