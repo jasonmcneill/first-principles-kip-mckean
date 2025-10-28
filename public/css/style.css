@@ -6,6 +6,10 @@ html {
   scrollbar-gutter: stable;
 }
 
+body {
+  background-color: var(--bs-light);
+}
+
 .bg-green {
   background-color: #224651;
 }
@@ -25,9 +29,11 @@ h2.pageHeadline {
 h1 {
   font-size: 1.6rem !important;
 }
+
 h2 {
   font-size: 1.3rem !important;
 }
+
 h3 {
   font-size: 1rem !important;
 }
