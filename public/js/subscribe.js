@@ -1,4 +1,16 @@
-function init() {
+function localizePrice() {
+  const priceElement = document.getElementById('price');
+  const price = 1.0;
+  const locale = navigator.language || 'en-US'; // auto-detect user locale
+  const currency = 'USD';
+
+  priceElement.textContent = new Intl.NumberFormat(locale, {
+    style: 'currency',
+    currency
+  }).format(price);
+}
+
+function paypalButtons() {
   paypal.Buttons({
     style: {
       shape: 'rect',
@@ -37,6 +49,11 @@ function init() {
       }
     }
   }).render('#paypal-button-container-P-7DY340608J9283523ND5FJUA'); // Renders the PayPal button
+}
+
+function init() {
+  localizePrice();
+  paypalButtons();
 }
 
 init();
