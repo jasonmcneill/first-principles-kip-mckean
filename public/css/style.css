@@ -7,7 +7,7 @@ html {
 }
 
 body {
-  background-color: var(--bs-light);
+  background-color: var(--bs-light) !important;
 }
 
 .bg-green {
