@@ -15,11 +15,13 @@
       "original": "$1.00",
       "translated": "$1.00"
     },
-    "tags": [
-      {
-        "name": "span",
-        "attributes": "id=\"price\""
-      }
-    ]
+    "decorations": {
+      "tags": [
+        {
+          "name": "span",
+          "attributes": "id=\"price\""
+        }
+      ]
+    }
   }
 ]
