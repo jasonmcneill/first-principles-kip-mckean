@@ -192,7 +192,7 @@ function sendMail_ZeptoMail(
   return new Promise(async (resolve, reject) => {
     const { SendMailClient } = require('zeptomail');
     const url = "api.zeptomail.com/";
-    const token = process.env.ZEPTOMAIL_API_TOKEN;
+    const token = process.env.KIPMCKEAN_ZEPTOMAIL_API_TOKEN;
     const client = new SendMailClient({ url, token });
 
     const fromEmail =
