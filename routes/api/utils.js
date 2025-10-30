@@ -29,8 +29,8 @@ exports.sendMail = (
   subject = "",
   htmlBody = "",
   textBody = "",
-  fromEmailName = process.env.KIPMCKEAN_EMAIL_FROM_NAME,
-  fromEmailAddress = process.env.KIPMCKEAN_EMAIL_FROM_ADDRESS
+  fromEmailName = process.env.EMAIL_FROM_NAME,
+  fromEmailAddress = process.env.EMAIL_FROM_ADDRESS
 ) => {
   return new Promise((resolve, reject) => {
     if (process.env.NODE_ENV === "production") {
@@ -192,18 +192,18 @@ function sendMail_ZeptoMail(
   return new Promise(async (resolve, reject) => {
     const { SendMailClient } = require('zeptomail');
     const url = "api.zeptomail.com/";
-    const token = process.env.KIPMCKEAN_ZEPTOMAIL_API_TOKEN;
+    const token = process.env.ZEPTOMAIL_API_TOKEN;
     const client = new SendMailClient({ url, token });
 
     const fromEmail =
       fromEmailAddress && fromEmailAddress.length
         ? fromEmailAddress
-        : process.env.KIPMCKEAN_EMAIL_FROM_ADDRESS;
+        : process.env.EMAIL_FROM_ADDRESS;
 
     const fromName =
       fromEmailName && fromEmailName.length
         ? fromEmailName
-        : process.env.KIPMCKEAN_EMAIL_FROM_NAME;
+        : process.env.EMAIL_FROM_NAME;
 
     try {
       const mailOptions = {
