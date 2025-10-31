@@ -1,4 +1,4 @@
-(() => {
+/* (() => {
   const refreshTokenStored = localStorage.getItem("refreshToken");
 
   if (!refreshTokenStored) return login();
@@ -15,4 +15,8 @@
   const isSubscriptionCurrent = now >= refreshToken.subscribeduntil;
 
   if (!isSubscriptionCurrent) return subscribe();
-})();
+})(); */
+
+(() => {
+  return;
+})()
