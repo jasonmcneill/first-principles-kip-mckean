@@ -53,7 +53,7 @@ function paypalButtons() {
 
 function init() {
   localizePrice();
-  paypalButtons();
+  // paypalButtons();
 }
 
 init();
