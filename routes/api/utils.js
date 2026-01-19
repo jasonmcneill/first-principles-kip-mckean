@@ -84,8 +84,7 @@ function sendMail_MailJet(
   fromEmailAddress
 ) {
   return new Promise((resolve, reject) => {
-    console.log("Sending Mail via MailJet...");
-    const Mailjet = require('node-mailjet');
+    // const Mailjet = require('node-mailjet');
     const mailjet = Mailjet.apiConnect(
       process.env.MAILJET_KEY_ID,
       process.env.MAILJET_SECRET_KEY,
@@ -114,7 +113,7 @@ function sendMail_MailJet(
     request
       .then((result) => {
         const { response } = result;
-        console.log(response);
+        // console.log(response);
 
         const mailResponse = {
           statusCode: 200,
