@@ -67,7 +67,6 @@ exports.sendMail = (
         fromEmailName,
         fromEmailAddress
       ).then((result) => {
-        console.log(result);
         resolve(result);
       });
     }
@@ -84,7 +83,7 @@ function sendMail_MailJet(
   fromEmailAddress
 ) {
   return new Promise((resolve, reject) => {
-    // const Mailjet = require('node-mailjet');
+    const Mailjet = require('node-mailjet');
     const mailjet = Mailjet.apiConnect(
       process.env.MAILJET_KEY_ID,
       process.env.MAILJET_SECRET_KEY,
