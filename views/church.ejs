@@ -10,6 +10,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <script src="/js/enforceAccess.js"></script>
+  <script src="/js/global.js"></script>
   <script src="/js/enforceSubscription.js"></script>
   <title><%- data.pageTitle %></title>
   <link rel="stylesheet" href="/css/style.css" />
@@ -267,12 +268,11 @@
   </div>
 
   <script type="application/json" id="content">
-      <%- JSON.stringify(data) %>
-    </script>
+    <%- JSON.stringify(data) %>
+  </script>
   <script type="application/json" id="globalContent">
-      <%- JSON.stringify(globalData) %>
-    </script>
-  <script src="/js/global.js"></script>
+    <%- JSON.stringify(globalData) %>
+  </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
