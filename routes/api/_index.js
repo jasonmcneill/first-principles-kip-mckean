@@ -27,4 +27,7 @@ router.post("/pw-forgot-confirm", pwForgotConfirm.POST);
 const pwForgotNew = require("./pw-forgot-new");
 router.post("/pw-forgot-new", authenticateToken, pwForgotNew.POST);
 
+const paypalWebhook = require("./paypal-webhook");
+router.post("/paypal-webhook", paypalWebhook.POST);
+
 module.exports = router;

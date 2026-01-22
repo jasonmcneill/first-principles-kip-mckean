@@ -2,8 +2,8 @@
   {
     "key": "p1",
     "text": {
-      "original": "$1.00/month",
-      "translated": "$1.00/month"
+      "original": "$12.00/year",
+      "translated": "$12.00/year"
     },
     "decorations": {
       "bold": true
@@ -12,8 +12,8 @@
   {
     "key": "p1",
     "text": {
-      "original": "$1.00",
-      "translated": "$1.00"
+      "original": "$12.00",
+      "translated": "$12.00"
     },
     "decorations": {
       "tags": [

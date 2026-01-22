@@ -113,9 +113,17 @@ function onSubmit(evt) {
         sessionStorage.setItem("accessToken", data.accessToken);
 
         const refreshToken = JSON.parse(atob(data.refreshToken.split(".")[1]));
+        const subscribedUntil = refreshToken.subscribeduntil || null;
 
         switch (refreshToken.status) {
           case "active":
+            if (!subscribedUntil) return window.location.replace("./subscribe");
+            const subscriptionExpiry = new Date(subscribedUntil * 1000);
+            const now = new Date();
+            if (!subscriptionExpiry || subscriptionExpiry < now) {
+              window.location.replace("./subscribe");
+              return;
+            }
             window.location.replace("./dashboard");
             break;
           default:

@@ -1,7 +1,7 @@
 function localizePrice() {
   const priceElement = document.getElementById('price');
-  const price = 1.0;
-  const locale = navigator.language || 'en-US'; // auto-detect user locale
+  const price = 12.0;
+  const locale = navigator.language || 'en-US';
   const currency = 'USD';
 
   priceElement.textContent = new Intl.NumberFormat(locale, {
@@ -11,49 +11,29 @@ function localizePrice() {
 }
 
 function paypalButtons() {
+  const planId = document.querySelector("[data-paypal-plan-id]").getAttribute("data-paypal-plan-id");
   paypal.Buttons({
-    style: {
-      shape: 'rect',
-      color: 'gold',
-      layout: 'vertical',
-      label: 'subscribe'
-    },
-    createSubscription: function (data, actions) {
-      return actions.subscription.create({
-        /* Creates the subscription */
-        plan_id: 'P-7DY340608J9283523ND5FJUA'
-      });
-    },
-    onApprove: async function (data, actions) {
-      console.log(data);
-      console.log(actions);
+      style: {
+          shape: 'rect',
+          color: 'white',
+          layout: 'vertical',
+          label: 'subscribe'
+      },
+      createSubscription: function(data, actions) {
 
-      try {
-        const res = await fetch('/api/subscription/confirm', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ subscriptionId: data.subscriptionID })
+        return actions.subscription.create({
+          plan_id: planId
         });
-
-        if (!res.ok) throw new Error('Server error');
-
-        // TODO:  Call API and pass in subscription information. Return JWT for subscription and save to localStorage.
-
-        console.log('Subscription confirmed on server!');
-
-        setTimeout(() => {
-          window.location.href = './thank-you';
-        }, 1000);
-      } catch (err) {
-        console.error('onApprove error:', err);
+      },
+      onApprove: function(data, actions) {
+        alert(data.subscriptionID);
       }
-    }
-  }).render('#paypal-button-container-P-7DY340608J9283523ND5FJUA'); // Renders the PayPal button
+  }).render(`#paypal-button-container-${planId}`); 
 }
 
 function init() {
   localizePrice();
-  // paypalButtons();
+  paypalButtons();
 }
 
 init();
