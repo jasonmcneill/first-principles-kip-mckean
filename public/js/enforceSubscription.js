@@ -23,7 +23,7 @@
 
   const checkSubscription = async () => {
     const endpoint = "/api/check-subscription";
-    const accessToken = await getAccessToken();
+    const accessToken = await getAccessToken().catch(() => null);
 
     if (!accessToken) return;
 
@@ -32,7 +32,7 @@
 
     try {
       const response = await fetch(endpoint, {
-        method: "GET",
+        method: "POST",
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${accessToken}`,
