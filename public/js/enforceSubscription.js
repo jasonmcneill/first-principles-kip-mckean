@@ -1,4 +1,4 @@
-/* (() => {
+(() => {
   const refreshTokenStored = localStorage.getItem("refreshToken");
 
   if (!refreshTokenStored) return login();
@@ -6,7 +6,7 @@
   const refreshToken = JSON.parse(atob(refreshTokenStored.split(".")[1]));
 
   const subscribe = () => {
-    return window.location.href = `./subscribe`;
+    return window.location.replace("./subscribe");
   };
 
   if (!refreshToken.subscribeduntil) return subscribe();
@@ -15,8 +15,4 @@
   const isSubscriptionCurrent = now >= refreshToken.subscribeduntil;
 
   if (!isSubscriptionCurrent) return subscribe();
-})(); */
-
-(() => {
-  return;
-})()
+})();
