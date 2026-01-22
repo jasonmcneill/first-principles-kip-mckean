@@ -30,4 +30,7 @@ router.post("/pw-forgot-new", authenticateToken, pwForgotNew.POST);
 const paypalWebhook = require("./paypal-webhook");
 router.post("/paypal-webhook", paypalWebhook.POST);
 
+const checkSubscription = require("./check-subscription");
+router.post("/check-subscription", authenticateToken, checkSubscription.POST);
+
 module.exports = router;
