@@ -4,7 +4,6 @@
   },
   "appTitle": "First Principles",
   "pageTitle": "Forgot My Password",
-  "sideMenuHeader": "Menu",
   "p1": "Have you forgotten your password? No problem! You can reset it. To begin, complete the form below.",
   "labelEmailAddress": "E-mail Address:",
   "buttonResetPassword": "Reset Password",

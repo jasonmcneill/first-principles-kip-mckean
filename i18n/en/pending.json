@@ -4,7 +4,6 @@
   },
   "appTitle": "First Principles",
   "pageTitle": "Account Still Unconfirmed",
-  "sideMenuHeader": "Menu",
   "p1": "Your account remains unconfirmed. To confirm it, we must send another confirmation code to the e-mail address that you registered with. Click on the button below to begin:",
   "buttonSend": "Send Code",
   "emailSubject": "First Principles Confirmation Code",
