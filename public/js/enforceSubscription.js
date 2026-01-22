@@ -12,7 +12,8 @@
   if (!refreshToken.subscribeduntil) return subscribe();
 
   const now = Math.floor(Date.now() / 1000);
-  const isSubscriptionCurrent = now < refreshToken.subscribeduntil;
+  const expiry = new Date(refreshToken.subscribeduntil).getTime();
+  const isSubscriptionCurrent = now < expiry;
 
   if (!isSubscriptionCurrent) return subscribe();
 })();
