@@ -1,7 +1,7 @@
 exports.POST = async (req, res) => {
   const db = require("../../db");
   const jsonwebtoken = require("jsonwebtoken");
-  const userid = req.user && req.user.userid;
+  const userid = req.user && req.user.id;
 
   if (!userid) {
     return res.status(401).json({ msg: "user not found" });
@@ -28,7 +28,7 @@ exports.POST = async (req, res) => {
     ;
   `;
 
-  db.query(sql, [userid], (err, results) => {
+  db.query(sql, [userid], (err, result) => {
     if (err) {
       console.error("Database error:", err);
       return res
@@ -36,11 +36,11 @@ exports.POST = async (req, res) => {
         .json({ msg: "unable to query for user", msgType: "error" });
     }
 
-    if (results.length === 0) {
+    if (result.length === 0) {
       return res.status(404).json({ msg: "user not found", msgType: "error" });
     }
 
-    const user = results[0];
+    const user = result[0];
 
     if (user.subscribeduntil === null) {
       return res.json({ msg: "no active subscription", msgType: "error" });
