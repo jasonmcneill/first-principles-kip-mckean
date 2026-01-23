@@ -65,6 +65,7 @@ async function checkSubscription() {
 }
 
 function init() {
+  checkSubscription();
   localizePrice();
   paypalButtons();
 }
