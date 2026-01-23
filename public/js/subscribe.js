@@ -50,7 +50,7 @@ async function checkSubscription() {
     .then((res) => res.json())
     .then((data) => {
       if (data.msg && data.msg !== "subscription active") {
-        return subscribe();
+        return;
       }
 
       if (data.refreshToken) {
