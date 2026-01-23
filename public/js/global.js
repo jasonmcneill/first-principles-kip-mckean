@@ -10,10 +10,13 @@ function fpScrollTo(el, offset = 20) {
 function getAccessToken() {
   let needToRefresh = false;
   const accessToken = sessionStorage.getItem("accessToken") || "";
-  let expiry = Date.now().valueOf() / 1000;
+  const now = Math.floor(Date.now().valueOf() / 1000);
+  let expiry = 0;
+
+  if (!accessToken.length) needToRefresh = true;
 
   try {
-    expiry = JSON.parse(atob(accessToken.split(".")[1])).exp;
+    expiry = Math.floor(JSON.parse(atob(accessToken.split(".")[1])).exp);
     if (expiry < now) needToRefresh = true;
   } catch (err) {
     needToRefresh = true;
@@ -91,7 +94,7 @@ function hideScriptureHash() {
     history.replaceState(
       null,
       "",
-      window.location.pathname + window.location.search
+      window.location.pathname + window.location.search,
     );
   }
 }
@@ -274,29 +277,31 @@ function addListeners() {
     }
   });
 
-  const myModalEl = document.getElementById("modal");
-
-  myModalEl.addEventListener("hide.bs.modal", (event) => {
-    if (window.location.hash === "#modal") {
-      history.replaceState(
-        null,
-        "",
-        window.location.pathname + window.location.search
-      );
-    }
-  });
-
-  myModalEl.addEventListener("show.bs.modal", (event) => {
-    history.pushState(null, "", "#modal");
-  });
-
   window.addEventListener("pageshow", function (event) {
     if (event.persisted) {
       resetSubmitButtons();
     }
   });
 
-  document.addEventListener("DOMContentLoaded", maskNumericPasswordOnIOS);
+  document.addEventListener("DOMContentLoaded", () => {
+    maskNumericPasswordOnIOS();
+
+    const myModalEl = document.getElementById("modal");
+
+    myModalEl.addEventListener("hide.bs.modal", (event) => {
+      if (window.location.hash === "#modal") {
+        history.replaceState(
+          null,
+          "",
+          window.location.pathname + window.location.search,
+        );
+      }
+    });
+
+    myModalEl.addEventListener("show.bs.modal", (event) => {
+      history.pushState(null, "", "#modal");
+    });
+  });
 }
 
 function init() {
