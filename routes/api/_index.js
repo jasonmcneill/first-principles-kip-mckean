@@ -3,6 +3,8 @@ const router = express.Router();
 const utils = require("./utils");
 const authenticateToken = utils.authenticateToken;
 
+// REGISTRATION & AUTHENTICATION ROUTES
+
 const register = require("./register");
 router.post("/register", register.POST);
 
@@ -27,9 +29,17 @@ router.post("/pw-forgot-confirm", pwForgotConfirm.POST);
 const pwForgotNew = require("./pw-forgot-new");
 router.post("/pw-forgot-new", authenticateToken, pwForgotNew.POST);
 
+// SUBSCRIPTION ROUTES
+
+// When onApprove fires in the client after a successful subscription purchase
+const verifySubscription = require("./verify-subscription");
+router.post("/verify-subscription", authenticateToken, verifySubscription.POST);
+
+// PayPal Webhook to handle subscription events
 const paypalWebhook = require("./paypal-webhook");
 router.post("/paypal-webhook", paypalWebhook.POST);
 
+// Check subscription status continuously in the client
 const checkSubscription = require("./check-subscription");
 router.post("/check-subscription", authenticateToken, checkSubscription.POST);
 

@@ -5,35 +5,48 @@ exports.POST = async (req, res) => {
   const eventBody = req.body;
 
   // Log the subscription webhook event (for debugging purposes)
-  console.log("Received PayPal Webhook Event:", JSON.stringify(eventBody, null, 2));
+  console.log(
+    "Received PayPal Webhook Event:",
+    JSON.stringify(eventBody, null, 2),
+  );
 
   // Process the subscription webhook event based on its type
+  // https://developer.paypal.com/api/rest/webhooks/event-names/#subscriptions
   const eventType = eventBody.event_type;
-  if (eventType === "BILLING.SUBSCRIPTION.CANCELLED") {
-    const subscriptionId = eventBody.resource.id;
 
-    // Update the user's subscription status in the database
+  if (eventType === "PAYMENT.SALE.COMPLETED") {
+    const subscriptionId = eventBody.id;
+    const subscriptionTime = eventBody.create_time;
+    const validUntil = eventBody.valid_until;
+
     const sql = `
-      UPDATE users
-      SET subscription_status = 'cancelled'
-      WHERE paypal_subscription_id = ?
+      UPDATE
+        users
+      SET
+        paypalSubscriptionId = ?,
+        subscribeduntil = ?,
+        paypalSubscriptionDetails = ?
+      WHERE
+        userid = ?
       ;
     `;
 
-    db.query(sql, [subscriptionId], (error, result) => {
-      if (error) {
-        console.log("Database error while updating subscription status:", error);
-        return res.status(500).send({
-          msg: "unable to process subscription cancellation",
-          msgType: "error",
-        });
-      }
+    db.query(
+      sql,
+      [subscriptionId, validUntil, JSON.stringify(req.body), req.user.id],
+      (err, result) => {
+        if (err) {
+          console.log("Unable to update subscription status:", err);
+          return res
+            .status(500)
+            .send({
+              msg: "unable to update subscription status",
+              msgType: "error",
+            });
+        }
 
-      console.log(`Subscription ${subscriptionId} marked as cancelled in the database.`);
-      return res.status(200).send({
-        msg: "subscription cancellation processed",
-        msgType: "success",
-      });
-    })
+        const sql;
+      },
+    );
   }
-}
+};
