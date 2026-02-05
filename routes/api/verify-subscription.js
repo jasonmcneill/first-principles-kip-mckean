@@ -35,7 +35,8 @@ exports.POST = async (req, res) => {
         UPDATE
           users
         SET
-          subscribeduntil = ?,
+          paypalSubscriptionId = ?,
+          subscribeduntil = STR_TO_DATE(?, '%Y-%m-%dT%H:%i:%sZ'),
           paypalSubscriptionDetails = ?
         WHERE
           id = ?
@@ -47,7 +48,7 @@ exports.POST = async (req, res) => {
 
       db.query(
         sqlUpdate,
-        [subscribedUntil, JSON.stringify(subData), req.user.id],
+        [subscriptionID, subscribedUntil, JSON.stringify(subData), req.user.id],
         (error) => {
           if (error) {
             console.log(error);
