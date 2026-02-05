@@ -36,7 +36,7 @@ exports.POST = async (req, res) => {
           users
         SET
           subscribeduntil = ?,
-          paymapSubscriptionDetails = ?
+          paypalSubscriptionDetails = ?
         WHERE
           id = ?
         LIMIT 1
