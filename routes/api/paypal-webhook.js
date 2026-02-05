@@ -17,7 +17,8 @@ exports.POST = async (req, res) => {
   if (eventType === 'PAYMENT.SALE.COMPLETED') {
     const resource = eventBody.resource;
     const subscriptionId = resource.billing_agreement_id;
-    const validUntil = resource.valid_until;
+    const validUntil = resource.billing_info.next_billing_time;
+    const details = JSON.stringify(resource);
 
     const sql = `
       UPDATE
@@ -33,7 +34,7 @@ exports.POST = async (req, res) => {
 
     db.query(
       sql,
-      [validUntil, JSON.stringify(eventBody), subscriptionId],
+      [subscriptionId, validUntil, details, subscriptionId],
       (err, result) => {
         if (err) {
           console.log('Unable to update subscription status:', err);
