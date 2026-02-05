@@ -15,9 +15,9 @@ exports.POST = async (req, res) => {
   const eventType = eventBody.event_type;
 
   if (eventType === 'PAYMENT.SALE.COMPLETED') {
-    const subscriptionId = eventBody.id;
-    const subscriptionTime = eventBody.create_time;
-    const validUntil = eventBody.valid_until;
+    const resource = eventBody.resource;
+    const subscriptionId = resource.billing_agreement_id;
+    const validUntil = resource.valid_until;
 
     const sql = `
       UPDATE
@@ -27,13 +27,13 @@ exports.POST = async (req, res) => {
         subscribeduntil = STR_TO_DATE(?, '%Y-%m-%dT%H:%i:%sZ'),
         paypalSubscriptionDetails = ?
       WHERE
-        userid = ?
+        paypalSubscriptionId = ?
       ;
     `;
 
     db.query(
       sql,
-      [subscriptionId, validUntil, JSON.stringify(req.body), req.user.id],
+      [validUntil, JSON.stringify(eventBody), subscriptionId],
       (err, result) => {
         if (err) {
           console.log('Unable to update subscription status:', err);
@@ -43,8 +43,15 @@ exports.POST = async (req, res) => {
           });
         }
 
-        return res.status(200).send();
+        if (result.affectedRows === 0) {
+          console.warn(`No user found with subscription ID: ${subscriptionId}`);
+          return res.status(200).send('Webhook received but no user updated');
+        }
+
+        return res.status(200).send('Success');
       }
     );
+  } else {
+    return res.status(200).send('Event ignored');
   }
 };
