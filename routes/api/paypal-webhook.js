@@ -24,7 +24,7 @@ exports.POST = async (req, res) => {
         users
       SET
         paypalSubscriptionId = ?,
-        subscribeduntil = ?,
+        subscribeduntil = STR_TO_DATE(?, '%Y-%m-%dT%H:%i:%sZ'),
         paypalSubscriptionDetails = ?
       WHERE
         userid = ?
