@@ -100,15 +100,17 @@ function hideScriptureHash() {
 }
 
 function listenForScriptureClicks() {
-  document.querySelectorAll('[data-scripture]').forEach((el) => {
-    el.addEventListener('click', (evt) => {
-      if (evt.target.matches('[data-scripture]')) {
-        const slug = evt.target.getAttribute('data-scripture');
-        evt.preventDefault();
-        showScripture(slug);
-      }
+  document.addEventListener('DOMContentLoaded', (domLoadedEvt) => {
+    document.querySelectorAll('[data-scripture]').forEach((el) => {
+      el.addEventListener('click', (evt) => {
+        if (evt.target.matches('[data-scripture]')) {
+          const slug = evt.target.getAttribute('data-scripture');
+          evt.preventDefault();
+          showScripture(slug);
+        }
+      });
     });
-  });
+  }
 }
 
 function loadContent() {
