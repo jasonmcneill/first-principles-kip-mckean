@@ -110,7 +110,7 @@ function listenForScriptureClicks() {
         }
       });
     });
-  }
+  });
 }
 
 function loadContent() {
