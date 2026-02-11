@@ -68,7 +68,7 @@
 
   if (!isSubscriptionCurrent) return subscribe();
 
-  const INTERVAL_MS = 20000; // 20 seconds
+  const INTERVAL_MS = 60000 * 60; // 60 minutes
 
   const checkSubscription = async () => {
     const endpoint = '/api/check-subscription';
