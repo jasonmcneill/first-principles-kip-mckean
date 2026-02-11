@@ -4,19 +4,19 @@ let globalPhrases;
 function fpScrollTo(el, offset = 20) {
   const y = el.getBoundingClientRect().top + window.pageYOffset - offset;
 
-  window.scrollTo({ top: y, behavior: "smooth" });
+  window.scrollTo({ top: y, behavior: 'smooth' });
 }
 
 function getAccessToken() {
   let needToRefresh = false;
-  const accessToken = sessionStorage.getItem("accessToken") || "";
+  const accessToken = sessionStorage.getItem('accessToken') || '';
   const now = Math.floor(Date.now().valueOf() / 1000);
   let expiry = 0;
 
   if (!accessToken.length) needToRefresh = true;
 
   try {
-    expiry = Math.floor(JSON.parse(atob(accessToken.split(".")[1])).exp);
+    expiry = Math.floor(JSON.parse(atob(accessToken.split('.')[1])).exp);
     if (expiry < now) needToRefresh = true;
   } catch (err) {
     needToRefresh = true;
@@ -24,29 +24,29 @@ function getAccessToken() {
 
   return new Promise((resolve, reject) => {
     if (!needToRefresh) return resolve(accessToken);
-    const refreshToken = localStorage.getItem("refreshToken") || "";
-    if (!refreshToken.length) return reject("refresh token missing");
+    const refreshToken = localStorage.getItem('refreshToken') || '';
+    if (!refreshToken.length) return reject('refresh token missing');
 
-    fetch("/api/refresh-token", {
-      method: "POST",
+    fetch('/api/refresh-token', {
+      method: 'POST',
       body: JSON.stringify({
         refreshToken: refreshToken,
       }),
       headers: new Headers({
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       }),
     })
       .then((res) => res.json())
       .then((data) => {
         switch (data.msg) {
-          case "tokens renewed":
+          case 'tokens renewed':
             const { accessToken, refreshToken } = data;
-            localStorage.setItem("refreshToken", refreshToken);
-            sessionStorage.setItem("accessToken", accessToken);
+            localStorage.setItem('refreshToken', refreshToken);
+            sessionStorage.setItem('accessToken', accessToken);
             resolve(accessToken);
             break;
           default:
-            resolve("could not get access token");
+            resolve('could not get access token');
             break;
         }
       })
@@ -77,33 +77,33 @@ function getPhrase(key) {
 }
 
 function hideAudioIfOpusNotSupported() {
-  const testAudio = document.createElement("audio");
+  const testAudio = document.createElement('audio');
   const canPlayOpus =
     !!testAudio.canPlayType &&
-    testAudio.canPlayType('audio/webm; codecs="opus"').replace(/no/, "");
+    testAudio.canPlayType('audio/webm; codecs="opus"').replace(/no/, '');
 
   if (!canPlayOpus) {
-    document.querySelectorAll(".audioContainer").forEach((item) => {
-      item.setAttribute("hidden", "");
+    document.querySelectorAll('.audioContainer').forEach((item) => {
+      item.setAttribute('hidden', '');
     });
   }
 }
 
 function hideScriptureHash() {
-  if (window.location.hash && window.location.hash === "#modal") {
+  if (window.location.hash && window.location.hash === '#modal') {
     history.replaceState(
       null,
-      "",
-      window.location.pathname + window.location.search,
+      '',
+      window.location.pathname + window.location.search
     );
   }
 }
 
 function listenForScriptureClicks() {
-  document.querySelectorAll("[data-scripture]").forEach((el) => {
-    el.addEventListener("click", (evt) => {
-      if (event.target.matches("[data-scripture]")) {
-        const slug = evt.target.getAttribute("data-scripture");
+  document.querySelectorAll('[data-scripture]').forEach((el) => {
+    el.addEventListener('click', (evt) => {
+      if (evt.target.matches('[data-scripture]')) {
+        const slug = evt.target.getAttribute('data-scripture');
         evt.preventDefault();
         showScripture(slug);
       }
@@ -112,10 +112,10 @@ function listenForScriptureClicks() {
 }
 
 function loadContent() {
-  const contentEl = document.querySelector("#content");
+  const contentEl = document.querySelector('#content');
   if (!contentEl) return;
 
-  const globalContentEl = document.querySelector("#globalContent");
+  const globalContentEl = document.querySelector('#globalContent');
   if (!globalContentEl) return;
 
   const content = JSON.parse(contentEl.innerHTML);
@@ -126,8 +126,8 @@ function loadContent() {
 }
 
 async function logOut() {
-  localStorage.removeItem("refreshToken");
-  sessionStorage.removeItem("accessToken");
+  localStorage.removeItem('refreshToken');
+  sessionStorage.removeItem('accessToken');
 
   const clearAllPWACaches = async () => {
     const cacheKeys = await caches.keys();
@@ -144,7 +144,7 @@ async function logOut() {
   };
 
   // await clearAllPWACaches();
-  window.location.replace("./login");
+  window.location.replace('./login');
 }
 
 function listenForAudio() {
@@ -152,7 +152,7 @@ function listenForAudio() {
     const channel = new MessageChannel();
     const t = setTimeout(() => {
       channel.port1.onmessage = null;
-      resolve({ ok: false, error: "timeout", url, requestId });
+      resolve({ ok: false, error: 'timeout', url, requestId });
     }, timeoutMs);
 
     channel.port1.onmessage = (ev) => {
@@ -160,7 +160,7 @@ function listenForAudio() {
       resolve(ev.data);
     };
 
-    sw.postMessage({ type: "PREFETCH_AUDIO", url, requestId }, [channel.port2]);
+    sw.postMessage({ type: 'PREFETCH_AUDIO', url, requestId }, [channel.port2]);
   });
 }
 
@@ -170,41 +170,41 @@ function maskNumericPasswordOnIOS() {
     document
       .querySelectorAll('input[type="password"][data-mask="true"]')
       .forEach((item) => {
-        item.type = "tel";
-        item.inputMode = "numeric";
-        item.style.webkitTextSecurity = "disc";
+        item.type = 'tel';
+        item.inputMode = 'numeric';
+        item.style.webkitTextSecurity = 'disc';
       });
   }
 }
 
 function resetSubmitButtons() {
-  document.querySelectorAll("button[type=submit]").forEach((item) => {
-    item.removeAttribute("disabled");
-    item.querySelector(".submitButtonSpinner").classList.add("d-none");
+  document.querySelectorAll('button[type=submit]').forEach((item) => {
+    item.removeAttribute('disabled');
+    item.querySelector('.submitButtonSpinner').classList.add('d-none');
   });
 }
 
 function showScripture(slug) {
   return new Promise((resolve, reject) => {
-    const modal = new bootstrap.Modal("#modal");
-    const lang = document.querySelector("html").getAttribute("lang");
+    const modal = new bootstrap.Modal('#modal');
+    const lang = document.querySelector('html').getAttribute('lang');
     const endpoint = `/scriptures/${lang}/${slug}.json`;
 
     fetch(endpoint)
       .then((res) => res.json())
       .then((scriptureObject) => {
-        const modalEl = document.querySelector("#modal");
+        const modalEl = document.querySelector('#modal');
         const modal = new bootstrap.Modal(modalEl);
-        const header = modalEl.querySelector(".modal-title");
-        const body = modalEl.querySelector(".modal-body");
+        const header = modalEl.querySelector('.modal-title');
+        const body = modalEl.querySelector('.modal-body');
         const { display, version, book, chapter, verses } = scriptureObject;
-        let expandText = "Expand";
-        let versesHTML = "";
+        let expandText = 'Expand';
+        let versesHTML = '';
 
         for (let i = 0; i < verses.length; i++) {
           const verseNum = verses[i][0];
           const verseText = verses[i][1];
-          let verseHTML = "";
+          let verseHTML = '';
 
           if (verses.length === 1) {
             verseHTML =
@@ -260,46 +260,46 @@ function showScripture(slug) {
 }
 
 function showSubmitButtonSpinner(submitEvt) {
-  const submitButtonEl = submitEvt.target.querySelector("button[type=submit]");
-  const spinnerEl = submitButtonEl?.querySelector(".submitButtonSpinner");
-  submitButtonEl?.setAttribute("disabled", "");
-  spinnerEl?.classList.remove("d-none");
+  const submitButtonEl = submitEvt.target.querySelector('button[type=submit]');
+  const spinnerEl = submitButtonEl?.querySelector('.submitButtonSpinner');
+  submitButtonEl?.setAttribute('disabled', '');
+  spinnerEl?.classList.remove('d-none');
 }
 
 function addListeners() {
   listenForScriptureClicks();
 
-  window.addEventListener("popstate", () => {
-    const modalEl = document.getElementById("modal");
+  window.addEventListener('popstate', () => {
+    const modalEl = document.getElementById('modal');
     const modal = bootstrap.Modal.getInstance(modalEl);
     if (modal) {
       modal.hide();
     }
   });
 
-  window.addEventListener("pageshow", function (event) {
+  window.addEventListener('pageshow', function (event) {
     if (event.persisted) {
       resetSubmitButtons();
     }
   });
 
-  document.addEventListener("DOMContentLoaded", () => {
+  document.addEventListener('DOMContentLoaded', () => {
     maskNumericPasswordOnIOS();
 
-    const myModalEl = document.getElementById("modal");
+    const myModalEl = document.getElementById('modal');
 
-    myModalEl.addEventListener("hide.bs.modal", (event) => {
-      if (window.location.hash === "#modal") {
+    myModalEl.addEventListener('hide.bs.modal', (event) => {
+      if (window.location.hash === '#modal') {
         history.replaceState(
           null,
-          "",
-          window.location.pathname + window.location.search,
+          '',
+          window.location.pathname + window.location.search
         );
       }
     });
 
-    myModalEl.addEventListener("show.bs.modal", (event) => {
-      history.pushState(null, "", "#modal");
+    myModalEl.addEventListener('show.bs.modal', (event) => {
+      history.pushState(null, '', '#modal');
     });
   });
 }
