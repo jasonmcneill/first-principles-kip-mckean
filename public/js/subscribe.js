@@ -85,7 +85,7 @@ async function checkSubscription() {
         sessionStorage.setItem('accessToken', data.accessToken);
       }
 
-      window.location.replace('./dashboard');
+      window.location.replace('./subscribed-thanks');
     });
 }
 
