@@ -236,7 +236,7 @@ exports.POST = async (req, res) => {
 
   db.query(
     sql,
-    [firstName, lastName, gender, mailingList, lang],
+    [firstName, lastName, gender, mailingList, lang, req.user.id],
     (error, result) => {
       if (error) {
         console.error(error);
