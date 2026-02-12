@@ -189,6 +189,9 @@ async function onSubmit(evt) {
   })
     .then((res) => res.json())
     .then((data) => {
+      /*
+        
+      */
       switch (data.msg) {
         case 'username is taken':
           popUpError(

@@ -75,7 +75,7 @@ exports.POST = async (req, res) => {
     bcrypt.hash(password, saltRounds, (hashErr, hashedPassword) => {
       if (hashErr) {
         console.error(hashErr);
-        return resolve('unable to resolve password');
+        return resolve('unable to hash password');
       }
 
       const sql = `
@@ -271,14 +271,14 @@ exports.POST = async (req, res) => {
         if (error) {
           console.log(error);
           return res.status(500).send({
-            msg: 'unable to log in',
+            msg: 'unable to query for updated JWT data',
             msgType: 'error',
           });
         }
 
         if (!result.length) {
           return res.status(404).send({
-            msg: 'invalid login',
+            msg: 'user not found',
             msgType: 'error',
           });
         }
