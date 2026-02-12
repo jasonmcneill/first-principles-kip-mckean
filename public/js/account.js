@@ -210,11 +210,17 @@ async function onSubmit(evt) {
           break;
         case 'account updated':
           if (data.refreshToken) {
-            localStorage.setItem(JSON.stringify(data.refreshToken));
+            localStorage.setItem(
+              'refreshToken',
+              JSON.stringify(data.refreshToken)
+            );
           }
 
           if (data.accessToken) {
-            sessionStorage.setItem(JSON.stringify(data.accessToken));
+            sessionStorage.setItem(
+              'accessToken',
+              JSON.stringify(data.accessToken)
+            );
           }
 
           window.location.href = './dashboard';
