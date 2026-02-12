@@ -180,18 +180,18 @@ async function onSubmit(evt) {
   const formData = validate();
   if (!formData) return;
 
+  const accessToken = await getAccessToken();
+
   fetch('/api/account-update', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
+      authorization: `Bearer ${accessToken}`,
     },
     body: JSON.stringify(formData),
   })
     .then((res) => res.json())
     .then((data) => {
-      /*
-        
-      */
       switch (data.msg) {
         case 'username is taken':
           popUpError(
