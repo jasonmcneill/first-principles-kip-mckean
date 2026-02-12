@@ -223,7 +223,15 @@ async function onSubmit(evt) {
             );
           }
 
-          window.location.href = './dashboard';
+          showModal(
+            getPhrase('accountUpdatedHeader'),
+            getPhrase('accountUpdatedBody')
+          );
+
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+          });
           break;
         default:
           popUpError(getPhrase('errorTitle'), getPhrase('errorGeneric'));

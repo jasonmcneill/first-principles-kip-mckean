@@ -1,7 +1,6 @@
 exports.POST = async (req, res) => {
   const db = require('../../db');
   const jsonwebtoken = require('jsonwebtoken');
-  const userid = req.user.id;
 
   const sql = `
     SELECT

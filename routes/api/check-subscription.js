@@ -53,60 +53,8 @@ exports.POST = async (req, res) => {
       return res.json({ msg: 'subscription expired', msgType: 'error' });
     }
 
-    const {
-      id,
-      username,
-      status,
-      firstname,
-      lastname,
-      email,
-      gender,
-      mailingList,
-      lang,
-      subscribeduntil,
-      createdAt,
-    } = result[0];
-
-    const refreshToken = jsonwebtoken.sign(
-      {
-        id: id,
-        username: username,
-        status: status,
-        firstname: firstname,
-        lastname: lastname,
-        email: email,
-        gender: gender,
-        mailingList: mailingList,
-        lang: lang,
-        subscribeduntil: subscribeduntil,
-        createdAt: createdAt,
-      },
-      process.env.REFRESH_TOKEN_SECRET,
-      { expiresIn: '30d' }
-    );
-
-    const accessToken = jsonwebtoken.sign(
-      {
-        id: id,
-        username: username,
-        status: status,
-        firstname: firstname,
-        lastname: lastname,
-        email: email,
-        gender: gender,
-        mailingList: mailingList,
-        lang: lang,
-        subscribeduntil: subscribeduntil,
-        createdAt: createdAt,
-      },
-      process.env.ACCESS_TOKEN_SECRET,
-      { expiresIn: '10m' }
-    );
-
     return res.json({
       msg: 'subscription active',
-      refreshToken: refreshToken,
-      accessToken: accessToken,
     });
   });
 };

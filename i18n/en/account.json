@@ -32,5 +32,7 @@
   "errorTitle": "Error",
   "errorGeneric": "There was an unexpected error. Please check your internet connection and try again.",
   "usernameTakenTitle": "Username Taken",
-  "usernameTaken": "That username is already being used by another user. Please choose a different username."
+  "usernameTaken": "That username is already being used by another user. Please choose a different username.",
+  "accountUpdatedHeader": "Account Updated",
+  "accountUpdatedBody": "Your changes were saved."
 }

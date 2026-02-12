@@ -186,6 +186,18 @@ function resetSubmitButtons() {
   });
 }
 
+function showModal(modalTitle, modalBody) {
+  const modalEl = document.querySelector('#modal');
+  const modal = new bootstrap.Modal(modalEl);
+  const titleEl = modalEl.querySelector('.modal-title');
+  const bodyEl = modalEl.querySelector('.modal-body');
+
+  titleEl.innerHTML = modalTitle;
+  bodyEl.innerHTML = modalBody;
+
+  modal.show();
+}
+
 function showScripture(slug) {
   return new Promise((resolve, reject) => {
     const modal = new bootstrap.Modal('#modal');

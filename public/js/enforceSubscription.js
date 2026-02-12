@@ -72,7 +72,7 @@
 
   const checkSubscription = async () => {
     const endpoint = '/api/check-subscription';
-    const accessToken = await getAccessToken().catch(() => null);
+    const accessToken = await getAccessToken();
 
     if (!accessToken) return;
 
@@ -84,7 +84,7 @@
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          Authorization: `Bearer ${accessToken}`,
+          authorization: `Bearer ${accessToken}`,
         },
         signal: controller.signal,
       });
@@ -92,14 +92,8 @@
       const data = await response.json();
 
       if (data.msg && data.msg !== 'subscription active') {
+        console.error(msg);
         return subscribe();
-      }
-
-      if (data.refreshToken) {
-        localStorage.setItem('refreshToken', data.refreshToken);
-      }
-      if (data.accessToken) {
-        sessionStorage.setItem('accessToken', data.accessToken);
       }
 
       clearTimeout(timeoutId);
