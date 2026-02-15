@@ -212,14 +212,14 @@ async function onSubmit(evt) {
           if (data.refreshToken) {
             localStorage.setItem(
               'refreshToken',
-              JSON.stringify(data.refreshToken)
+              data.refreshToken
             );
           }
 
           if (data.accessToken) {
             sessionStorage.setItem(
               'accessToken',
-              JSON.stringify(data.accessToken)
+              data.accessToken
             );
           }
 
