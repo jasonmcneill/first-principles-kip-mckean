@@ -68,16 +68,41 @@
 
   if (!isSubscriptionCurrent) return subscribe();
 
-  const INTERVAL_MS = 60000 * 60; // 60 minutes
+  const getSubscriptionStatus = () => {
+    const refreshTokenStored = localStorage.getItem('refreshToken');
+    if (!refreshTokenStored) return { valid: false, daysRemaining: 0 };
 
-  const checkSubscription = async () => {
+    try {
+      const token = JSON.parse(atob(refreshTokenStored.split('.')[1]));
+      if (!token.subscribeduntil) return { valid: false, daysRemaining: 0 };
+
+      const now = Math.floor(Date.now() / 1000);
+      const expiry = Math.floor(new Date(token.subscribeduntil).getTime() / 1000);
+      const secondsRemaining = expiry - now;
+      const daysRemaining = secondsRemaining / (60 * 60 * 24);
+
+      return {
+        valid: now < expiry,
+        daysRemaining: daysRemaining,
+        expiry: expiry,
+      };
+    } catch (error) {
+      console.error('Error parsing refresh token:', error);
+      return { valid: false, daysRemaining: 0 };
+    }
+  };
+
+  const verifyWithAPI = async (blocking = false) => {
     const endpoint = '/api/check-subscription';
     const accessToken = await getAccessToken();
 
-    if (!accessToken) return;
+    if (!accessToken) {
+      if (blocking) return subscribe();
+      return;
+    }
 
     const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), INTERVAL_MS);
+    const timeoutId = setTimeout(() => controller.abort(), 30000); // 30 second timeout
 
     try {
       const response = await fetch(endpoint, {
@@ -92,22 +117,56 @@
       const data = await response.json();
 
       if (data.msg && data.msg !== 'subscription active') {
-        console.error(msg);
+        console.error('Subscription not active:', data.msg);
         return subscribe();
       }
 
       clearTimeout(timeoutId);
-      setTimeout(checkSubscription, INTERVAL_MS);
     } catch (error) {
       if (error.name === 'AbortError') {
-        console.warn('Fetch timed out. Starting next cycle...');
+        console.warn('Subscription check timed out');
       } else {
-        console.error('Network error:', error);
+        console.error('Network error during subscription check:', error);
       }
 
       clearTimeout(timeoutId);
-      setTimeout(checkSubscription, INTERVAL_MS);
+
+      // If blocking and network failed, still enforce for expired tokens
+      if (blocking) {
+        const status = getSubscriptionStatus();
+        if (!status.valid) return subscribe();
+      }
+      // If non-blocking, fail gracefully (allow access if token says valid)
     }
+  };
+
+  const checkSubscription = async () => {
+    const status = getSubscriptionStatus();
+
+    // Token invalid - must verify with API (blocking)
+    if (!status.valid) {
+      await verifyWithAPI(true);
+      return;
+    }
+
+    // Token valid - determine check interval based on time remaining
+    let nextCheckInterval;
+    if (status.daysRemaining > 7) {
+      // More than 7 days: check once per day
+      nextCheckInterval = 60000 * 60 * 24; // 24 hours
+    } else if (status.daysRemaining > 1) {
+      // 1-7 days: check every 6 hours
+      nextCheckInterval = 60000 * 60 * 6; // 6 hours
+    } else {
+      // Less than 1 day: check hourly
+      nextCheckInterval = 60000 * 60; // 1 hour
+    }
+
+    // Verify in background (non-blocking)
+    verifyWithAPI(false);
+
+    // Schedule next check
+    setTimeout(checkSubscription, nextCheckInterval);
   };
 
   checkSubscription();
