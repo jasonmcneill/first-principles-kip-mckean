@@ -76,14 +76,17 @@
       </div>
       <div class="offcanvas-body bg-light">
         <div class="list-group bg-white shadow">
+          <a href="./account" class="list-group-item list-group-item-action">
+            <%- globalData.account %>
+          </a>
           <a href="javascript:logOut()" class="list-group-item list-group-item-action">
-            <%- globalData.logout %>
+          <%- globalData.logout %>
           </a>
         </div>
       </div>
     </div>
 
-    <div class="container-fluid">
+    <div class="container-fluid"> 
       <div class="row">
         <div class="col-12 col-md-8 offset-md-2 px-3 py-3">
           <% if(data.metadata.hasAudio) { %>
