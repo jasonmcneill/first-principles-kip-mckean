@@ -29,13 +29,9 @@ exports.POST = async (req, res) => {
       });
     }
 
-    if (
-      result[0].paypalSubscriptionDetails &&
-      result[0].paypalSubscriptionDetails.length
-    ) {
-      result[0].paypalSubscriptionDetails = JSON.parse(
-        paypalSubscriptionDetails
-      );
+    const psd = result[0].paypalSubscriptionDetails;
+    if (psd && psd.length) {
+      psd = JSON.parse(psd);
     }
 
     return res.status(200).send({
