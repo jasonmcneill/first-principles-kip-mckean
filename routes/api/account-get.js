@@ -29,7 +29,10 @@ exports.POST = async (req, res) => {
       });
     }
 
-    if (paypalSubscriptionDetails && paypalSubscriptionDetails.length) {
+    if (
+      result[0].paypalSubscriptionDetails &&
+      result[0].paypalSubscriptionDetails.length
+    ) {
       result[0].paypalSubscriptionDetails = JSON.parse(
         paypalSubscriptionDetails
       );
