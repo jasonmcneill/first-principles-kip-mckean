@@ -31,7 +31,7 @@ exports.POST = async (req, res) => {
 
     const psd = result[0].paypalSubscriptionDetails;
     if (psd && psd.length) {
-      psd = JSON.parse(psd);
+      result[0].paypalSubscriptionDetails = JSON.parse(psd);
     }
 
     return res.status(200).send({
