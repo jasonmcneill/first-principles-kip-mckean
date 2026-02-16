@@ -27,9 +27,7 @@ function getAccountInfo() {
           gender,
           mailingList,
         } = data.acctInfo;
-        const subscriptionDetails = JSON.parse(
-          data.acctInfo.paypalSubscriptionDetails
-        );
+        const subscriptionDetails = data.acctInfo.paypalSubscriptionDetails;
 
         document.querySelector('#username').value = username;
         document.querySelector('#email').value = email;
@@ -210,17 +208,11 @@ async function onSubmit(evt) {
           break;
         case 'account updated':
           if (data.refreshToken) {
-            localStorage.setItem(
-              'refreshToken',
-              data.refreshToken
-            );
+            localStorage.setItem('refreshToken', data.refreshToken);
           }
 
           if (data.accessToken) {
-            sessionStorage.setItem(
-              'accessToken',
-              data.accessToken
-            );
+            sessionStorage.setItem('accessToken', data.accessToken);
           }
 
           showModal(
