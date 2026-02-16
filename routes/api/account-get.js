@@ -29,6 +29,12 @@ exports.POST = async (req, res) => {
       });
     }
 
+    if (paypalSubscriptionDetails && paypalSubscriptionDetails.length) {
+      result[0].paypalSubscriptionDetails = JSON.parse(
+        paypalSubscriptionDetails
+      );
+    }
+
     return res.status(200).send({
       msg: 'account info retrieved',
       msgType: 'success',
