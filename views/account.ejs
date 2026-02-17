@@ -53,6 +53,21 @@
       form label {
         font-weight: bold;
       }
+
+      table.table {
+        border-color: none;
+      }
+      table.table th,
+      table.table td {
+        background-color: unset;
+      }
+
+      table tr td:first-child {
+        text-align: end;
+        text-wrap-mode: nowrap;
+        white-space: nowrap;
+        width: 1%;
+      }
     </style>
   </head>
 
@@ -193,6 +208,103 @@
                 <h2 class="border-bottom border-dark mb-3">
                   <%- data.headingSubscription %>
                 </h2>
+
+                <p class="mb-4">
+                  <strong>Subscription status:</strong><br />
+                  <strong
+                    class="text-uppercase text-danger"
+                    id="subscriptionStatus"
+                  >
+                    cancelled
+                  </strong>
+                  <!-- Add i18n entries for all possible values -->
+                </p>
+
+                <div id="resubscribeContainer" class="mb-5">
+                  <p class="mb-1 pb-1">Want to reactivate your subscription?</p>
+                  <a href="./subscribe" class="btn btn-sm btn-primary">
+                    Subscribe
+                  </a>
+                </div>
+
+                <p id="validUntilContainer" class="my-4 d-none">
+                  <strong>Subscription valid until:</strong><br />
+                  <span id="validUntilDate">February 2, 2027 at 3:00 AM</span>
+                </p>
+
+                <p class="my-4">
+                  <strong>Original subscription date:</strong><br />
+                  <span id="originalSubscriptionDate">
+                    February 2, 2026 at 3:00 AM
+                  </span>
+                </p>
+
+                <p id="expiredOnContainer" class="my-4">
+                  <strong>Subscription expired:</strong><br />
+                  <span id="validUntilDate">February 2, 2027 at 3:00 AM</span>
+                </p>
+
+                <div class="my-4">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th colspan="2">Last annual payment:</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Amount:</td>
+                        <td>
+                          <span id="lastPmtAmt"> $12.00 USD </span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Date:</td>
+                        <td>
+                          <span id="lastPmtDate">
+                            February 2, 2026 at 3:00 AM
+                          </span>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div class="my-4 d-none" id="nextPmtContainer">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th colspan="2">Next annual payment:</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Amount:</td>
+                        <td>
+                          <span id="nextPmtAmt"> $12.00 USD </span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Date:</td>
+                        <td>
+                          <span id="nextPmtDate">
+                            February 2, 2027 at 3:00 AM
+                          </span>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div class="my-4 d-none" id="btnCancelSubscriptionContainer">
+                  <button
+                    type="button"
+                    class="btn btn-sm btn-outline btn-outline-danger"
+                    id="btnCancelSubscription"
+                  >
+                    Cancel subscription
+                  </button>
+                </div>
               </div>
 
               <form id="accountForm" class="my-4" novalidate>
