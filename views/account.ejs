@@ -209,28 +209,60 @@
                   <%- data.headingSubscription %>
                 </h2>
 
-                <p class="mb-4">
+                <p class="mb-4 d-none" id="subscriptionStatusActiveContainer">
                   <strong>Subscription status:</strong><br />
                   <strong
-                    class="text-uppercase text-danger"
-                    id="subscriptionStatus"
+                    class="text-uppercase text-success d-none"
+                    id="subscriptionStatusActive"
                   >
-                    cancelled
+                    active
                   </strong>
                   <!-- Add i18n entries for all possible values -->
                 </p>
 
-                <div id="resubscribeContainer" class="mb-5">
+                <p class="mb-4 d-none" id="subscriptionStatusActiveContainer">
+                  <strong>Subscription status:</strong><br />
+                  <strong
+                    class="text-uppercase text-success d-none"
+                    id="subscriptionStatusActive"
+                  >
+                    active
+                  </strong>
+                  <!-- Add i18n entries for all possible values -->
+                </p>
+
+                <div id="subscriptionStatusCancelledContainer">
+                  <p class="mb-4">
+                    <strong>Subscription status:</strong><br />
+                    <strong
+                      class="text-uppercase text-danger"
+                      id="subscriptionStatusActive"
+                    >
+                      cancelled
+                    </strong>
+                    <!-- Add i18n entries for all possible values -->
+                  </p>
+
+                  <p id="validUntilContainer" class="my-4">
+                    <strong>Subscription remains valid until:</strong><br />
+                    <span id="validUntilDate">February 2, 2027 at 3:00 AM</span>
+                  </p>
+
+                  <div class="mt-2 alert alert-warning">
+                    <strong>
+                      Your subscription will not renew, and you will not be
+                      charged again.
+                    </strong>
+                  </div>
+                  <hr class="my-5" />
+                </div>
+
+                <div id="resubscribeContainer" class="mb-5 d-none">
                   <p class="mb-1 pb-1">Want to reactivate your subscription?</p>
                   <a href="./subscribe" class="btn btn-sm btn-primary">
                     Subscribe
                   </a>
                 </div>
-
-                <p id="validUntilContainer" class="my-4 d-none">
-                  <strong>Subscription valid until:</strong><br />
-                  <span id="validUntilDate">February 2, 2027 at 3:00 AM</span>
-                </p>
 
                 <p class="my-4">
                   <strong>Original subscription date:</strong><br />
@@ -239,7 +271,7 @@
                   </span>
                 </p>
 
-                <p id="expiredOnContainer" class="my-4">
+                <p id="expiredOnContainer" class="my-4 d-none">
                   <strong>Subscription expired:</strong><br />
                   <span id="validUntilDate">February 2, 2027 at 3:00 AM</span>
                 </p>
