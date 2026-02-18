@@ -39,7 +39,7 @@ router.post('/verify-subscription', authenticateToken, verifySubscription.POST);
 const paypalWebhook = require('./paypal-webhook');
 router.post('/paypal-webhook', paypalWebhook.POST);
 
-// Check subscription status continuously in the client
+// Check subscription status
 const checkSubscription = require('./check-subscription');
 router.post('/check-subscription', authenticateToken, checkSubscription.POST);
 
@@ -50,5 +50,19 @@ router.post('/account-get', authenticateToken, accountGet.POST);
 
 const accountUpdate = require('./account-update');
 router.post('/account-update', authenticateToken, accountUpdate.POST);
+
+const subscriptionSuspendRenewals = require('./subscription-suspend-renewals');
+router.post(
+  '/subscription-suspend-renewals',
+  authenticateToken,
+  subscriptionSuspendRenewals
+);
+
+const subscriptionResumeRenewals = require('./subscription-resume-renewals');
+router.post(
+  '/subscription-resume-renewals',
+  authenticateToken,
+  subscriptionResumeRenewals
+);
 
 module.exports = router;

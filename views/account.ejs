@@ -209,101 +209,65 @@
                   <%- data.headingSubscription %>
                 </h2>
 
-                <p class="mb-4 d-none" id="subscriptionStatusActiveContainer">
-                  <strong>Subscription status:</strong><br />
-                  <strong
-                    class="text-uppercase text-success d-none"
-                    id="subscriptionStatusActive"
-                  >
-                    active
-                  </strong>
-                  <!-- Add i18n entries for all possible values -->
-                </p>
-
-                <p class="mb-4 d-none" id="subscriptionStatusActiveContainer">
-                  <strong>Subscription status:</strong><br />
-                  <strong
-                    class="text-uppercase text-success d-none"
-                    id="subscriptionStatusActive"
-                  >
-                    active
-                  </strong>
-                  <!-- Add i18n entries for all possible values -->
-                </p>
-
-                <div id="subscriptionStatusCancelledContainer">
+                <div class="d-none" id="subscriptionStatusActiveContainer">
                   <p class="mb-4">
                     <strong>Subscription status:</strong><br />
-                    <strong
-                      class="text-uppercase text-danger"
-                      id="subscriptionStatusActive"
-                    >
+                    <strong class="text-uppercase text-success">
+                      active
+                    </strong>
+                  </p>
+                </div>
+
+                <div id="subscriptionStatusSuspendedContainer">
+                  <p class="mb-4">
+                    <strong>Subscription status:</strong><br />
+                    <strong class="text-uppercase text-warning">
+                      renewals paused
+                    </strong>
+                    <br />
+                    <small class="text-muted" id="dateSuspended">
+                      You turned off future charges on February 16, 2026.
+                    </small>
+                  </p>
+
+                  <p class="my-4" id="accessRemainsUntilContainer">
+                    Your most recent payment was on
+                    <span id="lastPaymentDate">February 2, 2026</span>. You can
+                    continue to use First Principles until
+                    <strong id="accessRemainsUntilDate">
+                      February 2, 2027</strong
+                    >.
+                  </p>
+
+                  <div class="alert alert-warning my-4">
+                    <p>
+                      You will not be charged again until you unpause future
+                      subscription renewals.
+                    </p>
+
+                    <button id="btnUnsuspend" class="btn btn-sm btn-warning">
+                      Unpause Renewals
+                    </button>
+                  </div>
+                </div>
+
+                <div class="d-none" id="subscriptionStatusCancelledContainer">
+                  <p class="mb-4">
+                    <strong>Subscription status:</strong><br />
+                    <strong class="text-uppercase text-danger">
                       cancelled
                     </strong>
-                    <!-- Add i18n entries for all possible values -->
                     <br />
                     <small class="text-muted" id="dateCancelled">
                       Cancelled on February 16, 2026
                     </small>
                   </p>
 
-                  <p id="validUntilContainer" class="my-4">
-                    <strong>Subscription remains valid until:</strong><br />
-                    <span id="validUntilDate">February 2, 2027 at 3:00 AM</span>
-                  </p>
-
-                  <div class="mt-2 alert alert-warning">
-                    <strong>
-                      Your subscription will not renew, and you will not be
-                      charged again.
-                    </strong>
+                  <div class="mb-5">
+                    <a href="./subscribe" class="btn btn-sm btn-primary">
+                      Reactivate Subscription
+                    </a>
                   </div>
-                  <hr class="my-5" />
-                </div>
-
-                <div id="resubscribeContainer" class="mb-5 d-none">
-                  <p class="mb-1 pb-1">Want to reactivate your subscription?</p>
-                  <a href="./subscribe" class="btn btn-sm btn-primary">
-                    Subscribe
-                  </a>
-                </div>
-
-                <p class="my-4">
-                  <strong>Original subscription date:</strong><br />
-                  <span id="originalSubscriptionDate">
-                    February 2, 2026 at 3:00 AM
-                  </span>
-                </p>
-
-                <p id="expiredOnContainer" class="my-4 d-none">
-                  <strong>Subscription expired:</strong><br />
-                  <span id="validUntilDate">February 2, 2027 at 3:00 AM</span>
-                </p>
-
-                <div class="my-4">
-                  <table class="table">
-                    <thead>
-                      <tr>
-                        <th colspan="2">Last annual payment:</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>Amount:</td>
-                        <td>
-                          <span id="lastPmtAmt"> $12.00 USD </span>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>Date:</td>
-                        <td>
-                          <span id="lastPmtDate">
-                            February 2, 2026 at 3:00 AM
-                          </span>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
                 </div>
 
                 <div class="my-4 d-none" id="nextPmtContainer">
