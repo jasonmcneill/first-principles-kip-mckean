@@ -2,6 +2,7 @@
   --bs-link-color: rgb(55 115 134) !important;
   --bs-link-color-rgb: 55, 115, 134 !important;
   --bs-link-hover-color-rgb: rgb(42, 89, 103) !important;
+  --bs-btn-border-color: #224651 !important;
 }
 
 ol,
@@ -21,6 +22,7 @@ ul {
 
 .btn-primary {
   background-color: #377386 !important;
+  border-color: #224651 !important;
 }
 
 .btn:hover {
