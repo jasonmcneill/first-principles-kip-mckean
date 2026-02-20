@@ -303,5 +303,20 @@
         }
       ]
     }
+  },
+  {
+    "key": "o3",
+    "text": {
+      "original": "next lesson",
+      "translated": "next lesson"
+    },
+    "decorations": {
+      "tags": [
+        {
+          "name": "a",
+          "attributes": "href='./miraculous-gifts-holy-spirit'"
+        }
+      ]
+    }
   }
 ]

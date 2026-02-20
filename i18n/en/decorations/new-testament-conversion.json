@@ -107,6 +107,16 @@
   {
     "key": "o2ap1",
     "text": {
+      "original": "Pray Jesus into your heart",
+      "translated": "Pray Jesus into your heart"
+    },
+    "decorations": {
+      "bold": true
+    }
+  },
+  {
+    "key": "o2ap1",
+    "text": {
       "original": "Revelation 3:20",
       "translated": "Revelation 3:20"
     },
@@ -117,6 +127,16 @@
           "attributes": "data-scripture=\"revelation-3-20\""
         }
       ]
+    }
+  },
+  {
+    "key": "o2ap2",
+    "text": {
+      "original": "Accept Jesus into your heart",
+      "translated": "Accept Jesus into your heart"
+    },
+    "decorations": {
+      "bold": true
     }
   },
   {
@@ -167,6 +187,16 @@
   {
     "key": "o2bp1",
     "text": {
+      "original": "Infant baptism",
+      "translated": "Infant baptism"
+    },
+    "decorations": {
+      "bold": true
+    }
+  },
+  {
+    "key": "o2bp1",
+    "text": {
       "original": "Colossians 2:12",
       "translated": "Colossians 2:12"
     },
@@ -192,6 +222,16 @@
           "attributes": "data-scripture=\"ezekiel-18-20\""
         }
       ]
+    }
+  },
+  {
+    "key": "o2c",
+    "text": {
+      "original": "Baptism does not save you",
+      "translated": "Baptism does not save you"
+    },
+    "decorations": {
+      "bold": true
     }
   },
   {
@@ -227,6 +267,16 @@
   {
     "key": "o2d",
     "text": {
+      "original": "Baptism is a work — yet we are saved by faith",
+      "translated": "Baptism is a work — yet we are saved by faith"
+    },
+    "decorations": {
+      "bold": true
+    }
+  },
+  {
+    "key": "o2d",
+    "text": {
       "original": "Ephesians 2:8",
       "translated": "Ephesians 2:8"
     },
@@ -257,6 +307,16 @@
   {
     "key": "o2e",
     "text": {
+      "original": "Baptism is an outward sign of an inward grace",
+      "translated": "Baptism is an outward sign of an inward grace"
+    },
+    "decorations": {
+      "bold": true
+    }
+  },
+  {
+    "key": "o2e",
+    "text": {
       "original": "Romans 6:2-4",
       "translated": "Romans 6:2-4"
     },
@@ -267,6 +327,16 @@
           "attributes": "data-scripture=\"romans-6-2-4\""
         }
       ]
+    }
+  },
+  {
+    "key": "o2f",
+    "text": {
+      "original": "Baptism is not important, after all, look at what Paul said in 1 Corinthians 1:17",
+      "translated": "Baptism is not important, after all, look at what Paul said in 1 Corinthians 1:17"
+    },
+    "decorations": {
+      "bold": true
     }
   },
   {
@@ -317,6 +387,16 @@
   {
     "key": "o2g",
     "text": {
+      "original": "The thief on the cross was not baptized and Jesus told him that they would see each other in Paradise",
+      "translated": "The thief on the cross was not baptized and Jesus told him that they would see each other in Paradise"
+    },
+    "decorations": {
+      "bold": true
+    }
+  },
+  {
+    "key": "o2g",
+    "text": {
       "original": "Romans 6:2-4",
       "translated": "Romans 6:2-4"
     },
@@ -342,6 +422,16 @@
           "attributes": "data-scripture=\"matthew-9-2-6\""
         }
       ]
+    }
+  },
+  {
+    "key": "o2h",
+    "text": {
+      "original": "Believers baptism",
+      "translated": "Believers baptism"
+    },
+    "decorations": {
+      "bold": true
     }
   },
   {
