@@ -73,7 +73,7 @@
 
   <body>
     <div class="master-container">
-      <div class="container-fluid px-0">
+      <div class="container-fluid p-0">
         <div class="row">
           <div class="col-12 text-center">
             <div
@@ -209,24 +209,56 @@
                   <%- data.headingSubscription %>
                 </h2>
 
-                <div class="d-none" id="subscriptionStatusActiveContainer">
-                  <p class="mb-4">
+                <div class="d-none" id="subscriptionActiveContainer">
+                  <p>
                     <strong>Subscription status:</strong><br />
                     <strong class="text-uppercase text-success">
                       active
                     </strong>
                   </p>
+
+                  <div class="my-4">
+                    <strong>Next annual payment:</strong>
+                    <table class="table">
+                      <tbody>
+                        <tr>
+                          <td>Amount:</td>
+                          <td>
+                            <span id="nextPmtAmt"> $12.00 USD </span>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Date:</td>
+                          <td>
+                            <span id="nextPmtDate">
+                              February 2, 2027 at 3:00 AM
+                            </span>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <div>
+                    <button
+                      type="button"
+                      class="btn btn-sm btn-outline btn-outline-danger mt-2"
+                      id="btnCancelSubscription"
+                    >
+                      Cancel subscription
+                    </button>
+                  </div>
                 </div>
 
-                <div id="subscriptionStatusSuspendedContainer">
+                <div class="d-none" id="subscriptionSuspendedContainer">
                   <p class="mb-4">
                     <strong>Subscription status:</strong><br />
-                    <strong class="text-uppercase text-warning">
-                      renewals paused
+                    <strong class="text-uppercase text-danger">
+                      cancelled
                     </strong>
                     <br />
                     <small class="text-muted" id="dateSuspended">
-                      You turned off future charges on February 16, 2026.
+                      Cancelled on February 16, 2026
                     </small>
                   </p>
 
@@ -239,20 +271,16 @@
                     >.
                   </p>
 
-                  <div class="alert alert-warning my-4">
-                    <p>
-                      You will not be charged again until you unpause future
-                      subscription renewals.
-                    </p>
-
-                    <button id="btnUnsuspend" class="btn btn-sm btn-warning">
-                      Unpause Renewals
-                    </button>
-                  </div>
+                  <p>
+                    You will not be charged again unless you
+                    <a id="linkReinstateSuspended" href="#">
+                      reinstate your subscription</a
+                    >.
+                  </p>
                 </div>
 
-                <div class="d-none" id="subscriptionStatusCancelledContainer">
-                  <p class="mb-4">
+                <div class="d-none" id="subscriptionCancelledContainer">
+                  <p class="my-4">
                     <strong>Subscription status:</strong><br />
                     <strong class="text-uppercase text-danger">
                       cancelled
@@ -263,47 +291,9 @@
                     </small>
                   </p>
 
-                  <div class="mb-5">
-                    <a href="./subscribe" class="btn btn-sm btn-primary">
-                      Reactivate Subscription
-                    </a>
-                  </div>
-                </div>
-
-                <div class="my-4 d-none" id="nextPmtContainer">
-                  <table class="table">
-                    <thead>
-                      <tr>
-                        <th colspan="2">Next annual payment:</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>Amount:</td>
-                        <td>
-                          <span id="nextPmtAmt"> $12.00 USD </span>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>Date:</td>
-                        <td>
-                          <span id="nextPmtDate">
-                            February 2, 2027 at 3:00 AM
-                          </span>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-
-                <div class="my-4 d-none" id="btnCancelSubscriptionContainer">
-                  <button
-                    type="button"
-                    class="btn btn-sm btn-outline btn-outline-danger"
-                    id="btnCancelSubscription"
-                  >
-                    Cancel subscription
-                  </button>
+                  <a href="./subscribe" class="btn btn-sm btn-primary">
+                    Resubscribe
+                  </a>
                 </div>
               </div>
 
@@ -489,7 +479,7 @@
         </div>
       </div>
 
-      <div class="container-fluid px-0">
+      <div class="container-fluid p-0">
         <div class="row">
           <div class="col-12">
             <footer class="mt-2 px-4 py-4 bg-dark text-light text-center">

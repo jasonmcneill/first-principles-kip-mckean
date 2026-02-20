@@ -169,6 +169,16 @@ function validate(phrases) {
   };
 }
 
+function onCancelClicked(evt) {
+  evt.preventDefault();
+  console.log('Cancel clicked');
+}
+
+function onReinstateClicked(evt) {
+  evt.preventDefault();
+  console.log('Reinstate clicked');
+}
+
 async function onSubmit(evt) {
   evt.preventDefault();
 
@@ -239,6 +249,12 @@ async function onSubmit(evt) {
 
 function addListeners() {
   document.querySelector('#accountForm').addEventListener('submit', onSubmit);
+  document
+    .querySelector('#linkReinstateSuspended')
+    .addEventListener('click', onReinstateClicked);
+  document
+    .querySelector('#btnCancelSubscription')
+    .addEventListener('click', onCancelClicked);
 }
 
 async function init() {
