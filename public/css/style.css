@@ -1,3 +1,22 @@
+.form-check-input:checked {
+  background-color: #41869b !important;
+  border-color: #41869b !important;
+}
+
+.form-check-input:focus {
+  border-color: #41869b !important;
+  box-shadow: 0 0 0 0.25rem #41869b54 !important;
+}
+
+.btn-primary {
+  background-color: #377386 !important;
+}
+
+.btn:hover {
+  background-color: #377386 !important;
+  border-color: #224651 !important;
+}
+
 html {
   font-size: 20px;
   max-width: 100vw !important;
