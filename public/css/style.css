@@ -15,6 +15,7 @@ ul {
   border-color: #41869b !important;
 }
 
+.form-control:focus,
 .form-check-input:focus {
   border-color: #41869b !important;
   box-shadow: 0 0 0 0.25rem #41869b54 !important;
