@@ -135,7 +135,6 @@ function showSubscriptionStatus(acctInfo) {
   reset();
 
   // Toggle based on status
-  status = 'suspended';
 
   if (status === 'active') {
     const nextPmtAmtEl = document.querySelector('#nextPmtAmt');
