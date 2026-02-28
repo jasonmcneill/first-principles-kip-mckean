@@ -136,7 +136,9 @@ function showSubscriptionStatus(acctInfo) {
 
   // Toggle based on status
 
-  if (status === 'active') {
+  if (!paypalSubscriptionDetails) {
+    window.location.href = './subscribe';
+  } else if (status === 'active') {
     const nextPmtAmtEl = document.querySelector('#nextPmtAmt');
     const nextPmtDateEl = document.querySelector('#nextPmtDate');
     const nextAmt = formatCurrency(nextPaymentAmount);
