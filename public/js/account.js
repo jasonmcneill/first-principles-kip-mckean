@@ -127,7 +127,7 @@ function showSubscriptionStatus(acctInfo) {
   reset();
 
   // Toggle based on status
-  status = 'suspended';
+  status = 'cancelled';
 
   if (status === 'active') {
     const nextPmtAmtEl = document.querySelector('#nextPmtAmt');
@@ -180,11 +180,12 @@ function showSubscriptionStatus(acctInfo) {
     const dateCancelled = formatDate(
       paypalSubscriptionDetails.status_update_time
     );
-    const cancelledOn = getPhrase('cancelledOn').replaceAll(
+    const cancelledBy = paypalSubscriptionDetails.status_changed_by; // value will be "user" (if user cancelled via their own PayPal dashboard) or "merchant" (if this app made the pertinent API call).
+    const cancelledOnTxt = getPhrase('cancelledOn').replaceAll(
       '{DATE}',
       dateCancelled
     );
-    dateCancelledEl.innerHTML = cancelledOn;
+    dateCancelledEl.innerHTML = cancelledOnTxt;
     subscriptionCancelledContainerEl.classList.remove('d-none');
   }
 }
