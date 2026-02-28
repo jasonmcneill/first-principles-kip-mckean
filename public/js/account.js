@@ -13,18 +13,16 @@ function formatCurrency(nextPmtAmt) {
 
 function formatDate(iso8601Date, includeTime = true) {
   const date = new Date(iso8601Date);
-  let formatted;
+  let formatted = date.toLocaleString(undefined, {
+    dateStyle: 'long',
+    timeStyle: 'short',
+  });
 
   if (isNaN(date.getTime())) {
     return 'Invalid Date';
   }
 
-  if (includeTime) {
-    formatted = date.toLocaleString(undefined, {
-      dateStyle: 'long',
-      timeStyle: 'short',
-    });
-  } else {
+  if (!includeTime) {
     formatted = date.toLocaleString(undefined, {
       dateStyle: 'long',
     });
