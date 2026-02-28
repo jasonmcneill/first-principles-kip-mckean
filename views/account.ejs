@@ -262,29 +262,35 @@
 
                   <p class="my-4" id="accessRemainsUntilContainer"></p>
 
-                  <p>
-                    You will not be charged again unless you
-                    <a id="linkReinstateSuspended" href="#">
-                      reinstate your subscription</a
-                    >.
+                  <p><%- data.suspendedNotChargedAgain %></p>
+
+                  <p class="text-md-start text-center">
+                    <button
+                      class="btn btn-sm btn-primary"
+                      id="btnReinstateSuspended"
+                    >
+                      <%- data.reinstateSubscription %>
+                    </button>
                   </p>
                 </div>
 
                 <div class="d-none" id="subscriptionCancelledContainer">
                   <p class="my-4">
-                    <strong>Subscription status:</strong><br />
+                    <strong><%- data.subscriptionStatus %></strong><br />
                     <strong class="text-uppercase text-danger">
-                      cancelled
+                      <%- data.cancelled %>
                     </strong>
                     <br />
                     <small class="text-muted" id="dateCancelled">
-                      Cancelled on February 16, 2026
+                      <%- data.cancelledOn %>
                     </small>
                   </p>
 
-                  <a href="./subscribe" class="btn btn-sm btn-primary">
-                    Resubscribe
-                  </a>
+                  <p class="text-md-start text-center">
+                    <a href="./subscribe" class="btn btn-sm btn-primary">
+                      <%- data.resubscribe %>
+                    </a>
+                  </p>
                 </div>
               </div>
 

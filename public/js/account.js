@@ -198,6 +198,17 @@ function showSubscriptionStatus(acctInfo) {
       '{DATE}',
       dateCancelled
     );
+    const continueUntilDate = formatDate(
+      paypalSubscriptionDetails.billing_info.next_billing_time
+    );
+    const accessEnded = checkIfDateIsPast(
+      paypalSubscriptionDetails.billing_info.next_billing_time
+    );
+    const continueUntilTxt = getPhrase('continueUntil').replaceAll(
+      '{DATE}',
+      `<strong class="text-success">${continueUntilDate}</strong>`
+    );
+    const accessRemainsUntilTxt = continueUntilTxt;
     dateCancelledEl.innerHTML = cancelledOnTxt;
     subscriptionCancelledContainerEl.classList.remove('d-none');
   }
@@ -386,7 +397,7 @@ async function onSubmit(evt) {
 function addListeners() {
   document.querySelector('#accountForm').addEventListener('submit', onSubmit);
   document
-    .querySelector('#linkReinstateSuspended')
+    .querySelector('#btnReinstateSuspended')
     .addEventListener('click', onReinstateClicked);
   document
     .querySelector('#btnCancelSubscription')

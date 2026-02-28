@@ -45,5 +45,8 @@
   "cancelSubscription": "Cancel subscription",
   "cancelled": "cancelled",
   "mostRecentPmt": "Your most recent payment was {AMOUNT} on {DATE}.",
-  "continueUntil": "You can continue to use First Principles until {DATE}."
+  "continueUntil": "You can continue to use First Principles until {DATE}.",
+  "suspendedNotChargedAgain": "You will not be charged again unless you reinstate your subscription.",
+  "reinstateSubscription": "Reinstate my subscription",
+  "resubscribe": "Resubscribe"
 }
