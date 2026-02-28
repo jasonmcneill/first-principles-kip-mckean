@@ -1,3 +1,11 @@
+function checkIfDateIsPast(iso8601Date) {
+  const inputDate = new Date(iso8601Date);
+  const now = new Date();
+  const isInPast = inputDate < now;
+
+  return isInPast;
+}
+
 function formatCurrency(nextPmtAmt) {
   const value = nextPmtAmt.value;
   const currency_code = nextPmtAmt.currency_code;
@@ -127,7 +135,7 @@ function showSubscriptionStatus(acctInfo) {
   reset();
 
   // Toggle based on status
-  status = 'cancelled';
+  status = 'suspended';
 
   if (status === 'active') {
     const nextPmtAmtEl = document.querySelector('#nextPmtAmt');
@@ -162,6 +170,9 @@ function showSubscriptionStatus(acctInfo) {
     const continueUntilDate = formatDate(
       paypalSubscriptionDetails.billing_info.next_billing_time
     );
+    const accessEnded = checkIfDateIsPast(
+      paypalSubscriptionDetails.billing_info.next_billing_time
+    );
     const mostRecentPmtTxt = getPhrase('mostRecentPmt')
       .replaceAll('{AMOUNT}', `<strong>${mostRecentPmtAmt}</strong>`)
       .replaceAll('{DATE}', mostRecentPmtDate);
@@ -169,7 +180,9 @@ function showSubscriptionStatus(acctInfo) {
       '{DATE}',
       `<strong class="text-success">${continueUntilDate}</strong>`
     );
-    const accessRemainsUntilTxt = `${mostRecentPmtTxt} ${continueUntilTxt}`;
+    const accessRemainsUntilTxt = accessEnded
+      ? mostRecentPmtTxt
+      : `${mostRecentPmtTxt} ${continueUntilTxt}`;
 
     dateSuspendedEl.innerHTML = suspendedOnTxt;
     accessRemainsUntilContainerEl.innerHTML = accessRemainsUntilTxt;
