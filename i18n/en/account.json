@@ -34,5 +34,7 @@
   "usernameTakenTitle": "Username Taken",
   "usernameTaken": "That username is already being used by another user. Please choose a different username.",
   "accountUpdatedHeader": "Account Updated",
-  "accountUpdatedBody": "Your changes were saved."
+  "accountUpdatedBody": "Your changes were saved.",
+  "cancelledOn": "Cancelled on {DATE}",
+  "suspendedOn": "Cancelled on {DATE}"
 }
