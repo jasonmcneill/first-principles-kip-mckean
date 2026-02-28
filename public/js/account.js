@@ -1,4 +1,6 @@
-function formatCurrency({ value, currency_code }) {
+function formatCurrency(nextPmtAmt) {
+  const value = nextPmtAmt.value;
+  const currency_code = nextPmtAmt.currency_code;
   const locale = navigator.language;
   const formatted = new Intl.NumberFormat(locale, {
     style: 'currency',
@@ -117,8 +119,7 @@ function showSubscriptionStatus(acctInfo) {
   reset();
 
   // Toggle based on status
-  // subscriptionActiveContainerEl.classList.remove('d-none');
-  status = 'suspended';
+  // status = 'suspended';
 
   if (status === 'active') {
     const nextPmtAmtEl = document.querySelector('#nextPmtAmt');
