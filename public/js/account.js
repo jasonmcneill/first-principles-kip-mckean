@@ -317,12 +317,12 @@ function validate(phrases) {
 }
 
 function onCancelClicked(evt) {
-  evt.preventDefault();
+  // evt.preventDefault();
+  // Should just redirect the browser to "./subscribe"
   console.log('Cancel clicked');
 }
 
 function onReinstateClicked(evt) {
-  evt.preventDefault();
   console.log('Reinstate clicked');
 }
 
