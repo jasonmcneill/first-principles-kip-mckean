@@ -199,7 +199,7 @@
                 style="height: 200px"
               >
                 <div class="spinner-border text-secondary" role="status">
-                  <span class="visually-hidden">Loading...</span>
+                  <span class="visually-hidden"><%- globalData.loading %></span>
                 </div>
               </div>
             </div>
@@ -211,28 +211,26 @@
 
                 <div class="d-none" id="subscriptionActiveContainer">
                   <p>
-                    <strong>Subscription status:</strong><br />
+                    <strong><%- data.subscriptionStatus %></strong><br />
                     <strong class="text-uppercase text-success">
-                      active
+                      <%- data.active %>
                     </strong>
                   </p>
 
                   <div class="my-4">
-                    <strong>Next annual payment:</strong>
+                    <strong><%- data.nextAnnualPayment %></strong>
                     <table class="table">
                       <tbody>
                         <tr>
-                          <td>Amount:</td>
+                          <td><%- data.amount %></td>
                           <td>
-                            <span id="nextPmtAmt"> $12.00 USD </span>
+                            <span id="nextPmtAmt"> </span>
                           </td>
                         </tr>
                         <tr>
-                          <td>Date:</td>
+                          <td><%- data.date %></td>
                           <td>
-                            <span id="nextPmtDate">
-                              February 2, 2027 at 3:00 AM
-                            </span>
+                            <span id="nextPmtDate"> </span>
                           </td>
                         </tr>
                       </tbody>
@@ -245,31 +243,24 @@
                       class="btn btn-sm btn-outline btn-outline-danger mt-2"
                       id="btnCancelSubscription"
                     >
-                      Cancel subscription
+                      <%- data.cancelSubscription %>
                     </button>
                   </div>
                 </div>
 
                 <div class="d-none" id="subscriptionSuspendedContainer">
                   <p class="mb-4">
-                    <strong>Subscription status:</strong><br />
+                    <strong><%- data.subscriptionStatus %></strong><br />
                     <strong class="text-uppercase text-danger">
-                      cancelled
+                      <%- data.cancelled %>
                     </strong>
                     <br />
                     <small class="text-muted" id="dateSuspended">
-                      Cancelled on February 16, 2026
+                      <%- data.cancelledOn %>
                     </small>
                   </p>
 
-                  <p class="my-4" id="accessRemainsUntilContainer">
-                    Your most recent payment was on
-                    <span id="lastPaymentDate">February 2, 2026</span>. You can
-                    continue to use First Principles until
-                    <strong class="text-success" id="accessRemainsUntilDate">
-                      February 2, 2027</strong
-                    >.
-                  </p>
+                  <p class="my-4" id="accessRemainsUntilContainer"></p>
 
                   <p>
                     You will not be charged again unless you

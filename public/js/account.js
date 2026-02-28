@@ -11,17 +11,26 @@ function formatCurrency(nextPmtAmt) {
   return formatted;
 }
 
-function formatDate(iso8601Date) {
+function formatDate(iso8601Date, includeTime = true) {
   const date = new Date(iso8601Date);
+  let formatted;
 
   if (isNaN(date.getTime())) {
     return 'Invalid Date';
   }
 
-  return date.toLocaleString(undefined, {
-    dateStyle: 'long',
-    timeStyle: 'short',
-  });
+  if (includeTime) {
+    formatted = date.toLocaleString(undefined, {
+      dateStyle: 'long',
+      timeStyle: 'short',
+    });
+  } else {
+    formatted = date.toLocaleString(undefined, {
+      dateStyle: 'long',
+    });
+  }
+
+  return formatted;
 }
 
 function getAccountInfo() {
@@ -119,7 +128,7 @@ function showSubscriptionStatus(acctInfo) {
   reset();
 
   // Toggle based on status
-  // status = 'suspended';
+  status = 'suspended';
 
   if (status === 'active') {
     const nextPmtAmtEl = document.querySelector('#nextPmtAmt');
@@ -134,15 +143,38 @@ function showSubscriptionStatus(acctInfo) {
     subscriptionActiveContainerEl.classList.remove('d-none');
   } else if (status === 'suspended') {
     const dateSuspendedEl = document.querySelector('#dateSuspended');
+    const accessRemainsUntilContainerEl = document.querySelector(
+      '#accessRemainsUntilContainer'
+    );
     const dateSuspended = formatDate(
       paypalSubscriptionDetails.status_update_time
     );
-    const suspendedOn = getPhrase('suspendedOn').replaceAll(
+    const suspendedOnTxt = getPhrase('suspendedOn').replaceAll(
       '{DATE}',
       dateSuspended
     );
+    const mostRecentPmtAmt = formatCurrency(
+      paypalSubscriptionDetails.billing_info.last_payment.amount
+    );
+    const mostRecentPmtDate = formatDate(
+      paypalSubscriptionDetails.billing_info.last_payment.time,
+      false
+    );
+    const continueUntilDate = formatDate(
+      paypalSubscriptionDetails.billing_info.next_billing_time
+    );
+    const mostRecentPmtTxt = getPhrase('mostRecentPmt')
+      .replaceAll('{AMOUNT}', `<strong>${mostRecentPmtAmt}</strong>`)
+      .replaceAll('{DATE}', mostRecentPmtDate);
+    const continueUntilTxt = getPhrase('continueUntil').replaceAll(
+      '{DATE}',
+      `<strong class="text-success">${continueUntilDate}</strong>`
+    );
+    const accessRemainsUntilTxt = `${mostRecentPmtTxt} ${continueUntilTxt}`;
 
-    dateSuspendedEl.innerHTML = suspendedOn;
+    dateSuspendedEl.innerHTML = suspendedOnTxt;
+    accessRemainsUntilContainerEl.innerHTML = accessRemainsUntilTxt;
+    accessRemainsUntilContainerEl.classList.remove('d-none');
     subscriptionSuspendedContainerEl.classList.remove('d-none');
   } else if (status === 'cancelled') {
     const dateCancelledEl = document.querySelector('#dateCancelled');

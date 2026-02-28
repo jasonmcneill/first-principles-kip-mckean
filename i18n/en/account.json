@@ -36,5 +36,14 @@
   "accountUpdatedHeader": "Account Updated",
   "accountUpdatedBody": "Your changes were saved.",
   "cancelledOn": "Cancelled on {DATE}",
-  "suspendedOn": "Cancelled on {DATE}"
+  "suspendedOn": "Cancelled on {DATE}",
+  "subscriptionStatus": "Subscription status:",
+  "active": "active",
+  "nextAnnualPayment": "Next annual payment:",
+  "amount": "Amount:",
+  "date": "Date:",
+  "cancelSubscription": "Cancel subscription",
+  "cancelled": "cancelled",
+  "mostRecentPmt": "Your most recent payment was {AMOUNT} on {DATE}.",
+  "continueUntil": "You can continue to use First Principles until {DATE}."
 }
