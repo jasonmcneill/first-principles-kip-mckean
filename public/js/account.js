@@ -6,6 +6,10 @@ function checkIfDateIsPast(iso8601Date) {
   return isInPast;
 }
 
+function hideSpinner() {
+  document.querySelector('#pageSpinner').classList.add('d-none');
+}
+
 function formatCurrency(nextPmtAmt) {
   const value = nextPmtAmt.value;
   const currency_code = nextPmtAmt.currency_code;
@@ -44,11 +48,13 @@ function getAccountInfo() {
   return new Promise(async (resolve, reject) => {
     const endpoint = '/api/account-get';
     const accessToken = await getAccessToken();
-    const pageSpinner = document.querySelector('#pageSpinner');
     const main = document.querySelector('main');
 
-    main.classList.add('d-none');
-    pageSpinner.classList.remove('d-none');
+    const isOffline = checkIfOffline();
+
+    if (isOffline) {
+      return reject('Internet connection is required');
+    }
 
     fetch(endpoint, {
       mode: 'cors',
@@ -84,16 +90,28 @@ function getAccountInfo() {
 
         document.querySelector('#mailinglist').checked = mailingList === 1;
 
+        if (!data.acctInfo) {
+          return reject('Unable to retrieve account info');
+        }
+
+        document.querySelector('#profileForm').classList.remove('d-none');
+
+        showSubscriptionStatus(data.acctInfo);
+
+        document.querySelector('main').classList.remove('d-none');
+
         return resolve(data.acctInfo);
       })
       .catch((error) => {
-        console.error(error);
-      })
-      .finally(() => {
-        pageSpinner.classList.add('d-none');
-        main.classList.remove('d-none');
+        return reject(error);
       });
   });
+}
+
+function checkIfOffline() {
+  const isOffline = navigator.onLine === false;
+
+  return isOffline;
 }
 
 function popUpError(title, body) {
@@ -107,6 +125,18 @@ function popUpError(title, body) {
   resetSubmitButtons();
 
   new bootstrap.Modal('#modal').show();
+}
+
+function showProfileDetailsUnavailable() {
+  document
+    .querySelector('#profileDetailsUnavailable')
+    .classList.remove('d-none');
+}
+
+function showSubscriptionDetailsUnavailable() {
+  document
+    .querySelector('#subscriptionDetailsUnavailable')
+    .classList.remove('d-none');
 }
 
 function showSubscriptionStatus(acctInfo) {
@@ -123,22 +153,21 @@ function showSubscriptionStatus(acctInfo) {
   const accessRemainsUntilContainerEl = document.querySelector(
     '#accessRemainsUntilContainer'
   );
+
   let { nextPaymentAmount, paypalSubscriptionDetails, status } = acctInfo;
 
   // Reset
-  const reset = () => {
-    subscriptionActiveContainerEl.classList.add('d-none');
-    subscriptionSuspendedContainerEl.classList.add('d-none');
-    accessRemainsUntilContainerEl.classList.add('d-none');
-  };
-
-  reset();
+  subscriptionActiveContainerEl.classList.add('d-none');
+  subscriptionSuspendedContainerEl.classList.add('d-none');
+  accessRemainsUntilContainerEl.classList.add('d-none');
 
   // Toggle based on status
 
   if (!paypalSubscriptionDetails) {
-    window.location.href = './subscribe';
+    // SUBSCRIPTION NULL
+    showSubscriptionDetailsUnavailable();
   } else if (status === 'active') {
+    // SUBSCRIPTION ACTIVE
     const nextPmtAmtEl = document.querySelector('#nextPmtAmt');
     const nextPmtDateEl = document.querySelector('#nextPmtDate');
     const nextAmt = formatCurrency(nextPaymentAmount);
@@ -150,6 +179,7 @@ function showSubscriptionStatus(acctInfo) {
     nextPmtDateEl.innerHTML = nextDate;
     subscriptionActiveContainerEl.classList.remove('d-none');
   } else if (status === 'suspended') {
+    // SUBSCRIPTION SUSPENDED
     const dateSuspendedEl = document.querySelector('#dateSuspended');
     const accessRemainsUntilContainerEl = document.querySelector(
       '#accessRemainsUntilContainer'
@@ -190,6 +220,7 @@ function showSubscriptionStatus(acctInfo) {
     accessRemainsUntilContainerEl.classList.remove('d-none');
     subscriptionSuspendedContainerEl.classList.remove('d-none');
   } else if (status === 'cancelled') {
+    // SUBSCRIPTION CANCELLED
     const dateCancelledEl = document.querySelector('#dateCancelled');
     const dateCancelled = formatDate(
       paypalSubscriptionDetails.status_update_time
@@ -230,7 +261,6 @@ function validate(phrases) {
     genderRequired: content.errorGenderRequired,
   };
 
-  const registrationForm = document.querySelector('#accountForm');
   const genderErrorEl = document.querySelector('#gender_invalid_feedback');
   const maleEl = document.querySelector('#gender_male');
   const femaleEl = document.querySelector('#gender_female');
@@ -319,7 +349,6 @@ function validate(phrases) {
 
 function onCancelClicked(evt) {
   // evt.preventDefault();
-  // Should just redirect the browser to "./subscribe"
   console.log('Cancel clicked');
 }
 
@@ -396,7 +425,7 @@ async function onSubmit(evt) {
 }
 
 function addListeners() {
-  document.querySelector('#accountForm').addEventListener('submit', onSubmit);
+  document.querySelector('#profileForm').addEventListener('submit', onSubmit);
   document
     .querySelector('#btnReinstateSuspended')
     .addEventListener('click', onReinstateClicked);
@@ -407,7 +436,17 @@ function addListeners() {
 
 async function init() {
   addListeners();
-  await getAccountInfo().then((acctInfo) => showSubscriptionStatus(acctInfo));
+
+  getAccountInfo()
+    .catch((err) => {
+      console.error(err);
+      showSubscriptionDetailsUnavailable();
+      showProfileDetailsUnavailable();
+      document.querySelector('main').classList.remove('d-none');
+    })
+    .finally(() => {
+      hideSpinner();
+    });
 }
 
 init();

@@ -209,6 +209,18 @@
                   <%- data.headingSubscription %>
                 </h2>
 
+                <div class="d-none" id="subscriptionDetailsUnavailable">
+                  <div class="alert alert-warning border-warning" role="alert">
+                    <p>
+                      <strong class="alert-heading">
+                        <%- data.subUnavailableHeadline %>
+                      </strong>
+                    </p>
+                    <p><%- data.connectReload %></p>
+                    <p><%- data.pleaseSubscribe %></p>
+                  </div>
+                </div>
+
                 <div class="d-none" id="subscriptionActiveContainer">
                   <p>
                     <strong><%- data.subscriptionStatus %></strong><br />
@@ -294,11 +306,23 @@
                 </div>
               </div>
 
-              <form id="accountForm" class="my-4" novalidate>
+              <h2 class="border-bottom border-dark mb-3">
+                <%- data.headingProfile %>
+              </h2>
+
+              <div class="d-none" id="profileDetailsUnavailable">
+                <div class="alert alert-warning border-warning" role="alert">
+                  <p>
+                    <strong class="alert-heading">
+                      <%- data.profileUnavailableHeadline %>
+                    </strong>
+                  </p>
+                  <div><%- data.connectReload %></div>
+                </div>
+              </div>
+
+              <form id="profileForm" class="my-4 d-none" novalidate>
                 <div class="bg-light mt-5 mb-4">
-                  <h2 class="border-bottom border-dark mb-3">
-                    <%- data.headingProfile %>
-                  </h2>
                   <input
                     type="hidden"
                     name="lang"
@@ -357,6 +381,7 @@
                       class="form-control"
                       id="email"
                       name="email"
+                      autocomplete="email"
                       required
                     />
                     <div class="email invalid-feedback">

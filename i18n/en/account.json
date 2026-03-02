@@ -48,5 +48,9 @@
   "continueUntil": "You can continue to use First Principles until {DATE}.",
   "suspendedNotChargedAgain": "You will not be charged again unless you reinstate your subscription.",
   "reinstateSubscription": "Reinstate my subscription",
-  "resubscribe": "Resubscribe"
+  "resubscribe": "Resubscribe",
+  "connectReload": "Please connect to the internet then reload the page.",
+  "pleaseSubscribe": "If you do not have an active subscription, please subscribe.",
+  "subUnavailableHeadline": "Subscription Details Not Available",
+  "profileUnavailableHeadline": "Profile Details Not Available"
 }
