@@ -50,10 +50,9 @@ function getAccountInfo() {
     const accessToken = await getAccessToken();
     const main = document.querySelector('main');
 
-    const isOffline = checkIfOffline();
-
-    if (isOffline) {
-      return reject('Internet connection is required');
+    if (!navigator.onLine) {
+      handleOffline();
+      return resolve();
     }
 
     fetch(endpoint, {
@@ -108,10 +107,18 @@ function getAccountInfo() {
   });
 }
 
-function checkIfOffline() {
-  const isOffline = navigator.onLine === false;
+function handleOffline() {
+  document.querySelectorAll('.hideIfOffline').forEach((item) => {
+    item.classList.add('d-none');
+  });
 
-  return isOffline;
+  document.querySelector('#offline').classList.remove('d-none');
+
+  hideSpinner();
+
+  document.querySelector('main').classList.remove('d-none');
+
+  return;
 }
 
 function popUpError(title, body) {
@@ -436,6 +443,10 @@ function addListeners() {
 
 async function init() {
   addListeners();
+
+  if (!navigator.onLine) {
+    return handleOffline();
+  }
 
   getAccountInfo()
     .catch((err) => {

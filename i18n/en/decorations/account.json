@@ -24,5 +24,18 @@
         "attributes": "class='alert-link'"
       }
     }
+  },
+  {
+    "key": "offline",
+    "text": {
+      "original": "reload the page",
+      "translated": "reload the page"
+    },
+    "decorations": {
+      "link": {
+        "href": "javascript:window.location.reload()",
+        "attributes": "class='alert-link'"
+      }
+    }
   }
 ]

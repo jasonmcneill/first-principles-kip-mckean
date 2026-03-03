@@ -205,12 +205,23 @@
             </div>
             <main class="py-4 d-none">
               <div class="mb-5">
-                <h2 class="border-bottom border-dark mb-3">
+                <h2 class="border-bottom border-dark mb-3 hideIfOffline">
                   <%- data.headingSubscription %>
                 </h2>
 
+                <div class="d-none" id="offline">
+                  <div class="alert alert-danger border-danger" role="alert">
+                    <p>
+                      <strong class="alert-heading">
+                        <%- data.offlineHeadline %>
+                      </strong>
+                    </p>
+                    <p><%- data.offline %></p>
+                  </div>
+                </div>
+
                 <div class="d-none" id="subscriptionDetailsUnavailable">
-                  <div class="alert alert-warning border-warning" role="alert">
+                  <div class="alert alert-warning" role="alert">
                     <p>
                       <strong class="alert-heading">
                         <%- data.subUnavailableHeadline %>
@@ -306,7 +317,7 @@
                 </div>
               </div>
 
-              <h2 class="border-bottom border-dark mb-3">
+              <h2 class="border-bottom border-dark mb-3 hideIfOffline">
                 <%- data.headingProfile %>
               </h2>
 

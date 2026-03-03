@@ -52,5 +52,7 @@
   "connectReload": "Please connect to the internet then reload the page.",
   "pleaseSubscribe": "If you do not have an active subscription, please subscribe.",
   "subUnavailableHeadline": "Subscription Details Not Available",
-  "profileUnavailableHeadline": "Profile Details Not Available"
+  "profileUnavailableHeadline": "Profile Details Not Available",
+  "offlineHeadline": "You are Offline",
+  "offline": "This page requires an internet connection. Please connect, then reload the page."
 }
