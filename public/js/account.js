@@ -447,18 +447,18 @@ async function init() {
 
   if (!navigator.onLine) {
     return handleOffline();
+  } else {
+    getAccountInfo()
+      .catch((err) => {
+        console.error(err);
+        showSubscriptionDetailsUnavailable();
+        showProfileDetailsUnavailable();
+        document.querySelector('main').classList.remove('d-none');
+      })
+      .finally(() => {
+        hideSpinner();
+      });
   }
-
-  getAccountInfo()
-    .catch((err) => {
-      console.error(err);
-      showSubscriptionDetailsUnavailable();
-      showProfileDetailsUnavailable();
-      document.querySelector('main').classList.remove('d-none');
-    })
-    .finally(() => {
-      hideSpinner();
-    });
 }
 
 init();
