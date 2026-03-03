@@ -446,6 +446,9 @@ async function init() {
   addListeners();
 
   getAccountInfo()
+    .then((acctInfo) => {
+      console.log(acctInfo);
+    })
     .catch((err) => {
       console.error(err);
       handleOffline();
