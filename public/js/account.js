@@ -453,6 +453,7 @@ async function init() {
         console.error(err);
         showSubscriptionDetailsUnavailable();
         showProfileDetailsUnavailable();
+        document.querySelector('#offline').classList.add('d-none');
         document.querySelector('main').classList.remove('d-none');
       })
       .finally(() => {
