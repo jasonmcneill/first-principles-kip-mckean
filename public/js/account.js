@@ -6,10 +6,6 @@ function checkIfDateIsPast(iso8601Date) {
   return isInPast;
 }
 
-function hideSpinner() {
-  document.querySelector('#pageSpinner').classList.add('d-none');
-}
-
 function formatCurrency(nextPmtAmt) {
   const value = nextPmtAmt.value;
   const currency_code = nextPmtAmt.currency_code;
@@ -120,6 +116,10 @@ function handleOffline() {
   document.querySelector('main').classList.remove('d-none');
 
   return;
+}
+
+function hideSpinner() {
+  document.querySelector('#pageSpinner').classList.add('d-none');
 }
 
 function popUpError(title, body) {
