@@ -445,19 +445,15 @@ function addListeners() {
 async function init() {
   addListeners();
 
-  if (!navigator.onLine) {
-    return handleOffline();
-  } else {
-    getAccountInfo()
-      .catch((err) => {
-        console.error(err);
-        handleOffline();
-      })
-      .finally(() => {
-        hideSpinner();
-        document.querySelector('main').classList.remove('d-none');
-      });
-  }
+  getAccountInfo()
+    .catch((err) => {
+      console.error(err);
+      handleOffline();
+    })
+    .finally(() => {
+      hideSpinner();
+      document.querySelector('main').classList.remove('d-none');
+    });
 }
 
 init();
