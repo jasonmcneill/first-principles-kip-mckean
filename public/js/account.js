@@ -46,11 +46,6 @@ function getAccountInfo() {
     const accessToken = await getAccessToken();
     const main = document.querySelector('main');
 
-    if (!navigator.onLine) {
-      handleOffline();
-      return resolve();
-    }
-
     fetch(endpoint, {
       mode: 'cors',
       method: 'post',
@@ -92,8 +87,6 @@ function getAccountInfo() {
         document.querySelector('#profileForm').classList.remove('d-none');
 
         showSubscriptionStatus(data.acctInfo);
-
-        document.querySelector('main').classList.remove('d-none');
 
         return resolve(data.acctInfo);
       })
