@@ -102,6 +102,7 @@ function getAccountInfo() {
         return resolve(data.acctInfo);
       })
       .catch((error) => {
+        handleOffline();
         return reject(error);
       });
   });

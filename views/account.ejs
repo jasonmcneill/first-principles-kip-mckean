@@ -220,7 +220,10 @@
                   </div>
                 </div>
 
-                <div class="d-none" id="subscriptionDetailsUnavailable">
+                <div
+                  class="d-none hideIfOffline"
+                  id="subscriptionDetailsUnavailable"
+                >
                   <div class="alert alert-warning" role="alert">
                     <p>
                       <strong class="alert-heading">
@@ -232,7 +235,10 @@
                   </div>
                 </div>
 
-                <div class="d-none" id="subscriptionActiveContainer">
+                <div
+                  class="d-none hideIfOffline"
+                  id="subscriptionActiveContainer"
+                >
                   <p>
                     <strong><%- data.subscriptionStatus %></strong><br />
                     <strong class="text-uppercase text-success">
@@ -271,7 +277,10 @@
                   </div>
                 </div>
 
-                <div class="d-none" id="subscriptionSuspendedContainer">
+                <div
+                  class="d-none hideIfOffline"
+                  id="subscriptionSuspendedContainer"
+                >
                   <p class="mb-4">
                     <strong><%- data.subscriptionStatus %></strong><br />
                     <strong class="text-uppercase text-danger">
@@ -297,7 +306,10 @@
                   </p>
                 </div>
 
-                <div class="d-none" id="subscriptionCancelledContainer">
+                <div
+                  class="d-none hideIfOffline"
+                  id="subscriptionCancelledContainer"
+                >
                   <p class="my-4">
                     <strong><%- data.subscriptionStatus %></strong><br />
                     <strong class="text-uppercase text-danger">
@@ -321,7 +333,7 @@
                 <%- data.headingProfile %>
               </h2>
 
-              <div class="d-none" id="profileDetailsUnavailable">
+              <div class="d-none hideIfOffline" id="profileDetailsUnavailable">
                 <div class="alert alert-warning border-warning" role="alert">
                   <p>
                     <strong class="alert-heading">
@@ -332,7 +344,11 @@
                 </div>
               </div>
 
-              <form id="profileForm" class="my-4 d-none" novalidate>
+              <form
+                id="profileForm"
+                class="my-4 d-none hideIfOffline"
+                novalidate
+              >
                 <div class="bg-light mt-5 mb-4">
                   <input
                     type="hidden"
