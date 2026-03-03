@@ -451,13 +451,11 @@ async function init() {
     getAccountInfo()
       .catch((err) => {
         console.error(err);
-        showSubscriptionDetailsUnavailable();
-        showProfileDetailsUnavailable();
-        document.querySelector('#offline').classList.add('d-none');
-        document.querySelector('main').classList.remove('d-none');
+        handleOffline();
       })
       .finally(() => {
         hideSpinner();
+        document.querySelector('main').classList.remove('d-none');
       });
   }
 }
