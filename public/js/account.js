@@ -381,7 +381,7 @@ async function onCancelConfirmed(modal) {
   const endpoint = '/api/subscription-suspend-renewals';
 
   fetch(endpoint, {
-    mode: 'POST',
+    method: 'POST',
   })
     .then((res) => res.json())
     .then((data) => {
