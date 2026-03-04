@@ -1,3 +1,6 @@
+let subscriptionData = null;
+const modalCancelSubscription = new bootstrap.Modal('#modalCancelSubscription');
+
 function checkIfDateIsPast(iso8601Date) {
   const inputDate = new Date(iso8601Date);
   const now = new Date();
@@ -156,6 +159,10 @@ function showSubscriptionStatus(acctInfo) {
   );
 
   let { nextPaymentAmount, paypalSubscriptionDetails, status } = acctInfo;
+
+  if (paypalSubscriptionDetails) {
+    subscriptionData = paypalSubscriptionDetails;
+  }
 
   // Reset
   subscriptionActiveContainerEl.classList.add('d-none');
@@ -348,9 +355,29 @@ function validate(phrases) {
   };
 }
 
-function onCancelClicked(evt) {
-  // evt.preventDefault();
-  console.log('Cancel clicked');
+function onCancelClicked() {
+  const modalEl = document.querySelector('#modalCancelSubscription');
+  const modalTitleEl = modalEl.querySelector('.modal-title');
+  const modalBodyEl = modalEl.querySelector('.modal-body');
+  const modalFooterEl = modalEl.querySelector('.modal-footer');
+  const continueUntilDate = formatDate(
+    subscriptionData.billing_info.next_billing_time,
+    false
+  );
+  const txtP1 = getPhrase('confirmCancelP1').replaceAll(
+    '{DATE}',
+    `<strong class='text-success'>${continueUntilDate}</strong>`
+  );
+
+  modalEl.querySelector('.modal-body p:first-child').innerHTML = txtP1;
+
+  modalCancelSubscription.show();
+}
+
+function onCancelConfirmed(modal) {
+  console.log('Subscription cancellation confirmed');
+
+  modalCancelSubscription.hide();
 }
 
 function onReinstateClicked(evt) {
@@ -433,15 +460,15 @@ function addListeners() {
   document
     .querySelector('#btnCancelSubscription')
     .addEventListener('click', onCancelClicked);
+  document
+    .querySelector('#modalCancelSubscription .modal-footer .subscriptionCancel')
+    .addEventListener('click', onCancelConfirmed);
 }
 
 async function init() {
   addListeners();
 
   getAccountInfo()
-    .then((acctInfo) => {
-      console.log(acctInfo);
-    })
     .catch((err) => {
       console.error(err);
       handleOffline();

@@ -559,6 +559,53 @@
             ></button>
           </div>
           <div class="modal-body pb-4"></div>
+          <div class="modal-footer d-none">
+            <button
+              class="btn btn-outline-dark modalCancel"
+              data-bs-toggle="modal"
+            ></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="modalCancelSubscription"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="modalHeader"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5"><%- data.confirmCancelTitle %></h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body pb-4">
+            <p></p>
+
+            <p>
+              <strong class="text-danger"><%- data.confirmCancelP2 %></strong>
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-danger subscriptionCancel">
+              <%- data.confirmCancelBtn %>
+            </button>
+            <button
+              class="btn btn-outline-dark modalCancel"
+              data-bs-toggle="modal"
+            >
+              <%- data.confirmCancelClose %>
+            </button>
+          </div>
         </div>
       </div>
     </div>

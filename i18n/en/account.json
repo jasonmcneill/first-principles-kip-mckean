@@ -54,5 +54,10 @@
   "subUnavailableHeadline": "Subscription Details Not Available",
   "profileUnavailableHeadline": "Profile Details Not Available",
   "offlineHeadline": "You are Offline",
-  "offline": "This page requires an internet connection. Please connect, then reload the page."
+  "offline": "This page requires an internet connection. Please connect, then reload the page.",
+  "confirmCancelTitle": "Cancel Subscription",
+  "confirmCancelP1": "Even if you cancel, your access will continue until {DATE}.",
+  "confirmCancelP2": "Are you sure you want to cancel?",
+  "confirmCancelBtn": "Yes, I am sure",
+  "confirmCancelClose": "Disregard"
 }
