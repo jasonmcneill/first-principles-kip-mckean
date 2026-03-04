@@ -20,14 +20,14 @@ module.exports = async (req, res) => {
         console.error('Database error:', err);
         return res.status(500).json({
           msg: 'unable to query for subscription',
-          msgType: 'error'
+          msgType: 'error',
         });
       }
 
       if (results.length === 0 || !results[0].paypalSubscriptionId) {
         return res.status(404).json({
           msg: 'no subscription found',
-          msgType: 'error'
+          msgType: 'error',
         });
       }
 
@@ -61,21 +61,22 @@ module.exports = async (req, res) => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          reason: 'Customer requested suspension'
-        })
+          reason: 'Customer requested suspension',
+        }),
       });
 
       if (suspendRes.status === 204) {
         return res.json({
           msg: 'subscription suspended',
-          msgType: 'success'
+          msgType: 'success',
         });
       } else {
         const errorData = await suspendRes.json();
         console.error('PayPal suspend error:', errorData);
         return res.status(500).json({
           msg: 'unable to suspend subscription',
-          msgType: 'error'
+          msgType: 'error',
+          errorData: errorData,
         });
       }
     });
@@ -83,7 +84,7 @@ module.exports = async (req, res) => {
     console.error('Error suspending subscription:', err);
     return res.status(500).json({
       msg: 'internal error',
-      msgType: 'error'
+      msgType: 'error',
     });
   }
 };

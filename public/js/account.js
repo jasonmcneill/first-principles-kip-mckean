@@ -374,10 +374,24 @@ function onCancelClicked() {
   modalCancelSubscription.show();
 }
 
-function onCancelConfirmed(modal) {
+async function onCancelConfirmed(modal) {
   console.log('Subscription cancellation confirmed');
 
-  modalCancelSubscription.hide();
+  const accessToken = await getAccessToken();
+  const endpoint = '/api/subscription-suspend-renewals';
+
+  fetch(endpoint, {
+    mode: 'POST',
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      if (data.msg === 'subscription suspended') {
+        modalCancelSubscription.hide();
+        return window.location.reload();
+      }
+
+      // TODO:  handle errors
+    });
 }
 
 function onReinstateClicked(evt) {
