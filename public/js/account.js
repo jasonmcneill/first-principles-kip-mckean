@@ -382,6 +382,10 @@ async function onCancelConfirmed(modal) {
 
   fetch(endpoint, {
     method: 'POST',
+    headers: new Headers({
+      'Content-Type': 'application/json',
+      authorization: `Bearer ${accessToken}`,
+    }),
   })
     .then((res) => res.json())
     .then((data) => {
