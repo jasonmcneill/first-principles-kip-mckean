@@ -200,9 +200,13 @@ function showSubscriptionStatus(acctInfo) {
     const continueUntilDate = formatDate(
       paypalSubscriptionDetails.billing_info.next_billing_time
     );
-    const accessEnded = checkIfDateIsPast(
-      paypalSubscriptionDetails.billing_info.next_billing_time
+
+    const addOneYear = new Date(
+      paypalSubscriptionDetails.billing_info.last_payment.time
     );
+    addOneYear.setFullYear(addOneYear.getFullYear() + 1);
+    const accessEnded = checkIfDateIsPast(addOneYear.toISOString());
+
     const mostRecentPmtTxt = getPhrase('mostRecentPmt')
       .replaceAll('{AMOUNT}', `<strong>${mostRecentPmtAmt}</strong>`)
       .replaceAll('{DATE}', mostRecentPmtDate);
