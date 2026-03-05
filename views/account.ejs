@@ -204,41 +204,18 @@
               </div>
             </div>
             <main class="py-4 d-none">
-              <section id="subscriptionSection" class="mb-5">
-                <h2 class="border-bottom border-dark mb-3 hideIfOffline">
-                  <%- data.headingSubscription %>
-                </h2>
-
-                <div class="d-none" id="offline">
-                  <div class="alert alert-danger border-danger" role="alert">
-                    <p>
-                      <strong class="alert-heading">
-                        <%- data.offlineHeadline %>
-                      </strong>
-                    </p>
-                    <p><%- data.offline %></p>
-                  </div>
+              <div class="d-none" id="offline">
+                <div class="alert alert-danger border-danger" role="alert">
+                  <p>
+                    <strong class="alert-heading">
+                      <%- data.offlineHeadline %>
+                    </strong>
+                  </p>
+                  <p><%- data.offline %></p>
                 </div>
-
-                <div
-                  class="d-none hideIfOffline"
-                  id="subscriptionDetailsUnavailable"
-                >
-                  <div class="alert alert-warning border-warning" role="alert">
-                    <p>
-                      <strong class="alert-heading">
-                        <%- data.subUnavailableHeadline %>
-                      </strong>
-                    </p>
-                    <p><%- data.connectReload %></p>
-                    <p><%- data.pleaseSubscribe %></p>
-                  </div>
-                </div>
-
-                <div
-                  class="d-none hideIfOffline"
-                  id="subscriptionActiveContainer"
-                >
+              </div>
+              <section id="subscriptionSection">
+                <div class="d-none mb-5" id="subscriptionActiveContainer">
                   <p>
                     <strong><%- data.subscriptionStatus %></strong><br />
                     <strong class="text-uppercase text-success">
@@ -277,10 +254,7 @@
                   </div>
                 </div>
 
-                <div
-                  class="d-none hideIfOffline"
-                  id="subscriptionSuspendedContainer"
-                >
+                <div class="d-none mb-5" id="subscriptionSuspendedContainer">
                   <p class="mb-4">
                     <strong><%- data.subscriptionStatus %></strong><br />
                     <strong class="text-uppercase text-danger">
@@ -306,10 +280,7 @@
                   </p>
                 </div>
 
-                <div
-                  class="d-none hideIfOffline"
-                  id="subscriptionCancelledContainer"
-                >
+                <div class="d-none mb-5" id="subscriptionCancelledContainer">
                   <p class="my-4">
                     <strong><%- data.subscriptionStatus %></strong><br />
                     <strong class="text-uppercase text-danger">
@@ -330,30 +301,12 @@
               </section>
 
               <section id="profileSection">
-                <h2 class="border-bottom border-dark mb-3 hideIfOffline">
+                <h2 class="border-bottom border-dark mb-3">
                   <%- data.headingProfile %>
                 </h2>
 
-                <div
-                  class="d-none hideIfOffline"
-                  id="profileDetailsUnavailable"
-                >
-                  <div class="alert alert-warning border-warning" role="alert">
-                    <p>
-                      <strong class="alert-heading">
-                        <%- data.profileUnavailableHeadline %>
-                      </strong>
-                    </p>
-                    <p><%- data.connectReload %></p>
-                  </div>
-                </div>
-
-                <form
-                  id="profileForm"
-                  class="my-4 d-none hideIfOffline"
-                  novalidate
-                >
-                  <div class="bg-light mt-5 mb-4">
+                <form id="profileForm" class="d-none" novalidate>
+                  <div class="bg-light my-4">
                     <input
                       type="hidden"
                       name="lang"

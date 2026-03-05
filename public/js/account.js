@@ -131,18 +131,6 @@ function popUpError(title, body) {
   new bootstrap.Modal('#modal').show();
 }
 
-function showProfileDetailsUnavailable() {
-  document
-    .querySelector('#profileDetailsUnavailable')
-    .classList.remove('d-none');
-}
-
-function showSubscriptionDetailsUnavailable() {
-  document
-    .querySelector('#subscriptionDetailsUnavailable')
-    .classList.remove('d-none');
-}
-
 function showSubscriptionStatus(acctInfo) {
   const subscriptionActiveContainerEl = document.querySelector(
     '#subscriptionActiveContainer'
@@ -173,7 +161,7 @@ function showSubscriptionStatus(acctInfo) {
 
   if (!paypalSubscriptionDetails) {
     // SUBSCRIPTION NULL
-    showSubscriptionDetailsUnavailable();
+    document.querySelector('#subscriptionSection').classList.remove('d-none');
   } else if (status === 'active') {
     // SUBSCRIPTION ACTIVE
     const nextPmtAmtEl = document.querySelector('#nextPmtAmt');
