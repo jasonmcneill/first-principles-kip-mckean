@@ -59,6 +59,11 @@ function getAccountInfo() {
     })
       .then((res) => res.json())
       .then((data) => {
+        if (!data || !data.acctInfo) {
+          handleOffline();
+          return reject('response is missing required parameter acctInfo');
+        }
+
         const {
           username,
           status,
@@ -101,10 +106,8 @@ function getAccountInfo() {
 }
 
 function handleOffline() {
-  document.querySelectorAll('.hideIfOffline').forEach((item) => {
-    item.classList.add('d-none');
-  });
-
+  document.querySelector('#subscriptionSection').classList.add('d-none');
+  document.querySelector('#profileSection').classList.add('d-none');
   document.querySelector('#offline').classList.remove('d-none');
 
   hideSpinner();
