@@ -162,6 +162,10 @@ function showSubscriptionStatus(acctInfo) {
 
   // Toggle based on status
 
+  if (status && status.length) {
+    status = status.toLowerCase();
+  }
+
   if (!paypalSubscriptionDetails) {
     // SUBSCRIPTION NULL
     document.querySelector('#subscriptionSection').classList.remove('d-none');
