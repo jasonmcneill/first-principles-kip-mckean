@@ -67,6 +67,20 @@ module.exports = async (req, res) => {
       });
 
       if (suspendRes.status === 204) {
+        // Fetch updated subscription details from PayPal and update the DB
+        const subRes = await fetch(`${paypalBaseUrl}/v1/billing/subscriptions/${subscriptionID}`, {
+          method: 'GET',
+          headers: { Authorization: `Bearer ${paypalAccessToken}` },
+        });
+        const subData = await subRes.json();
+
+        const sqlUpdate = `UPDATE users SET paypalSubscriptionDetails = ? WHERE id = ? LIMIT 1`;
+        db.query(sqlUpdate, [JSON.stringify(subData), userid], (updateErr) => {
+          if (updateErr) {
+            console.error('Error updating paypalSubscriptionDetails:', updateErr);
+          }
+        });
+
         return res.json({
           msg: 'subscription suspended',
           msgType: 'success',
