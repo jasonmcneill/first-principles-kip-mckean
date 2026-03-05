@@ -160,16 +160,12 @@ function showSubscriptionStatus(acctInfo) {
   subscriptionSuspendedContainerEl.classList.add('d-none');
   accessRemainsUntilContainerEl.classList.add('d-none');
 
-  // Toggle based on status
-
-  if (status && status.length) {
-    status = status.toLowerCase();
-  }
+  // Toggle based on subscription status
 
   if (!paypalSubscriptionDetails) {
     // SUBSCRIPTION NULL
     document.querySelector('#subscriptionSection').classList.remove('d-none');
-  } else if (status === 'active') {
+  } else if (paypalSubscriptionDetails.status === 'active') {
     // SUBSCRIPTION ACTIVE
     const nextPmtAmtEl = document.querySelector('#nextPmtAmt');
     const nextPmtDateEl = document.querySelector('#nextPmtDate');
@@ -181,7 +177,7 @@ function showSubscriptionStatus(acctInfo) {
     nextPmtAmtEl.innerHTML = `${nextAmt} ${nextPaymentAmount.currency_code}`;
     nextPmtDateEl.innerHTML = nextDate;
     subscriptionActiveContainerEl.classList.remove('d-none');
-  } else if (status === 'suspended') {
+  } else if (paypalSubscriptionDetails.status === 'suspended') {
     // SUBSCRIPTION SUSPENDED
     const dateSuspendedEl = document.querySelector('#dateSuspended');
     const accessRemainsUntilContainerEl = document.querySelector(
@@ -222,7 +218,7 @@ function showSubscriptionStatus(acctInfo) {
     accessRemainsUntilContainerEl.innerHTML = accessRemainsUntilTxt;
     accessRemainsUntilContainerEl.classList.remove('d-none');
     subscriptionSuspendedContainerEl.classList.remove('d-none');
-  } else if (status === 'cancelled') {
+  } else if (paypalSubscriptionDetails.status === 'cancelled') {
     // SUBSCRIPTION CANCELLED
     const dateCancelledEl = document.querySelector('#dateCancelled');
     const dateCancelled = formatDate(
