@@ -369,7 +369,7 @@ async function onCancelConfirmed(modal) {
   console.log('Subscription cancellation confirmed');
 
   const accessToken = await getAccessToken();
-  const endpoint = '/api/subscription-suspend-renewals';
+  const endpoint = '/api/subscription-suspend';
 
   fetch(endpoint, {
     method: 'POST',
