@@ -51,18 +51,10 @@ router.post('/account-get', authenticateToken, accountGet.POST);
 const accountUpdate = require('./account-update');
 router.post('/account-update', authenticateToken, accountUpdate.POST);
 
-const subscriptionSuspendRenewals = require('./subscription-suspend-renewals');
-router.post(
-  '/subscription-suspend-renewals',
-  authenticateToken,
-  subscriptionSuspendRenewals
-);
+const subscriptionSuspend = require('./subscription-suspend');
+router.post('/subscription-suspend', authenticateToken, subscriptionSuspend);
 
-const subscriptionResumeRenewals = require('./subscription-resume-renewals');
-router.post(
-  '/subscription-resume-renewals',
-  authenticateToken,
-  subscriptionResumeRenewals
-);
+const subscriptionResume = require('./subscription-resume');
+router.post('/subscription-resume', authenticateToken, subscriptionResume);
 
 module.exports = router;

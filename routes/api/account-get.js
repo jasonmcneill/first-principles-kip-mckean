@@ -42,7 +42,8 @@ exports.POST = async (req, res) => {
           const auth = Buffer.from(
             `${process.env.PAYPAL_CLIENT_ID}:${process.env.PAYPAL_SECRET}`
           ).toString('base64');
-          const tokenEndpoint = 'https://api-m.sandbox.paypal.com/v1/oauth2/token';
+          const paypalBaseUrl = process.env.NODE_ENV === 'production' ? 'https://api-m.paypal.com' : 'https://api-m.sandbox.paypal.com';
+          const tokenEndpoint = `${paypalBaseUrl}/v1/oauth2/token`;
 
           const tokenRes = await fetch(tokenEndpoint, {
             method: 'POST',
@@ -57,7 +58,7 @@ exports.POST = async (req, res) => {
           const paypalAccessToken = tokenData.access_token;
 
           // Get plan details
-          const planEndpoint = `https://api-m.sandbox.paypal.com/v1/billing/plans/${planId}`;
+          const planEndpoint = `${paypalBaseUrl}/v1/billing/plans/${planId}`;
           const planRes = await fetch(planEndpoint, {
             method: 'GET',
             headers: { Authorization: `Bearer ${paypalAccessToken}` },
