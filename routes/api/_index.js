@@ -40,8 +40,8 @@ const paypalWebhook = require('./paypal-webhook');
 router.post('/paypal-webhook', paypalWebhook.POST);
 
 // Check subscription status
-const checkSubscription = require('./check-subscription');
-router.post('/check-subscription', authenticateToken, checkSubscription.POST);
+const checkSubscription = require('./subscription-get');
+router.post('/subscription-get', authenticateToken, checkSubscription.POST);
 
 // ACCOUNT
 

@@ -77,7 +77,9 @@
       if (!token.subscribeduntil) return { valid: false, daysRemaining: 0 };
 
       const now = Math.floor(Date.now() / 1000);
-      const expiry = Math.floor(new Date(token.subscribeduntil).getTime() / 1000);
+      const expiry = Math.floor(
+        new Date(token.subscribeduntil).getTime() / 1000
+      );
       const secondsRemaining = expiry - now;
       const daysRemaining = secondsRemaining / (60 * 60 * 24);
 
@@ -93,7 +95,7 @@
   };
 
   const verifyWithAPI = async (blocking = false) => {
-    const endpoint = '/api/check-subscription';
+    const endpoint = '/api/subscription-get';
     const accessToken = await getAccessToken();
 
     if (!accessToken) {

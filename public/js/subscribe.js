@@ -60,7 +60,7 @@ function paypalButtons() {
 }
 
 async function checkSubscription() {
-  const endpoint = '/api/check-subscription';
+  const endpoint = '/api/subscription-get';
   const accessToken = await getAccessToken().catch(() => null);
 
   if (!accessToken) return;
