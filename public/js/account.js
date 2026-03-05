@@ -201,9 +201,8 @@ function showSubscriptionStatus(acctInfo) {
       paypalSubscriptionDetails.billing_info.last_payment.time
     );
     addOneYear.setFullYear(addOneYear.getFullYear() + 1);
-    addOneYear.toISOString();
     const continueUntilDate = formatDate(addOneYear);
-    const accessEnded = checkIfDateIsPast(addOneYear);
+    const accessEnded = checkIfDateIsPast(addOneYear.toISOString());
 
     const mostRecentPmtTxt = getPhrase('mostRecentPmt')
       .replaceAll('{AMOUNT}', `<strong>${mostRecentPmtAmt}</strong>`)
