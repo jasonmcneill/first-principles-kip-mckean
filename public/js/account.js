@@ -197,15 +197,13 @@ function showSubscriptionStatus(acctInfo) {
       paypalSubscriptionDetails.billing_info.last_payment.time,
       false
     );
-    const continueUntilDate = formatDate(
-      paypalSubscriptionDetails.billing_info.next_billing_time
-    );
-
     const addOneYear = new Date(
       paypalSubscriptionDetails.billing_info.last_payment.time
     );
     addOneYear.setFullYear(addOneYear.getFullYear() + 1);
-    const accessEnded = checkIfDateIsPast(addOneYear.toISOString());
+    addOneYear.toISOString();
+    const continueUntilDate = formatDate(addOneYear);
+    const accessEnded = checkIfDateIsPast(addOneYear);
 
     const mostRecentPmtTxt = getPhrase('mostRecentPmt')
       .replaceAll('{AMOUNT}', `<strong>${mostRecentPmtAmt}</strong>`)
