@@ -165,7 +165,7 @@ function showSubscriptionStatus(acctInfo) {
   if (!paypalSubscriptionDetails) {
     // SUBSCRIPTION NULL
     document.querySelector('#subscriptionSection').classList.remove('d-none');
-  } else if (paypalSubscriptionDetails.status === 'active') {
+  } else if (paypalSubscriptionDetails.status === 'ACTIVE') {
     // SUBSCRIPTION ACTIVE
     const nextPmtAmtEl = document.querySelector('#nextPmtAmt');
     const nextPmtDateEl = document.querySelector('#nextPmtDate');
@@ -177,7 +177,7 @@ function showSubscriptionStatus(acctInfo) {
     nextPmtAmtEl.innerHTML = `${nextAmt} ${nextPaymentAmount.currency_code}`;
     nextPmtDateEl.innerHTML = nextDate;
     subscriptionActiveContainerEl.classList.remove('d-none');
-  } else if (paypalSubscriptionDetails.status === 'suspended') {
+  } else if (paypalSubscriptionDetails.status === 'SUSPENDED') {
     // SUBSCRIPTION SUSPENDED
     const dateSuspendedEl = document.querySelector('#dateSuspended');
     const accessRemainsUntilContainerEl = document.querySelector(
@@ -218,7 +218,7 @@ function showSubscriptionStatus(acctInfo) {
     accessRemainsUntilContainerEl.innerHTML = accessRemainsUntilTxt;
     accessRemainsUntilContainerEl.classList.remove('d-none');
     subscriptionSuspendedContainerEl.classList.remove('d-none');
-  } else if (paypalSubscriptionDetails.status === 'cancelled') {
+  } else if (paypalSubscriptionDetails.status === 'CANCELLED') {
     // SUBSCRIPTION CANCELLED
     const dateCancelledEl = document.querySelector('#dateCancelled');
     const dateCancelled = formatDate(
