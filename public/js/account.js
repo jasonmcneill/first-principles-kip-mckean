@@ -1,5 +1,8 @@
 let subscriptionData = null;
 const modalCancelSubscription = new bootstrap.Modal('#modalCancelSubscription');
+const modalReinstateSubscription = new bootstrap.Modal(
+  '#modalReinstateSubscription'
+);
 
 function checkIfDateIsPast(iso8601Date) {
   const inputDate = new Date(iso8601Date);
@@ -368,10 +371,14 @@ function onCancelClicked() {
 }
 
 async function onCancelConfirmed(modal) {
-  console.log('Subscription cancellation confirmed');
-
+  const modalEl = document.querySelector('#modalCancelSubscription');
+  const modalFooterEl = modalEl.querySelector('.modal-footer');
+  const modalSpinnerEl = modalEl.querySelector('.modal-spinner');
   const accessToken = await getAccessToken();
   const endpoint = '/api/subscription-suspend';
+
+  modalFooterEl.classList.add('d-none');
+  modalSpinnerEl.classList.remove('d-none');
 
   fetch(endpoint, {
     method: 'POST',
@@ -392,7 +399,50 @@ async function onCancelConfirmed(modal) {
 }
 
 function onReinstateClicked(evt) {
-  console.log('Reinstate clicked');
+  const modalEl = document.querySelector('#modalReinstateSubscription');
+  const modalTitleEl = modalEl.querySelector('.modal-title');
+  const modalBodyEl = modalEl.querySelector('.modal-body');
+  const modalFooterEl = modalEl.querySelector('.modal-footer');
+  const modalSpinnerEl = modalEl.querySelector('.modal-spinner');
+  const pmtAmt = formatCurrency(
+    subscriptionData.billing_info.last_payment.amount
+  );
+  const txtP1 = getPhrase('reinstateP1').replaceAll(
+    '{AMT}',
+    `<strong class='text-success'>${pmtAmt}</strong>`
+  );
+
+  modalEl.querySelector('.modal-body p:first-child').innerHTML = txtP1;
+
+  modalReinstateSubscription.show();
+}
+
+async function onReinstateConfirmed(modal) {
+  const modalEl = document.querySelector('#modalReinstateSubscription');
+  const modalFooterEl = modalEl.querySelector('.modal-footer');
+  const modalSpinnerEl = modalEl.querySelector('.modal-spinner');
+  const accessToken = await getAccessToken();
+  const endpoint = '/api/subscription-resume';
+
+  modalFooterEl.classList.add('d-none');
+  modalSpinnerEl.classList.remove('d-none');
+
+  fetch(endpoint, {
+    method: 'POST',
+    headers: new Headers({
+      'Content-Type': 'application/json',
+      authorization: `Bearer ${accessToken}`,
+    }),
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      if (data.msg === 'subscription resumed') {
+        modalReinstateSubscription.hide();
+        return window.location.reload();
+      }
+
+      // TODO:  handle errors
+    });
 }
 
 async function onSubmit(evt) {
@@ -474,6 +524,11 @@ function addListeners() {
   document
     .querySelector('#modalCancelSubscription .modal-footer .subscriptionCancel')
     .addEventListener('click', onCancelConfirmed);
+  document
+    .querySelector(
+      '#modalReinstateSubscription .modal-footer .confirmReinstatement'
+    )
+    .addEventListener('click', onReinstateConfirmed);
 }
 
 async function init() {

@@ -228,22 +228,24 @@
 
                   <div class="my-4">
                     <strong><%- data.nextAnnualPayment %></strong>
-                    <table class="table">
-                      <tbody>
-                        <tr>
-                          <td><%- data.amount %></td>
-                          <td>
-                            <span id="nextPmtAmt"> </span>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td><%- data.date %></td>
-                          <td>
-                            <span id="nextPmtDate"> </span>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
+                    <div class="text-center">
+                      <table class="table d-inline-block" style="width: auto">
+                        <tbody>
+                          <tr>
+                            <td class="text-end"><%- data.amount %></td>
+                            <td class="text-start">
+                              <span id="nextPmtAmt"> </span>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="text-end"><%- data.date %></td>
+                            <td class="text-start">
+                              <span id="nextPmtDate"> </span>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
                   </div>
 
                   <div>
@@ -574,6 +576,59 @@
             >
               <%- data.confirmCancelClose %>
             </button>
+          </div>
+          <div class="modal-spinner mb-5 text-center d-none">
+            <div class="spinner-border text-danger" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="modalReinstateSubscription"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="modalHeader"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5">
+              <%- data.reinstateSubscriptionTitle %>
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body pb-4">
+            <p></p>
+
+            <p>
+              <strong><%- data.reinstateP2 %></strong>
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-primary confirmReinstatement">
+              <%- data.confirmReinstatement %>
+            </button>
+            <button
+              class="btn btn-outline-dark modalCancel"
+              data-bs-toggle="modal"
+            >
+              <%- data.confirmCancelClose %>
+            </button>
+          </div>
+          <div class="modal-spinner mb-5 text-center d-none">
+            <div class="spinner-border text-success" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
           </div>
         </div>
       </div>

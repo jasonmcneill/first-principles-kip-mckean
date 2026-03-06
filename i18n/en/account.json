@@ -59,5 +59,9 @@
   "confirmCancelP1": "Even if you cancel, your access will continue until {DATE}.",
   "confirmCancelP2": "Are you sure you want to cancel?",
   "confirmCancelBtn": "Yes, I am sure",
-  "confirmCancelClose": "Disregard"
+  "confirmCancelClose": "Disregard",
+  "reinstateSubscriptionTitle": "Reinstate My Subscription",
+  "reinstateP1": "It costs only {AMT} per year to maintain your access to First Principles.",
+  "reinstateP2": "Thank you for reinstating your subscription!",
+  "confirmReinstatement": "Confirm Reinstatement"
 }
