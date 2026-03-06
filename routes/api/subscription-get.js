@@ -85,20 +85,14 @@ exports.POST = (req, res) => {
     addOneYear.setFullYear(addOneYear.getFullYear() + 1);
 
     const now = new Date();
-    const subscribedUntil = new Date(addOneYear);
+    const accessExpiry = new Date(addOneYear);
 
-    if (now >= subscribedUntil) {
-      return res.json({ msg: 'subscription expired', msgType: 'error' });
+    if (now >= accessExpiry) {
+      return res.json({ msg: 'access is expired', msgType: 'error' });
     }
 
-    if (paypalSubscriptionDetails.status !== 'ACTIVE') {
-      return res.json({
-        msg: 'no active subscription',
-      });
-    } else {
-      return res.json({
-        msg: 'subscription active',
-      });
-    }
+    return res.json({
+      msg: 'access is active',
+    });
   });
 };

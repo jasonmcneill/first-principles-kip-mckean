@@ -69,9 +69,9 @@
       })
         .then((res) => res.json())
         .then((data) => {
-          if (data.msg && data.msg !== 'subscription active') {
-            window.location.replace('./subscribe');
-          }
+          if (data.msg && data.msg === 'access is active') return;
+
+          window.location.replace('./subscribe');
         })
         .catch((err) => {
           console.error(err);
