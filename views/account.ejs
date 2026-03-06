@@ -261,7 +261,7 @@
                   class="d-none mb-5 text-center"
                   id="subscriptionSuspendedContainer"
                 >
-                  <p class="mb-4">
+                  <p class="mb-4 balance">
                     <strong><%- data.subscriptionStatus %></strong><br />
                     <strong class="text-uppercase text-danger">
                       <%- data.cancelled %>
@@ -272,9 +272,9 @@
                     </small>
                   </p>
 
-                  <p class="my-4" id="accessRemainsUntilContainer"></p>
+                  <p class="my-4 balance" id="accessRemainsUntilContainer"></p>
 
-                  <p><%- data.suspendedNotChargedAgain %></p>
+                  <p class="balance"><%- data.suspendedNotChargedAgain %></p>
 
                   <button
                     class="btn btn-sm btn-primary"
@@ -288,7 +288,7 @@
                   class="d-none mb-5 text-center"
                   id="subscriptionCancelledContainer"
                 >
-                  <p class="my-4">
+                  <p class="my-4 balance">
                     <strong><%- data.subscriptionStatus %></strong><br />
                     <strong class="text-uppercase text-danger">
                       <%- data.cancelled %>
