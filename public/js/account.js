@@ -209,7 +209,7 @@ function showSubscriptionStatus(acctInfo) {
       .replaceAll('{DATE}', mostRecentPmtDate);
     const continueUntilTxt = getPhrase('continueUntil').replaceAll(
       '{DATE}',
-      `<strong class="text-success">${continueUntilDate}</strong>`
+      `<strong class="text-success text-nowrap">${continueUntilDate}</strong>`
     );
     const accessRemainsUntilTxt = accessEnded
       ? mostRecentPmtTxt
@@ -238,7 +238,7 @@ function showSubscriptionStatus(acctInfo) {
     );
     const continueUntilTxt = getPhrase('continueUntil').replaceAll(
       '{DATE}',
-      `<strong class="text-success">${continueUntilDate}</strong>`
+      `<strong class="text-success text-nowrap">${continueUntilDate}</strong>`
     );
     const accessRemainsUntilTxt = continueUntilTxt;
     dateCancelledEl.innerHTML = cancelledOnTxt;
