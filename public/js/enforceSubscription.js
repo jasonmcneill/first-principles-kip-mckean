@@ -69,6 +69,14 @@
       })
         .then((res) => res.json())
         .then((data) => {
+          if (data.accessToken) {
+            sessionStorage.setItem('accessToken', data.accessToken);
+          }
+
+          if (data.refreshToken) {
+            localStorage.setItem('refreshToken', data.refreshToken);
+          }
+
           if (data.msg && data.msg === 'access is active') return;
 
           window.location.replace('./subscribe');
