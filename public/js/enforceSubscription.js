@@ -56,13 +56,6 @@
     });
   };
 
-  const now = Math.floor(Date.now() / 1000);
-  const jwtSubscriptionExpiry = Math.floor(
-    new Date(refreshToken.subscribeduntil).getTime() / 1000
-  );
-  const isJwtSubscriptionCurrent = now < jwtSubscriptionExpiry;
-
-  if (isJwtSubscriptionCurrent) return;
   if (!navigator.onLine) return;
 
   try {
