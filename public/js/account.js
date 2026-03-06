@@ -93,6 +93,7 @@ function getAccountInfo() {
         }
 
         document.querySelector('#profileForm').classList.remove('d-none');
+        document.querySelector('footer').classList.remove('d-none');
 
         showSubscriptionStatus(data.acctInfo);
 
