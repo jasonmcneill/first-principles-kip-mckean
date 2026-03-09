@@ -148,10 +148,12 @@ function showSubscriptionStatus(acctInfo) {
   const subscriptionCancelledContainerEl = document.querySelector(
     '#subscriptionCancelledContainer'
   );
-
   const accessRemainsUntilContainerEl = document.querySelector(
     '#accessRemainsUntilContainer'
   );
+  const subscriptionContainerEl = document
+    .querySelector('#subscriptionSection')
+    .classList.add('d-none');
 
   let { nextPaymentAmount, paypalSubscriptionDetails, status } = acctInfo;
 
@@ -168,7 +170,7 @@ function showSubscriptionStatus(acctInfo) {
 
   if (!paypalSubscriptionDetails) {
     // SUBSCRIPTION NULL
-    document.querySelector('#subscriptionSection').classList.remove('d-none');
+    subscriptionContainerEl.classList.remove('d-none');
   } else if (paypalSubscriptionDetails.status === 'ACTIVE') {
     // SUBSCRIPTION ACTIVE
     const nextPmtAmtEl = document.querySelector('#nextPmtAmt');
@@ -180,6 +182,7 @@ function showSubscriptionStatus(acctInfo) {
 
     nextPmtAmtEl.innerHTML = `${nextAmt} ${nextPaymentAmount.currency_code}`;
     nextPmtDateEl.innerHTML = nextDate;
+    subscriptionContainerEl.classList.remove('d-none');
     subscriptionActiveContainerEl.classList.remove('d-none');
   } else if (paypalSubscriptionDetails.status === 'SUSPENDED') {
     // SUBSCRIPTION SUSPENDED
