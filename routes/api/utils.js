@@ -192,8 +192,9 @@ function sendMail_ZeptoMail(
   return new Promise(async (resolve, reject) => {
     const { SendMailClient } = require('zeptomail');
     const url = 'api.zeptomail.com/';
-    const isSupportRequest = subject.indexOf('Support request') >= 0;
-    console.log('isSupportRequest:', isSupportRequest, subject);
+    const isSupportRequest = /Support\s+Request/i.test(subject);
+    console.log('isSupportRequest:', isSupportRequest);
+    console.log(JSON.stringify(subject));
     const token = isSupportRequest
       ? process.env.ZEPTOMAIL_SUPPORT_TOKEN
       : process.env.ZEPTOMAIL_API_TOKEN;
