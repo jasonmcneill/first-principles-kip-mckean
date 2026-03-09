@@ -170,7 +170,7 @@ function showSubscriptionStatus(acctInfo) {
 
   if (!paypalSubscriptionDetails) {
     // SUBSCRIPTION NULL
-    subscriptionContainerEl.classList.remove('d-none');
+    subscriptionContainerEl.classList.add('d-none');
   } else if (paypalSubscriptionDetails.status === 'ACTIVE') {
     // SUBSCRIPTION ACTIVE
     const nextPmtAmtEl = document.querySelector('#nextPmtAmt');
