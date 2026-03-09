@@ -32,13 +32,15 @@ function formatDate(iso8601Date, includeTime = true) {
     return 'Invalid Date';
   }
 
-  let formatted = date.toLocaleString(undefined, {
+  const locale = navigator.language;
+
+  let formatted = date.toLocaleString(locale, {
     dateStyle: 'long',
     timeStyle: 'short',
   });
 
   if (!includeTime) {
-    formatted = date.toLocaleString(undefined, {
+    formatted = date.toLocaleString(locale, {
       dateStyle: 'long',
     });
   }

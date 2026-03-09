@@ -1,5 +1,8 @@
 {
   "errorHeader": "Error:",
-  "account": "My Account",
-  "logout": "Cerrar sesión"
+  "home": "Inicio",
+  "account": "Mi cuenta",
+  "logout": "Cerrar sesión",
+  "sideMenuHeader": "Menú",
+  "loading": "Cargando..."
 }
