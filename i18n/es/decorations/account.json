@@ -1,0 +1,41 @@
+[
+  {
+    "key": "connectReload",
+    "text": {
+      "original": "reload the page",
+      "translated": "recargar la página"
+    },
+    "decorations": {
+      "link": {
+        "href": "javascript:window.location.reload()",
+        "attributes": "class='alert-link'"
+      }
+    }
+  },
+  {
+    "key": "pleaseSubscribe",
+    "text": {
+      "original": "subscribe",
+      "translated": "suscribirse"
+    },
+    "decorations": {
+      "link": {
+        "href": "./subscribe",
+        "attributes": "class='alert-link'"
+      }
+    }
+  },
+  {
+    "key": "offline",
+    "text": {
+      "original": "reload the page",
+      "translated": "recargar la página"
+    },
+    "decorations": {
+      "link": {
+        "href": "javascript:window.location.reload()",
+        "attributes": "class='alert-link'"
+      }
+    }
+  }
+]
