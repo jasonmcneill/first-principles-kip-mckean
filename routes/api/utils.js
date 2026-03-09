@@ -114,7 +114,7 @@ function sendMail_MailJet(
     request
       .then((result) => {
         const { response } = result;
-        // console.log(response);
+        console.log(response);
 
         const mailResponse = {
           statusCode: 200,
@@ -226,7 +226,7 @@ function sendMail_ZeptoMail(
 
       const response = await client.sendMail(mailOptions);
 
-      console.log(response);
+      // console.log(response);
 
       const mailResponse = {
         statusCode: 200,
