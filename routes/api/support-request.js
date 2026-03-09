@@ -82,15 +82,57 @@ exports.POST = (req, res) => {
         });
       }
 
-      return res.status(200).send({
+      /* return res.status(200).send({
         msg: 'message sent',
         msgType: 'success',
-      });
+      }); */
 
-      // TODO: add required parameters to "sendMail()" function below
+      let textBody = `
+NEW SUPPORT REQUEST
+
+A request for support has been received from the First Principles web site.  Reply to this message to respond.
+
+Date:
+{DATE}
+
+User:
+{FIRSTNAME} {LASTNAME}
+
+User ID:
+{USERID}
+
+E-mail:
+{EMAIL}
+
+Message:
+----------------------------------
+{MESSAGE}
+----------------------------------
+      `;
+
+      const now = new Date();
+      const formatter = new Intl.DateTimeFormat(userlocale, {
+        dateStyle: 'full',
+        timeStyle: 'long',
+      });
+      const formattedDate = formatter.format(now);
+
+      textBody = textBody.replaceAll('{DATE}', formattedDate);
+      textBody = textBody.replaceAll('{FIRSTNAME} {LASTNAME}', name);
+      textBody = textBody.replaceAll('{USERID}', req.user.id);
+      textBody = textBody.replaceAll('{EMAIL}', email);
+      textBody = textBody.replaceAll('{MESSAGE}', message);
 
       require('./utils')
-        .sendMail()
+        .sendMail(
+          'vrtjason@gmail.com',
+          'Jason McNeill',
+          'Support Request (fp.kipmckean.com)',
+          '',
+          textBody.trim(),
+          name,
+          email
+        )
         .then((mailResponse) => {
           const { statusCode } = mailResponse;
 
@@ -98,14 +140,12 @@ exports.POST = (req, res) => {
             return res.status(200).send({
               msg: 'message sent',
               msgType: 'success',
-              userid: insertResult.insertId,
               mailResponse: mailResponse,
             });
           } else {
             return res.status(400).send({
               msg: 'message not sent',
               msgType: 'error',
-              userid: insertResult.insertId,
               mailResponse: mailResponse,
             });
           }
