@@ -245,21 +245,6 @@
     }
   },
   {
-    "key": "o3a",
-    "text": {
-      "original": "Acts 2:17",
-      "translated": "Hechos 2:17"
-    },
-    "decorations": {
-      "tags": [
-        {
-          "name": "span",
-          "attributes": "data-scripture=\"acts-2-17\""
-        }
-      ]
-    }
-  },
-  {
     "key": "o3a1",
     "text": {
       "original": "Isaiah 2:2",
