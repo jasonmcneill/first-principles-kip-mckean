@@ -229,7 +229,7 @@ function sendMail_ZeptoMail(
 
       const response = await client.sendMail(mailOptions);
 
-      // console.log(response);
+      console.log(response);
 
       const mailResponse = {
         statusCode: 200,
