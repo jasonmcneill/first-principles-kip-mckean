@@ -151,9 +151,9 @@ function showSubscriptionStatus(acctInfo) {
   const accessRemainsUntilContainerEl = document.querySelector(
     '#accessRemainsUntilContainer'
   );
-  const subscriptionContainerEl = document
-    .querySelector('#subscriptionSection')
-    .classList.add('d-none');
+  const subscriptionContainerEl = document.querySelector(
+    '#subscriptionSection'
+  );
 
   let { nextPaymentAmount, paypalSubscriptionDetails, status } = acctInfo;
 
