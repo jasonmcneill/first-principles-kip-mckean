@@ -45,7 +45,7 @@
   "cancelSubscription": "Cancelar suscripción",
   "cancelled": "cancelado",
   "mostRecentPmt": "Su pago más reciente fue de {AMOUNT} el {DATE}.",
-  "continueUntil": "Puede seguir utilizando First Principles hasta el {DATE}.",
+  "continueUntil": "Puede seguir utilizando Principios Básicos hasta el {DATE}.",
   "suspendedNotChargedAgain": "No se le volverá a cobrar a menos que restablezca su suscripción.",
   "reinstateSubscription": "Restablecer mi suscripción",
   "resubscribe": "Volver a suscribirse",
@@ -61,7 +61,7 @@
   "confirmCancelBtn": "Sí, estoy seguro",
   "confirmCancelClose": "Descartar",
   "reinstateSubscriptionTitle": "Restablecer mi suscripción",
-  "reinstateP1": "Cuesta solo {AMT} al año mantener su acceso a First Principles.",
+  "reinstateP1": "Cuesta solo {AMT} al año mantener su acceso a Principios Básicos.",
   "reinstateP2": "¡Gracias por restablecer su suscripción!",
   "confirmReinstatement": "Confirmar restablecimiento"
 }
