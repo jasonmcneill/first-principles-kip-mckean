@@ -13,7 +13,6 @@
     />
     <script src="/js/enforceAccess.js"></script>
     <script src="/js/global.js"></script>
-    <script src="/js/enforceSubscription.js"></script>
     <title><%- data.pageTitle %></title>
     <link rel="stylesheet" href="/css/style.css" />
     <link
@@ -160,12 +159,6 @@
             >
               <%- globalData.home %>
             </a>
-            <a
-              href="./dashboard"
-              class="list-group-item list-group-item-action"
-            >
-              <%- globalData.home %>
-            </a>
             <a href="./account" class="list-group-item list-group-item-action">
               <%- globalData.account %>
             </a>
@@ -182,87 +175,115 @@
         </div>
       </div>
 
-      <div class="container-fluid">
+      <div class="container-fluid mb-5 pb-5">
         <div class="row">
-          <div class="col-12 col-md-8 offset-md-2 px-3 py-3">
-            <ol type="I">
-              <li class="mb-3"><strong><%- data.o1 %></strong></li>
-              <li class="mb-3">
-                <div class="mb-3"><strong><%- data.o2 %></strong></div>
-                <ol type="A">
-                  <li class="mb-3"><strong><%- data.o2a %></strong></li>
-                  <li class="mb-3"><strong><%- data.o2b %></strong></li>
-                  <li class="mb-3"><strong><%- data.o2c %></strong></li>
-                </ol>
-              </li>
-              <li class="mb-3">
-                <div class="mb-3"><strong><%- data.o3 %></strong></div>
-                <ol type="A">
-                  <li class="mb-3">
-                    <div class="mb-3"><%- data.o3a %></div>
-                    <ol>
-                      <li class="mb-3"><%- data.o3a1 %></li>
-                      <li class="mb-3"><%- data.o3a2 %></li>
-                    </ol>
-                  </li>
-                  <li class="mb-3">
-                    <div class="mb-3"><%- data.o3b %></div>
-                    <ol>
-                      <li class="mb-3"><%- data.o3b1 %></li>
-                      <li class="mb-3"><%- data.o3b2 %></li>
-                    </ol>
-                  </li>
-                  <li class="mb-3"><%- data.o3c %></li>
-                  <li>
-                    <div class="mb-3"><%- data.o3d %></div>
-                    <ol>
-                      <li class="mb-3"><%- data.o3d1 %></li>
-                      <li class="mb-3"><%- data.o3d2 %></li>
-                    </ol>
-                  </li>
-                  <li>
-                    <div class="mb-3"><%- data.o3e %></div>
-                    <ol>
-                      <li class="mb-3"><%- data.o3e1 %></li>
-                      <li class="mb-3"><%- data.o3e2 %></li>
-                    </ol>
-                  </li>
-                  <li class="mb-3"><%- data.o3f %></li>
-                </ol>
-              </li>
-              <li class="mb-3"><strong><%- data.o4 %></strong></li>
-            </ol>
-
-            <div
-              class="modal fade"
-              id="modal"
-              data-bs-keyboard="false"
-              tabindex="-1"
-              aria-labelledby="modalHeader"
-              aria-hidden="true"
-            >
-              <div
-                class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
-              >
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="modalHeader"></h1>
-                    <button
-                      type="button"
-                      class="btn-close"
-                      data-bs-dismiss="modal"
-                      aria-label="Close"
-                    ></button>
-                  </div>
-                  <div class="modal-body pb-4"></div>
-                </div>
+          <div
+            class="col-12 col-md-8 offset-md-2 px-3 py-3 balance text-center"
+          >
+            <%- data.p1 %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-md-8 offset-md-2">
+            <form id="supportForm" novalidate>
+              <div id="nameContainer">
+                <strong>
+                  <label for="name" class="form-label">
+                    <%- data.labelName %>
+                  </label>
+                </strong>
+                <input type="text" class="form-control" id="name" required />
+                <div class="invalid-feedback"><%- data.nameRequired %></div>
               </div>
-            </div>
+              <div class="my-4" id="emailContainer">
+                <strong>
+                  <label for="email" class="form-label">
+                    <%- data.labelEmail %>
+                  </label>
+                </strong>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="name@example.com"
+                  required
+                />
+                <div class="invalid-feedback"><%- data.emailRequired %></div>
+              </div>
+              <div class="my-4" id="messageContainer">
+                <strong>
+                  <label for="message" class="form-label">
+                    <%- data.labelMessage %>
+                  </label>
+                </strong>
+                <textarea class="form-control" id="message" rows="6"></textarea>
+                <div class="invalid-feedback"><%- data.messageRequired %></div>
+              </div>
+              <div class="mb-5 text-center">
+                <button type="submit" class="btn btn-primary">
+                  <div
+                    class="spinner-border submitButtonSpinner d-none"
+                    role="status"
+                  >
+                    <span class="visually-hidden">Loading...</span>
+                  </div>
+                  <span class="submitButtonContent"><%- data.submit %></span>
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
 
-      <div class="container-fluid p-0">
+      <div
+        class="modal fade"
+        id="modal"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="modalHeader"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5"></h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body pb-4"></div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="modal fade"
+        id="modalMessageSent"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="modalHeader"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5"><%- data.messageSent %></h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body pb-4"><%- data.replyASAP %></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid p-0 fixed-bottom">
         <div class="row">
           <div class="col-12">
             <footer class="mt-2 px-4 py-4 bg-dark text-light text-center">
@@ -286,6 +307,7 @@
       crossorigin="anonymous"
     ></script>
 
+    <script src="/js/support.js"></script>
     <script src="/js/load-sw.js"></script>
   </body>
 </html>

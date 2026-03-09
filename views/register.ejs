@@ -184,9 +184,9 @@
                 />
                 <!-- Username -->
                 <div class="mb-4">
-                  <label for="username" class="form-label"
-                    ><%- data.username %></label
-                  >
+                  <label for="username" class="form-label">
+                    <%- data.username %>
+                  </label>
                   <input
                     type="text"
                     maxlength="255"
@@ -204,9 +204,9 @@
 
                 <!-- Password -->
                 <div class="mb-4">
-                  <label for="password" class="form-label"
-                    ><%- data.password %></label
-                  >
+                  <label for="password" class="form-label">
+                    <%- data.password %>
+                  </label>
                   <input
                     type="password"
                     maxlength="255"
@@ -216,8 +216,11 @@
                     required
                     autocomplete="new-password"
                     autocapitalize="off"
+                    aria-describedby="passwordHelpBlock"
                   />
-                  <div class="form-text"><%- data.passwordRequirement %></div>
+                  <div class="form-text" id="passwordHelpBlock">
+                    <%- data.passwordRequirement %>
+                  </div>
                   <div class="password invalid-feedback">
                     <%- data.errorPasswordRequired %>
                   </div>
@@ -225,9 +228,9 @@
 
                 <!-- Email -->
                 <div class="mb-4">
-                  <label for="email" class="form-label"
-                    ><%- data.email %></label
-                  >
+                  <label for="email" class="form-label">
+                    <%- data.email %>
+                  </label>
                   <input
                     type="email"
                     maxlength="255"

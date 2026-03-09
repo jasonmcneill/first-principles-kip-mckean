@@ -1,0 +1,18 @@
+{
+  "metadata": {
+    "lang": "en",
+    "paypalLocale": "en_US"
+  },
+  "appTitle": "First Principles",
+  "pageTitle": "Support",
+  "p1": "Need some help? Please reach out below:",
+  "labelName": "Name:",
+  "nameRequired": "Your name is required.",
+  "labelEmail": "E-mail address:",
+  "emailRequired": "Your e-mail address is required.",
+  "labelMessage": "Message:",
+  "messageRequired": "Please input your message.",
+  "submit": "Request Support",
+  "messageSent": "Message Sent",
+  "replyASAP": "You will receive a reply as soon as possible. Thank you!"
+}

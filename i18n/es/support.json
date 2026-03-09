@@ -1,0 +1,18 @@
+{
+  "metadata": {
+    "lang": "es",
+    "paypalLocale": "es_US"
+  },
+  "appTitle": "Principios Básicos",
+  "pageTitle": "Soporte",
+  "p1": "¿Necesita ayuda? Por favor, póngase en contacto a continuación:",
+  "labelName": "Nombre:",
+  "nameRequired": "Su nombre es obligatorio.",
+  "labelEmail": "Correo electrónico:",
+  "emailRequired": "Su dirección de correo electrónico es obligatoria.",
+  "labelMessage": "Mensaje:",
+  "messageRequired": "Por favor, ingrese su mensaje.",
+  "submit": "Solicitar Soporte",
+  "messageSent": "Mensaje Enviado",
+  "replyASAP": "Recibirá una respuesta lo antes posible. ¡Gracias!"
+}

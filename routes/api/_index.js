@@ -56,4 +56,9 @@ router.post('/subscription-suspend', authenticateToken, subscriptionSuspend);
 const subscriptionResume = require('./subscription-resume');
 router.post('/subscription-resume', authenticateToken, subscriptionResume);
 
+// SUPPORT
+
+const supportRequest = require('./support-request');
+router.post('/support-request', authenticateToken, supportRequest.POST);
+
 module.exports = router;
