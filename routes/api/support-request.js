@@ -118,7 +118,7 @@ exports.POST = (req, res) => {
       htmlBody = htmlBody.replaceAll('{FIRSTNAME} {LASTNAME}', name);
       htmlBody = htmlBody.replaceAll('{USERID}', req.user.id);
       htmlBody = htmlBody.replaceAll('{EMAIL}', email);
-      htmlBody = htmlBody.replaceAll('{MESSAGE}', message);
+      htmlBody = htmlBody.replaceAll('{MESSAGE}', message.replaceAll('\n', '<br>'));
 
       require('./utils')
         .sendMail(
