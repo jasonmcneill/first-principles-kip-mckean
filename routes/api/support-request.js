@@ -128,7 +128,7 @@ exports.POST = (req, res) => {
         .sendMail(
           'vrtjason@gmail.com',
           'Jason McNeill',
-          'Support Request (fp.kipmckean.com)',
+          `Support Request (${process.env.DOMAIN})`,
           htmlBody.trim(),
           textBody.trim(),
           name,
