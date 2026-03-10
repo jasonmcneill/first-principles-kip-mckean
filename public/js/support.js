@@ -88,6 +88,9 @@ async function onSubmit(evt) {
     .then((res) => res.json())
     .then((data) => {
       modalMsgSent.show();
+      evt.target.reset();
+      document.querySelector('.submitButtonContent').classList.add('d-none');
+      document.querySelector('.submitButtonSpinner').classList.remove('d-none');
     })
     .catch((err) => {
       console.error(err);
