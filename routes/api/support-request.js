@@ -110,6 +110,48 @@ Message:
 ----------------------------------
       `;
 
+      let htmlBody = `
+        <style type="text/css">
+        #fp-kip-mckean-support {
+        }
+        </style>
+
+        <div id="fp-kip-mckean-support">
+        <h2>NEW SUPPORT REQUEST</h2>
+
+        <p>
+          A request for support has been received from the First Principles web site.  Reply to this message to respond.
+        </p>
+
+        <p>
+          <strong>Date:</strong><br>
+          {DATE}
+        </p>
+
+        <p>
+          <strong>Name:</strong><br>
+          {FIRSTNAME} {LASTNAME}
+        </p>
+
+        <p>
+          <strong>User ID:</strong><br>
+          {USERID}
+        </p>
+
+        <p>
+          <strong>E-mail:</strong><br>
+          {EMAIL}
+        </p>
+
+        <div>
+          <strong>Message:</strong><br>
+          <blockquote>
+            {MESSAGE}
+          </blockquote>
+        </div>
+        </div>
+      `;
+
       const now = new Date();
       const formatter = new Intl.DateTimeFormat(userlocale, {
         dateStyle: 'full',
@@ -123,12 +165,18 @@ Message:
       textBody = textBody.replaceAll('{EMAIL}', email);
       textBody = textBody.replaceAll('{MESSAGE}', message);
 
+      htmlBody = htmlBody.replaceAll('{DATE}', formattedDate);
+      htmlBody = htmlBody.replaceAll('{FIRSTNAME} {LASTNAME}', name);
+      htmlBody = htmlBody.replaceAll('{USERID}', req.user.id);
+      htmlBody = htmlBody.replaceAll('{EMAIL}', email);
+      htmlBody = htmlBody.replaceAll('{MESSAGE}', message);
+
       require('./utils')
         .sendMail(
           'vrtjason@gmail.com',
           'Jason McNeill',
           'Support Request (fp.kipmckean.com)',
-          '',
+          htmlBody.trim(),
           textBody.trim(),
           name,
           email
