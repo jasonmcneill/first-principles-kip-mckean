@@ -120,9 +120,8 @@ Message:
           font-size: 1.5rem;
         }
         #fp-kip-mckean-support blockquote {
-          color: navy;
           padding: 1rem;
-          border: 1px solid navy;
+          border: 1px solid gainsboro;
           margin: 0.5rem 0 1rem 0;
         }
 
@@ -166,7 +165,7 @@ Message:
 
         <div class="mt-4 mb-4">
           <strong>Message:</strong><br>
-          <blockquote>
+          <blockquote style="border: 1px solid gainsboro; margin: 0.5rem 0 1rem 0; padding: 1rem">
             {MESSAGE}
           </blockquote>
         </div>
