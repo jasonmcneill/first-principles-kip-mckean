@@ -105,6 +105,7 @@ exports.POST = (req, res) => {
       const formatter = new Intl.DateTimeFormat(userlocale, {
         dateStyle: 'full',
         timeStyle: 'long',
+        timeZone: 'America/Los_Angeles',
       });
       const formattedDate = formatter.format(now);
 
@@ -118,7 +119,10 @@ exports.POST = (req, res) => {
       htmlBody = htmlBody.replaceAll('{FIRSTNAME} {LASTNAME}', name);
       htmlBody = htmlBody.replaceAll('{USERID}', req.user.id);
       htmlBody = htmlBody.replaceAll('{EMAIL}', email);
-      htmlBody = htmlBody.replaceAll('{MESSAGE}', message.replaceAll('\n', '<br>'));
+      htmlBody = htmlBody.replaceAll(
+        '{MESSAGE}',
+        message.replaceAll('\n', '<br>')
+      );
 
       require('./utils')
         .sendMail(
