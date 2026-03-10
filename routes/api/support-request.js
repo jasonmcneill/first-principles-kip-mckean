@@ -5,6 +5,8 @@ exports.POST = (req, res) => {
   let email = req.body.email || '';
   const message = req.body.message || '';
   const userlocale = req.body.userlocale || 'en-US';
+  const htmlEmail = req.body.htmlEmail || '';
+  const textEmail = req.body.textEmail || '';
 
   // Validate
 
@@ -52,6 +54,20 @@ exports.POST = (req, res) => {
     });
   }
 
+  if (htmlEmail.length === 0) {
+    return res.status(400).send({
+      msg: 'htmlEmail is required',
+      msgType: 'error',
+    });
+  }
+
+  if (textEmail.length === 0) {
+    return res.status(400).send({
+      msg: 'textEmail is required',
+      msgType: 'error',
+    });
+  }
+
   const sql = `
     INSERT INTO \`support-requests\`(
       userid,
@@ -82,95 +98,8 @@ exports.POST = (req, res) => {
         });
       }
 
-      /* return res.status(200).send({
-        msg: 'message sent',
-        msgType: 'success',
-      }); */
-
-      let textBody = `
-NEW SUPPORT REQUEST
-
-A request for support has been received from the First Principles web site.  Reply to this message to respond.
-
-Date:
-{DATE}
-
-User:
-{FIRSTNAME} {LASTNAME}
-
-User ID:
-{USERID}
-
-E-mail:
-{EMAIL}
-
-Message:
-----------------------------------
-{MESSAGE}
-----------------------------------
-      `;
-
-      let htmlBody = `
-        <style type="text/css">
-        #fp-kip-mckean-support {
-          background-color: white;
-          padding: 1rem;
-        }
-        #fp-kip-mckean-support h2 {
-          font-size: 1.5rem;
-        }
-        #fp-kip-mckean-support blockquote {
-          padding: 1rem;
-          border: 1px solid gainsboro;
-          margin: 0.5rem 0 1rem 0;
-        }
-
-        #fp-kip-mckean-support mt-1 {margin-top: 1rem}
-        #fp-kip-mckean-support mt-2 {margin-top: 2rem}
-        #fp-kip-mckean-support mt-3 {margin-top: 3rem}
-        #fp-kip-mckean-support mt-4 {margin-top: 4rem}
-
-        #fp-kip-mckean-support mb-1 {margin-bottom: 1rem}
-        #fp-kip-mckean-support mb-2 {margin-bottom: 2rem}
-        #fp-kip-mckean-support mb-3 {margin-bottom: 3rem}
-        #fp-kip-mckean-support mb-4 {margin-bottom: 4rem}
-        </style>
-
-        <div id="fp-kip-mckean-support">
-        <h2>NEW SUPPORT REQUEST</h2>
-
-        <p class="mt-4 mb-4">
-          A request for support has been received from the First Principles web site.  Reply to this message to respond.
-        </p>
-
-        <p class="mt-4 mb-4">
-          <strong>Date:</strong><br>
-          {DATE}
-        </p>
-
-        <p class="mt-4 mb-4">
-          <strong>Name:</strong><br>
-          {FIRSTNAME} {LASTNAME}
-        </p>
-
-        <p class="mt-4 mb-4">
-          <strong>User ID:</strong><br>
-          {USERID}
-        </p>
-
-        <p class="mt-4 mb-4">
-          <strong>E-mail:</strong><br>
-          {EMAIL}
-        </p>
-
-        <div class="mt-4 mb-4">
-          <strong>Message:</strong><br>
-          <blockquote style="border: 1px solid gainsboro; margin: 0.5rem 0 1rem 0; padding: 1rem">
-            {MESSAGE}
-          </blockquote>
-        </div>
-        </div>
-      `;
+      let textBody = textEmail;
+      let htmlBody = htmlEmail;
 
       const now = new Date();
       const formatter = new Intl.DateTimeFormat(userlocale, {

@@ -1,0 +1,20 @@
+NEW SUPPORT REQUEST
+
+A request for support has been received from the First Principles web site.  Reply to this message to respond.
+
+Date:
+{DATE}
+
+User:
+{FIRSTNAME} {LASTNAME}
+
+User ID:
+{USERID}
+
+E-mail:
+{EMAIL}
+
+Message:
+----------------------------------
+{MESSAGE}
+----------------------------------

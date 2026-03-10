@@ -1,5 +1,25 @@
 const modalMsgSent = new bootstrap.Modal('#modalMessageSent');
 
+function getHTMLEmail() {
+  return new Promise((resolve, reject) => {
+    fetch('/js/email/support/support.html')
+      .then((res) => res.text())
+      .then((content) => {
+        return resolve(content);
+      });
+  });
+}
+
+function getTextEmail() {
+  return new Promise((resolve, reject) => {
+    fetch('/js/email/support/support.txt')
+      .then((res) => res.text())
+      .then((content) => {
+        return resolve(content);
+      });
+  });
+}
+
 function validate(evt) {
   const name = evt.target.name.value.trim();
   const email = evt.target.email.value.trim().toLowerCase();
@@ -44,6 +64,8 @@ async function onSubmit(evt) {
   const userlocale = navigator.languages[0] || 'en-US';
   const endpoint = '/api/support-request';
   const accessToken = await getAccessToken();
+  const htmlEmail = await getHTMLEmail();
+  const textEmail = await getTextEmail();
 
   document.querySelector('.submitButtonContent').classList.add('d-none');
   document.querySelector('.submitButtonSpinner').classList.remove('d-none');
@@ -55,6 +77,8 @@ async function onSubmit(evt) {
       email: email,
       message: message,
       userlocale: userlocale,
+      htmlEmail: htmlEmail,
+      textEmail: textEmail,
     }),
     headers: new Headers({
       'Content-Type': 'application/json',
