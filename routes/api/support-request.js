@@ -126,8 +126,8 @@ exports.POST = (req, res) => {
 
       require('./utils')
         .sendMail(
-          'vrtjason@gmail.com',
-          'Jason McNeill',
+          process.env.SUPPORT_EMAIL_ADDRESS,
+          process.env.SUPPORT_EMAIL_NAME,
           `Support Request (${process.env.DOMAIN})`,
           htmlBody.trim(),
           textBody.trim(),
