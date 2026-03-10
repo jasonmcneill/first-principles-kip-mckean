@@ -92,8 +92,8 @@ function sendMail_MailJet(
       Messages: [
         {
           From: {
-            Email: `${fromEmailAddress}`,
-            Name: `${fromEmailName}`,
+            Email: `${process.env.EMAIL_FROM_ADDRESS}`,
+            Name: `${process.env.EMAIL_FROM_NAME}`,
           },
           To: [
             {
@@ -114,7 +114,6 @@ function sendMail_MailJet(
     request
       .then((result) => {
         const { response } = result;
-        console.log(require('util').inspect(response, true, 2, true));
 
         const mailResponse = {
           statusCode: 200,
