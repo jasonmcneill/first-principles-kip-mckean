@@ -113,8 +113,8 @@ function sendMail_MailJet(
     });
     request
       .then((result) => {
-        const { Messages } = result;
-        console.log(require('util').inspect(Messages, true, 7, true));
+        const { response } = result;
+        console.log('MailJet response:', result.body?.Messages ?? result.body);
 
         const mailResponse = {
           statusCode: 200,
