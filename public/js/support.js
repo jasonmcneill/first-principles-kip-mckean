@@ -37,6 +37,17 @@ function validate(evt) {
   }
 
   if (!email.length) {
+    document.querySelector('#emailContainer .invalid-feedback').innerText =
+      getPhrase('emailRequired');
+    evt.target.email.classList.add('is-invalid');
+    if (isValid) fpScrollTo(evt.target.email, 50);
+    isValid = false;
+  }
+
+  const isEmailValid = validateEmail(email);
+  if (!isEmailValid) {
+    document.querySelector('#emailContainer .invalid-feedback').innerText =
+      getPhrase('emailInvalid');
     evt.target.email.classList.add('is-invalid');
     if (isValid) fpScrollTo(evt.target.email, 50);
     isValid = false;
@@ -49,6 +60,27 @@ function validate(evt) {
   }
 
   return isValid;
+}
+
+function validateEmail(email) {
+  const tester =
+    /^[-!#$%&'*+\/0-9=?A-Z^_a-z{|}~](\.?[-!#$%&'*+\/0-9=?A-Z^_a-z{|}~])*@[a-zA-Z0-9](-*\.?[a-zA-Z0-9])*\.[a-zA-Z](-?[a-zA-Z0-9])+$/;
+
+  if (!email) return false;
+
+  if (email.length > 254) return false;
+
+  const valid = tester.test(email);
+  if (!valid) return false;
+
+  // Further checking of specific part lengths as per the library's logic
+  const parts = email.split('@');
+  if (parts[0].length > 64) return false;
+
+  const domainParts = parts[1].split('.');
+  if (domainParts.some((part) => part.length > 63)) return false;
+
+  return true;
 }
 
 async function onSubmit(evt) {
@@ -89,8 +121,8 @@ async function onSubmit(evt) {
     .then((data) => {
       modalMsgSent.show();
       evt.target.reset();
-      document.querySelector('.submitButtonContent').classList.add('d-none');
-      document.querySelector('.submitButtonSpinner').classList.remove('d-none');
+      document.querySelector('.submitButtonContent').classList.remove('d-none');
+      document.querySelector('.submitButtonSpinner').classList.add('d-none');
     })
     .catch((err) => {
       console.error(err);

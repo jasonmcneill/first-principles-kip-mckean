@@ -10,6 +10,7 @@
   "nameRequired": "Your name is required.",
   "labelEmail": "E-mail address:",
   "emailRequired": "Your e-mail address is required.",
+  "emailInvalid": "Invalid e-mail address",
   "labelMessage": "Message:",
   "messageRequired": "Please input your message.",
   "submit": "Request Support",

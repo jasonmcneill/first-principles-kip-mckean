@@ -10,6 +10,7 @@
   "nameRequired": "Su nombre es obligatorio.",
   "labelEmail": "Correo electrónico:",
   "emailRequired": "Su dirección de correo electrónico es obligatoria.",
+  "emailInvalid": "Correo electrónico no válido",
   "labelMessage": "Mensaje:",
   "messageRequired": "Por favor, ingrese su mensaje.",
   "submit": "Solicitar Soporte",
