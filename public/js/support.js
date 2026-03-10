@@ -2,7 +2,7 @@ const modalMsgSent = new bootstrap.Modal('#modalMessageSent');
 
 function getHTMLEmail() {
   return new Promise((resolve, reject) => {
-    fetch('/js/email/support/support.html')
+    fetch('/email/support/support.html')
       .then((res) => res.text())
       .then((content) => {
         return resolve(content);
@@ -12,7 +12,7 @@ function getHTMLEmail() {
 
 function getTextEmail() {
   return new Promise((resolve, reject) => {
-    fetch('/js/email/support/support.txt')
+    fetch('/email/support/support.txt')
       .then((res) => res.text())
       .then((content) => {
         return resolve(content);
