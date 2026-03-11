@@ -167,74 +167,72 @@
 
       <div class="container-fluid mb-5 pb-5">
         <div class="row bg-light">
-          <div class="col-12 col-md-6 offset-md-3">
+          <div class="col-12 col-md-6 offset-md-3 col-lg-4 offset-lg-4">
             <main>
-              <div class="card my-4 shadow-sm">
-                <div class="card-body">
-                  <div class="alert alert-danger d-none" role="alert"></div>
+              <div class="my-4">
+                <div class="alert alert-danger d-none" role="alert"></div>
 
-                  <form id="loginForm" novalidate>
-                    <div class="mb-4">
-                      <label for="username" class="form-label">
-                        <%- data.username %>
-                      </label>
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="username"
-                        maxlength="255"
-                        autocomplete="off"
-                        autocapitalize="off"
-                      />
-                      <div class="invalid-feedback">
-                        <%- data.usernameError %>
-                      </div>
+                <form id="loginForm" novalidate>
+                  <div class="mb-4">
+                    <label for="username" class="form-label">
+                      <%- data.username %>
+                    </label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="username"
+                      maxlength="255"
+                      autocomplete="off"
+                      autocapitalize="off"
+                    />
+                    <div class="invalid-feedback">
+                      <%- data.usernameError %>
                     </div>
+                  </div>
 
-                    <div class="mb-4">
-                      <label for="password" class="form-label">
-                        <%- data.password %>
-                      </label>
-                      <input
-                        type="password"
-                        class="form-control"
-                        id="password"
-                        maxlength="255"
-                        autocapitalize="off"
-                      />
-                      <div class="invalid-feedback">
-                        <%- data.passwordError %>
-                      </div>
+                  <div class="mb-4">
+                    <label for="password" class="form-label">
+                      <%- data.password %>
+                    </label>
+                    <input
+                      type="password"
+                      class="form-control"
+                      id="password"
+                      maxlength="255"
+                      autocapitalize="off"
+                    />
+                    <div class="invalid-feedback">
+                      <%- data.passwordError %>
                     </div>
+                  </div>
 
-                    <div class="py-2 my-4 text-center">
-                      <button type="submit" class="btn btn-primary">
-                        <span
-                          class="spinner-border spinner-border-sm me-2 submitButtonSpinner d-none"
-                          aria-hidden="true"
-                        ></span>
-                        <%- data.logIn %>
-                      </button>
-                    </div>
+                  <div class="py-2 my-4 text-center">
+                    <button type="submit" class="btn btn-primary">
+                      <span
+                        class="spinner-border spinner-border-sm me-2 submitButtonSpinner d-none"
+                        aria-hidden="true"
+                      ></span>
+                      <%- data.logIn %>
+                    </button>
+                  </div>
 
-                    <hr class="my-4" />
+                  <hr class="my-4" />
 
-                    <div class="text-center small">
-                      <p class="my-3">
-                        <a href="/<%- data.metadata.lang %>/pw-forgot">
-                          <%- data.forgotPassword %>
-                        </a>
-                      </p>
+                  <div class="text-center small">
+                    <p class="my-3">
+                      <a href="/<%- data.metadata.lang %>/pw-forgot">
+                        <%- data.forgotPassword %>
+                      </a>
+                    </p>
 
-                      <p class="my-3">
-                        <%- data.noAccount %>
-                        <a href="/<%- data.metadata.lang %>/register">
-                          <%- data.registerLink %>
-                        </a>
-                      </p>
-                    </div>
-                  </form>
-                </div>
+                    <p class="my-3">
+                      <%- data.noAccount %>
+                      <a href="/<%- data.metadata.lang %>/register">
+                        <%- data.registerLink %>
+                      </a>
+                    </p>
+                  </div>
+                </form>
               </div>
             </main>
           </div>
