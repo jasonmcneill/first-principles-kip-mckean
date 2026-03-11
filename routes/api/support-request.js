@@ -115,6 +115,7 @@ exports.POST = (req, res) => {
       textBody = textBody.replaceAll('{EMAIL}', email);
       textBody = textBody.replaceAll('{MESSAGE}', message);
 
+      htmlBody = htmlBody.replaceAll('{DOMAIN}', process.env.DOMAIN);
       htmlBody = htmlBody.replaceAll('{DATE}', formattedDate);
       htmlBody = htmlBody.replaceAll('{NAME}', name);
       htmlBody = htmlBody.replaceAll('{USERID}', req.user.id);
