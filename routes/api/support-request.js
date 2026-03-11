@@ -102,7 +102,7 @@ exports.POST = (req, res) => {
       let htmlBody = htmlEmail;
 
       const now = new Date();
-      const formatter = new Intl.DateTimeFormat(userlocale, {
+      const formatter = new Intl.DateTimeFormat('en-US', {
         dateStyle: 'full',
         timeStyle: 'long',
         timeZone: 'America/Los_Angeles',
