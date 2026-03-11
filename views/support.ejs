@@ -176,14 +176,12 @@
 
       <div class="container-fluid mb-5 pb-5">
         <div class="row">
-          <div
-            class="col-12 col-md-8 offset-md-2 px-3 py-3 balance text-center"
-          >
-            <%- data.p1 %>
-          </div>
+          <div class="col-12 px-3 py-3 balance text-center"><%- data.p1 %></div>
         </div>
         <div class="row">
-          <div class="col-12 col-md-8 offset-md-2">
+          <div
+            class="col-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3"
+          >
             <form id="supportForm" novalidate>
               <div id="nameContainer">
                 <strong>
@@ -200,13 +198,7 @@
                     <%- data.labelEmail %>
                   </label>
                 </strong>
-                <input
-                  type="email"
-                  class="form-control"
-                  id="email"
-                  placeholder="name@example.com"
-                  required
-                />
+                <input type="email" class="form-control" id="email" required />
                 <div class="invalid-feedback"><%- data.emailRequired %></div>
               </div>
               <div class="my-4" id="messageContainer">

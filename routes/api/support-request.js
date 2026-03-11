@@ -110,7 +110,7 @@ exports.POST = (req, res) => {
       const formattedDate = formatter.format(now);
 
       textBody = textBody.replaceAll('{DATE}', formattedDate);
-      textBody = textBody.replaceAll('{FIRSTNAME} {LASTNAME}', name);
+      textBody = textBody.replaceAll('{NAME}', name);
       textBody = textBody.replaceAll('{USERID}', req.user.id);
       textBody = textBody.replaceAll('{EMAIL}', email);
       textBody = textBody.replaceAll('{MESSAGE}', message);
