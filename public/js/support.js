@@ -20,6 +20,18 @@ function getTextEmail() {
   });
 }
 
+function prepopulateForm() {
+  const refreshToken = JSON.parse(
+    atob(localStorage.getItem('refreshToken').split('.')[1])
+  );
+  const { firstname, lastname, email } = refreshToken;
+  const nameEl = document.querySelector('#name');
+  const emailEl = document.querySelector('#email');
+
+  nameEl.value = `${firstname} ${lastname}`;
+  emailEl.value = email;
+}
+
 function validate(evt) {
   const name = evt.target.name.value.trim();
   const email = evt.target.email.value.trim().toLowerCase();
@@ -143,6 +155,7 @@ function addListeners() {
 
 function init() {
   addListeners();
+  prepopulateForm();
 }
 
 init();
