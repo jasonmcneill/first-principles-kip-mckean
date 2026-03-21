@@ -225,6 +225,17 @@ exports.POST = (req, res) => {
       });
     }
 
+    if (!paypalSubscriptionDetails.billing_info) {
+      const jwt = await getJWT(db, req.user.id, '');
+      return res.json({
+        msg: 'cannot connect to paypal',
+        msgType: 'error',
+        accessToken: jwt.accessToken,
+        refreshToken: jwt.refreshToken,
+        error: paypalSubscriptionDetails?.error,
+      });
+    }
+
     const addOneYear = new Date(
       paypalSubscriptionDetails.billing_info.last_payment.time
     );
