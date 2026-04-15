@@ -212,7 +212,7 @@ function showScripture(slug) {
         const header = modalEl.querySelector('.modal-title');
         const body = modalEl.querySelector('.modal-body');
         const { display, version, book, chapter, verses } = scriptureObject;
-        let expandText = 'Expand';
+        let expandText = getGlobalPhrase('expand');
         let versesHTML = '';
 
         for (let i = 0; i < verses.length; i++) {
