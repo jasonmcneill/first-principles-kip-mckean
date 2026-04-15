@@ -298,6 +298,7 @@ function addListeners() {
   });
 
   document.addEventListener('DOMContentLoaded', () => {
+    loadContent();
     maskNumericPasswordOnIOS();
 
     const myModalEl = document.getElementById('modal');
@@ -320,7 +321,6 @@ function addListeners() {
 
 function init() {
   addListeners();
-  loadContent();
   hideAudioIfOpusNotSupported();
   hideScriptureHash();
   resetSubmitButtons();
