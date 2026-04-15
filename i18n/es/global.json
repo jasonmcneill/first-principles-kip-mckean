@@ -6,5 +6,6 @@
   "logout": "Cerrar sesión",
   "sideMenuHeader": "Menú",
   "loading": "Cargando...",
-  "close": "Cerrar"
+  "close": "Cerrar",
+  "changeLanguage": "Cambiar idioma"
 }
