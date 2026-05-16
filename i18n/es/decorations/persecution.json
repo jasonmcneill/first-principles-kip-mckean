@@ -376,21 +376,6 @@
     }
   },
   {
-    "key": "o4a",
-    "text": {
-      "original": "Matthew 5:10-12",
-      "translated": "Mateo 5:10-12"
-    },
-    "decorations": {
-      "tags": [
-        {
-          "name": "span",
-          "attributes": "data-scripture=\"matthew-5-10-12\""
-        }
-      ]
-    }
-  },
-  {
     "key": "o4b",
     "text": {
       "original": "Ephesians 6:10-18",
